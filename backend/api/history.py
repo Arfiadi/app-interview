@@ -1,4 +1,3 @@
-# app/backend/api/history.py
 from fastapi import APIRouter
 from utils.model_loader import load_history, load_history_item
 
@@ -6,6 +5,10 @@ router = APIRouter()
 
 @router.get("/")
 def list_history():
+    return load_history()
+
+@router.get("/all")
+def get_all_history():
     return load_history()
 
 @router.get("/{session_id}")

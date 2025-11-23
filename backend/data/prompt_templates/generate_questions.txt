@@ -1,0 +1,4 @@
+Buat {n} pertanyaan interview singkat dan relevan untuk:
+Role: {role}
+Experience: {exp}
+Industry: {industry}

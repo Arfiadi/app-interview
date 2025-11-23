@@ -1,0 +1,71 @@
+[
+  {
+    "session_id": "ba9d46b5-67f3-4cd4-b2a2-331a0a590306",
+    "overall_score": 54.0,
+    "meta": {
+      "job_role": "Software Engineer",
+      "experience_level": "Mid",
+      "industry": "Tech"
+    },
+    "results": [
+      {
+        "question": "Describe a challenging technical problem you solved and how you approached it.",
+        "user_answer": "I don't have technical problem",
+        "ideal_answer": "Saya pernah menghadapi bug yang sulit direproduksi terkait race condition pada aplikasi yang menangani high-throughput data. Saya mendekati masalah ini dengan pertama-tama menganalisis log dan metrik untuk mengidentifikasi pola, lalu mengisolasi bagian kode yang diduga menjadi penyebabnya. Untuk memastikannya, saya menulis test unit yang mensimulasikan kondisi konkurensi tinggi dan menggunakan debugger untuk melacak eksekusi. Solusinya adalah menerapkan mekanisme locking yang lebih robust, yang akhirnya menyelesaikan bug tanpa mengorbankan performa sistem secara signifikan.",
+        "similarity_score": 54,
+        "keywords": {
+          "user_keywords": [
+            "technical problem",
+            "have technical",
+            "problem",
+            "have",
+            "technical"
+          ],
+          "ideal_keywords": [
+            "high-throughput data",
+            "sulit direproduksi",
+            "direproduksi terkait",
+            "terkait race",
+            "race condition",
+            "menangani high-throughput"
+          ],
+          "missing_keywords": [
+            "high-throughput data",
+            "sulit direproduksi",
+            "direproduksi terkait",
+            "terkait race",
+            "race condition",
+            "menangani high-throughput"
+          ],
+          "extra_keywords": [
+            "technical problem",
+            "have technical",
+            "problem",
+            "have",
+            "technical"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "high-throughput data",
+            "sulit direproduksi",
+            "direproduksi terkait",
+            "terkait race",
+            "race condition",
+            "menangani high-throughput"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "high-throughput data",
+            "sulit direproduksi",
+            "direproduksi terkait",
+            "terkait race",
+            "race condition",
+            "menangani high-throughput"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban jujur dan tidak dibuat-buat.\n- **Perbaikan:** Untuk wawasan yang lebih baik, pikirkan kembali pengalaman Anda; bahkan insiden kecil seperti memperbaiki error di spreadsheet atau mengotomatiskan tugas bisa menjadi contoh teknis yang menarik untuk diceritakan."
+      }
+    ]
+  }
+]

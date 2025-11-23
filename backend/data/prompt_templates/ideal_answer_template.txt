@@ -1,0 +1,6 @@
+Berikan jawaban ideal singkat (4-6 kalimat) untuk:
+Pertanyaan: {question}
+Role: {role}
+Experience: {exp}
+Industry: {industry}
+Jawaban dalam bahasa Indonesia.

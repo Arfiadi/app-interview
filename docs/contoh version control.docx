@@ -1,0 +1,126 @@
+Tentu — **version control (Git)** Wajib kita terapkan **mulai sekarang** untuk menjaga progres, rollback perubahan, dan memastikan coding kamu RAPIH selama 48 jam menuju deadline.
+
+Kamu sudah commit skeleton folder, jadi sekarang kita mulai **version control workflow yang benar** untuk fase development backend + frontend.
+
+Berikut adalah panduan **Git workflow FINAL**, disesuaikan dengan PRD (file: `/mnt/data/prd.docx`).
+
+---
+
+# 🔥 **1. Buat Branch Baru: `backend-dev`**
+
+Agar kamu tidak mengotori main branch selama backend development.
+
+Jalankan:
+
+```sh
+git checkout -b backend-dev
+```
+
+---
+
+# 🔥 **2. Setiap File Backend Yang Kita Generate → Commit Satu Per Satu**
+
+Tujuannya:
+
+* gampang rollback
+* tiap commit kecil & jelas
+* progress bisa kamu tunjukkan sebagai "professional work"
+
+Format commit message:
+
+```
+feat(backend): add FastAPI skeleton and root server
+feat(backend): add interview endpoints
+feat(backend): add scoring service with cosine similarity
+feat(backend): integrate YAKE keyword extraction
+feat(backend): add topic coverage
+feat(backend): add LLM feedback service
+fix(backend): improve error handling
+refactor(backend): cleanup imports
+```
+
+---
+
+# 🔥 **3. Setelah Backend Selesai → Merge ke `main`**
+
+Setelah dites via `/docs` dan Postman:
+
+```sh
+git checkout main
+git merge backend-dev
+git push
+```
+
+---
+
+# 🔥 **4. Lanjut Buat Branch Baru untuk Frontend**
+
+Saat backend selesai:
+
+```sh
+git checkout -b frontend-dev
+```
+
+Kemudian commit per halaman:
+
+```
+feat(frontend): add pre-interview page
+feat(frontend): add interview flow UI
+feat(frontend): add results page
+feat(frontend): integrate backend API
+fix(frontend): fix state bug on question navigation
+```
+
+---
+
+# 🔥 **5. Setiap Kali Kamu Menghasilkan Kode Via ChatGPT → Jalankan Workflow Ini**
+
+Supaya aman:
+
+```sh
+git add .
+git commit -m "feat(backend): add scoring evaluator file"
+git push
+```
+
+---
+
+# 🔥 **6. Buat Tag Jika Kamu Mau Tunjukkan Versi MVP**
+
+Setelah semuanya berjalan:
+
+```sh
+git tag v0.1-mvp
+git push origin v0.1-mvp
+```
+
+---
+
+# 🧠 BONUS: Git Ignore
+
+Pastikan file `.gitignore` kamu mencakup:
+
+```
+venv/
+__pycache__/
+*.pyc
+.env
+history.json
+.DS_Store
+```
+
+Jika belum ada, saya bisa buatkan `.gitignore` yang lengkap.
+
+---
+
+# 🔥 **Kamu Mau Saya Buatkan:**
+
+## ✔ `.gitignore`
+
+## ✔ Script otomatis commit-per-file
+
+## ✔ Commit plan (urutan commit biar rapi)
+
+## ✔ Branch plan ringkas untuk 48 jam ke depan
+
+

@@ -1,4 +1,13 @@
-Buat {n} pertanyaan interview singkat dan relevan untuk:
-Role: {role}
-Experience: {exp}
-Industry: {industry}
+Bertindaklah sebagai Hiring Manager di industri {industry}.
+Buatlah {n} pertanyaan wawancara untuk kandidat pelamar posisi {role} dengan tingkat pengalaman {exp}.
+
+Kriteria Pertanyaan:
+1. Hindari pertanyaan klise (seperti "Perkenalkan diri Anda").
+2. Fokus pada pertanyaan berbasis kompetensi (Behavioral) atau Teknis yang spesifik.
+3. Gunakan metode "Scenario-based" untuk setidaknya 2 pertanyaan.
+4. Pertanyaan harus menantang namun relevan dengan level {exp}.
+
+Format Output:
+Hanya kembalikan array JSON murni berisi string pertanyaan. 
+Contoh: ["Pertanyaan 1...", "Pertanyaan 2...", "Pertanyaan 3..."]
+Jangan ada teks pembuka atau penutup selain JSON.

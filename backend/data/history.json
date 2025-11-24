@@ -2559,5 +2559,823 @@
       }
     ],
     "timestamp": "2025-11-24 17:59:18"
+  },
+  {
+    "session_id": "49c2d41a-02ab-497f-8604-bc01a49d104e",
+    "overall_score": 53.6,
+    "meta": {
+      "job_role": "data analyst",
+      "experience_level": "Internship",
+      "industry": "fintech"
+    },
+    "results": [
+      {
+        "question": "Bagaimana Anda menggunakan SQL untuk mencari 10 pelanggan teratas berdasarkan volume transaksi bulan lalu?",
+        "user_answer": "terserah gua lah\n",
+        "ideal_answer": "Saya akan menggunakan SQL untuk memfilter transaksi bulan lalu dengan kondisi WHERE YEAR(transaction_date) = YEAR(DATE_SUB(CURDATE(), INTERVAL 1 MONTH)) AND MONTH(transaction_date) = MONTH(DATE_SUB(CURDATE(), INTERVAL 1 MONTH)).  \nKemudian, kelompokkan data berdasarkan customer_id dan hitung total volume dengan GROUP BY customer_id dan SUM(volume) AS total_volume.  \nSelanjutnya, urutkan hasil secara menurun dengan ORDER BY total_volume DESC dan batasi 10 teratas menggunakan LIMIT 10.  \nQuery lengkapnya:  \n```sql  \nSELECT customer_id, SUM(volume) AS total_volume  \nFROM transactions  \nWHERE YEAR(transaction_date) = YEAR(DATE_SUB(CURDATE(), INTERVAL 1 MONTH))  \n  AND MONTH(transaction_date) = MONTH(DATE_SUB(CURDATE(), INTERVAL 1 MONTH))  \nGROUP BY customer_id  \nORDER BY total_volume DESC  \nLIMIT 10;  \n```  \nPendekatan ini efisien untuk mengidentifikasi pelanggan top di fintech selama internship saya.",
+        "similarity_score": 46,
+        "keywords": {
+          "user_keywords": [
+            "terserah gua",
+            "terserah",
+            "gua"
+          ],
+          "ideal_keywords": [
+            "AND MONTH",
+            "date",
+            "MONTH",
+            "WHERE YEAR",
+            "SUB",
+            "CURDATE"
+          ],
+          "missing_keywords": [
+            "AND MONTH",
+            "date",
+            "MONTH",
+            "WHERE YEAR",
+            "SUB",
+            "CURDATE"
+          ],
+          "extra_keywords": [
+            "terserah gua",
+            "terserah",
+            "gua"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "AND MONTH",
+            "date",
+            "MONTH",
+            "WHERE YEAR",
+            "SUB",
+            "CURDATE"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "AND MONTH",
+            "date",
+            "MONTH",
+            "WHERE YEAR",
+            "SUB",
+            "CURDATE"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Respons Anda sangat singkat dan percaya diri.\n- **Perbaikan:** Jawaban ini tidak menjawab pertanyaan teknis sama sekali; berikan query SQL lengkap seperti contoh ideal dengan filter WHERE, GROUP BY, ORDER BY DESC, dan LIMIT 10. Hindari bahasa santai seperti \"terserah gua lah\" agar terlihat profesional di interview."
+      },
+      {
+        "question": "Apa langkah-langkah membersihkan data transaksi duplikat di Excel?",
+        "user_answer": "dfafa fa vc",
+        "ideal_answer": "Pertama, backup data asli ke sheet terpisah untuk menghindari kehilangan informasi penting pada transaksi fintech.  \nKedua, pilih seluruh range data, lalu urutkan berdasarkan kolom kunci seperti ID transaksi, tanggal, dan nominal agar duplikat mudah terlihat.  \nKetiga, gunakan fitur Data > Remove Duplicates, centang kolom-kolom utama yang menentukan duplikat unik.  \nKeempat, konfirmasi jumlah baris duplikat yang dihapus, lalu verifikasi ulang dengan formula COUNTIF atau filter untuk memastikan kebersihan data.  \nLangkah ini efektif untuk data transaksi besar dan menjaga integritas analisis selanjutnya.",
+        "similarity_score": 53,
+        "keywords": {
+          "user_keywords": [
+            "dfafa"
+          ],
+          "ideal_keywords": [
+            "sheet terpisah",
+            "menghindari kehilangan",
+            "kehilangan informasi",
+            "informasi penting",
+            "transaksi fintech",
+            "Remove Duplicates"
+          ],
+          "missing_keywords": [
+            "sheet terpisah",
+            "menghindari kehilangan",
+            "kehilangan informasi",
+            "informasi penting",
+            "transaksi fintech",
+            "Remove Duplicates"
+          ],
+          "extra_keywords": [
+            "dfafa"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "sheet terpisah",
+            "menghindari kehilangan",
+            "kehilangan informasi",
+            "informasi penting",
+            "transaksi fintech",
+            "Remove Duplicates"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "sheet terpisah",
+            "menghindari kehilangan",
+            "kehilangan informasi",
+            "informasi penting",
+            "transaksi fintech",
+            "Remove Duplicates"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Tidak ada kekuatan yang terlihat karena jawaban tidak relevan dan tidak menjawab pertanyaan.\n- **Perbaikan:** Struktur jawaban dengan langkah-langkah jelas (backup, sort, Remove Duplicates, verifikasi) seperti jawaban ideal; latihan ulang untuk memberikan respons lengkap dan tepat sasaran."
+      },
+      {
+        "question": "Metrik apa yang penting untuk mendeteksi fraud di transaksi fintech?",
+        "user_answer": "dfa fa v afa ",
+        "ideal_answer": "Metrik penting untuk mendeteksi fraud di transaksi fintech adalah **velocity transaksi**, yaitu jumlah transaksi dalam waktu singkat yang melebihi pola normal user. Selanjutnya, **anomaly nilai transaksi** seperti nominal jauh di atas rata-rata historis akun. **Ketidaksesuaian geolokasi atau IP address** dengan lokasi user terdaftar juga krusial. **Perubahan device fingerprint** atau perangkat baru yang sering digunakan menjadi indikator kuat. Serta, **rasio transaksi gagal atau login gagal** yang tinggi. Metrik ini saya analisis menggunakan SQL dan Python untuk mendukung deteksi dini fraud.",
+        "similarity_score": 59,
+        "keywords": {
+          "user_keywords": [
+            "dfa",
+            "afa"
+          ],
+          "ideal_keywords": [
+            "waktu singkat",
+            "melebihi pola",
+            "pola normal",
+            "velocity transaksi",
+            "Metrik penting",
+            "normal user"
+          ],
+          "missing_keywords": [
+            "waktu singkat",
+            "melebihi pola",
+            "pola normal",
+            "velocity transaksi",
+            "Metrik penting",
+            "normal user"
+          ],
+          "extra_keywords": [
+            "dfa",
+            "afa"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "waktu singkat",
+            "melebihi pola",
+            "pola normal",
+            "velocity transaksi",
+            "Metrik penting",
+            "normal user"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "waktu singkat",
+            "melebihi pola",
+            "pola normal",
+            "velocity transaksi",
+            "Metrik penting",
+            "normal user"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Jawaban sangat ringkas dan langsung.\n- **Perbaikan**: Jawaban tidak relevan dengan pertanyaan; sebutkan metrik spesifik seperti velocity transaksi, anomaly nilai, geolokasi/IP mismatch, device fingerprint, dan rasio gagal, lalu tambahkan tools analisis seperti SQL/Python untuk kredibilitas. Latih jawaban struktural dengan bolding poin utama agar impactful."
+      },
+      {
+        "question": "Bagaimana menghitung churn rate pengguna dari data bulanan?",
+        "user_answer": "df d fa bsf ",
+        "ideal_answer": "Churn rate pengguna dihitung dengan rumus: (Jumlah pengguna yang churn / Total pengguna aktif di awal bulan) × 100%.  \nUntuk data bulanan di fintech, identifikasi pengguna aktif awal bulan dari data transaksi atau login bulan sebelumnya, lalu pengguna churn adalah yang tidak aktif lagi (misalnya, tidak login/transaksi minimal 1 kali) di bulan tersebut.  \nGunakan SQL untuk query, seperti menghitung unique user ID per bulan dengan window function atau cohort analysis.  \nContoh: Jika awal Januari 1.000 user aktif dan hanya 900 aktif di Februari, churn rate = (100/1.000) × 100% = 10%.  \nVisualisasikan tren bulanan di dashboard seperti Tableau untuk insight retention.",
+        "similarity_score": 57,
+        "keywords": {
+          "user_keywords": [
+            "bsf"
+          ],
+          "ideal_keywords": [
+            "Jumlah pengguna",
+            "Total pengguna",
+            "Jumlah",
+            "Total",
+            "pengguna",
+            "aktif"
+          ],
+          "missing_keywords": [
+            "Jumlah pengguna",
+            "Total pengguna",
+            "Jumlah",
+            "Total",
+            "pengguna",
+            "aktif"
+          ],
+          "extra_keywords": [
+            "bsf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Jumlah pengguna",
+            "Total pengguna",
+            "Jumlah",
+            "Total",
+            "pengguna",
+            "aktif"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Jumlah pengguna",
+            "Total pengguna",
+            "Jumlah",
+            "Total",
+            "pengguna",
+            "aktif"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Respons singkat dan menyebut elemen data seperti \"df\", menunjukkan familiarity dasar dengan data processing.\n- **Perbaikan**: Jelaskan rumus churn rate secara eksplisit ((churn / active awal) × 100%), berikan contoh numerik, dan sebutkan metode seperti SQL cohort analysis atau visualisasi di Tableau untuk terlihat expert. Struktur jawaban dengan langkah-langkah actionable agar lebih impactful."
+      },
+      {
+        "question": "Jelaskan cara memvisualisasikan tren pendapatan harian dengan chart.",
+        "user_answer": "f aafds adsf  av",
+        "ideal_answer": "Untuk memvisualisasikan tren pendapatan harian, saya merekomendasikan line chart karena efektif menunjukkan perubahan waktu secara kontinu. Sumbu X digunakan untuk tanggal atau hari, sementara sumbu Y untuk total pendapatan harian yang telah diagregasi. Pertama, saya persiapkan data dengan mengelompokkan pendapatan per hari menggunakan SQL atau Pandas di Python. Kemudian, buat chart di Tableau atau Power BI, tambahkan garis moving average untuk menghaluskan fluktuasi harian. Pastikan chart dilengkapi judul, label sumbu, dan legenda agar mudah dibaca oleh stakeholder fintech.",
+        "similarity_score": 53,
+        "keywords": {
+          "user_keywords": [
+            "aafds adsf",
+            "aafds",
+            "adsf"
+          ],
+          "ideal_keywords": [
+            "secara kontinu",
+            "memvisualisasikan tren",
+            "merekomendasikan line",
+            "efektif menunjukkan",
+            "menunjukkan perubahan",
+            "perubahan waktu"
+          ],
+          "missing_keywords": [
+            "secara kontinu",
+            "memvisualisasikan tren",
+            "merekomendasikan line",
+            "efektif menunjukkan",
+            "menunjukkan perubahan",
+            "perubahan waktu"
+          ],
+          "extra_keywords": [
+            "aafds adsf",
+            "aafds",
+            "adsf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "secara kontinu",
+            "memvisualisasikan tren",
+            "merekomendasikan line",
+            "efektif menunjukkan",
+            "menunjukkan perubahan",
+            "perubahan waktu"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "secara kontinu",
+            "memvisualisasikan tren",
+            "merekomendasikan line",
+            "efektif menunjukkan",
+            "menunjukkan perubahan",
+            "perubahan waktu"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban terlalu singkat dan tidak relevan, sehingga tidak menunjukkan pemahaman apapun.\n- **Perbaikan:** Berikan penjelasan struktural seperti rekomendasi line chart (X: hari, Y: pendapatan), langkah persiapan data (SQL/Pandas), dan tools (Tableau/Power BI) dengan elemen visualisasi seperti moving average; latihan jawab lengkap 1-2 menit untuk simulasi interview."
+      }
+    ],
+    "timestamp": "2025-11-24 20:23:15"
+  },
+  {
+    "session_id": "f9abca5c-59e8-43f9-8007-4af124758b8f",
+    "overall_score": 55.8,
+    "meta": {
+      "job_role": "data analyst",
+      "experience_level": "Internship",
+      "industry": "fintech"
+    },
+    "results": [
+      {
+        "question": "Bagaimana cara menulis query SQL sederhana untuk menghitung total transaksi per pelanggan dalam sebulan terakhir?",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Untuk menghitung total transaksi per pelanggan dalam sebulan terakhir, asumsikan tabel `transaksi` memiliki kolom `id_pelanggan`, `tanggal_transaksi`, dan `jumlah_transaksi`. Query SQL sederhana adalah:  \n```sql\nSELECT id_pelanggan, SUM(jumlah_transaksi) AS total_transaksi\nFROM transaksi\nWHERE tanggal_transaksi >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)\nGROUP BY id_pelanggan\nORDER BY total_transaksi DESC;\n```  \nQuery ini menggunakan `SUM()` untuk menjumlahkan transaksi, `WHERE` dengan `DATE_SUB()` untuk filter sebulan terakhir, dan `GROUP BY` untuk per pelanggan. Hasilnya bisa divisualisasikan di dashboard fintech untuk analisis retensi pelanggan. Saya sering menguji query ini di tools seperti MySQL Workbench sebelum deploy.",
+        "similarity_score": 50,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "sebulan terakhir",
+            "asumsikan tabel",
+            "memiliki kolom",
+            "transaksi",
+            "WHERE tanggal",
+            "pelanggan"
+          ],
+          "missing_keywords": [
+            "sebulan terakhir",
+            "asumsikan tabel",
+            "memiliki kolom",
+            "transaksi",
+            "WHERE tanggal",
+            "pelanggan"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "sebulan terakhir",
+            "asumsikan tabel",
+            "memiliki kolom",
+            "transaksi",
+            "WHERE tanggal",
+            "pelanggan"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "sebulan terakhir",
+            "asumsikan tabel",
+            "memiliki kolom",
+            "transaksi",
+            "WHERE tanggal",
+            "pelanggan"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kejujuran dalam mengakui ketidaktahuan menunjukkan integritas, yang dihargai interviewer.\n- **Perbaikan:** Selanjutnya, coba breakdown masalah (tabel transaksi, filter 1 bulan terakhir dengan DATE_SUB, SUM + GROUP BY id_pelanggan) dan latihan query dasar di tools seperti MySQL Workbench untuk jawaban lebih percaya diri."
+      },
+      {
+        "question": "Jelaskan perbedaan antara mean dan median, serta kapan menggunakan median pada data transaksi fintech?",
+        "user_answer": "median kalo ga ada outlier\n",
+        "ideal_answer": "Mean adalah rata-rata aritmatika dari seluruh data, dihitung dengan menjumlahkan semua nilai dan dibagi jumlah data, sedangkan median adalah nilai tengah setelah data diurutkan dari kecil ke besar. Mean sensitif terhadap outlier atau nilai ekstrem, sehingga bisa misleading pada distribusi skewed, sementara median lebih robust dan representatif untuk data tidak normal. Pada data transaksi fintech, seperti nilai transfer atau pembayaran, distribusi sering skewed karena banyak transaksi kecil dan sedikit transaksi besar (outlier). Gunakan median untuk menggambarkan nilai transaksi tipikal pengguna, misalnya dalam analisis rata-rata harian, agar insight lebih akurat dan tidak terdistorsi oleh transaksi VIP atau fraud besar.",
+        "similarity_score": 68,
+        "keywords": {
+          "user_keywords": [
+            "median kalo",
+            "median",
+            "outlier",
+            "kalo"
+          ],
+          "ideal_keywords": [
+            "dibagi jumlah",
+            "data",
+            "nilai",
+            "Mean",
+            "besar",
+            "rata-rata aritmatika"
+          ],
+          "missing_keywords": [
+            "dibagi jumlah",
+            "data",
+            "nilai",
+            "Mean",
+            "besar",
+            "rata-rata aritmatika"
+          ],
+          "extra_keywords": [
+            "median kalo",
+            "median",
+            "outlier",
+            "kalo"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "dibagi jumlah",
+            "data",
+            "nilai",
+            "Mean",
+            "besar",
+            "rata-rata aritmatika"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "dibagi jumlah",
+            "data",
+            "nilai",
+            "Mean",
+            "besar",
+            "rata-rata aritmatika"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kamu mengenali konsep outlier sebagai faktor kunci dalam pemilihan median, yang relevan untuk data fintech.\n- **Perbaikan:** Jawaban terlalu singkat, keliru (median justru untuk *ada* outlier, bukan tidak ada), dan kurang definisi mean/median serta contoh skewed data transaksi; lengkapi seperti jawaban ideal agar komprehensif dan akurat."
+      },
+      {
+        "question": "Bagaimana menggunakan pivot table di Excel untuk menganalisis volume pinjaman harian?",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Untuk menganalisis volume pinjaman harian menggunakan pivot table di Excel, pertama siapkan data dengan kolom seperti Tanggal, ID Pinjaman, dan Volume Pinjaman. Kemudian, pilih range data, masuk ke Insert > PivotTable, dan letakkan Tanggal di Rows (group by Days jika tanggal mentah) serta Volume Pinjaman di Values dengan fungsi Sum. Analisis bisa dilakukan dengan menambahkan filter tanggal via Slicer atau Timeline untuk periode tertentu, serta melihat tren harian melalui chart dari pivot table. Di fintech, ini membantu identifikasi peak hari pinjaman untuk optimalisasi likuiditas. Saya sering gunakan fitur ini saat internship untuk ringkasan harian dari ribuan transaksi.",
+        "similarity_score": 42,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "volume pinjaman",
+            "pertama siapkan",
+            "menganalisis volume",
+            "pinjaman",
+            "volume",
+            "Excel"
+          ],
+          "missing_keywords": [
+            "volume pinjaman",
+            "pertama siapkan",
+            "menganalisis volume",
+            "pinjaman",
+            "volume",
+            "Excel"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "volume pinjaman",
+            "pertama siapkan",
+            "menganalisis volume",
+            "pinjaman",
+            "volume",
+            "Excel"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "volume pinjaman",
+            "pertama siapkan",
+            "menganalisis volume",
+            "pinjaman",
+            "volume",
+            "Excel"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Kejujuran mengakui ketidaktahuan menunjukkan integritas, menghindari jawaban salah.\n- **Perbaikan**: Latih dasar pivot table: siapkan data (Tanggal, Volume), Insert > PivotTable, Rows=Tanggal (group by Days), Values=Sum Volume; tambahkan relevansi fintech seperti peak harian untuk likuiditas agar impresif di interview."
+      },
+      {
+        "question": "Apa langkah dasar untuk mendeteksi pola fraud pada data transaksi menggunakan analisis data?",
+        "user_answer": "data imbalanced\n",
+        "ideal_answer": "Langkah dasar pertama adalah mengumpulkan dan membersihkan data transaksi, termasuk menangani missing values, outliers, dan normalisasi fitur seperti jumlah, waktu, dan lokasi transaksi. Selanjutnya, lakukan Exploratory Data Analysis (EDA) dengan visualisasi seperti histogram, boxplot, atau time-series plot untuk mengidentifikasi pola normal dan anomali awal. Kemudian, lakukan feature engineering, misalnya menghitung frekuensi transaksi per user atau rasio velocity transaksi. Terapkan teknik deteksi anomali seperti Isolation Forest atau Z-score untuk mengklasifikasikan transaksi mencurigakan. Akhirnya, validasi hasil dengan metrik seperti precision-recall dan kolaborasi dengan tim bisnis untuk aturan fraud rules di fintech.",
+        "similarity_score": 71,
+        "keywords": {
+          "user_keywords": [
+            "data imbalanced",
+            "data",
+            "imbalanced"
+          ],
+          "ideal_keywords": [
+            "Langkah dasar",
+            "termasuk menangani",
+            "missing values",
+            "dasar pertama",
+            "menangani missing",
+            "normalisasi fitur"
+          ],
+          "missing_keywords": [
+            "Langkah dasar",
+            "termasuk menangani",
+            "missing values",
+            "dasar pertama",
+            "menangani missing",
+            "normalisasi fitur"
+          ],
+          "extra_keywords": [
+            "data imbalanced",
+            "data",
+            "imbalanced"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Langkah dasar",
+            "termasuk menangani",
+            "missing values",
+            "dasar pertama",
+            "menangani missing",
+            "normalisasi fitur"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Langkah dasar",
+            "termasuk menangani",
+            "missing values",
+            "dasar pertama",
+            "menangani missing",
+            "normalisasi fitur"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kamu mengenali isu data imbalanced yang memang krusial dalam fraud detection, menunjukkan pemahaman konteks dasar.\n- **Perbaikan:** Jawaban terlalu singkat dan tidak menjawab langkah dasar; strukturkan secara berurutan seperti: bersihkan data, EDA untuk pola anomali, feature engineering, terapkan Isolation Forest/Z-score, lalu validasi dengan precision-recall. Latih jawaban end-to-end untuk terlihat komprehensif."
+      },
+      {
+        "question": "Bagaimana memvisualisasikan tingkat churn pelanggan di dashboard seperti Tableau atau Google Data Studio?",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Untuk memvisualisasikan tingkat churn pelanggan di Tableau atau Google Data Studio, saya akan mulai dengan KPI card yang menampilkan churn rate saat ini (misalnya, bulanan) beserta target benchmark di industri fintech. Selanjutnya, gunakan line chart untuk menunjukkan tren churn rate dari waktu ke waktu, dengan filter berdasarkan segmen pelanggan seperti usia akun atau jenis produk (tabungan vs. investasi). Tambahkan bar chart atau stacked bar untuk breakdown churn berdasarkan alasan (voluntary/involuntary) atau wilayah geografis. Heatmap bisa digunakan untuk melihat pola churn per bulan dan kanal akuisisi, memungkinkan drill-down interaktif agar stakeholder bisa eksplorasi lebih dalam. Pendekatan ini memudahkan identifikasi pola dan rekomendasi retensi.",
+        "similarity_score": 48,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "Data Studio",
+            "Google Data",
+            "KPI card",
+            "beserta target",
+            "industri fintech",
+            "memvisualisasikan tingkat"
+          ],
+          "missing_keywords": [
+            "Data Studio",
+            "Google Data",
+            "KPI card",
+            "beserta target",
+            "industri fintech",
+            "memvisualisasikan tingkat"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Data Studio",
+            "Google Data",
+            "KPI card",
+            "beserta target",
+            "industri fintech",
+            "memvisualisasikan tingkat"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Data Studio",
+            "Google Data",
+            "KPI card",
+            "beserta target",
+            "industri fintech",
+            "memvisualisasikan tingkat"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban jujur menghindari informasi salah, menunjukkan integritas.\n- **Perbaikan:** Ganti \"tidak tahu\" dengan struktur pemikiran seperti KPI card untuk churn rate, line chart tren waktu, dan bar chart breakdown alasan—latih ini agar terlihat analitis meski belum expert."
+      }
+    ],
+    "timestamp": "2025-11-24 20:35:32"
+  },
+  {
+    "session_id": "c0675a2a-2e88-4bf4-a876-f3c7e432201b",
+    "overall_score": 57.4,
+    "meta": {
+      "job_role": "data analyst",
+      "experience_level": "Internship",
+      "industry": "fintech"
+    },
+    "results": [
+      {
+        "question": "Bagaimana cara Anda menulis query SQL untuk mencari 10 pelanggan teratas berdasarkan volume transaksi bulan lalu?",
+        "user_answer": "test\n",
+        "ideal_answer": "Saya akan mengasumsikan tabel `transaksi` dengan kolom `customer_id`, `tanggal_transaksi`, dan `volume`. Pertama, filter data bulan lalu menggunakan `WHERE YEAR(tanggal_transaksi) = YEAR(DATE_SUB(CURDATE(), INTERVAL 1 MONTH)) AND MONTH(tanggal_transaksi) = MONTH(DATE_SUB(CURDATE(), INTERVAL 1 MONTH))`. Kemudian, kelompokkan berdasarkan `customer_id` dan hitung total volume dengan `GROUP BY customer_id` serta `SUM(volume) AS total_volume`. Selanjutnya, urutkan secara menurun dengan `ORDER BY total_volume DESC` dan batasi 10 hasil menggunakan `LIMIT 10`. Contoh query lengkap: `SELECT customer_id, SUM(volume) AS total_volume FROM transaksi WHERE YEAR(tanggal_transaksi) = YEAR(DATE_SUB(CURDATE(), INTERVAL 1 MONTH)) AND MONTH(tanggal_transaksi) = MONTH(DATE_SUB(CURDATE(), INTERVAL 1 MONTH)) GROUP BY customer_id ORDER BY total_volume DESC LIMIT 10;`. Query ini efisien dengan index pada `tanggal_transaksi` dan `customer_id` untuk data fintech skala besar.",
+        "similarity_score": 57,
+        "keywords": {
+          "user_keywords": [
+            "test"
+          ],
+          "ideal_keywords": [
+            "MONTH",
+            "AND MONTH",
+            "WHERE YEAR",
+            "tanggal",
+            "DATE",
+            "SUB"
+          ],
+          "missing_keywords": [
+            "MONTH",
+            "AND MONTH",
+            "WHERE YEAR",
+            "tanggal",
+            "DATE",
+            "SUB"
+          ],
+          "extra_keywords": [
+            "test"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "MONTH",
+            "AND MONTH",
+            "WHERE YEAR",
+            "tanggal",
+            "DATE",
+            "SUB"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "MONTH",
+            "AND MONTH",
+            "WHERE YEAR",
+            "tanggal",
+            "DATE",
+            "SUB"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat tidak relevan sama sekali dengan pertanyaan, hanya berupa kata \"test\" yang tampak seperti placeholder atau uji coba, sehingga tidak meyakinkan dan gagal menunjukkan kemampuan SQL dasar untuk posisi data analyst internship.\n\n### ✅ Kekuatan\n- **Respons sangat singkat:** Menunjukkan kemampuan memberikan jawaban cepat, meskipun tidak substansial.\n- **Tidak ada kesalahan sintaksis:** Jawaban bebas dari error penulisan yang umum terjadi pada kandidat pemula.\n\n### 💡 Area Perbaikan\n- **Kurang substansi teknis:** Jawaban tidak menyertakan query SQL, asumsi tabel, atau logika filtering, sehingga gagal menjawab inti pertanyaan.\n- **Tidak menunjukkan pemahaman konsep:** Hilang elemen kunci seperti GROUP BY, SUM, ORDER BY, dan LIMIT; saran gunakan contoh query lengkap untuk membuktikan skill.\n- **Kurang profesionalisme:** Tampak tidak serius; diwaktu interview, jawab dengan struktur jelas (misal, asumsi data lalu query) untuk membangun kredibilitas.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi fintech dengan tabel `transaksi` (kolom: `customer_id`, `tanggal_transaksi`, `volume`), tugas saya adalah mengidentifikasi 10 pelanggan top bulan lalu. Saya akan filter data menggunakan `WHERE YEAR(tanggal_transaksi) = YEAR(DATE_SUB(CURDATE(), INTERVAL 1 MONTH)) AND MONTH(tanggal_transaksi) = MONTH(DATE_SUB(CURDATE(), INTERVAL 1 MONTH))`, lalu `GROUP BY customer_id`, hitung `SUM(volume) AS total_volume`, urutkan `ORDER BY total_volume DESC`, dan batasi `LIMIT 10`. Query lengkap: `SELECT customer_id, SUM(volume) AS total_volume FROM transaksi WHERE YEAR(tanggal_transaksi) = YEAR(DATE_SUB(CURDATE(), INTERVAL 1 MONTH)) AND MONTH(tanggal_transaksi) = MONTH(DATE_SUB(CURDATE(), INTERVAL 1 MONTH)) GROUP BY customer_id ORDER BY total_volume DESC LIMIT 10;`. Hasilnya efisien untuk data besar dengan index pada `tanggal_transaksi` dan `customer_id`, memastikan performa optimal.\""
+      },
+      {
+        "question": "Jelaskan langkah-langkah membersihkan data transaksi yang mengandung nilai hilang menggunakan Pandas di Python.",
+        "user_answer": "dfaf af",
+        "ideal_answer": "Langkah pertama, muat data transaksi ke DataFrame Pandas menggunakan `pd.read_csv()` atau sejenisnya, lalu identifikasi nilai hilang dengan `df.isnull().sum()` dan `df.info()` untuk mengetahui jumlah serta proporsi missing values per kolom. Selanjutnya, evaluasi konteks data fintech seperti kolom numerik (jumlah transaksi) atau time series (tanggal), lalu pilih strategi: hapus baris/kolom dengan `df.dropna()` jika missing <5%, atau imputasi dengan `df.fillna(df.mean())` untuk numerik, `df.fillna(method='ffill')` untuk time series. Terapkan perubahan secara selektif per kolom, misalnya `df['jumlah'].fillna(df['jumlah'].median(), inplace=True)`. Verifikasi hasil dengan `df.isnull().sum()` lagi dan visualisasi heatmap menggunakan seaborn. Terakhir, simpan data bersih ke file baru untuk analisis lanjutan.",
+        "similarity_score": 63,
+        "keywords": {
+          "user_keywords": [
+            "dfaf"
+          ],
+          "ideal_keywords": [
+            "DataFrame Pandas",
+            "Langkah pertama",
+            "Pandas menggunakan",
+            "identifikasi nilai",
+            "nilai hilang",
+            "time series"
+          ],
+          "missing_keywords": [
+            "DataFrame Pandas",
+            "Langkah pertama",
+            "Pandas menggunakan",
+            "identifikasi nilai",
+            "nilai hilang",
+            "time series"
+          ],
+          "extra_keywords": [
+            "dfaf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "DataFrame Pandas",
+            "Langkah pertama",
+            "Pandas menggunakan",
+            "identifikasi nilai",
+            "nilai hilang",
+            "time series"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "DataFrame Pandas",
+            "Langkah pertama",
+            "Pandas menggunakan",
+            "identifikasi nilai",
+            "nilai hilang",
+            "time series"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat tidak relevan sama sekali dengan pertanyaan, tampak seperti input acak atau kesalahan ketik, sehingga gagal menunjukkan pemahaman dasar Pandas untuk data cleaning. Ini tidak meyakinkan dan menandakan kurangnya persiapan, meski level internship memaafkan kesalahan awal.\n\n### ✅ Kekuatan\n- **Sangat ringkas:** Jawaban pendek, menunjukkan kemampuan menyampaikan ide dengan cepat (jika dikembangkan).\n- **Tidak bertele-tele:** Langsung to the point, menghindari penjelasan berlebih yang sering membuat jawaban junior membingungkan.\n\n### 💡 Area Perbaikan\n- **Kurang relevan dan substansi:** Jawaban tidak menyebutkan langkah Pandas apa pun (seperti `isnull()`, `dropna()`, atau `fillna()`), sehingga gagal menjawab pertanyaan inti tentang cleaning missing values.\n- **Perlu struktur jelas:** Tambahkan langkah-langkah logis, contoh kode spesifik, dan konteks fintech untuk terlihat profesional; latihan dengan dataset nyata akan membantu.\n- **Verifikasi dan visualisasi absen:** Tidak ada pengecekan hasil atau tools seperti heatmap, yang krusial untuk data analyst.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situation:** Saat menangani data transaksi fintech dengan missing values di kolom seperti 'jumlah' atau 'tanggal'.  \n> **Task:** Membersihkan data agar siap analisis tanpa bias.  \n> **Action:** Muat data (`pd.read_csv()`), identifikasi missing (`df.isnull().sum()`), hapus jika <5% (`df.dropna()`), imputasi numerik (`df['jumlah'].fillna(df['jumlah'].median(), inplace=True)`), forward-fill time series (`df['tanggal'].fillna(method='ffill')`), verifikasi (`df.info()`) dan visualisasikan heatmap Seaborn.  \n> **Result:** Data bersih 100% lengkap, siap untuk modeling, mengurangi error analisis hingga 20% berdasarkan pengalaman proyek sebelumnya."
+      },
+      {
+        "question": "Apa metrik utama yang akan Anda gunakan untuk menganalisis churn pelanggan di aplikasi fintech?",
+        "user_answer": "fadf adfaf daf a  ",
+        "ideal_answer": "Metrik utama untuk menganalisis churn pelanggan di aplikasi fintech adalah **Churn Rate**, yang dihitung sebagai persentase pelanggan yang berhenti aktif (misalnya, tidak login atau transaksi selama 30 hari) dibagi total pelanggan awal periode tersebut. Saya juga akan menggunakan **Retention Rate** sebagai kebalikannya untuk mengukur retensi bulanan atau kohort. Di fintech, metrik pendukung seperti **Monthly Active Users (MAU)**, frekuensi transaksi, dan **Customer Lifetime Value (CLV)** membantu mendeteksi pola churn dini. Selain itu, analisis RFM (Recency, Frequency, Monetary) berguna untuk segmentasi pelanggan berisiko tinggi. Dengan metrik ini, saya bisa identifikasi penyebab churn seperti penurunan engagement dan sarankan rekomendasi data-driven.",
+        "similarity_score": 56,
+        "keywords": {
+          "user_keywords": [
+            "fadf adfaf",
+            "adfaf daf",
+            "fadf",
+            "adfaf",
+            "daf"
+          ],
+          "ideal_keywords": [
+            "Retention Rate",
+            "berhenti aktif",
+            "dibagi total",
+            "awal periode",
+            "Rate",
+            "Churn Rate"
+          ],
+          "missing_keywords": [
+            "Retention Rate",
+            "berhenti aktif",
+            "dibagi total",
+            "awal periode",
+            "Rate",
+            "Churn Rate"
+          ],
+          "extra_keywords": [
+            "fadf adfaf",
+            "adfaf daf",
+            "fadf",
+            "adfaf",
+            "daf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Retention Rate",
+            "berhenti aktif",
+            "dibagi total",
+            "awal periode",
+            "Rate",
+            "Churn Rate"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Retention Rate",
+            "berhenti aktif",
+            "dibagi total",
+            "awal periode",
+            "Rate",
+            "Churn Rate"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sepenuhnya tidak relevan dengan pertanyaan, tampak seperti input acak atau kesalahan ketik yang tidak menunjukkan pemahaman dasar tentang analisis churn. Secara keseluruhan, jawaban ini tidak meyakinkan dan gagal memenuhi standar minimum untuk posisi data analyst internship.\n\n### ✅ Kekuatan\n- **Ringkas ekstrem:** Jawaban sangat pendek, menunjukkan kemampuan menyampaikan ide dengan efisien (meski isinya kosong).\n- **Tidak ada distraksi panjang:** Langsung ke inti tanpa bertele-tele, yang bisa menjadi kelebihan jika isinya tepat.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi total:** Jawaban tidak menyebutkan metrik apa pun seperti Churn Rate atau Retention Rate, sehingga gagal menjawab pertanyaan secara langsung.\n- **Kurang kedalaman dan struktur:** Perlu penjelasan spesifik, contoh perhitungan, atau metrik pendukung fintech seperti MAU/CLV untuk menunjukkan pengetahuan analitis.\n- **Potensi kesalahan teknis:** Pastikan jawaban ditulis dengan benar; ini bisa jadi glitch, tapi dalam interview sungguhan, persiapan konten lebih krusial.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Metrik utama saya gunakan adalah **Churn Rate** (persentase pelanggan tidak aktif >30 hari dibagi total pelanggan awal), didukung **Retention Rate** kohort dan **MAU** untuk deteksi dini di fintech. Saya juga analisis RFM (Recency, Frequency, Monetary) untuk segmentasi berisiko tinggi. Contoh: Di proyek sebelumnya, turunnya churn 15% setelah insight ini, dengan rekomendasi personalisasi notifikasi berbasis data.\""
+      },
+      {
+        "question": "Bagaimana cara membuat pivot table di Excel untuk merangkum pendapatan bulanan per kategori transaksi?",
+        "user_answer": "cfacf  adf ",
+        "ideal_answer": "Untuk membuat pivot table di Excel guna merangkum pendapatan bulanan per kategori transaksi, pertama siapkan data dengan kolom Tanggal, Kategori Transaksi, dan Pendapatan yang bersih. Pilih seluruh range data, lalu klik Insert > PivotTable untuk membuat tabel pivot baru. Di panel PivotTable Fields, seret 'Kategori Transaksi' ke area Rows, seret 'Tanggal' ke Rows juga, kemudian right-click pada field Tanggal di pivot table > Group > pilih Months untuk mengelompokkan bulanan. Seret 'Pendapatan' ke area Values dan ubah ke Sum jika belum otomatis. Hasilnya, pivot table akan menampilkan total pendapatan per bulan dan kategori, yang bisa difilter atau diurutkan sesuai kebutuhan di fintech.",
+        "similarity_score": 55,
+        "keywords": {
+          "user_keywords": [
+            "cfacf adf",
+            "cfacf",
+            "adf"
+          ],
+          "ideal_keywords": [
+            "kategori transaksi",
+            "Excel guna",
+            "transaksi",
+            "pertama siapkan",
+            "guna merangkum",
+            "kolom Tanggal"
+          ],
+          "missing_keywords": [
+            "kategori transaksi",
+            "Excel guna",
+            "transaksi",
+            "pertama siapkan",
+            "guna merangkum",
+            "kolom Tanggal"
+          ],
+          "extra_keywords": [
+            "cfacf adf",
+            "cfacf",
+            "adf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "kategori transaksi",
+            "Excel guna",
+            "transaksi",
+            "pertama siapkan",
+            "guna merangkum",
+            "kolom Tanggal"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "kategori transaksi",
+            "Excel guna",
+            "transaksi",
+            "pertama siapkan",
+            "guna merangkum",
+            "kolom Tanggal"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sepenuhnya tidak relevan dengan pertanyaan, tampak seperti input acak tanpa pemahaman dasar pivot table di Excel, sehingga tidak meyakinkan untuk level internship data analyst.\n\n### ✅ Kekuatan\n- **Ringkas:** Jawaban sangat singkat, menunjukkan kemampuan untuk tidak bertele-tele (meski isinya kurang tepat).\n- **Potensi belajar:** Ini bisa menjadi kesempatan awal untuk kandidat internship yang masih hijau untuk berkembang dengan feedback langsung.\n\n### 💡 Area Perbaikan\n- **Tidak relevan:** Jawaban \"cfacf adf\" sama sekali tidak menyentuh topik pivot table, langkah pembuatan, atau konteks pendapatan bulanan—perlu jawaban yang langsung ke poin teknis.\n- **Kurang struktur dan detail:** Hilang penjelasan langkah demi langkah, grouping tanggal, dan pengaturan values, yang esensial untuk menunjukkan skill Excel dasar di fintech.\n- **Kurang profesionalisme:** Jawaban terlihat tidak serius; saran gunakan bahasa formal dan contoh konkret untuk membangun kredibilitas.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situation:** Dalam analisis data transaksi fintech, saya sering merangkum pendapatan bulanan per kategori untuk laporan bulanan.  \n> **Task:** Membuat pivot table di Excel untuk mengelompokkan data berdasarkan bulan dan kategori.  \n> **Action:** Siapkan data dengan kolom Tanggal, Kategori Transaksi, dan Pendapatan. Pilih range data > Insert > PivotTable. Seret 'Kategori Transaksi' ke Rows, 'Tanggal' ke Rows lalu right-click > Group > Months, dan 'Pendapatan' ke Values (ubah ke Sum).  \n> **Result:** Pivot table menampilkan total pendapatan per bulan-kategori, siap difilter/urutkan—menghemat waktu analisis hingga 80% untuk insight cepat."
+      },
+      {
+        "question": "Ceritakan KPI sederhana untuk mendeteksi potensi fraud pada data transaksi harian.",
+        "user_answer": " fa afcad",
+        "ideal_answer": "Sebagai data analyst intern di fintech, KPI sederhana untuk deteksi fraud pada transaksi harian adalah **velocity transaksi**, yaitu jumlah transaksi per user dalam 1 jam; jika melebihi 5 transaksi, bisa jadi indikasi bot atau fraud. Selanjutnya, **nilai transaksi outlier**, di mana transaksi di atas 3 standar deviasi dari rata-rata harian user, untuk mendeteksi pembelian mencurigakan. KPI ketiga adalah **transaksi di luar jam normal**, seperti lebih dari 20% transaksi user terjadi pukul 02.00-05.00 WIB. KPI ini mudah dihitung dengan SQL query harian dan bisa diintegrasikan ke dashboard untuk alert real-time. Pendekatan ini efektif karena sederhana namun sensitif terhadap pola fraud umum.",
+        "similarity_score": 56,
+        "keywords": {
+          "user_keywords": [
+            "afcad"
+          ],
+          "ideal_keywords": [
+            "data analyst",
+            "analyst intern",
+            "jadi indikasi",
+            "indikasi bot",
+            "transaksi",
+            "KPI"
+          ],
+          "missing_keywords": [
+            "data analyst",
+            "analyst intern",
+            "jadi indikasi",
+            "indikasi bot",
+            "transaksi",
+            "KPI"
+          ],
+          "extra_keywords": [
+            "afcad"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "data analyst",
+            "analyst intern",
+            "jadi indikasi",
+            "indikasi bot",
+            "transaksi",
+            "KPI"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "data analyst",
+            "analyst intern",
+            "jadi indikasi",
+            "indikasi bot",
+            "transaksi",
+            "KPI"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban user tidak relevan sama sekali dengan pertanyaan, tampak seperti kesalahan ketik atau kurang pemahaman konteks, sehingga tidak meyakinkan dan gagal menunjukkan kemampuan analisis dasar untuk posisi data analyst intern.\n\n### ✅ Kekuatan\n- **Ringkas ekstrem:** Jawaban sangat pendek, menunjukkan kemampuan menyampaikan ide dengan efisien (meski isinya belum tepat).\n- **Potensi inisiatif:** Ada upaya menjawab, yang bisa menjadi dasar untuk pengembangan lebih lanjut dengan persiapan yang lebih baik.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi dan substansi:** Jawaban tidak menyebutkan KPI apapun terkait fraud transaksi, sehingga terlihat tidak paham pertanyaan—fokuslah pada metrik sederhana seperti velocity atau outlier.\n- **Kurang struktur dan spesifisitas:** Tambahkan contoh KPI konkret, rumus sederhana, atau cara implementasi (misalnya SQL), agar jawaban lebih kredibel dan actionable.\n- **Perlu persiapan teknis:** Hindari jawaban acak; latihan dengan data transaksi nyata untuk membangun confidence.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi fintech dengan volume transaksi harian tinggi (Situation), tugas saya sebagai data analyst intern adalah mendeteksi fraud dini via KPI sederhana (Task). Saya gunakan **velocity transaksi** (>5 tx/user/jam), **outlier nilai** (>3 SD dari rata-rata user), dan **transaksi malam** (>20% di 02.00-05.00 WIB) yang dihitung via SQL harian untuk alert dashboard (Action). Hasilnya, deteksi fraud naik 15-20% di tim sebelumnya, efektif dan scalable (Result).\""
+      }
+    ],
+    "timestamp": "2025-11-24 20:58:59"
   }
 ]

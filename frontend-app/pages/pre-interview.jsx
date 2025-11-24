@@ -1,53 +1,86 @@
-import Button from "../components/ui/Button";
-import Card from "../components/ui/Card";
-import Input from "../components/ui/Input";
 import { useState } from "react";
+import Layout from "../components/Layout";
+import Button from "../components/ui/Button";
+import Input from "../components/ui/Input";
+import Select from "../components/ui/Select";
 
+/**
+ * Halaman 1: Pre-Interview (Setup)
+ * Fungsi: Menerima input user (Role, Level, Industry) lalu melempar ke halaman interview.
+ */
 export default function PreInterview() {
   const [job, setJob] = useState("");
   const [level, setLevel] = useState("");
   const [industry, setIndustry] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleStart = () => {
+    if (!job || !level || !industry) {
+      alert("Mohon lengkapi semua data sebelum memulai.");
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    // Redirect ke halaman interview dengan membawa data input di URL
+    setTimeout(() => {
+        window.location.href = `/interview?job=${encodeURIComponent(job)}&level=${encodeURIComponent(level)}&industry=${encodeURIComponent(industry)}`;
+    }, 500);
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <Card className="w-full max-w-lg">
-        <h2 className="text-2xl font-bold mb-6">Mulai Wawancara</h2>
-
-        <div className="space-y-4">
-          <div>
-            <label>Job Role</label>
-            <Input value={job} onChange={e => setJob(e.target.value)} placeholder="Software Engineer" />
-          </div>
-
-          <div>
-            <label>Experience Level</label>
-            <select
-              value={level}
-              onChange={(e) => setLevel(e.target.value)}
-              className="w-full bg-[#222] border border-[#333] rounded-lg px-4 py-2"
-            >
-              <option>Pilih level</option>
-              <option>Junior</option>
-              <option>Mid</option>
-              <option>Senior</option>
-            </select>
-          </div>
-
-          <div>
-            <label>Industry</label>
-            <Input value={industry} onChange={e => setIndustry(e.target.value)} placeholder="Tech / Finance / Marketing" />
-          </div>
+    <Layout title="Setup Sesi Wawancara">
+      <div className="flex flex-col items-center justify-center min-h-[80vh] py-12 px-4 sm:px-6 lg:px-8">
+        
+        {/* Header Teks */}
+        <div className="text-center max-w-2xl mb-10 animate-slide-up">
+          <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-4 tracking-tight">
+            Selamat Datang di Sesi Privat Anda
+          </h1>
+          <p className="text-lg text-text-sub leading-relaxed">
+            Kami akan mensimulasikan lingkungan wawancara yang objektif. 
+            Silakan tentukan target peran Anda.
+          </p>
         </div>
 
-        <Button
-          className="mt-6 w-full"
-          onClick={() => {
-            window.location.href = `/interview?job=${job}&level=${level}&industry=${industry}`;
-          }}
-        >
-          Mulai Wawancara
-        </Button>
-      </Card>
-    </div>
+        {/* Form Input */}
+        <div className="w-full max-w-md bg-surface p-8 rounded-2xl shadow-card border border-gray-100 animate-fade-in">
+          <div className="space-y-6">
+            <Input 
+              label="Posisi / Role"
+              placeholder="Contoh: Product Manager..."
+              value={job}
+              onChange={(e) => setJob(e.target.value)}
+            />
+
+            <Select 
+              label="Tingkat Pengalaman"
+              value={level}
+              onChange={(e) => setLevel(e.target.value)}
+              placeholder="Pilih level pengalaman..."
+              options={["Internship", "Junior (1-2 tahun)", "Mid-Level (3-5 tahun)", "Senior (5+ tahun)", "Managerial"]}
+            />
+
+            <Input 
+              label="Industri"
+              placeholder="Contoh: Fintech, Healthtech..."
+              value={industry}
+              onChange={(e) => setIndustry(e.target.value)}
+            />
+
+            <div className="pt-4">
+              <Button 
+                variant="primary" 
+                className="w-full text-lg shadow-lg shadow-primary/20"
+                onClick={handleStart}
+                isLoading={isSubmitting}
+              >
+                Mulai Sesi Wawancara
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
   );
 }

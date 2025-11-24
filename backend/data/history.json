@@ -1487,5 +1487,1077 @@
       }
     ],
     "timestamp": "2025-11-24 15:26:31"
+  },
+  {
+    "session_id": "8e18b1ab-ab2d-4568-8197-6bdfce9ee266",
+    "overall_score": 47.4,
+    "meta": {
+      "job_role": "data analyst",
+      "experience_level": "Junior",
+      "industry": "finance"
+    },
+    "results": [
+      {
+        "question": "Bagaimana Anda menggunakan SQL untuk menghitung total transaksi per nasabah dalam database perbankan?",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Saya akan menggunakan query SQL dengan fungsi agregat COUNT dan klausa GROUP BY untuk menghitung total transaksi per nasabah. Contoh query sederhana: `SELECT nasabah_id, COUNT(*) AS total_transaksi FROM transaksi GROUP BY nasabah_id ORDER BY total_transaksi DESC;`. Query ini mengelompokkan data berdasarkan nasabah_id dan menghitung jumlah transaksi masing-masing. Di database perbankan, hasilnya bisa dianalisis untuk memahami aktivitas nasabah. Jika diperlukan, saya tambahkan WHERE untuk filter periode waktu atau JOIN dengan tabel nasabah untuk detail lebih lanjut.",
+        "similarity_score": 45,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "klausa GROUP",
+            "query SQL",
+            "agregat COUNT",
+            "fungsi agregat",
+            "GROUP",
+            "transaksi GROUP"
+          ],
+          "missing_keywords": [
+            "klausa GROUP",
+            "query SQL",
+            "agregat COUNT",
+            "fungsi agregat",
+            "GROUP",
+            "transaksi GROUP"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "klausa GROUP",
+            "query SQL",
+            "agregat COUNT",
+            "fungsi agregat",
+            "GROUP",
+            "transaksi GROUP"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "klausa GROUP",
+            "query SQL",
+            "agregat COUNT",
+            "fungsi agregat",
+            "GROUP",
+            "transaksi GROUP"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kejujuran dalam mengakui ketidaktahuan menunjukkan integritas.\n- **Perbaikan:** Latih query SQL dasar seperti `SELECT nasabah_id, COUNT(*) FROM transaksi GROUP BY nasabah_id` untuk kasus ini; di interview selanjutnya, jelaskan konsep agregat dan GROUP BY meski tidak hafal sintaks lengkap agar terlihat berpikir kritis."
+      },
+      {
+        "question": "Jelaskan langkah membuat pivot table di Excel untuk merangkum pendapatan bulanan berdasarkan kategori produk.",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Pertama, siapkan data dengan kolom Tanggal, Kategori Produk, dan Pendapatan, lalu pilih seluruh range data.  \nKedua, klik tab Insert > PivotTable, pilih lokasi baru di worksheet, dan konfirmasi.  \nKetiga, di panel PivotTable Fields, seret Kategori Produk ke Rows, Bulan (group Tanggal jika perlu via right-click > Group) ke Columns, dan Pendapatan ke Values dengan fungsi Sum.  \nKeempat, sesuaikan format angka di Values untuk tampilan keuangan yang rapi, seperti ribuan atau mata uang.  \nPivot table kini merangkum pendapatan bulanan per kategori produk secara dinamis.",
+        "similarity_score": 47,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "Kategori Produk",
+            "siapkan data",
+            "range data",
+            "kolom Tanggal",
+            "Pertama",
+            "group Tanggal"
+          ],
+          "missing_keywords": [
+            "Kategori Produk",
+            "siapkan data",
+            "range data",
+            "kolom Tanggal",
+            "Pertama",
+            "group Tanggal"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Kategori Produk",
+            "siapkan data",
+            "range data",
+            "kolom Tanggal",
+            "Pertama",
+            "group Tanggal"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Kategori Produk",
+            "siapkan data",
+            "range data",
+            "kolom Tanggal",
+            "Pertama",
+            "group Tanggal"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kejujuran dalam mengakui ketidaktahuan menunjukkan integritas, tapi kurang menonjol di interview teknis.\n- **Perbaikan:** Pelajari langkah dasar pivot table (siapkan data → Insert > PivotTable → drag Kategori ke Rows, Bulan ke Columns, Pendapatan ke Values Sum); latihan dengan data dummy 2-3 kali agar bisa jelaskan secara percaya diri."
+      },
+      {
+        "question": "Apa langkah-langkah membersihkan dataset harga saham dengan nilai hilang menggunakan Pandas?",
+        "user_answer": "tidak tahu\n",
+        "ideal_answer": "Pertama, muat dataset harga saham menggunakan `pd.read_csv()` atau `pd.read_excel()`. Selanjutnya, identifikasi nilai hilang dengan `df.isnull().sum()` atau `df.info()`. Untuk data time series seperti harga saham, gunakan forward fill `df.fillna(method='ffill')` atau interpolasi `df.interpolate(method='linear')` agar tren harga tetap terjaga. Verifikasi hasil dengan `df.isnull().sum()` lagi untuk memastikan tidak ada missing values. Terakhir, simpan dataset bersih ke file baru dengan `df.to_csv()`.",
+        "similarity_score": 50,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "pd.read",
+            "saham menggunakan",
+            "Pertama",
+            "excel",
+            "csv",
+            "df.isnull"
+          ],
+          "missing_keywords": [
+            "pd.read",
+            "saham menggunakan",
+            "Pertama",
+            "excel",
+            "csv",
+            "df.isnull"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "pd.read",
+            "saham menggunakan",
+            "Pertama",
+            "excel",
+            "csv",
+            "df.isnull"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "pd.read",
+            "saham menggunakan",
+            "Pertama",
+            "excel",
+            "csv",
+            "df.isnull"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Mengakui ketidaktahuan secara jujur menunjukkan integritas dan menghindari jawaban salah yang bisa merugikan.\n- **Perbaikan:** Pelajari langkah dasar Pandas: identifikasi missing values dengan `df.isnull().sum()`, isi dengan `ffill` atau `interpolate` untuk data saham, lalu verifikasi dan simpan; praktikkan langsung di Jupyter Notebook untuk interview selanjutnya."
+      },
+      {
+        "question": "Jelaskan metrik keuangan ROI dan bagaimana menghitungnya di Excel atau Python.",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "ROI (Return on Investment) adalah metrik keuangan yang mengukur efisiensi investasi dengan membandingkan laba bersih terhadap biaya investasi, dinyatakan dalam persentase. Rumus dasarnya adalah: ROI = ((Pendapatan Akhir - Biaya Investasi) / Biaya Investasi) × 100%. Di Excel, hitung dengan formula sederhana seperti `=(B2-A2)/A2*100`, di mana A2 adalah biaya investasi dan B2 adalah pendapatan akhir. Di Python, gunakan kode `roi = ((revenue - cost) / cost) * 100` dengan library seperti NumPy atau Pandas untuk data tabular. Sebagai data analyst junior di finance, saya sering pakai metrik ini untuk analisis portofolio investasi.",
+        "similarity_score": 52,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "biaya investasi",
+            "ROI",
+            "Pendapatan Akhir",
+            "mengukur efisiensi",
+            "membandingkan laba",
+            "laba bersih"
+          ],
+          "missing_keywords": [
+            "biaya investasi",
+            "ROI",
+            "Pendapatan Akhir",
+            "mengukur efisiensi",
+            "membandingkan laba",
+            "laba bersih"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "biaya investasi",
+            "ROI",
+            "Pendapatan Akhir",
+            "mengukur efisiensi",
+            "membandingkan laba",
+            "laba bersih"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "biaya investasi",
+            "ROI",
+            "Pendapatan Akhir",
+            "mengukur efisiensi",
+            "membandingkan laba",
+            "laba bersih"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kejujuran dalam mengakui ketidaktahuan menunjukkan integritas dan menghindari memberikan informasi salah.\n- **Perbaikan:** Pelajari rumus ROI dasar: ((Pendapatan Akhir - Biaya)/Biaya) × 100%; latihan di Excel dengan `=(B2-A2)/A2*100` dan Python `roi = ((revenue - cost)/cost)*100`. Di interview, katakan \"Saya belum hafal detailnya, tapi ROI mengukur efisiensi investasi dengan rumus (laba/biaya)*100%\" lalu jelaskan konteks terkait pengalaman Anda."
+      },
+      {
+        "question": "Bagaimana memastikan akurasi data saat menyiapkan laporan keuangan kuartalan?",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Untuk memastikan akurasi data saat menyiapkan laporan keuangan kuartalan, saya selalu memulai dengan verifikasi sumber data dari sistem akuntansi resmi seperti ERP atau ledger utama, serta melakukan rekonsiliasi dengan periode sebelumnya. Selanjutnya, saya gunakan tools seperti Excel dengan formula validasi atau script Python sederhana untuk mendeteksi outlier, duplikasi, dan inkonsistensi. Saya juga lakukan cross-check manual pada sampel transaksi bernilai tinggi untuk memastikan kelengkapan. Terakhir, saya kolaborasi dengan tim akuntansi untuk konfirmasi akhir dan dokumentasikan semua proses sebagai audit trail, sehingga laporan siap dan akurat.",
+        "similarity_score": 43,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "keuangan kuartalan",
+            "ledger utama",
+            "verifikasi sumber",
+            "melakukan rekonsiliasi",
+            "akurasi data",
+            "sumber data"
+          ],
+          "missing_keywords": [
+            "keuangan kuartalan",
+            "ledger utama",
+            "verifikasi sumber",
+            "melakukan rekonsiliasi",
+            "akurasi data",
+            "sumber data"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "keuangan kuartalan",
+            "ledger utama",
+            "verifikasi sumber",
+            "melakukan rekonsiliasi",
+            "akurasi data",
+            "sumber data"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "keuangan kuartalan",
+            "ledger utama",
+            "verifikasi sumber",
+            "melakukan rekonsiliasi",
+            "akurasi data",
+            "sumber data"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kejujuran Anda menunjukkan integritas, yang dihargai dalam peran keuangan.\n- **Perbaikan:** Hindari \"tidak tahu\" di interview; jawab dengan langkah umum seperti verifikasi sumber data dari ERP, rekonsiliasi periode sebelumnya, dan cross-check manual—latih 2-3 poin ini agar terdengar percaya diri."
+      }
+    ],
+    "timestamp": "2025-11-24 16:27:04"
+  },
+  {
+    "session_id": "c958b382-087e-4329-8589-83f3b990340b",
+    "overall_score": 64.8,
+    "meta": {
+      "job_role": "data analyst",
+      "experience_level": "Mid",
+      "industry": "finance"
+    },
+    "results": [
+      {
+        "question": "How would you use SQL to identify top 10 customers by transaction volume in a banking dataset?",
+        "user_answer": "sql top 10",
+        "ideal_answer": "Saya akan mulai dengan mengasumsikan dataset memiliki tabel `transactions` dengan kolom `customer_id` dan `transaction_amount`. Query SQL utamanya adalah:  \n```sql\nSELECT customer_id, SUM(transaction_amount) AS total_volume \nFROM transactions \nGROUP BY customer_id \nORDER BY total_volume DESC \nLIMIT 10;\n```  \nQuery ini mengelompokkan transaksi per pelanggan, menjumlahkan volume, lalu mengurutkan secara menurun untuk top 10. Jika diperlukan, saya tambahkan filter seperti `WHERE transaction_date >= '2023-01-01'` atau JOIN dengan tabel `customers` untuk detail nama pelanggan, memastikan analisis akurat di konteks banking.",
+        "similarity_score": 85,
+        "keywords": {
+          "user_keywords": [
+            "sql top",
+            "sql",
+            "top"
+          ],
+          "ideal_keywords": [
+            "mengasumsikan dataset",
+            "dataset memiliki",
+            "DESC LIMIT",
+            "memiliki tabel",
+            "amount",
+            "SELECT customer"
+          ],
+          "missing_keywords": [
+            "mengasumsikan dataset",
+            "dataset memiliki",
+            "DESC LIMIT",
+            "memiliki tabel",
+            "amount",
+            "SELECT customer"
+          ],
+          "extra_keywords": [
+            "sql top",
+            "sql",
+            "top"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "mengasumsikan dataset",
+            "dataset memiliki",
+            "DESC LIMIT",
+            "memiliki tabel",
+            "amount",
+            "SELECT customer"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "mengasumsikan dataset",
+            "dataset memiliki",
+            "DESC LIMIT",
+            "memiliki tabel",
+            "amount",
+            "SELECT customer"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Kamu tepat mengenali SQL sebagai tools utama dan konsep \"top 10\" untuk ranking.\n- **Perbaikan**: Tulis query lengkap seperti `SELECT customer_id, SUM(transaction_amount) AS total_volume FROM transactions GROUP BY customer_id ORDER BY total_volume DESC LIMIT 10;`, plus asumsi tabel dan penjelasan langkah (GROUP BY, SUM, ORDER BY) agar jawaban terstruktur dan meyakinkan interviewer."
+      },
+      {
+        "question": "Describe a Python script using pandas to calculate monthly returns from a stock price dataset.",
+        "user_answer": "pandas csv",
+        "ideal_answer": "Saya akan memulai script dengan mengimpor pandas dan membaca dataset harga saham menggunakan `pd.read_csv()`, yang berisi kolom 'Date' dan 'Close'. Selanjutnya, set 'Date' sebagai index dan konversi ke datetime dengan `pd.to_datetime()`, lalu resample data ke tingkat bulanan menggunakan `resample('M').last()` untuk mengambil harga penutupan akhir bulan. Kemudian, hitung monthly returns dengan `monthly_data['Close'].pct_change()` yang memberikan persentase perubahan dari bulan sebelumnya. Akhirnya, simpan hasil ke DataFrame baru atau CSV dengan `to_csv()` untuk analisis lebih lanjut, seperti visualisasi atau laporan portofolio. Script ini efisien untuk dataset besar di finance, memastikan akurasi perhitungan return bulanan.",
+        "similarity_score": 65,
+        "keywords": {
+          "user_keywords": [
+            "pandas csv",
+            "pandas",
+            "csv"
+          ],
+          "ideal_keywords": [
+            "berisi kolom",
+            "Date",
+            "mengimpor pandas",
+            "saham menggunakan",
+            "harga saham",
+            "Close"
+          ],
+          "missing_keywords": [
+            "berisi kolom",
+            "Date",
+            "mengimpor pandas",
+            "saham menggunakan",
+            "harga saham",
+            "Close"
+          ],
+          "extra_keywords": [
+            "pandas csv",
+            "pandas",
+            "csv"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "berisi kolom",
+            "Date",
+            "mengimpor pandas",
+            "saham menggunakan",
+            "harga saham",
+            "Close"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "berisi kolom",
+            "Date",
+            "mengimpor pandas",
+            "saham menggunakan",
+            "harga saham",
+            "Close"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Anda menyebutkan pandas dan CSV, yang relevan sebagai library utama dan format data input.\n- **Perbaikan:** Jelaskan langkah lengkap seperti import pandas, read_csv, set index datetime, resample('M').last() untuk harga akhir bulan, pct_change() untuk returns, dan simpan hasil; latihan struktur jawaban secara berurutan agar terlihat expert."
+      },
+      {
+        "question": "What steps would you take to detect anomalies in credit card fraud data using statistical methods?",
+        "user_answer": "boxplot",
+        "ideal_answer": "Pertama, saya akan melakukan eksplorasi data awal (EDA) untuk memahami distribusi variabel seperti nominal transaksi, frekuensi, waktu, dan lokasi, serta membersihkan data dari missing values dan normalisasi.  \nKedua, terapkan metode univariate seperti Z-score atau IQR (Interquartile Range) pada setiap fitur untuk mengidentifikasi outliers berdasarkan deviasi dari mean atau kuartil.  \nKetiga, lakukan analisis multivariat menggunakan Mahalanobis distance atau PCA untuk mendeteksi anomali yang melibatkan korelasi antar-fitur.  \nKeempat, validasi hasil dengan visualisasi seperti boxplot, scatter plot, dan metrik seperti precision-recall jika data berlabel.  \nTerakhir, tetapkan threshold berdasarkan aturan bisnis dan monitor performa model secara berkala untuk adaptasi terhadap pola fraud baru.",
+        "similarity_score": 63,
+        "keywords": {
+          "user_keywords": [
+            "boxplot"
+          ],
+          "ideal_keywords": [
+            "nominal transaksi",
+            "Interquartile Range",
+            "melakukan eksplorasi",
+            "memahami distribusi",
+            "distribusi variabel",
+            "missing values"
+          ],
+          "missing_keywords": [
+            "nominal transaksi",
+            "Interquartile Range",
+            "melakukan eksplorasi",
+            "memahami distribusi",
+            "distribusi variabel",
+            "missing values"
+          ],
+          "extra_keywords": [
+            "boxplot"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "nominal transaksi",
+            "Interquartile Range",
+            "melakukan eksplorasi",
+            "memahami distribusi",
+            "distribusi variabel",
+            "missing values"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "nominal transaksi",
+            "Interquartile Range",
+            "melakukan eksplorasi",
+            "memahami distribusi",
+            "distribusi variabel",
+            "missing values"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Boxplot adalah visualisasi sederhana dan efektif untuk mendeteksi outliers univariate secara cepat.\n- **Perbaikan:** Jawaban terlalu singkat dan tidak menjelaskan langkah-langkah lengkap; tambahkan EDA, metode univariate (Z-score/IQR), multivariate (Mahalanobis/PCA), validasi dengan metrik, serta threshold bisnis untuk struktur yang komprehensif seperti jawaban ideal. Latih menyusun respons step-by-step agar terlihat sistematis."
+      },
+      {
+        "question": "Explain how to build a Power BI dashboard for visualizing portfolio risk metrics like VaR.",
+        "user_answer": "fjdklajfaf",
+        "ideal_answer": "Untuk membangun dashboard Power BI visualisasi metrik risiko portofolio seperti VaR, pertama impor data dari sumber seperti Excel atau database SQL yang berisi return aset, volatilitas, dan perhitungan VaR historis atau parametrik. Selanjutnya, gunakan Power Query untuk membersihkan data, transformasi, dan hitung metrik tambahan seperti CVaR atau stress testing. Bangun model data dengan relationship antar tabel (misalnya, portofolio, aset, dan tanggal) menggunakan DAX untuk measure seperti VaR 95% confidence level. Buat visualisasi interaktif seperti line chart untuk tren VaR harian, gauge untuk VaR saat ini, heatmap untuk exposure per aset, dan slicer untuk filter berdasarkan tenor atau skenario. Akhiri dengan pengujian performa, tambah tooltip informatif, lalu publish ke Power BI Service untuk sharing tim finance.",
+        "similarity_score": 50,
+        "keywords": {
+          "user_keywords": [
+            "fjdklajfaf"
+          ],
+          "ideal_keywords": [
+            "database SQL",
+            "pertama impor",
+            "dashboard Power",
+            "membangun dashboard",
+            "berisi return",
+            "Power Query"
+          ],
+          "missing_keywords": [
+            "database SQL",
+            "pertama impor",
+            "dashboard Power",
+            "membangun dashboard",
+            "berisi return",
+            "Power Query"
+          ],
+          "extra_keywords": [
+            "fjdklajfaf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "database SQL",
+            "pertama impor",
+            "dashboard Power",
+            "membangun dashboard",
+            "berisi return",
+            "Power Query"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "database SQL",
+            "pertama impor",
+            "dashboard Power",
+            "membangun dashboard",
+            "berisi return",
+            "Power Query"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Tidak ada kekuatan yang terlihat karena jawaban berupa gibberish tanpa konten relevan.\n- **Perbaikan:** Berikan jawaban terstruktur seperti impor data (Excel/SQL), transformasi Power Query, model DAX untuk VaR, visualisasi interaktif (line chart, gauge, heatmap), dan publish ke Power BI Service; latihan jelaskan langkah demi langkah secara singkat tapi lengkap."
+      },
+      {
+        "question": "How would you forecast quarterly revenue using time-series analysis in R or Python for a fintech firm?",
+        "user_answer": "dkflafdlajdf",
+        "ideal_answer": "Untuk meramalkan revenue kuartalan di fintech menggunakan time-series analysis di Python (dengan library seperti pandas, statsmodels, dan Prophet), saya mulai dengan memuat data, melakukan EDA melalui plotting ACF/PACF, dan uji stasioneritas via Augmented Dickey-Fuller test. Jika data tidak stasioner, saya terapkan differencing atau log transform, lalu decompose untuk identifikasi trend, seasonalitas kuartalan, dan residu. Saya pilih model SARIMA untuk pola musiman atau Prophet untuk kemudahan handling holiday/effect eksternal seperti fluktuasi pasar fintech. Model difit pada data train (80%), dievaluasi dengan MAE/RMSE pada test set, kemudian generate forecast 4-8 quarter ke depan beserta confidence interval. Visualisasi hasil menggunakan matplotlib memastikan interpretasi yang actionable bagi tim finance.",
+        "similarity_score": 61,
+        "keywords": {
+          "user_keywords": [
+            "dkflafdlajdf"
+          ],
+          "ideal_keywords": [
+            "melakukan EDA",
+            "plotting ACF",
+            "via Augmented",
+            "Augmented Dickey-Fuller",
+            "meramalkan revenue",
+            "time-series analysis"
+          ],
+          "missing_keywords": [
+            "melakukan EDA",
+            "plotting ACF",
+            "via Augmented",
+            "Augmented Dickey-Fuller",
+            "meramalkan revenue",
+            "time-series analysis"
+          ],
+          "extra_keywords": [
+            "dkflafdlajdf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "melakukan EDA",
+            "plotting ACF",
+            "via Augmented",
+            "Augmented Dickey-Fuller",
+            "meramalkan revenue",
+            "time-series analysis"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "melakukan EDA",
+            "plotting ACF",
+            "via Augmented",
+            "Augmented Dickey-Fuller",
+            "meramalkan revenue",
+            "time-series analysis"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Tidak ada kekuatan signifikan karena jawaban berupa gibberish yang tidak relevan dengan pertanyaan.\n- **Perbaikan:** Berikan jawaban terstruktur seperti contoh ideal: mulai dari EDA (ACF/PACF, ADF test), transformasi data, pemilihan model (SARIMA/Prophet), evaluasi (MAE/RMSE), dan visualisasi; latihan jelaskan langkah-langkah secara singkat tapi lengkap untuk tunjukkan pemahaman time-series di Python/R."
+      }
+    ],
+    "timestamp": "2025-11-24 17:43:33"
+  },
+  {
+    "session_id": "c49d0581-7872-4c67-833c-93dfd0bc748e",
+    "overall_score": 53.2,
+    "meta": {
+      "job_role": "data analyst",
+      "experience_level": "Junior",
+      "industry": "finance"
+    },
+    "results": [
+      {
+        "question": "How would you use SQL to calculate the average daily transaction volume from a financial dataset?",
+        "user_answer": "I dont know\n",
+        "ideal_answer": "Untuk menghitung average daily transaction volume dari dataset keuangan, saya akan menggunakan SQL dengan subquery untuk mengelompokkan data per hari terlebih dahulu. Asumsikan tabel bernama `transactions` dengan kolom `transaction_date` dan `transaction_amount`. Querynya adalah:  \n```sql\nSELECT AVG(daily_volume) AS average_daily_transaction_volume\nFROM (\n    SELECT DATE(transaction_date) AS transaction_day, SUM(transaction_amount) AS daily_volume\n    FROM transactions\n    GROUP BY DATE(transaction_date)\n) AS daily_summary;\n```  \nQuery ini merangkum total volume transaksi harian menggunakan `SUM` dan `GROUP BY`, lalu menghitung rata-ratanya dengan `AVG`. Pendekatan ini efisien untuk dataset besar di industri finance.",
+        "similarity_score": 45,
+        "keywords": {
+          "user_keywords": [
+            "dont know",
+            "know",
+            "dont"
+          ],
+          "ideal_keywords": [
+            "mengelompokkan data",
+            "date",
+            "volume FROM",
+            "transaction",
+            "SELECT DATE",
+            "SELECT AVG"
+          ],
+          "missing_keywords": [
+            "mengelompokkan data",
+            "date",
+            "volume FROM",
+            "transaction",
+            "SELECT DATE",
+            "SELECT AVG"
+          ],
+          "extra_keywords": [
+            "dont know",
+            "know",
+            "dont"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "mengelompokkan data",
+            "date",
+            "volume FROM",
+            "transaction",
+            "SELECT DATE",
+            "SELECT AVG"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "mengelompokkan data",
+            "date",
+            "volume FROM",
+            "transaction",
+            "SELECT DATE",
+            "SELECT AVG"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kejujuran dalam mengakui ketidaktahuan menunjukkan integritas yang baik di interview.\n- **Perbaikan:** Latih konsep GROUP BY per hari dengan SUM untuk daily volume, lalu AVG di subquery; hafalkan query ideal seperti `SELECT AVG(daily_volume) FROM (SELECT DATE(transaction_date), SUM(transaction_amount) FROM transactions GROUP BY DATE(transaction_date)) AS daily_summary`."
+      },
+      {
+        "question": "Explain how to create a pivot table in Excel to summarize quarterly revenue by product category.",
+        "user_answer": "dfasdfad ",
+        "ideal_answer": "Untuk membuat pivot table di Excel guna merangkum revenue kuartalan berdasarkan kategori produk, pertama pastikan data memiliki kolom Tanggal, Kategori Produk, dan Revenue. Pilih seluruh range data, lalu klik tab Insert > PivotTable, dan tentukan lokasi sheet baru atau existing worksheet. Di panel PivotTable Fields, seret Kategori Produk ke area Rows, grup kolom Tanggal menjadi Quarter (klik kanan pada Tanggal di pivot > Group > Quarters), serta seret Revenue ke area Values dengan fungsi Sum. Pivot table akan otomatis menampilkan total revenue per kuartal untuk setiap kategori produk. Terakhir, format nilai dan label agar lebih mudah dibaca untuk laporan keuangan.",
+        "similarity_score": 50,
+        "keywords": {
+          "user_keywords": [
+            "dfasdfad"
+          ],
+          "ideal_keywords": [
+            "Excel guna",
+            "kategori produk",
+            "pertama pastikan",
+            "kolom Tanggal",
+            "guna merangkum",
+            "kuartalan berdasarkan"
+          ],
+          "missing_keywords": [
+            "Excel guna",
+            "kategori produk",
+            "pertama pastikan",
+            "kolom Tanggal",
+            "guna merangkum",
+            "kuartalan berdasarkan"
+          ],
+          "extra_keywords": [
+            "dfasdfad"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Excel guna",
+            "kategori produk",
+            "pertama pastikan",
+            "kolom Tanggal",
+            "guna merangkum",
+            "kuartalan berdasarkan"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Excel guna",
+            "kategori produk",
+            "pertama pastikan",
+            "kolom Tanggal",
+            "guna merangkum",
+            "kuartalan berdasarkan"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban sangat ringkas, tapi tidak menunjukkan pemahaman topik sama sekali.\n- **Perbaikan:** Berikan langkah-langkah jelas seperti memilih data, Insert > PivotTable, drag fields (Kategori ke Rows, grup Tanggal ke Quarters, Revenue ke Values dengan Sum), dan format hasil—latih dengan contoh nyata untuk kelengkapan."
+      },
+      {
+        "question": "What steps would you take to clean a dataset of customer transactions with duplicates and missing values?",
+        "user_answer": "dfadf adf vv",
+        "ideal_answer": "Pertama, saya akan melakukan exploratory data analysis (EDA) menggunakan Pandas untuk mengidentifikasi missing values dengan `isnull().sum()` dan duplicates dengan `duplicated().sum()`, serta memeriksa struktur data transaksi seperti transaction ID, tanggal, dan amount.\n\nKedua, untuk missing values, saya akan menganalisis pola missingness; jika proporsinya kecil (<5%), drop rows dengan `dropna()`; jika signifikan, imputasi dengan median untuk amount numerik atau mode untuk kategori customer, agar sesuai konteks finance.\n\nKetiga, untuk duplicates, identifikasi berdasarkan kolom unik seperti transaction ID atau kombinasi customer ID + tanggal + amount, lalu hapus dengan `drop_duplicates()`.\n\nKeempat, setelah cleaning, validasi ulang dengan summary statistics (`describe()`) dan visualisasi untuk deteksi outlier.\n\nAkhirnya, simpan dataset bersih dalam format CSV atau Parquet, serta dokumentasikan langkah-langkah untuk reproducibility.",
+        "similarity_score": 63,
+        "keywords": {
+          "user_keywords": [
+            "dfadf adf",
+            "dfadf",
+            "adf"
+          ],
+          "ideal_keywords": [
+            "menggunakan Pandas",
+            "data analysis",
+            "exploratory data",
+            "struktur data",
+            "data transaksi",
+            "missing values"
+          ],
+          "missing_keywords": [
+            "menggunakan Pandas",
+            "data analysis",
+            "exploratory data",
+            "struktur data",
+            "data transaksi",
+            "missing values"
+          ],
+          "extra_keywords": [
+            "dfadf adf",
+            "dfadf",
+            "adf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "menggunakan Pandas",
+            "data analysis",
+            "exploratory data",
+            "struktur data",
+            "data transaksi",
+            "missing values"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "menggunakan Pandas",
+            "data analysis",
+            "exploratory data",
+            "struktur data",
+            "data transaksi",
+            "missing values"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban terlalu singkat dan tidak menunjukkan pemahaman dasar, sehingga tidak ada kekuatan yang terlihat.\n- **Perbaikan:** Struktur jawaban seperti ideal: mulai EDA (`isnull().sum()`, `duplicated().sum()`), handle missing values (dropna/imputasi berdasarkan konteks), hapus duplicates (`drop_duplicates()` berdasarkan kolom unik), validasi ulang (`describe()`), dan dokumentasikan; latihan jelaskan langkah demi langkah dengan contoh Pandas untuk terlihat kompeten."
+      },
+      {
+        "question": "How do you calculate ROI from a dataset, and how would you visualize it in a dashboard?",
+        "user_answer": "dfad fasf",
+        "ideal_answer": "Untuk menghitung ROI dari dataset, saya identifikasi kolom investasi awal, revenue, dan biaya, lalu hitung keuntungan bersih (revenue - biaya) sebelum terapkan rumus ROI = (Keuntungan Bersih / Investasi Awal) x 100%. Proses ini bisa dilakukan di Excel dengan formula sederhana atau Python Pandas untuk dataset besar di industri finance. Untuk visualisasi di dashboard, saya gunakan Power BI atau Tableau dengan gauge chart untuk nilai ROI saat ini, bar chart untuk perbandingan antar proyek, dan line chart untuk tren bulanan. Pendekatan ini memudahkan stakeholder melihat performa investasi secara intuitif dan actionable.",
+        "similarity_score": 52,
+        "keywords": {
+          "user_keywords": [
+            "dfad fasf",
+            "dfad",
+            "fasf"
+          ],
+          "ideal_keywords": [
+            "keuntungan bersih",
+            "investasi awal",
+            "hitung keuntungan",
+            "awal",
+            "bersih",
+            "revenue"
+          ],
+          "missing_keywords": [
+            "keuntungan bersih",
+            "investasi awal",
+            "hitung keuntungan",
+            "awal",
+            "bersih",
+            "revenue"
+          ],
+          "extra_keywords": [
+            "dfad fasf",
+            "dfad",
+            "fasf"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "keuntungan bersih",
+            "investasi awal",
+            "hitung keuntungan",
+            "awal",
+            "bersih",
+            "revenue"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "keuntungan bersih",
+            "investasi awal",
+            "hitung keuntungan",
+            "awal",
+            "bersih",
+            "revenue"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Respons sangat singkat, tapi tidak menunjukkan pemahaman apapun tentang topik.\n- **Perbaikan:** Jawab dengan struktur jelas seperti identifikasi data, rumus ROI=(Keuntungan Bersih/Investasi Awal)x100%, dan visualisasi via Power BI/Tableau (gauge/bar/line chart); praktikkan jawaban ideal untuk terlihat kompeten."
+      },
+      {
+        "question": "Using Python Pandas, how would you filter transactions above $1,000 from the last month?",
+        "user_answer": " afavfaxv av a",
+        "ideal_answer": "Saya akan mulai dengan memastikan kolom tanggal (`date`) dan jumlah transaksi (`amount`) dalam DataFrame Pandas sudah dalam format yang tepat, misalnya menggunakan `pd.to_datetime(df['date'])`.  \nSelanjutnya, hitung tanggal awal bulan lalu dengan `last_month_start = pd.Timestamp.now().replace(day=1) - pd.DateOffset(months=1)`.  \nKemudian, filter data menggunakan boolean indexing: `filtered_df = df[(df['date'] >= last_month_start) & (df['amount'] > 1000)]`.  \nAtau lebih ringkas dengan method `query`: `filtered_df = df.query(\"amount > 1000 and date >= @last_month_start\")`.  \nIni akan menghasilkan DataFrame hanya berisi transaksi di atas $1.000 dari bulan lalu, siap untuk analisis lebih lanjut di sektor finance.",
+        "similarity_score": 56,
+        "keywords": {
+          "user_keywords": [
+            "afavfaxv"
+          ],
+          "ideal_keywords": [
+            "DataFrame Pandas",
+            "memastikan kolom",
+            "month",
+            "amount",
+            "last",
+            "start"
+          ],
+          "missing_keywords": [
+            "DataFrame Pandas",
+            "memastikan kolom",
+            "month",
+            "amount",
+            "last",
+            "start"
+          ],
+          "extra_keywords": [
+            "afavfaxv"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "DataFrame Pandas",
+            "memastikan kolom",
+            "month",
+            "amount",
+            "last",
+            "start"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "DataFrame Pandas",
+            "memastikan kolom",
+            "month",
+            "amount",
+            "last",
+            "start"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban sangat ringkas, menunjukkan kemampuan berpikir cepat.\n- **Perbaikan:** Jawaban tidak relevan dan tidak menjawab pertanyaan; pelajari Pandas filtering dengan `pd.to_datetime()`, `DateOffset`, dan boolean indexing seperti `df[(df['date'] >= last_month_start) & (df['amount'] > 1000)]` untuk menjawab secara tepat dan teknis. Latih dengan contoh DataFrame nyata."
+      }
+    ],
+    "timestamp": "2025-11-24 17:48:20"
+  },
+  {
+    "session_id": "e413c6e3-c2ab-42b7-8228-17bb287185bb",
+    "overall_score": 52.6,
+    "meta": {
+      "job_role": "tes",
+      "experience_level": "Mid",
+      "industry": "tes"
+    },
+    "results": [
+      {
+        "question": "Bagaimana cara Anda mendesain test case efektif untuk fitur login aplikasi web?",
+        "user_answer": "saya tidak tahu",
+        "ideal_answer": "Saya mendesain test case efektif untuk fitur login dengan menganalisis requirement terlebih dahulu, termasuk autentikasi, session management, dan keamanan. Menggunakan teknik Equivalence Partitioning untuk membagi input seperti username/password menjadi kelas valid/invalid, serta Boundary Value Analysis untuk edge cases seperti panjang maksimal atau karakter khusus. Test case mencakup skenario positive (login sukses), negative (salah kredensial, akun terkunci setelah 3 kali gagal), dan security testing (SQL injection, XSS). Saya memastikan setiap test case memiliki precondition, step jelas, expected result, dan post-condition untuk traceability. Prioritas diberikan pada high-risk area, dan saya automate menggunakan Selenium untuk UI atau Postman untuk API guna efisiensi.",
+        "similarity_score": 47,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "termasuk autentikasi",
+            "session management",
+            "menganalisis requirement",
+            "Equivalence Partitioning",
+            "Boundary Value",
+            "Value Analysis"
+          ],
+          "missing_keywords": [
+            "termasuk autentikasi",
+            "session management",
+            "menganalisis requirement",
+            "Equivalence Partitioning",
+            "Boundary Value",
+            "Value Analysis"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "termasuk autentikasi",
+            "session management",
+            "menganalisis requirement",
+            "Equivalence Partitioning",
+            "Boundary Value",
+            "Value Analysis"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "termasuk autentikasi",
+            "session management",
+            "menganalisis requirement",
+            "Equivalence Partitioning",
+            "Boundary Value",
+            "Value Analysis"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Kejujuran Anda menunjukkan integritas, yang dihargai dalam tim kerja.\n- **Perbaikan**: Hindari jawaban \"saya tidak tahu\" di interview; coba breakdown pertanyaan dengan analisis requirement, teknik Equivalence Partitioning/Boundary Value Analysis, serta skenario positive/negative/security. Latih jawaban struktural seperti precondition-steps-expected result untuk terlihat kompeten."
+      },
+      {
+        "question": "Apa perbedaan utama antara black box testing dan white box testing, beserta contohnya?",
+        "user_answer": "hah?\n",
+        "ideal_answer": "Black box testing adalah pengujian di mana tester tidak mengetahui struktur internal atau kode program, hanya fokus pada input dan output untuk memverifikasi fungsionalitas sesuai spesifikasi. Sebaliknya, white box testing melibatkan pengetahuan penuh tentang kode internal, sehingga tester dapat menguji jalur eksekusi, branch, dan kondisi secara mendalam. Perbedaan utama adalah tingkat akses ke kode: black box bersifat eksternal dan berbasis requirement, sementara white box bersifat internal dan berbasis struktur kode. Contoh black box: menguji form login dengan input valid/invalid tanpa melihat kode. Contoh white box: unit testing fungsi kalkulasi untuk memastikan coverage 100% pada semua kondisi if-else.",
+        "similarity_score": 48,
+        "keywords": {
+          "user_keywords": [
+            "hah"
+          ],
+          "ideal_keywords": [
+            "sesuai spesifikasi",
+            "memverifikasi fungsionalitas",
+            "fungsionalitas sesuai",
+            "Black box",
+            "white box",
+            "box"
+          ],
+          "missing_keywords": [
+            "sesuai spesifikasi",
+            "memverifikasi fungsionalitas",
+            "fungsionalitas sesuai",
+            "Black box",
+            "white box",
+            "box"
+          ],
+          "extra_keywords": [
+            "hah"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "sesuai spesifikasi",
+            "memverifikasi fungsionalitas",
+            "fungsionalitas sesuai",
+            "Black box",
+            "white box",
+            "box"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "sesuai spesifikasi",
+            "memverifikasi fungsionalitas",
+            "fungsionalitas sesuai",
+            "Black box",
+            "white box",
+            "box"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Tidak ada kekuatan yang terlihat karena respons tidak menjawab pertanyaan.\n- **Perbaikan:** Hindari respons acak seperti \"hah?\" yang menunjukkan kurang persiapan; hafalkan perbedaan black box (fokus input-output tanpa akses kode, contoh: uji form login) vs white box (uji internal kode, contoh: unit test coverage if-else) agar siap interview."
+      },
+      {
+        "question": "Ceritakan pengalaman Anda menggunakan tools automation seperti Selenium di proyek sebelumnya.",
+        "user_answer": "saya pernah scrap data",
+        "ideal_answer": "Di proyek sebelumnya sebagai QA Engineer di perusahaan e-commerce, saya menggunakan Selenium WebDriver untuk mengotomatisasi pengujian UI pada aplikasi web berbasis JavaScript. Saya mengimplementasikan framework Page Object Model (POM) terintegrasi dengan TestNG, yang memungkinkan eksekusi test skenario end-to-end seperti login, pencarian produk, dan proses checkout. Tantangan utama adalah menangani elemen dinamis, yang saya atasi dengan explicit waits dan JavaScript Executor. Hasilnya, waktu eksekusi test berkurang 60% dari manual testing, dan coverage test mencapai 85%. Pengalaman ini memperkuat kemampuan saya dalam maintenance script dan CI/CD integration dengan Jenkins.",
+        "similarity_score": 64,
+        "keywords": {
+          "user_keywords": [
+            "scrap data",
+            "data",
+            "scrap"
+          ],
+          "ideal_keywords": [
+            "menggunakan Selenium",
+            "Selenium WebDriver",
+            "perusahaan e-commerce",
+            "WebDriver untuk",
+            "untuk mengotomatisasi",
+            "mengotomatisasi pengujian"
+          ],
+          "missing_keywords": [
+            "menggunakan Selenium",
+            "Selenium WebDriver",
+            "perusahaan e-commerce",
+            "WebDriver untuk",
+            "untuk mengotomatisasi",
+            "mengotomatisasi pengujian"
+          ],
+          "extra_keywords": [
+            "scrap data",
+            "data",
+            "scrap"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "menggunakan Selenium",
+            "Selenium WebDriver",
+            "perusahaan e-commerce",
+            "WebDriver untuk",
+            "untuk mengotomatisasi",
+            "mengotomatisasi pengujian"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "menggunakan Selenium",
+            "Selenium WebDriver",
+            "perusahaan e-commerce",
+            "WebDriver untuk",
+            "untuk mengotomatisasi",
+            "mengotomatisasi pengujian"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kamu menyebutkan pengalaman scraping data, yang relevan dengan automation tools.\n- **Perbaikan:** Perluas jawaban dengan struktur STAR (situasi proyek, tools seperti Selenium WebDriver + POM, tantangan + solusi, hasil kuantitatif seperti pengurangan waktu test 60%) agar lebih meyakinkan dan spesifik seperti jawaban ideal. Latih untuk jawab minimal 1-2 menit dengan detail teknis."
+      },
+      {
+        "question": "Bagaimana Anda menangani bug yang sulit direproduksi dalam tim development?",
+        "user_answer": "pakai ai",
+        "ideal_answer": "Saya mulai dengan mendokumentasikan bug secara detail, termasuk screenshot, log error, environment, dan langkah-langkah yang menyebabkannya, meskipun sulit direproduksi. Selanjutnya, saya mencoba mereproduksinya di berbagai kondisi seperti browser berbeda, OS, atau data test variatif untuk menemukan pola. Saya berkolaborasi erat dengan developer untuk menambahkan logging tambahan atau menggunakan tools seperti browser dev tools dan crash reporting. Jika masih belum ketemu, saya setup monitoring di staging/production dengan alert untuk capture saat terjadi lagi. Terakhir, saya update progress secara rutin di ticketing system agar tim tetap aligned dan prioritas tetap terjaga.",
+        "similarity_score": 50,
+        "keywords": {
+          "user_keywords": [
+            "pakai"
+          ],
+          "ideal_keywords": [
+            "termasuk screenshot",
+            "log error",
+            "sulit direproduksi",
+            "mendokumentasikan bug",
+            "secara detail",
+            "bug secara"
+          ],
+          "missing_keywords": [
+            "termasuk screenshot",
+            "log error",
+            "sulit direproduksi",
+            "mendokumentasikan bug",
+            "secara detail",
+            "bug secara"
+          ],
+          "extra_keywords": [
+            "pakai"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "termasuk screenshot",
+            "log error",
+            "sulit direproduksi",
+            "mendokumentasikan bug",
+            "secara detail",
+            "bug secara"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "termasuk screenshot",
+            "log error",
+            "sulit direproduksi",
+            "mendokumentasikan bug",
+            "secara detail",
+            "bug secara"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban singkat dan menunjukkan kesadaran akan tools modern seperti AI, yang relevan di era sekarang.\n- **Perbaikan:** Tambahkan struktur step-by-step seperti dokumentasi detail (screenshot, log), upaya reproduksi di berbagai environment, kolaborasi dengan tim via logging/monitoring, dan update rutin di ticketing—latih jawaban ideal untuk tampil lebih profesional dan berpengalaman."
+      },
+      {
+        "question": "Apa metrik testing (seperti test coverage) yang biasa Anda pantau, dan mengapa penting?",
+        "user_answer": "kdflasjflk a",
+        "ideal_answer": "Saya biasa memantau metrik utama seperti Test Coverage, Defect Density, Pass/Fail Rate, dan Requirements Coverage. Test Coverage mengukur proporsi kode atau requirement yang diuji, penting untuk memastikan testing komprehensif dan mengurangi risiko bug lolos ke produksi. Defect Density menunjukkan jumlah defect per ukuran kode, membantu identifikasi area berisiko tinggi agar prioritas testing lebih tepat. Pass/Fail Rate memberikan insight cepat tentang stabilitas build, sementara Requirements Coverage memverifikasi kesesuaian test dengan spesifikasi bisnis. Metrik ini krusial untuk meningkatkan kualitas software, efisiensi proses, dan kepercayaan tim dalam rilis produk.",
+        "similarity_score": 54,
+        "keywords": {
+          "user_keywords": [
+            "kdflasjflk"
+          ],
+          "ideal_keywords": [
+            "Fail Rate",
+            "Requirements Coverage",
+            "Test Coverage",
+            "Defect Density",
+            "Coverage",
+            "Pass"
+          ],
+          "missing_keywords": [
+            "Fail Rate",
+            "Requirements Coverage",
+            "Test Coverage",
+            "Defect Density",
+            "Coverage",
+            "Pass"
+          ],
+          "extra_keywords": [
+            "kdflasjflk"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Fail Rate",
+            "Requirements Coverage",
+            "Test Coverage",
+            "Defect Density",
+            "Coverage",
+            "Pass"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Fail Rate",
+            "Requirements Coverage",
+            "Test Coverage",
+            "Defect Density",
+            "Coverage",
+            "Pass"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Respons sangat ringkas, menunjukkan kemampuan berpikir cepat.\n- **Perbaikan:** Jawaban tidak relevan dan berupa gibberish; sebutkan metrik spesifik seperti Test Coverage, Defect Density, Pass/Fail Rate, dan Requirements Coverage, lalu jelaskan mengapa penting (misalnya, mengurangi risiko bug) seperti pada jawaban ideal untuk terlihat kompeten."
+      }
+    ],
+    "timestamp": "2025-11-24 17:59:18"
   }
 ]

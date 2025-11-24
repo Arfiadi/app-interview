@@ -83,3 +83,38 @@ const styles = {
     cursor: "pointer",
   },
 };
+
+
+// import Card from "../components/ui/Card";
+
+// export default function History({ history = [] }) {
+//   return (
+//     <div className="min-h-screen px-6 py-10">
+//       <h1 className="text-3xl font-bold mb-8">Riwayat Wawancara</h1>
+
+//       <div className="grid gap-6 max-w-2xl mx-auto">
+//         {history.map((h, i) => (
+//           <Card key={i}>
+//             <div className="flex justify-between items-center">
+//               <div>
+//                 <p className="text-white font-semibold">
+//                   Score: {h.overall_score}/100
+//                 </p>
+//                 <p className="text-gray-400 text-sm">
+//                   {h.meta?.date || "Tidak ada tanggal"}
+//                 </p>
+//               </div>
+
+//               <a
+//                 href={`/history/${h.session_id}`}
+//                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md"
+//               >
+//                 Lihat Detail
+//               </a>
+//             </div>
+//           </Card>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }

@@ -1,30 +1,26 @@
 import { useEffect, useState } from "react";
-import { useApi } from "../hooks/useApi";
-import Layout from "../components/Layout";
-import Button from "../components/ui/Button";
+// Gunakan path import alias @ (berkat jsconfig.json)
+import { useApi } from "@/hooks/useApi"; 
+import Layout from "@/components/Layout";
+import Button from "@/components/ui/Button";
 
 export default function HistoryPage() {
-  const { getHistory } = useApi();
+  const { getHistory, loading, error } = useApi();
   const [historyList, setHistoryList] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
 
   useEffect(() => {
-    async function loadHistory() {
-      setLoading(true);
+    async function load() {
       try {
-        const response = await fetch("http://127.0.0.1:8000/history/all");
-        const data = await response.json();
-        // Mengurutkan dari yang terbaru (asumsi timestamp format ISO atau bisa disort string)
+        // Panggil fungsi getHistory tanpa ID untuk mengambil semua data
+        // Ini akan menembak ke /api/history/all
+        const data = await getHistory(); 
         const sorted = Array.isArray(data) ? data.reverse() : [];
         setHistoryList(sorted);
       } catch (err) {
-        setError("Gagal memuat riwayat sesi.");
-      } finally {
-        setLoading(false);
+        // Error handled by hook
       }
     }
-    loadHistory();
+    load();
   }, []);
 
   const getScoreBadgeColor = (score) => {
@@ -53,7 +49,7 @@ export default function HistoryPage() {
            </div>
         ) : error ? (
            <div className="bg-red-50 text-red-600 p-4 rounded-lg text-center border border-red-100">
-             {error}
+             Gagal memuat riwayat. Pastikan backend Python berjalan.
            </div>
         ) : historyList.length === 0 ? (
            <div className="text-center py-20 bg-surface rounded-2xl border border-dashed border-gray-300">
@@ -68,8 +64,6 @@ export default function HistoryPage() {
                 className="bg-surface p-6 rounded-xl shadow-soft border border-gray-100 hover:shadow-card hover:border-secondary/30 transition-all duration-200 group"
               >
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                  
-                  {/* Info Utama */}
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-bold text-lg text-primary">
@@ -80,24 +74,15 @@ export default function HistoryPage() {
                       </span>
                     </div>
                     <p className="text-sm text-text-sub">
-                      {item.meta?.industry || item.industry || "-"} • {item.timestamp || "Tanggal tidak tersedia"}
+                      {item.meta?.industry || item.industry || "-"} • {item.timestamp || "Baru saja"}
                     </p>
                   </div>
 
-                  {/* Skor & Action */}
                   <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
                     <div className={`px-4 py-1.5 rounded-lg border font-bold text-sm ${getScoreBadgeColor(item.overall_score)}`}>
                       Skor: {item.overall_score}
                     </div>
-                    {/* Tombol detail bisa dikembangkan nanti untuk membuka kembali halaman result */}
-                    <button 
-                      className="text-sm font-medium text-secondary hover:text-primary transition-colors underline decoration-transparent hover:decoration-current"
-                      onClick={() => alert("Fitur lihat detail arsip akan hadir di update berikutnya!")}
-                    >
-                      Lihat Detail
-                    </button>
                   </div>
-
                 </div>
               </div>
             ))}

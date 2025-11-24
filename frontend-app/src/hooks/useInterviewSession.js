@@ -1,18 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
-// Hook ini mengelola seluruh logika sesi wawancara
 export function useInterviewSession() {
   const router = useRouter();
   
-  // Ambil params dari URL
+  // Params URL
   const { job, job_role, level, experience_level, industry } = router.query;
   const jobQuery = job || job_role || "";
   const levelQuery = level || experience_level || "";
   const industryQuery = industry || "";
 
-  // State Manajemen
-  const [status, setStatus] = useState("idle"); // idle, loading, ready, error
+  // State
+  const [status, setStatus] = useState("idle"); 
   const [questions, setQuestions] = useState([]);
   const [sessionId, setSessionId] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,19 +19,18 @@ export function useInterviewSession() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   
-  // Fitur Tambahan: Timer & Voice
+  // Feature: Timer & Voice
   const [timer, setTimer] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
   const recognitionRef = useRef(null);
 
-  // 1. INITIALIZE SESSION
+  // 1. INITIALIZE SESSION (Via Next.js API)
   useEffect(() => {
     if (!router.isReady) return;
     
-    // Validasi parameter
     if (!jobQuery || !levelQuery) {
         setStatus("error");
-        setErrorMsg("Parameter sesi tidak lengkap (Role/Level hilang).");
+        setErrorMsg("Parameter sesi tidak lengkap.");
         return;
     }
 
@@ -46,9 +44,8 @@ export function useInterviewSession() {
             num_questions: 5 
         };
         
-        // Panggil Backend
-        // Note: Pastikan URL backend sesuai env
-        const res = await fetch("http://127.0.0.1:8000/interview/generate", {
+        // UPDATE: Panggil relative path /api/...
+        const res = await fetch("/api/interview/generate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
@@ -66,7 +63,6 @@ export function useInterviewSession() {
       }
     }
 
-    // Hindari double-fetch di React Strict Mode
     if (status === 'idle') initSession();
     
   }, [router.isReady, jobQuery, levelQuery, industryQuery]);
@@ -80,7 +76,7 @@ export function useInterviewSession() {
     return () => clearInterval(interval);
   }, [status]);
 
-  // 3. VOICE RECOGNITION LOGIC
+  // 3. VOICE LOGIC
   useEffect(() => {
     if (typeof window !== "undefined") {
         const Speech = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -88,10 +84,9 @@ export function useInterviewSession() {
             const recognition = new Speech();
             recognition.continuous = true;
             recognition.interimResults = true;
-            recognition.lang = "id-ID"; // Bahasa Indonesia
+            recognition.lang = "id-ID";
             
             recognition.onresult = (e) => {
-                // Ambil hasil final saja untuk ditambahkan ke text area
                 if (e.results[0].isFinal) {
                     setAnswer(prev => (prev ? prev + " " : "") + e.results[0][0].transcript);
                 }
@@ -102,8 +97,7 @@ export function useInterviewSession() {
   }, []);
 
   const toggleVoice = () => {
-      if (!recognitionRef.current) return alert("Browser ini tidak mendukung fitur Voice-to-Text.");
-      
+      if (!recognitionRef.current) return alert("Browser tidak support voice.");
       if (isRecording) {
           recognitionRef.current.stop();
           setIsRecording(false);
@@ -113,16 +107,15 @@ export function useInterviewSession() {
       }
   };
 
-  // 4. SUBMIT ANSWER LOGIC
+  // 4. SUBMIT ANSWER (Via Next.js API)
   const submitAnswer = async () => {
       if (!sessionId) return;
       setIsSubmitting(true);
-      
-      // Auto-stop recording jika sedang merekam
       if (isRecording) toggleVoice();
 
       try {
-          await fetch("http://127.0.0.1:8000/scoring/submit", {
+          // UPDATE: Panggil API Next.js
+          await fetch("/api/scoring/submit", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -132,16 +125,14 @@ export function useInterviewSession() {
               })
           });
 
-          // Reset input dan pindah pertanyaan
           setAnswer("");
           if (currentIndex + 1 < questions.length) {
               setCurrentIndex(p => p + 1);
           } else {
-              // Jika pertanyaan habis, selesaikan sesi
               await finishSession();
           }
       } catch (e) {
-          alert("Gagal mengirim jawaban. Coba lagi.");
+          alert("Gagal kirim jawaban");
       } finally {
           setIsSubmitting(false);
       }
@@ -149,32 +140,28 @@ export function useInterviewSession() {
 
   const finishSession = async () => {
       try {
-        // Trigger evaluasi di backend
-        const res = await fetch("http://127.0.0.1:8000/scoring/evaluate", {
+        // UPDATE: Panggil API Next.js
+        const res = await fetch("/api/scoring/evaluate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ session_id: sessionId })
         });
         const result = await res.json();
         
-        // Pindah ke halaman Result
         router.push({
             pathname: "/results",
             query: { session_id: sessionId, result: JSON.stringify(result) }
         }, "/results");
       } catch(e) {
-          // Fallback jika error, tetap pindah agar user tidak stuck
           router.push(`/results?session_id=${sessionId}`);
       }
   };
 
-  // Expose data dan function yang dibutuhkan UI
   return {
       status, errorMsg,
       questions, currentQuestion: questions[currentIndex], currentIndex,
       answer, setAnswer,
       submitAnswer, isSubmitting,
-      timer,
-      isRecording, toggleVoice
+      timer, isRecording, toggleVoice
   };
 }

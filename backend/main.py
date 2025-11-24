@@ -1,8 +1,10 @@
 # app/backend/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+load_dotenv()
+from backend.api import interview, scoring, history
 
-from api import interview, scoring, history
 
 app = FastAPI(title="AI Interview Backend", version="1.0")
 

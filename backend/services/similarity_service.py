@@ -1,6 +1,6 @@
 # app/backend/services/similarity_service.py
 from sentence_transformers import SentenceTransformer, util
-from utils.model_loader import get_embedding_model
+from backend.utils.model_loader import get_embedding_model
 import torch
 
 # Lazy load model from utils.model_loader (singleton)

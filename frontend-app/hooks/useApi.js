@@ -62,7 +62,15 @@ export function useApi() {
   // ✔ Save to History
   // -------------------------
   async function saveHistory(session_id) {
-    return request("/history/save", "POST", { session_id });
+    const res = await fetch(`${API_BASE}/history/save`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ session_id }),
+    });
+
+    if (!res.ok) throw new Error("Failed to save history");
+
+    return await res.json();
   }
 
   // -------------------------

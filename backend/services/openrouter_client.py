@@ -14,6 +14,7 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
+
 def ask_openrouter(model: str, messages: list, temperature: float = 0.0, max_retries: int = 3):
     payload = {
         "model": model,
@@ -37,3 +38,5 @@ def ask_openrouter(model: str, messages: list, temperature: float = 0.0, max_ret
                 raise
             time.sleep(1.0)
     return None
+
+print("DEBUG OPENROUTER KEY:", OPENROUTER_API_KEY[:10])

@@ -1,5 +1,5 @@
 # app/backend/services/llm_feedback.py
-from services.openrouter_client import ask_openrouter
+from backend.services.openrouter_client import ask_openrouter
 import os
 
 MODEL = os.getenv("LLM_MODEL", "deepseek/deepseek-chat")

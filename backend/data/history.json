@@ -67,5 +67,1425 @@
         "feedback": "- **Kekuatan:** Jawaban jujur dan tidak dibuat-buat.\n- **Perbaikan:** Untuk wawasan yang lebih baik, pikirkan kembali pengalaman Anda; bahkan insiden kecil seperti memperbaiki error di spreadsheet atau mengotomatiskan tugas bisa menjadi contoh teknis yang menarik untuk diceritakan."
       }
     ]
+  },
+  {
+    "session_id": "f6a2cf82-06c8-4723-af44-ee19592b1cbe",
+    "overall_score": 52.0,
+    "meta": {
+      "job_role": "data engineer",
+      "experience_level": "intern",
+      "industry": "string"
+    },
+    "results": [
+      {
+        "question": "Bagaimana cara Anda membersihkan dan menstandarisasi data string yang tidak konsisten (misalnya, nama produk dengan kapitalisasi berbeda) menggunakan Python atau SQL?",
+        "user_answer": "saya tidak tahu, jangan nanya saya",
+        "ideal_answer": "Untuk membersihkan dan menstandarisasi data string tidak konsisten seperti nama produk dengan kapitalisasi berbeda, saya menggunakan Python dengan Pandas. Pertama, muat data ke DataFrame, lalu terapkan `df['nama_produk'].str.lower().str.strip()` untuk mengubah ke huruf kecil dan hilangkan spasi ekstra. Jika ada variasi lain, gunakan regex seperti `df['nama_produk'].str.replace(r'\\s+', ' ', regex=True)` atau mapping dictionary untuk penggantian. Di SQL, saya gunakan `LOWER(TRIM(nama_produk))` dalam query SELECT atau UPDATE untuk hasil serupa. Pendekatan ini memastikan konsistensi data secara efisien untuk pipeline ETL selanjutnya.",
+        "similarity_score": 52,
+        "keywords": {
+          "user_keywords": [
+            "tahu",
+            "nanya"
+          ],
+          "ideal_keywords": [
+            "menggunakan Python",
+            "kapitalisasi berbeda",
+            "Pandas",
+            "Python",
+            "menstandarisasi data",
+            "data string"
+          ],
+          "missing_keywords": [
+            "menggunakan Python",
+            "kapitalisasi berbeda",
+            "Pandas",
+            "Python",
+            "menstandarisasi data",
+            "data string"
+          ],
+          "extra_keywords": [
+            "tahu",
+            "nanya"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "menggunakan Python",
+            "kapitalisasi berbeda",
+            "Pandas",
+            "Python",
+            "menstandarisasi data",
+            "data string"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "menggunakan Python",
+            "kapitalisasi berbeda",
+            "Pandas",
+            "Python",
+            "menstandarisasi data",
+            "data string"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban menunjukkan kejujuran, tapi terlalu singkat dan tidak menunjukkan upaya pemikiran.\n- **Perbaikan:** Hindari menyerah; pelajari dasar seperti `df['kolom'].str.lower().str.strip()` di Pandas atau `LOWER(TRIM(kolom))` di SQL, lalu jawab dengan langkah sederhana + contoh untuk tunjukkan pemahaman ETL. Latih dengan dataset dummy untuk percaya diri."
+      }
+    ]
+  },
+  {
+    "session_id": "8d4f8379-2254-4fff-906d-be544079ed88",
+    "overall_score": 76.6,
+    "meta": {
+      "job_role": "data scientist",
+      "experience_level": "Intern",
+      "industry": "finance"
+    },
+    "results": [
+      {
+        "question": "Bagaimana cara Anda menangani missing values dalam dataset transaksi keuangan?",
+        "user_answer": "saya biasanya cek jumlah missing valuenya. jika sedikit, saya hapus langsung, jika lumayan banyak saya imputasi",
+        "ideal_answer": "Saya mulai dengan exploratory data analysis (EDA) untuk mengidentifikasi missing values, termasuk persentase, pola, dan potensi biasnya dalam dataset transaksi keuangan. Saya analisis konteks bisnis, seperti apakah missing disebabkan transaksi batal atau error input, agar tidak menimbulkan distorsi finansial. Untuk imputasi, saya prioritaskan median atau mean untuk variabel numerik seperti jumlah transaksi, mode untuk kategorikal, atau forward/backward fill pada data time series. Jika missing melebihi 20-30%, saya hapus baris atau konsultasikan dengan tim bisnis. Terakhir, saya validasi hasil dengan metrik seperti RMSE dan cross-validation untuk memastikan akurasi model tetap tinggi.",
+        "similarity_score": 72,
+        "keywords": {
+          "user_keywords": [
+            "missing valuenya",
+            "cek jumlah",
+            "jumlah missing",
+            "valuenya",
+            "hapus langsung",
+            "cek"
+          ],
+          "ideal_keywords": [
+            "termasuk persentase",
+            "potensi biasnya",
+            "EDA",
+            "missing values",
+            "transaksi keuangan",
+            "data analysis"
+          ],
+          "missing_keywords": [
+            "termasuk persentase",
+            "potensi biasnya",
+            "EDA",
+            "missing values",
+            "transaksi keuangan",
+            "data analysis"
+          ],
+          "extra_keywords": [
+            "missing valuenya",
+            "cek jumlah",
+            "jumlah missing",
+            "valuenya",
+            "hapus langsung",
+            "cek"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "termasuk persentase",
+            "potensi biasnya",
+            "EDA",
+            "missing values",
+            "transaksi keuangan",
+            "data analysis"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "termasuk persentase",
+            "potensi biasnya",
+            "EDA",
+            "missing values",
+            "transaksi keuangan",
+            "data analysis"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Jawaban Anda menunjukkan pemahaman dasar yang benar tentang memeriksa jumlah missing values dan memilih antara deletion atau imputation berdasarkan volumenya.\n- **Perbaikan**: Tambahkan langkah EDA untuk pola dan bias, konteks bisnis (misalnya error transaksi), metode spesifik (median untuk numerik, threshold 20-30%), serta validasi seperti RMSE agar terlihat lebih expert dan kontekstual."
+      },
+      {
+        "question": "Tulis query SQL sederhana untuk menghitung total transaksi per nasabah dalam satu bulan terakhir.",
+        "user_answer": "saya lupa nulis sql",
+        "ideal_answer": "Berikut query SQL sederhana untuk menghitung total transaksi per nasabah dalam satu bulan terakhir, dengan asumsi tabel `transaksi` memiliki kolom `id_nasabah`, `tanggal_transaksi`, dan `id_transaksi`:\n\n```sql\nSELECT id_nasabah, COUNT(*) AS total_transaksi\nFROM transaksi\nWHERE tanggal_transaksi >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)\nGROUP BY id_nasabah\nORDER BY total_transaksi DESC;\n```\n\nQuery ini menggunakan `GROUP BY` untuk mengelompokkan per nasabah, `COUNT(*)` untuk menghitung jumlah transaksi, dan filter tanggal dengan `DATE_SUB` (MySQL) agar hanya data satu bulan terakhir. Saya memilih `ORDER BY` untuk memudahkan analisis prioritas nasabah aktif. Sebagai intern data scientist di finance, query ini bisa dioptimalkan lebih lanjut dengan index pada `tanggal_transaksi` untuk performa besar data.",
+        "similarity_score": 77,
+        "keywords": {
+          "user_keywords": [
+            "nulis sql",
+            "lupa nulis",
+            "sql",
+            "lupa",
+            "nulis"
+          ],
+          "ideal_keywords": [
+            "sql SELECT",
+            "bulan terakhir",
+            "satu bulan",
+            "SQL sederhana",
+            "COUNT",
+            "DATE"
+          ],
+          "missing_keywords": [
+            "sql SELECT",
+            "bulan terakhir",
+            "satu bulan",
+            "SQL sederhana",
+            "COUNT",
+            "DATE"
+          ],
+          "extra_keywords": [
+            "nulis sql",
+            "lupa nulis",
+            "sql",
+            "lupa",
+            "nulis"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "sql SELECT",
+            "bulan terakhir",
+            "satu bulan",
+            "SQL sederhana",
+            "COUNT",
+            "DATE"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "sql SELECT",
+            "bulan terakhir",
+            "satu bulan",
+            "SQL sederhana",
+            "COUNT",
+            "DATE"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kejujuran dalam mengakui keterlupakan menunjukkan kesadaran diri, tapi ini minim kontribusi teknis.\n- **Perbaikan:** Di interview, jangan henti di \"lupa\"; coba tulis query dasar dari ingatan (SELECT, GROUP BY, WHERE), jelaskan logika asumsi tabel, dan sarankan optimasi—latih 10 query SQL umum harian untuk antisipasi."
+      },
+      {
+        "question": "Apa perbedaan supervised dan unsupervised learning? Berikan contoh di industri finance.",
+        "user_answer": "supervised dilatih dengan data berlabel, sedangkan unsupervided tanpa data berlabel",
+        "ideal_answer": "Supervised learning menggunakan data berlabel untuk melatih model memetakan input ke output spesifik, seperti klasifikasi atau regresi. Sebaliknya, unsupervised learning bekerja dengan data tak berlabel untuk menemukan pola tersembunyi, seperti clustering atau pengurangan dimensi. Perbedaan utamanya terletak pada keberadaan label data training. Di industri finance, supervised learning dipakai untuk prediksi fraud detection dengan model seperti Random Forest pada transaksi berlabel. Unsupervised learning, seperti K-means clustering, digunakan untuk segmentasi nasabah berdasarkan pola pengeluaran tanpa label.",
+        "similarity_score": 89,
+        "keywords": {
+          "user_keywords": [
+            "data berlabel",
+            "supervised dilatih",
+            "berlabel",
+            "data",
+            "supervised",
+            "dilatih"
+          ],
+          "ideal_keywords": [
+            "output spesifik",
+            "memetakan input",
+            "Supervised learning",
+            "learning",
+            "menggunakan data",
+            "berlabel"
+          ],
+          "missing_keywords": [
+            "output spesifik",
+            "memetakan input",
+            "Supervised learning",
+            "learning",
+            "menggunakan data"
+          ],
+          "extra_keywords": [
+            "data berlabel",
+            "supervised dilatih",
+            "data",
+            "supervised",
+            "dilatih"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "output spesifik",
+            "memetakan input",
+            "Supervised learning",
+            "learning",
+            "menggunakan data",
+            "berlabel"
+          ],
+          "covered_topics": [
+            "berlabel"
+          ],
+          "missing_topics": [
+            "output spesifik",
+            "memetakan input",
+            "Supervised learning",
+            "learning",
+            "menggunakan data"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban Anda menangkap esensi dasar perbedaan supervised (data berlabel) dan unsupervised learning (tanpa label) dengan tepat dan ringkas.\n- **Perbaikan:** Perbaiki ejaan \"unsupervided\" menjadi \"unsupervised\", tambahkan contoh spesifik seperti fraud detection (supervised) dan segmentasi nasabah (unsupervised) di finance, serta jelaskan aplikasi seperti klasifikasi/regresi vs clustering untuk lebih mendalam."
+      },
+      {
+        "question": "Bagaimana mendeteksi outlier dalam data harga saham menggunakan Python?",
+        "user_answer": "menggunakan boxplot ",
+        "ideal_answer": "Untuk mendeteksi outlier dalam data harga saham menggunakan Python, saya gunakan metode IQR (Interquartile Range) yang sederhana dan efektif. Pertama, load data dengan Pandas, lalu hitung Q1 = df['harga'].quantile(0.25), Q3 = df['harga'].quantile(0.75), dan IQR = Q3 - Q1. Tentukan batas lower = Q1 - 1.5*IQR dan upper = Q3 + 1.5*IQR, kemudian tandai outlier sebagai data di luar batas tersebut dengan kondisi boolean. Visualisasikan menggunakan boxplot dari Matplotlib untuk konfirmasi visual. Untuk data saham yang volatil, metode Z-score atau Isolation Forest dari Scikit-learn bisa jadi alternatif lanjutan.",
+        "similarity_score": 62,
+        "keywords": {
+          "user_keywords": [
+            "menggunakan boxplot",
+            "menggunakan",
+            "boxplot"
+          ],
+          "ideal_keywords": [
+            "Interquartile Range",
+            "menggunakan Python",
+            "harga quantile",
+            "IQR",
+            "Python",
+            "Interquartile"
+          ],
+          "missing_keywords": [
+            "Interquartile Range",
+            "menggunakan Python",
+            "harga quantile",
+            "IQR",
+            "Python",
+            "Interquartile"
+          ],
+          "extra_keywords": [
+            "menggunakan boxplot",
+            "menggunakan",
+            "boxplot"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Interquartile Range",
+            "menggunakan Python",
+            "harga quantile",
+            "IQR",
+            "Python",
+            "Interquartile"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Interquartile Range",
+            "menggunakan Python",
+            "harga quantile",
+            "IQR",
+            "Python",
+            "Interquartile"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban Anda tepat menyebutkan boxplot sebagai alat visualisasi outlier yang sederhana dan intuitif.\n- **Perbaikan:** Tambahkan penjelasan metode IQR lengkap dengan kode Pandas (Q1, Q3, batas lower/upper) serta alternatif seperti Z-score untuk data saham volatil, agar jawaban lebih komprehensif dan teknis."
+      },
+      {
+        "question": "Jelaskan langkah-langkah sederhana untuk membangun model prediksi churn nasabah menggunakan machine learning.",
+        "user_answer": "load data, eda, cleaning dan preprocessing , bangun model prediksi yang cocok, evaluasi dengan memilih metrik yang tepat\n",
+        "ideal_answer": "Pertama, kumpulkan data nasabah seperti demografi, riwayat transaksi, saldo rekening, dan label churn (misalnya, nasabah yang menutup akun dalam 3 bulan). Selanjutnya, lakukan eksplorasi data (EDA) untuk memahami distribusi, missing values, dan korelasi, diikuti preprocessing seperti handling outlier, encoding variabel kategorikal, dan scaling fitur. Kemudian, buat feature engineering relevan untuk finance, seperti rasio transaksi bulanan atau tenure nasabah, lalu split data menjadi train-test (80-20). Pilih model klasifikasi sederhana seperti Logistic Regression atau Random Forest, latih model, dan evaluasi menggunakan metrik seperti AUC-ROC, precision-recall karena data churn sering imbalance. Terakhir, tune hyperparameter dengan GridSearchCV dan interpretasikan hasil untuk insight bisnis, seperti faktor utama churn.",
+        "similarity_score": 83,
+        "keywords": {
+          "user_keywords": [
+            "load data",
+            "bangun model",
+            "model prediksi",
+            "memilih metrik",
+            "eda",
+            "load"
+          ],
+          "ideal_keywords": [
+            "saldo rekening",
+            "menutup akun",
+            "riwayat transaksi",
+            "kumpulkan data",
+            "label churn",
+            "data"
+          ],
+          "missing_keywords": [
+            "saldo rekening",
+            "menutup akun",
+            "riwayat transaksi",
+            "kumpulkan data",
+            "label churn",
+            "data"
+          ],
+          "extra_keywords": [
+            "load data",
+            "bangun model",
+            "model prediksi",
+            "memilih metrik",
+            "eda",
+            "load"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "saldo rekening",
+            "menutup akun",
+            "riwayat transaksi",
+            "kumpulkan data",
+            "label churn",
+            "data"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "saldo rekening",
+            "menutup akun",
+            "riwayat transaksi",
+            "kumpulkan data",
+            "label churn",
+            "data"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban Anda ringkas dan mencakup langkah-langkah esensial CRISP-DM seperti load data, EDA, preprocessing, modeling, dan evaluasi metrik, yang menunjukkan pemahaman struktur dasar.\n- **Perbaikan:** Tambahkan detail spesifik seperti feature engineering (e.g., rasio transaksi), split train-test, model churn-friendly (Logistic Regression/Random Forest), metrik imbalance (AUC-ROC/precision-recall), serta tuning dan insight bisnis untuk terlihat lebih expert dan actionable."
+      }
+    ]
+  },
+  {
+    "session_id": "d73543b5-5671-452f-8aee-dcb505a680e3",
+    "overall_score": 52.4,
+    "meta": {
+      "job_role": "software engineer",
+      "experience_level": "Intern",
+      "industry": "Food"
+    },
+    "results": [
+      {
+        "question": "How would you design a simple database schema for tracking restaurant inventory?",
+        "user_answer": "i don't know, dont ask me",
+        "ideal_answer": "Saya akan merancang schema database sederhana menggunakan relational database seperti MySQL dengan dua tabel utama: `items` dan `transactions`.  \nTabel `items` mencakup kolom `id` (PK), `nama_barang`, `kategori` (misal bahan baku/minuman), `stok_saat_ini`, `stok_minimum`, `harga_satuan`, dan `supplier`.  \nTabel `transactions` memiliki `id` (PK), `item_id` (FK), `tanggal`, `jenis` (masuk/keluar), `jumlah`, dan `keterangan` (misal pembelian/penggunaan).  \nRelasi one-to-many antara `items` dan `transactions` memungkinkan tracking stok real-time via trigger atau query UPDATE setelah transaksi.  \nSchema ini mendukung fitur dasar seperti alert stok rendah dengan query `SELECT * FROM items WHERE stok_saat_ini <= stok_minimum`.",
+        "similarity_score": 47,
+        "keywords": {
+          "user_keywords": [
+            "dont ask",
+            "know",
+            "dont",
+            "ask"
+          ],
+          "ideal_keywords": [
+            "database sederhana",
+            "relational database",
+            "sederhana menggunakan",
+            "menggunakan relational",
+            "transactions",
+            "tabel utama"
+          ],
+          "missing_keywords": [
+            "database sederhana",
+            "relational database",
+            "sederhana menggunakan",
+            "menggunakan relational",
+            "transactions",
+            "tabel utama"
+          ],
+          "extra_keywords": [
+            "dont ask",
+            "know",
+            "dont",
+            "ask"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "database sederhana",
+            "relational database",
+            "sederhana menggunakan",
+            "menggunakan relational",
+            "transactions",
+            "tabel utama"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "database sederhana",
+            "relational database",
+            "sederhana menggunakan",
+            "menggunakan relational",
+            "transactions",
+            "tabel utama"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Tidak ada kekuatan signifikan; jawaban terlalu singkat dan tidak menunjukkan pemahaman dasar.\n- **Perbaikan**: Hindari mengatakan \"saya tidak tahu\" di interview—coba jawab dengan pendekatan logis seperti tabel `items` (id, nama, stok) dan `transactions` (item_id, jenis masuk/keluar); latihan jelaskan schema sederhana untuk tunjukkan problem-solving skills."
+      },
+      {
+        "question": "Write pseudocode to calculate the total calories in a meal from a list of ingredients.",
+        "user_answer": "i can't",
+        "ideal_answer": "Berikut pseudocode sederhana untuk menghitung total kalori dari daftar bahan makanan, di mana setiap bahan memiliki atribut jumlah dan kalori per satuan.  \n\n```\nFUNGSI hitungTotalKalori(daftarBahan):\n    totalKalori = 0\n    UNTUK setiap bahan DI daftarBahan:\n        kaloriBahan = bahan.jumlah * bahan.kaloriPerSatuan\n        totalKalori = totalKalori + kaloriBahan\n    KEMBALIKAN totalKalori\n```\n\nPseudocode ini mengiterasi daftar bahan secara efisien dengan kompleksitas O(n), cocok untuk aplikasi food tracking. Saya mengasumsikan input berupa array objek bahan untuk kemudahan implementasi di bahasa pemrograman seperti JavaScript atau Python. Pendekatan ini mudah dibaca dan dapat diperluas dengan validasi input jika diperlukan.",
+        "similarity_score": 51,
+        "keywords": {
+          "user_keywords": [],
+          "ideal_keywords": [
+            "Berikut pseudocode",
+            "menghitung total",
+            "memiliki atribut",
+            "atribut jumlah",
+            "total kalori",
+            "pseudocode sederhana"
+          ],
+          "missing_keywords": [
+            "Berikut pseudocode",
+            "menghitung total",
+            "memiliki atribut",
+            "atribut jumlah",
+            "total kalori",
+            "pseudocode sederhana"
+          ],
+          "extra_keywords": []
+        },
+        "topics": {
+          "expected_topics": [
+            "Berikut pseudocode",
+            "menghitung total",
+            "memiliki atribut",
+            "atribut jumlah",
+            "total kalori",
+            "pseudocode sederhana"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Berikut pseudocode",
+            "menghitung total",
+            "memiliki atribut",
+            "atribut jumlah",
+            "total kalori",
+            "pseudocode sederhana"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Respons jujur menunjukkan kesadaran diri, tapi terlalu singkat untuk menunjukkan kemampuan problem-solving.\n- **Perbaikan:** Selalu coba berikan solusi dasar seperti loop sederhana untuk iterasi daftar bahan dan sum kalori (misal: total = 0; for each item: total += item.quantity * item.calories); latihan pseudocode dasar agar tak menyerah di interview."
+      },
+      {
+        "question": "Explain how to validate user input for a food ordering form.",
+        "user_answer": "ksjafof",
+        "ideal_answer": "Untuk memvalidasi input user pada form pemesanan makanan, saya akan menerapkan validasi di sisi client menggunakan HTML5 attributes seperti `required`, `type=\"email\"`, dan `pattern` untuk regex, serta JavaScript untuk pengecekan real-time seperti memastikan jumlah pesanan adalah bilangan bulat positif dan alamat tidak kosong. Di sisi server, menggunakan framework seperti Laravel atau Express.js, saya akan memvalidasi ulang semua input dengan rules seperti `email:required|email`, `integer:min:1` untuk jumlah item, dan sanitasi data untuk mencegah SQL injection atau XSS. Contoh spesifik: nama pelanggan minimal 2 karakter, nomor telepon 10-13 digit, dan total harga sesuai perhitungan item. Validasi ini memastikan data akurat, mencegah pesanan gagal, dan meningkatkan pengalaman user di aplikasi food delivery. Saya juga akan tampilkan pesan error yang ramah, seperti \"Mohon masukkan email yang valid\".",
+        "similarity_score": 50,
+        "keywords": {
+          "user_keywords": [
+            "ksjafof"
+          ],
+          "ideal_keywords": [
+            "pemesanan makanan",
+            "form pemesanan",
+            "pengecekan real-time",
+            "bilangan bulat",
+            "bulat positif",
+            "sisi client"
+          ],
+          "missing_keywords": [
+            "pemesanan makanan",
+            "form pemesanan",
+            "pengecekan real-time",
+            "bilangan bulat",
+            "bulat positif",
+            "sisi client"
+          ],
+          "extra_keywords": [
+            "ksjafof"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "pemesanan makanan",
+            "form pemesanan",
+            "pengecekan real-time",
+            "bilangan bulat",
+            "bulat positif",
+            "sisi client"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "pemesanan makanan",
+            "form pemesanan",
+            "pengecekan real-time",
+            "bilangan bulat",
+            "bulat positif",
+            "sisi client"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Respons sangat singkat, menunjukkan kecepatan tapi tidak substansial.\n- **Perbaikan:** Jawaban tidak relevan sama sekali; pelajari dan jelaskan validasi client-side (HTML5 `required`, JS real-time) serta server-side (rules Laravel/Express, sanitasi XSS/SQLi) dengan contoh spesifik seperti minimal karakter nama atau digit telepon, lalu praktikkan jawaban terstruktur seperti ideal."
+      },
+      {
+        "question": "Describe a basic algorithm to recommend dishes based on available ingredients.",
+        "user_answer": "you stupid",
+        "ideal_answer": "Algoritma dasar untuk merekomendasikan hidangan berdasarkan bahan tersedia adalah sebagai berikut: Pertama, simpan database resep yang masing-masing berisi daftar bahan wajib. Kedua, bandingkan daftar bahan pengguna dengan setiap resep menggunakan operasi intersection untuk menghitung jumlah bahan yang cocok. Ketiga, hitung skor kecocokan, misalnya persentase (jumlah cocok dibagi total bahan resep) dikali 100. Keempat, urutkan resep berdasarkan skor tertinggi dan rekomendasikan yang di atas threshold tertentu, seperti 70%. Algoritma ini sederhana, efisien dengan kompleksitas O(n*m) di mana n adalah jumlah resep dan m rata-rata bahan per resep, dan bisa diimplementasikan menggunakan Python dengan set untuk perbandingan cepat.",
+        "similarity_score": 53,
+        "keywords": {
+          "user_keywords": [
+            "you stupid",
+            "you",
+            "stupid"
+          ],
+          "ideal_keywords": [
+            "simpan database",
+            "merekomendasikan hidangan",
+            "masing-masing berisi",
+            "Pertama",
+            "berisi daftar",
+            "bahan"
+          ],
+          "missing_keywords": [
+            "simpan database",
+            "merekomendasikan hidangan",
+            "masing-masing berisi",
+            "Pertama",
+            "berisi daftar",
+            "bahan"
+          ],
+          "extra_keywords": [
+            "you stupid",
+            "you",
+            "stupid"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "simpan database",
+            "merekomendasikan hidangan",
+            "masing-masing berisi",
+            "Pertama",
+            "berisi daftar",
+            "bahan"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "simpan database",
+            "merekomendasikan hidangan",
+            "masing-masing berisi",
+            "Pertama",
+            "berisi daftar",
+            "bahan"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Tidak ada kekuatan signifikan karena jawaban tidak relevan dengan pertanyaan.\n- **Perbaikan:** Hindari respons kasar atau tidak profesional; jawab langsung dengan algoritma sederhana seperti database resep, intersection bahan, skor persentase, dan sorting berdasarkan threshold (lihat jawaban ideal untuk contoh lengkap dan actionable). Latih diri untuk tetap fokus dan teknis di interview."
+      },
+      {
+        "question": "What steps would you take to ensure data accuracy in a recipe management app?",
+        "user_answer": "dfa",
+        "ideal_answer": "Untuk memastikan akurasi data di aplikasi manajemen resep, pertama-tama saya akan menerapkan validasi input ketat pada form pengisian resep, seperti pengecekan format bahan, unit ukuran (misalnya gram atau sendok), dan rentang nilai realistis untuk mencegah kesalahan masukan. Kedua, saya akan menggunakan database dengan constraint unik dan foreign key untuk menghindari duplikat atau inkonsistensi data. Ketiga, integrasikan API eksternal terpercaya seperti dari USDA untuk verifikasi informasi nutrisi secara otomatis. Keempat, tambahkan fitur moderasi oleh admin atau komunitas pengguna sebelum resep dipublikasikan. Terakhir, lakukan pengujian rutin seperti unit test dan monitoring log untuk mendeteksi anomali data secara dini.",
+        "similarity_score": 61,
+        "keywords": {
+          "user_keywords": [
+            "dfa"
+          ],
+          "ideal_keywords": [
+            "format bahan",
+            "misalnya gram",
+            "kesalahan masukan",
+            "memastikan akurasi",
+            "aplikasi manajemen",
+            "menerapkan validasi"
+          ],
+          "missing_keywords": [
+            "format bahan",
+            "misalnya gram",
+            "kesalahan masukan",
+            "memastikan akurasi",
+            "aplikasi manajemen",
+            "menerapkan validasi"
+          ],
+          "extra_keywords": [
+            "dfa"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "format bahan",
+            "misalnya gram",
+            "kesalahan masukan",
+            "memastikan akurasi",
+            "aplikasi manajemen",
+            "menerapkan validasi"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "format bahan",
+            "misalnya gram",
+            "kesalahan masukan",
+            "memastikan akurasi",
+            "aplikasi manajemen",
+            "menerapkan validasi"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Tidak ada kekuatan yang terlihat karena jawaban terlalu singkat dan tidak relevan.\n- **Perbaikan:** Berikan jawaban terstruktur dengan 4-5 langkah konkret seperti validasi input, constraint database, API verifikasi, moderasi, dan pengujian rutin; gunakan contoh spesifik seperti USDA API untuk menunjukkan pemahaman mendalam. Latih agar jawaban minimal 4-5 kalimat lengkap, bukan singkatan acak."
+      }
+    ]
+  },
+  {
+    "session_id": "2dad0a2d-59cb-4d99-9720-55a3eed83f1e",
+    "overall_score": 53.2,
+    "meta": {
+      "job_role": "data engineer",
+      "experience_level": "Mid",
+      "industry": "tech"
+    },
+    "results": [
+      {
+        "question": "How would you design a scalable ETL pipeline for processing daily terabyte-scale logs using Spark and Airflow?",
+        "user_answer": "saya tidak pernah",
+        "ideal_answer": "Saya akan merancang pipeline ETL dengan Airflow sebagai orchestrator utama untuk menjadwalkan DAG harian yang menangani dependency dan retry otomatis. Data logs terabyte-scale dari S3 atau Kafka diingest ke Spark cluster EMR atau Databricks yang auto-scaling dengan dynamic allocation untuk menangani beban variabel. Di Spark, proses ETL menggunakan DataFrame API dengan partitioning berdasarkan tanggal dan kolom kunci untuk optimalisasi shuffle dan query performance. Output disimpan ke Delta Lake di S3 untuk mendukung ACID transactions, versioning, dan skalabilitas baca/tulis tinggi. Monitoring dilakukan via Airflow UI, Spark metrics, dan alerting Prometheus/Grafana untuk deteksi bottleneck dini. Pendekatan ini memastikan proses harian selesai dalam SLA waktu yang ketat meski volume data besar.",
+        "similarity_score": 45,
+        "keywords": {
+          "user_keywords": [],
+          "ideal_keywords": [
+            "menjadwalkan DAG",
+            "retry otomatis",
+            "merancang pipeline",
+            "orchestrator utama",
+            "DAG harian",
+            "pipeline ETL"
+          ],
+          "missing_keywords": [
+            "menjadwalkan DAG",
+            "retry otomatis",
+            "merancang pipeline",
+            "orchestrator utama",
+            "DAG harian",
+            "pipeline ETL"
+          ],
+          "extra_keywords": []
+        },
+        "topics": {
+          "expected_topics": [
+            "menjadwalkan DAG",
+            "retry otomatis",
+            "merancang pipeline",
+            "orchestrator utama",
+            "DAG harian",
+            "pipeline ETL"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "menjadwalkan DAG",
+            "retry otomatis",
+            "merancang pipeline",
+            "orchestrator utama",
+            "DAG harian",
+            "pipeline ETL"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban jujur menunjukkan integritas dan menghindari bluffing.\n- **Perbaikan:** Hindari mengatakan \"saya tidak pernah\" karena terlihat kurang siap; ganti dengan outline desain high-level seperti menggunakan Airflow untuk scheduling DAG, Spark EMR/Databricks untuk processing terabyte-scale dengan partitioning, dan Delta Lake untuk storage—latih jawaban struktural ini agar terlihat kompeten meski belum hands-on."
+      },
+      {
+        "question": "Explain how to optimize a slow-running SQL query on a billion-row table in BigQuery.",
+        "user_answer": "menggunakan index dan partisi yang tepat",
+        "ideal_answer": "Untuk mengoptimasi query SQL lambat pada tabel miliaran baris di BigQuery, pertama analisis execution plan menggunakan perintah EXPLAIN atau Query Insights untuk identifikasi bottleneck seperti full table scan. Pastikan tabel sudah dipartisi berdasarkan kolom waktu (misalnya DATE atau ingestion_time) dan dikelompokkan (clustered) pada kolom filter utama untuk mengurangi data yang dipindai. Optimasi query dengan menerapkan filter ketat di WHERE clause sejak awal, hindari SELECT *, gunakan JOIN efisien, dan pilih fungsi APPROX_ untuk agregasi besar jika akurasi tidak kritis. Buat materialized views untuk hasil agregasi berulang atau denormalisasi data untuk mengurangi kompleksitas. Terakhir, monitor biaya dan performa via BigQuery console, serta aktifkan BI Engine untuk caching query dashboard.",
+        "similarity_score": 68,
+        "keywords": {
+          "user_keywords": [
+            "menggunakan index",
+            "menggunakan",
+            "tepat",
+            "index",
+            "partisi"
+          ],
+          "ideal_keywords": [
+            "SQL lambat",
+            "perintah EXPLAIN",
+            "pertama analisis",
+            "table scan",
+            "query SQL",
+            "Query Insights"
+          ],
+          "missing_keywords": [
+            "SQL lambat",
+            "perintah EXPLAIN",
+            "pertama analisis",
+            "table scan",
+            "query SQL",
+            "Query Insights"
+          ],
+          "extra_keywords": [
+            "menggunakan index",
+            "menggunakan",
+            "tepat",
+            "index",
+            "partisi"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "SQL lambat",
+            "perintah EXPLAIN",
+            "pertama analisis",
+            "table scan",
+            "query SQL",
+            "Query Insights"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "SQL lambat",
+            "perintah EXPLAIN",
+            "pertama analisis",
+            "table scan",
+            "query SQL",
+            "Query Insights"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Kamu benar mengidentifikasi partitioning sebagai teknik utama optimasi di BigQuery untuk tabel besar.\n- **Perbaikan**: Hindari menyebut \"index\" karena BigQuery tidak mendukungnya (gunakan clustering instead); tambahkan langkah struktural seperti analisis EXPLAIN plan, filter WHERE awal, hindari SELECT *, dan materialized views untuk jawaban lebih komprehensif dan actionable."
+      },
+      {
+        "question": "What strategies do you use to handle schema evolution in a Delta Lake?",
+        "user_answer": "tidak punya strategi",
+        "ideal_answer": "Saya menggunakan fitur schema evolution bawaan Delta Lake dengan mengaktifkan opsi `mergeSchema` atau `overwriteSchema` saat operasi write seperti `append` atau `merge`, sehingga kolom baru dapat ditambahkan secara otomatis tanpa mengganggu data existing. Untuk perubahan tipe data atau penambahan kolom nullable, saya memanfaatkan `autoMerge` pada Spark session untuk evolusi skema yang aman. Saya juga menerapkan schema enforcement dengan `spark.databricks.delta.schema.autoMerge.enabled=true` untuk mencegah konflik destruktif seperti penghapusan kolom. Best practice yang saya lakukan adalah testing di environment dev terlebih dahulu, memanfaatkan time travel untuk rollback jika diperlukan, dan mendokumentasikan perubahan skema via Delta history. Pendekatan ini memastikan skalabilitas dan reliabilitas pipeline data di production.",
+        "similarity_score": 55,
+        "keywords": {
+          "user_keywords": [
+            "punya strategi",
+            "strategi",
+            "punya"
+          ],
+          "ideal_keywords": [
+            "Delta Lake",
+            "mengaktifkan opsi",
+            "menggunakan fitur",
+            "evolution bawaan",
+            "operasi write",
+            "ditambahkan secara"
+          ],
+          "missing_keywords": [
+            "Delta Lake",
+            "mengaktifkan opsi",
+            "menggunakan fitur",
+            "evolution bawaan",
+            "operasi write",
+            "ditambahkan secara"
+          ],
+          "extra_keywords": [
+            "punya strategi",
+            "strategi",
+            "punya"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Delta Lake",
+            "mengaktifkan opsi",
+            "menggunakan fitur",
+            "evolution bawaan",
+            "operasi write",
+            "ditambahkan secara"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Delta Lake",
+            "mengaktifkan opsi",
+            "menggunakan fitur",
+            "evolution bawaan",
+            "operasi write",
+            "ditambahkan secara"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Jawaban jujur menunjukkan kesadaran diri tentang keterbatasan pengalaman, yang bisa dihargai interviewer sebagai sikap rendah hati.\n- **Perbaikan**: Pelajari dan sebutkan strategi utama Delta Lake seperti `mergeSchema`, `autoMerge`, schema enforcement, serta best practice testing/dev env dan time travel; latihan jawab dengan contoh konkret untuk tunjukkan pemahaman teknis."
+      },
+      {
+        "question": "Describe a situation where you debugged a failing Kafka consumer in a production streaming pipeline.",
+        "user_answer": "saya tidak pernah punya pengalaman seperti itu",
+        "ideal_answer": "Di proyek streaming data real-time sebelumnya, Kafka consumer di pipeline produksi tiba-tiba mengalami lag tinggi hingga ribuan pesan dan beberapa partisi tidak terconsume karena frequent rebalancing. Saya mulai dengan memeriksa metrik Kafka seperti consumer lag, offset lag, dan logs consumer yang menunjukkan error \"session timeout expired\". Setelah menganalisis konfigurasi, ternyata session.timeout.ms terlalu rendah (10 detik) dibanding heartbeat.interval.ms, menyebabkan consumer keluar dari group saat beban tinggi. Saya menyesuaikan konfigurasi tersebut menjadi 30 detik, meningkatkan max.poll.records, dan melakukan reset consumer group dengan kafka-consumer-groups.sh. Hasilnya, lag turun ke nol dalam 30 menit, dan pipeline stabil dengan throughput 10k msg/s tanpa downtime lebih lanjut.",
+        "similarity_score": 52,
+        "keywords": {
+          "user_keywords": [
+            "punya pengalaman",
+            "punya",
+            "pengalaman"
+          ],
+          "ideal_keywords": [
+            "frequent rebalancing",
+            "proyek streaming",
+            "streaming data",
+            "data real-time",
+            "produksi tiba-tiba",
+            "tiba-tiba mengalami"
+          ],
+          "missing_keywords": [
+            "frequent rebalancing",
+            "proyek streaming",
+            "streaming data",
+            "data real-time",
+            "produksi tiba-tiba",
+            "tiba-tiba mengalami"
+          ],
+          "extra_keywords": [
+            "punya pengalaman",
+            "punya",
+            "pengalaman"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "frequent rebalancing",
+            "proyek streaming",
+            "streaming data",
+            "data real-time",
+            "produksi tiba-tiba",
+            "tiba-tiba mengalami"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "frequent rebalancing",
+            "proyek streaming",
+            "streaming data",
+            "data real-time",
+            "produksi tiba-tiba",
+            "tiba-tiba mengalami"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Kejujuran Anda dalam mengakui kurang pengalaman menunjukkan integritas dan menghindari overclaim.\n- **Perbaikan**: Pivot ke pengalaman debugging serupa (misal pipeline lain) atau jelaskan langkah hipotetis seperti cek lag, logs, dan config session.timeout.ms; latihan jawaban STAR untuk tunjukkan pengetahuan Kafka meski tanpa kasus eksak."
+      },
+      {
+        "question": "How do you ensure data quality and implement monitoring in your data pipelines?",
+        "user_answer": "i don't know",
+        "ideal_answer": "Saya memastikan kualitas data dengan menerapkan validasi skema, pemeriksaan kelengkapan, dan integritas menggunakan Great Expectations atau dbt tests di setiap tahap pipeline, baik pre- maupun post-processing. Saya juga melakukan data profiling rutin untuk mendeteksi anomali dan duplikasi. Untuk monitoring, saya gunakan Apache Airflow untuk tracking DAGs, serta Prometheus dan Grafana untuk memantau metrik seperti latency, throughput, dan error rates. Alerting diatur via PagerDuty atau Slack jika SLA terganggu, memungkinkan respons cepat dan otomatisasi remediation. Pendekatan ini telah terbukti efektif di proyek saya sebelumnya menggunakan Spark dan Kafka.",
+        "similarity_score": 46,
+        "keywords": {
+          "user_keywords": [
+            "know"
+          ],
+          "ideal_keywords": [
+            "Great Expectations",
+            "pemeriksaan kelengkapan",
+            "baik pre",
+            "validasi skema",
+            "tahap pipeline",
+            "memastikan kualitas"
+          ],
+          "missing_keywords": [
+            "Great Expectations",
+            "pemeriksaan kelengkapan",
+            "baik pre",
+            "validasi skema",
+            "tahap pipeline",
+            "memastikan kualitas"
+          ],
+          "extra_keywords": [
+            "know"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Great Expectations",
+            "pemeriksaan kelengkapan",
+            "baik pre",
+            "validasi skema",
+            "tahap pipeline",
+            "memastikan kualitas"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Great Expectations",
+            "pemeriksaan kelengkapan",
+            "baik pre",
+            "validasi skema",
+            "tahap pipeline",
+            "memastikan kualitas"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban Anda jujur, yang lebih baik daripada mengarang.\n- **Perbaikan:** Hindari \"saya tidak tahu\" di interview; sebutkan konsep dasar seperti validasi skema (Great Expectations/dbt tests), profiling rutin, dan monitoring via Airflow/Prometheus dengan alerting (PagerDuty/Slack) seperti jawaban ideal untuk tunjukkan pemahaman meski belum berpengalaman. Latih jawaban struktural: kualitas data → monitoring → contoh proyek."
+      }
+    ]
+  },
+  {
+    "session_id": "1cd8c03e-0cdb-419e-80d0-97e52c52c3b8",
+    "overall_score": 54.4,
+    "meta": {
+      "job_role": "apa aja",
+      "experience_level": "Intern",
+      "industry": "finance"
+    },
+    "results": [
+      {
+        "question": "Apa itu neraca keuangan dan komponen utamanya?",
+        "user_answer": "k",
+        "ideal_answer": "Neraca keuangan adalah laporan keuangan yang menggambarkan posisi keuangan perusahaan pada suatu tanggal tertentu. Komponen utamanya terdiri dari tiga elemen pokok: aset, liabilitas, dan ekuitas. Aset mencakup sumber daya yang dimiliki perusahaan, seperti kas, piutang, inventori, dan aset tetap. Liabilitas adalah kewajiban yang harus dibayar, termasuk utang jangka pendek dan jangka panjang. Ekuitas mewakili hak pemilik atas aset bersih setelah dikurangi liabilitas. Rumus dasar neraca adalah Aset = Liabilitas + Ekuitas.",
+        "similarity_score": 60,
+        "keywords": {
+          "user_keywords": [],
+          "ideal_keywords": [
+            "menggambarkan posisi",
+            "laporan keuangan",
+            "posisi keuangan",
+            "keuangan",
+            "aset",
+            "keuangan perusahaan"
+          ],
+          "missing_keywords": [
+            "menggambarkan posisi",
+            "laporan keuangan",
+            "posisi keuangan",
+            "keuangan",
+            "aset",
+            "keuangan perusahaan"
+          ],
+          "extra_keywords": []
+        },
+        "topics": {
+          "expected_topics": [
+            "menggambarkan posisi",
+            "laporan keuangan",
+            "posisi keuangan",
+            "keuangan",
+            "aset",
+            "keuangan perusahaan"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "menggambarkan posisi",
+            "laporan keuangan",
+            "posisi keuangan",
+            "keuangan",
+            "aset",
+            "keuangan perusahaan"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban sangat ringkas, tapi tidak menunjukkan pemahaman apapun.\n- **Perbaikan:** Berikan definisi neraca sebagai laporan posisi keuangan pada tanggal tertentu, sebutkan tiga komponen utama (aset, liabilitas, ekuitas) beserta contoh singkat, dan ingat rumus Aset = Liabilitas + Ekuitas untuk terlihat kompeten. Latih jawaban lengkap dalam 1-2 menit."
+      },
+      {
+        "question": "Jelaskan perbedaan antara aset lancar dan aset tetap.",
+        "user_answer": "k",
+        "ideal_answer": "Aset lancar adalah aset yang dapat dikonversi menjadi kas dalam waktu satu tahun atau satu siklus operasi bisnis, seperti kas, piutang usaha, dan persediaan barang.  \nSebaliknya, aset tetap merupakan aset jangka panjang yang digunakan dalam operasi bisnis lebih dari satu tahun, seperti tanah, bangunan, mesin, dan kendaraan.  \nPerbedaan utama terletak pada likuiditasnya; aset lancar lebih mudah dicairkan untuk kebutuhan jangka pendek, sementara aset tetap mendukung aktivitas operasional jangka panjang dan biasanya mengalami penyusutan nilai.  \nDalam neraca keuangan, aset lancar dicantumkan di bagian atas untuk menunjukkan likuiditas perusahaan, sedangkan aset tetap berada di bawahnya.",
+        "similarity_score": 57,
+        "keywords": {
+          "user_keywords": [],
+          "ideal_keywords": [
+            "piutang usaha",
+            "persediaan barang",
+            "menjadi kas",
+            "operasi bisnis",
+            "satu tahun",
+            "dikonversi menjadi"
+          ],
+          "missing_keywords": [
+            "piutang usaha",
+            "persediaan barang",
+            "menjadi kas",
+            "operasi bisnis",
+            "satu tahun",
+            "dikonversi menjadi"
+          ],
+          "extra_keywords": []
+        },
+        "topics": {
+          "expected_topics": [
+            "piutang usaha",
+            "persediaan barang",
+            "menjadi kas",
+            "operasi bisnis",
+            "satu tahun",
+            "dikonversi menjadi"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "piutang usaha",
+            "persediaan barang",
+            "menjadi kas",
+            "operasi bisnis",
+            "satu tahun",
+            "dikonversi menjadi"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban terlalu singkat dan tidak menunjukkan pemahaman dasar, sehingga tidak ada kekuatan signifikan.\n- **Perbaikan:** Berikan definisi jelas aset lancar (likuid dalam 1 tahun, contoh: kas, piutang) vs aset tetap (jangka panjang, contoh: tanah, mesin), soroti perbedaan likuiditas dan penyusutan, serta posisi di neraca untuk kesan profesional. Latih jawaban lengkap 3-4 kalimat agar terstruktur dan meyakinkan."
+      },
+      {
+        "question": "Mengapa Anda tertarik magang di industri keuangan?",
+        "user_answer": "j",
+        "ideal_answer": "Saya tertarik magang di industri keuangan karena sektor ini dinamis, berpengaruh besar terhadap perekonomian, dan memerlukan kombinasi analisis data serta pengambilan keputusan strategis yang menantang. Selama kuliah, mata kuliah keuangan dan pengalaman intern saya di bidang administrasi bisnis telah membangkitkan passion saya terhadap analisis portofolio dan manajemen risiko. Industri keuangan menawarkan peluang untuk belajar langsung dari tren pasar global seperti fintech dan sustainable finance. Magang ini akan memungkinkan saya menerapkan pengetahuan teori secara praktis sambil berkontribusi pada tim. Pada akhirnya, ini adalah langkah awal ideal untuk karir saya di bidang financial analysis.",
+        "similarity_score": 49,
+        "keywords": {
+          "user_keywords": [],
+          "ideal_keywords": [
+            "berpengaruh besar",
+            "memerlukan kombinasi",
+            "pengambilan keputusan",
+            "keputusan strategis",
+            "kombinasi analisis",
+            "analisis data"
+          ],
+          "missing_keywords": [
+            "berpengaruh besar",
+            "memerlukan kombinasi",
+            "pengambilan keputusan",
+            "keputusan strategis",
+            "kombinasi analisis",
+            "analisis data"
+          ],
+          "extra_keywords": []
+        },
+        "topics": {
+          "expected_topics": [
+            "berpengaruh besar",
+            "memerlukan kombinasi",
+            "pengambilan keputusan",
+            "keputusan strategis",
+            "kombinasi analisis",
+            "analisis data"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "berpengaruh besar",
+            "memerlukan kombinasi",
+            "pengambilan keputusan",
+            "keputusan strategis",
+            "kombinasi analisis",
+            "analisis data"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Jawaban Anda sangat ringkas dan langsung.\n- **Perbaikan**: Kembangkan dengan 2-3 alasan spesifik (misalnya passion dari kuliah/internship, tren seperti fintech), hubungkan pengalaman pribadi, dan sebutkan kontribusi serta manfaat karir—latih hingga 4-5 kalimat seperti jawaban ideal untuk terdengar meyakinkan."
+      },
+      {
+        "question": "Ceritakan pengalaman Anda menggunakan Excel untuk analisis data sederhana.",
+        "user_answer": "k",
+        "ideal_answer": "Selama magang di perusahaan finance, saya menggunakan Excel untuk menganalisis data transaksi harian klien. Saya menerapkan PivotTable guna merangkum penjualan bulanan dan mengidentifikasi tren pengeluaran utama. Formula seperti VLOOKUP dan SUMIF saya gunakan untuk menghitung total aset serta liabilitas dari spreadsheet mentah. Hasilnya divisualisasikan melalui chart dan dashboard sederhana untuk laporan tim manajemen. Pengalaman ini meningkatkan kemampuan saya dalam mengolah data secara cepat dan akurat.",
+        "similarity_score": 54,
+        "keywords": {
+          "user_keywords": [],
+          "ideal_keywords": [
+            "menggunakan Excel",
+            "perusahaan finance",
+            "harian klien",
+            "transaksi harian",
+            "Excel untuk",
+            "Excel"
+          ],
+          "missing_keywords": [
+            "menggunakan Excel",
+            "perusahaan finance",
+            "harian klien",
+            "transaksi harian",
+            "Excel untuk",
+            "Excel"
+          ],
+          "extra_keywords": []
+        },
+        "topics": {
+          "expected_topics": [
+            "menggunakan Excel",
+            "perusahaan finance",
+            "harian klien",
+            "transaksi harian",
+            "Excel untuk",
+            "Excel"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "menggunakan Excel",
+            "perusahaan finance",
+            "harian klien",
+            "transaksi harian",
+            "Excel untuk",
+            "Excel"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Respons sangat singkat, menunjukkan kecepatan tapi tidak ada konten substansial.\n- **Perbaikan:** Berikan cerita lengkap dengan contoh spesifik seperti PivotTable, VLOOKUP, dan visualisasi chart dari pengalaman nyata (lihat jawaban ideal); latihan struktur STAR (Situation, Task, Action, Result) untuk jawaban 1-2 menit."
+      },
+      {
+        "question": "Bagaimana Anda tetap update dengan berita keuangan terkini?",
+        "user_answer": "j",
+        "ideal_answer": "Saya rutin membaca berita keuangan dari sumber terpercaya seperti Bloomberg, Reuters, Kontan.co.id, dan Bisnis.com setiap pagi untuk mendapatkan update terkini. Saya juga berlangganan newsletter harian dari The Financial Times dan menggunakan aplikasi Yahoo Finance serta Investing.com untuk notifikasi real-time. Selain itu, saya mengikuti akun analis keuangan di Twitter dan LinkedIn guna memahami perspektif mendalam. Pendekatan ini membantu saya menganalisis tren pasar dengan cepat, meskipun sebagai intern, dan menerapkannya dalam tugas harian.",
+        "similarity_score": 52,
+        "keywords": {
+          "user_keywords": [],
+          "ideal_keywords": [
+            "update terkini",
+            "rutin membaca",
+            "membaca berita",
+            "sumber terpercaya",
+            "mendapatkan update",
+            "Reuters"
+          ],
+          "missing_keywords": [
+            "update terkini",
+            "rutin membaca",
+            "membaca berita",
+            "sumber terpercaya",
+            "mendapatkan update",
+            "Reuters"
+          ],
+          "extra_keywords": []
+        },
+        "topics": {
+          "expected_topics": [
+            "update terkini",
+            "rutin membaca",
+            "membaca berita",
+            "sumber terpercaya",
+            "mendapatkan update",
+            "Reuters"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "update terkini",
+            "rutin membaca",
+            "membaca berita",
+            "sumber terpercaya",
+            "mendapatkan update",
+            "Reuters"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Respons Anda sangat ringkas, menunjukkan kecepatan tapi kurang substansi.\n- **Perbaikan:** Berikan jawaban lengkap dengan sumber spesifik (e.g., Bloomberg, Reuters), tools (e.g., Yahoo Finance), dan contoh penerapan seperti jawaban ideal agar terlihat proaktif dan kredibel. Latih untuk jawab minimal 3-4 kalimat terstruktur."
+      }
+    ]
+  },
+  {
+    "session_id": "b52ecae0-d918-4b8a-86d4-11560143c005",
+    "overall_score": 60.8,
+    "meta": {
+      "job_role": "ai engineer",
+      "experience_level": "Intern",
+      "industry": "finance"
+    },
+    "results": [
+      {
+        "question": "What Python libraries are essential for an AI engineer working on financial data analysis?",
+        "user_answer": "langchain langgraph",
+        "ideal_answer": "Sebagai AI engineer di bidang finance, library esensial pertama adalah Pandas dan NumPy untuk manipulasi data time series dan perhitungan numerik cepat. Scikit-learn sangat penting untuk membangun model machine learning dasar seperti regresi linier atau random forest dalam prediksi harga saham. Untuk deep learning pada analisis sentimen atau forecasting, TensorFlow atau PyTorch menjadi pilihan utama. yfinance berguna untuk mengambil data pasar real-time, sementara Matplotlib dan Seaborn mendukung visualisasi grafik candlestick atau heatmap korelasi. TA-Lib juga esensial untuk menghitung indikator teknikal seperti RSI atau Moving Average.",
+        "similarity_score": 68,
+        "keywords": {
+          "user_keywords": [
+            "langchain langgraph",
+            "langchain",
+            "langgraph"
+          ],
+          "ideal_keywords": [
+            "bidang finance",
+            "numerik cepat",
+            "time series",
+            "perhitungan numerik",
+            "library esensial",
+            "Pandas"
+          ],
+          "missing_keywords": [
+            "bidang finance",
+            "numerik cepat",
+            "time series",
+            "perhitungan numerik",
+            "library esensial",
+            "Pandas"
+          ],
+          "extra_keywords": [
+            "langchain langgraph",
+            "langchain",
+            "langgraph"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "bidang finance",
+            "numerik cepat",
+            "time series",
+            "perhitungan numerik",
+            "library esensial",
+            "Pandas"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "bidang finance",
+            "numerik cepat",
+            "time series",
+            "perhitungan numerik",
+            "library esensial",
+            "Pandas"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kamu menyebutkan LangChain dan LangGraph, yang menunjukkan pemahaman tools AI modern untuk workflow LLM—bagus untuk konteks AI engineer.\n- **Perbaikan:** Jawaban terlalu singkat dan kurang relevan untuk financial data analysis; sebutkan library esensial seperti Pandas, NumPy, Scikit-learn, yfinance, dan TA-Lib, lalu jelaskan kegunaannya (misal: Pandas untuk time series, TA-Lib untuk indikator teknikal) agar lebih impactful."
+      },
+      {
+        "question": "How would you handle imbalanced datasets in a fraud detection model?",
+        "user_answer": "smote",
+        "ideal_answer": "Saya akan menangani dataset tidak seimbang pada model deteksi fraud dengan teknik resampling, seperti oversampling kelas minoritas menggunakan SMOTE atau undersampling kelas mayoritas untuk menyeimbangkan data. Selain itu, saya terapkan class weights pada algoritma seperti Random Forest atau XGBoost agar model lebih peka terhadap kasus fraud yang jarang. Saya juga prioritaskan metrik evaluasi seperti Precision, Recall, F1-score, dan AUC-ROC, bukan accuracy semata. Di konteks finance, ini membantu minimalkan false negatives yang berisiko tinggi. Terakhir, saya validasi model dengan stratified k-fold cross-validation untuk menjaga proporsi kelas.",
+        "similarity_score": 55,
+        "keywords": {
+          "user_keywords": [
+            "smote"
+          ],
+          "ideal_keywords": [
+            "menggunakan SMOTE",
+            "teknik resampling",
+            "menyeimbangkan data",
+            "menangani dataset",
+            "minoritas menggunakan",
+            "Random Forest"
+          ],
+          "missing_keywords": [
+            "menggunakan SMOTE",
+            "teknik resampling",
+            "menyeimbangkan data",
+            "menangani dataset",
+            "minoritas menggunakan",
+            "Random Forest"
+          ],
+          "extra_keywords": [
+            "smote"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "menggunakan SMOTE",
+            "teknik resampling",
+            "menyeimbangkan data",
+            "menangani dataset",
+            "minoritas menggunakan",
+            "Random Forest"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "menggunakan SMOTE",
+            "teknik resampling",
+            "menyeimbangkan data",
+            "menangani dataset",
+            "minoritas menggunakan",
+            "Random Forest"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Anda menyebut SMOTE, teknik oversampling yang relevan dan tepat untuk imbalanced data di fraud detection.\n- **Perbaikan**: Perluas jawaban dengan alternatif seperti undersampling atau class weights (e.g., di Random Forest/XGBoost), prioritaskan metrik F1/AUC-ROC daripada accuracy, dan sebutkan validasi stratified k-fold plus konteks finance (minimalkan false negatives)."
+      },
+      {
+        "question": "Explain overfitting and how to prevent it in a stock price prediction model.",
+        "user_answer": "berikan hyperparameter",
+        "ideal_answer": "Overfitting terjadi ketika model machine learning terlalu menyesuaikan data training, sehingga akurasi tinggi di training set tapi rendah di data baru atau unseen. Dalam prediksi harga saham, ini sering muncul karena model menangkap noise acak seperti fluktuasi harian daripada pola tren jangka panjang. Untuk mencegahnya, gunakan cross-validation atau walk-forward validation khas finance untuk evaluasi robust. Teknik lain termasuk regularization (L1/L2), dropout pada neural network, dan early stopping agar model tidak overtrain. Selain itu, kurangi fitur tidak relevan dan tambah data historis berkualitas untuk generalisasi lebih baik.",
+        "similarity_score": 56,
+        "keywords": {
+          "user_keywords": [
+            "berikan hyperparameter",
+            "berikan",
+            "hyperparameter"
+          ],
+          "ideal_keywords": [
+            "Overfitting terjadi",
+            "machine learning",
+            "akurasi tinggi",
+            "training set",
+            "training",
+            "model machine"
+          ],
+          "missing_keywords": [
+            "Overfitting terjadi",
+            "machine learning",
+            "akurasi tinggi",
+            "training set",
+            "training",
+            "model machine"
+          ],
+          "extra_keywords": [
+            "berikan hyperparameter",
+            "berikan",
+            "hyperparameter"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Overfitting terjadi",
+            "machine learning",
+            "akurasi tinggi",
+            "training set",
+            "training",
+            "model machine"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Overfitting terjadi",
+            "machine learning",
+            "akurasi tinggi",
+            "training set",
+            "training",
+            "model machine"
+          ]
+        },
+        "feedback": "- **Kekuatan**: Respons sangat ringkas dan langsung menyebut hyperparameter, yang memang relevan untuk tuning model.\n- **Perbaikan**: Mulai dengan definisi overfitting (model terlalu fit data training tapi gagal di data baru), lalu sebut teknik pencegahan spesifik seperti cross-validation/walk-forward, regularization (L1/L2), early stopping, dan feature selection untuk konteks prediksi saham—latih jawaban lengkap seperti contoh ideal agar lebih meyakinkan."
+      },
+      {
+        "question": "What steps would you take to preprocess transaction data for anomaly detection?",
+        "user_answer": "handling imbalanced data",
+        "ideal_answer": "Pertama, saya akan memeriksa kualitas data dengan menangani nilai hilang (imputasi atau penghapusan), menghapus duplikat, dan mengonversi tipe data seperti timestamp menjadi fitur datetime.  \nKedua, melakukan feature engineering relevan untuk transaksi keuangan, seperti agregasi jumlah transaksi harian, transformasi log pada nominal transaksi untuk mengatasi skewness, dan pembuatan fitur rasio (misalnya, jumlah transaksi vs. rata-rata).  \nKetiga, menskalakan fitur numerik menggunakan StandardScaler atau MinMaxScaler agar sensitif terhadap anomali tidak terganggu skala data.  \nKeempat, mengencode variabel kategorikal seperti jenis merchant dengan one-hot encoding.  \nTerakhir, membagi data menjadi train-test split dengan stratifikasi untuk menjaga keseimbangan sebelum modeling anomaly detection.",
+        "similarity_score": 74,
+        "keywords": {
+          "user_keywords": [
+            "handling imbalanced",
+            "imbalanced data",
+            "handling",
+            "data",
+            "imbalanced"
+          ],
+          "ideal_keywords": [
+            "menghapus duplikat",
+            "nilai hilang",
+            "memeriksa kualitas",
+            "menangani nilai",
+            "mengonversi tipe",
+            "fitur datetime"
+          ],
+          "missing_keywords": [
+            "menghapus duplikat",
+            "nilai hilang",
+            "memeriksa kualitas",
+            "menangani nilai",
+            "mengonversi tipe",
+            "fitur datetime"
+          ],
+          "extra_keywords": [
+            "handling imbalanced",
+            "imbalanced data",
+            "handling",
+            "data",
+            "imbalanced"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "menghapus duplikat",
+            "nilai hilang",
+            "memeriksa kualitas",
+            "menangani nilai",
+            "mengonversi tipe",
+            "fitur datetime"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "menghapus duplikat",
+            "nilai hilang",
+            "memeriksa kualitas",
+            "menangani nilai",
+            "mengonversi tipe",
+            "fitur datetime"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Kamu tepat mengenali handling imbalanced data sebagai isu kunci dalam anomaly detection pada transaksi.\n- **Perbaikan:** Perluas jawaban dengan langkah lengkap seperti cleaning (missing values, duplicates), feature engineering (agregasi, transformasi), scaling, encoding kategorikal, dan train-test split; strukturkan secara berurutan untuk terlihat komprehensif."
+      },
+      {
+        "question": "Describe a simple evaluation metric for a credit risk classification model.",
+        "user_answer": "no",
+        "ideal_answer": "Satu metrik evaluasi sederhana untuk model klasifikasi risiko kredit adalah **AUC-ROC** (Area Under the Receiver Operating Characteristic Curve). Metrik ini mengukur kemampuan model dalam membedakan nasabah berisiko tinggi (default) dari yang rendah, dengan nilai antara 0 hingga 1—semakin mendekati 1, semakin baik modelnya. AUC-ROC lebih unggul daripada Accuracy karena data kredit sering tidak seimbang (banyak nasabah baik), sehingga menghindari bias terhadap kelas mayoritas. Contohnya, AUC-ROC di atas 0.8 menandakan model yang cukup baik untuk produksi di industri keuangan. Saya biasa memvisualisasikannya dengan kurva ROC untuk interpretasi yang mudah.",
+        "similarity_score": 51,
+        "keywords": {
+          "user_keywords": [],
+          "ideal_keywords": [
+            "Area Under",
+            "Characteristic Curve",
+            "Receiver Operating",
+            "Operating Characteristic",
+            "Under the",
+            "the Receiver"
+          ],
+          "missing_keywords": [
+            "Area Under",
+            "Characteristic Curve",
+            "Receiver Operating",
+            "Operating Characteristic",
+            "Under the",
+            "the Receiver"
+          ],
+          "extra_keywords": []
+        },
+        "topics": {
+          "expected_topics": [
+            "Area Under",
+            "Characteristic Curve",
+            "Receiver Operating",
+            "Operating Characteristic",
+            "Under the",
+            "the Receiver"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Area Under",
+            "Characteristic Curve",
+            "Receiver Operating",
+            "Operating Characteristic",
+            "Under the",
+            "the Receiver"
+          ]
+        },
+        "feedback": "- **Kekuatan:** Jawaban sangat ringkas, tapi tidak menjawab pertanyaan sama sekali.\n- **Perbaikan:** Selalu jawab pertanyaan secara langsung dengan contoh metrik sederhana seperti AUC-ROC, jelaskan keunggulannya untuk data tidak seimbang, dan tambahkan contoh nilai (misalnya >0.8 baik); latihan ulang untuk hindari penolakan."
+      }
+    ],
+    "timestamp": "2025-11-24 15:26:31"
   }
 ]

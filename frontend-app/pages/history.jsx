@@ -13,7 +13,7 @@ export default function HistoryPage() {
       try {
         const response = await fetch("http://127.0.0.1:8000/history/all");
         const data = await response.json();
-        setHistoryList(data.history || []);
+        setHistoryList(Array.isArray(data) ? data : []);
       } catch (err) {
         setError("Gagal memuat history");
       }

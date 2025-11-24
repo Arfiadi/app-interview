@@ -1,10 +1,10 @@
-# app/backend/api/scoring.py
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from services.similarity_service import compute_similarity_score
-from services.nlp_insights import extract_keywords_and_missing, topic_coverage_simple
-from services.llm_feedback import get_feedback
-from utils.model_loader import cache_session_store, persist_result_to_history
+
+from backend.services.similarity_service import compute_similarity_score
+from backend.services.nlp_insights import extract_keywords_and_missing, topic_coverage_simple
+from backend.services.llm_feedback import get_feedback
+from backend.utils.model_loader import cache_session_store, persist_result_to_history
 
 router = APIRouter()
 
@@ -15,7 +15,6 @@ class AnswerSubmitRequest(BaseModel):
 
 @router.post("/submit")
 def submit_answer(req: AnswerSubmitRequest):
-    # validate session
     session = cache_session_store.get(req.session_id)
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
@@ -23,9 +22,9 @@ def submit_answer(req: AnswerSubmitRequest):
     if req.question_index < 0 or req.question_index >= len(session["questions"]):
         raise HTTPException(status_code=400, detail="Invalid question index")
 
-    # save user answer
     session["answers"][req.question_index] = req.answer
     return {"status": "ok"}
+
 
 class EvaluateRequest(BaseModel):
     session_id: str
@@ -47,7 +46,7 @@ def evaluate_session(req: EvaluateRequest):
         user_ans = user_answers[idx] or ""
         ideal_ans = ideal_answers[idx] or ""
 
-        sim = compute_similarity_score(user_ans, ideal_ans)  # returns 0-100 int
+        sim = compute_similarity_score(user_ans, ideal_ans)
         similarity_scores.append(sim)
 
         keywords = extract_keywords_and_missing(user_ans, ideal_ans)
@@ -72,7 +71,6 @@ def evaluate_session(req: EvaluateRequest):
         "results": results
     }
 
-    # persist to history (file-based JSON) for MVP
     persist_result_to_history(final, session_meta={
         "job_role": session["job_role"],
         "experience_level": session["experience_level"],

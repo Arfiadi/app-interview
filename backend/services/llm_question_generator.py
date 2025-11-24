@@ -1,5 +1,6 @@
 # app/backend/services/llm_question_generator.py
-from services.openrouter_client import ask_openrouter
+from backend.services.openrouter_client import ask_openrouter
+
 import json
 import os
 

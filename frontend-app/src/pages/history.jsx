@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useApi } from "@/hooks/useApi"; 
-import Layout from "@/components/Layout";
+import Layout from "@/components/common/Layout";
 import Button from "@/components/ui/Button";
 import HistoryItem from "@/components/history/HistoryItem"; // Import komponen baru
 

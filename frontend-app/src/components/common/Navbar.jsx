@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Button from "./ui/Button";
+// PERBAIKAN DI SINI: Gunakan alias @ untuk menunjuk ke src/components/ui
+import Button from "@/components/ui/Button"; 
 
 export default function Navbar() {
   const router = useRouter();
@@ -48,9 +49,8 @@ export default function Navbar() {
 
           {/* ACTION BUTTON */}
           <div className="flex items-center gap-3">
-             {/* Mobile Menu Button (Placeholder for simplicity) */}
              <div className="md:hidden">
-                {/* Bisa ditambahkan hamburger menu logic nanti */}
+                {/* Mobile menu placeholder */}
              </div>
              
              <Button 

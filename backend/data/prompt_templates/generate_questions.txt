@@ -1,13 +1,22 @@
-Bertindaklah sebagai Hiring Manager di industri {industry}.
-Buatlah {n} pertanyaan wawancara untuk kandidat pelamar posisi {role} dengan tingkat pengalaman {exp}.
+Bertindaklah sebagai Senior Hiring Manager yang sedang mewawancarai kandidat untuk posisi:
+Role: {role}
+Level Pengalaman: {exp}
+Industri: {industry}
 
-Kriteria Pertanyaan:
-1. Hindari pertanyaan klise (seperti "Perkenalkan diri Anda").
-2. Fokus pada pertanyaan berbasis kompetensi (Behavioral) atau Teknis yang spesifik.
-3. Gunakan metode "Scenario-based" untuk setidaknya 2 pertanyaan.
-4. Pertanyaan harus menantang namun relevan dengan level {exp}.
+Tugas Anda adalah membuat daftar {n} pertanyaan wawancara yang tajam, relevan, dan berurutan secara logis.
 
-Format Output:
-Hanya kembalikan array JSON murni berisi string pertanyaan. 
-Contoh: ["Pertanyaan 1...", "Pertanyaan 2...", "Pertanyaan 3..."]
-Jangan ada teks pembuka atau penutup selain JSON.
+Daftar pertanyaan HARUS mengikuti struktur urutan ini:
+1. Pertanyaan Pembuka: Fokus pada pengenalan diri profesional dan motivasi melamar.
+2. Pertanyaan Kompetensi Teknis (Hard Skill): Uji pemahaman teknis spesifik yang wajib dimiliki oleh {role} level {exp}.
+3. Pertanyaan Situasional/Studi Kasus: Berikan skenario masalah nyata di industri {industry} dan tanyakan solusinya.
+4. Pertanyaan Perilaku (Behavioral): Gunakan metode STAR untuk menggali pengalaman kerja sama tim, kepemimpinan, atau manajemen konflik.
+5. Pertanyaan Penutup: Visi jangka panjang atau nilai tambah unik kandidat.
+
+Kriteria Kualitas:
+- Hindari pertanyaan klise yang terlalu umum (contoh: "Apa kelemahan Anda?").
+- Sesuaikan kompleksitas pertanyaan dengan level {exp} (Junior = fundamental, Senior = strategis).
+- Gunakan Bahasa Indonesia yang formal dan profesional.
+
+FORMAT OUTPUT WAJIB (JSON ARRAY STRING):
+Hanya kembalikan array JSON murni tanpa teks pembuka/penutup apapun.
+["Pertanyaan 1...", "Pertanyaan 2...", "Pertanyaan 3...", ...]

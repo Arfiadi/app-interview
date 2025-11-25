@@ -1,11 +1,8 @@
-from fastapi import APIRouter
-from backend.utils.model_loader import load_history, load_history_item, persist_result_to_history
+from fastapi import APIRouter, HTTPException
+# PERBAIKAN DI SINI: Tambahkan delete_history_item ke dalam import
+from backend.utils.model_loader import load_history, load_history_item, persist_result_to_history, delete_history_item
 
 router = APIRouter()
-
-@router.get("/")
-def list_history():
-    return load_history()   # return list, bukan {history: []}
 
 @router.get("/all")
 def get_all_history():
@@ -18,14 +15,16 @@ def get_history(session_id: str):
         return {"error": "not found"}
     return item
 
-
-# Endpoint Baru: Delete
 @router.delete("/delete/{session_id}")
 def delete_history(session_id: str):
+    # Sekarang fungsi ini sudah dikenali
     success = delete_history_item(session_id)
+    
     if not success:
-        raise HTTPException(status_code=404, detail="Session not found or delete failed")
-    return {"status": "ok", "message": "History deleted"}
+        raise HTTPException(status_code=404, detail="Session not found or failed to delete")
+        
+    return {"status": "ok", "message": "History deleted successfully"}
+
 
 @router.post("/save")
 def save_history(payload: dict):

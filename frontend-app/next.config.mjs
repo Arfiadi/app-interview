@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
   reactStrictMode: true,
+  output: "standalone", // Untuk build yang lebih ringan
 };
 
 export default nextConfig;

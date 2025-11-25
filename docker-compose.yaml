@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # --- Service Backend ---
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: interview_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mounting folder data agar database JSON tidak hilang saat container mati
+      - ./backend/data:/app/data
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - LLM_MODEL=${LLM_MODEL}
+      - SECRET_KEY=${SECRET_KEY}
+    restart: unless-stopped
+
+  # --- Service Frontend ---
+  frontend:
+    build: 
+      context: ./frontend-app
+      dockerfile: Dockerfile
+    container_name: interview_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      # URL Backend untuk server-side fetching (antar container)
+      - PYTHON_API_URL=http://backend:8000
+      # URL Publik untuk client-side fetching (jika ada)
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+    depends_on:
+      - backend
+    restart: unless-stopped

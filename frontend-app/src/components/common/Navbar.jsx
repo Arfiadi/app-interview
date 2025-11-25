@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Button from "@/components/ui/Button";
-import { useAuth } from "@/context/AuthContext"; // Import Context Auth
+import UserMenu from "@/components/common/UserMenu"; // Import komponen baru
+import { useAuth } from "@/context/AuthContext";
 
 export default function Navbar() {
   const router = useRouter();
-  const { user, logout } = useAuth(); // Ambil status user & fungsi logout
+  const { user } = useAuth(); // Kita tidak butuh logout disini lagi, sudah di handle UserMenu
 
   const isActive = (path) => router.pathname === path;
 
@@ -33,13 +34,12 @@ export default function Navbar() {
               Beranda
             </Link>
             
-            {/* History hanya muncul jika login */}
             {user && (
               <Link 
                 href="/history" 
                 className={`text-sm font-medium transition-colors ${isActive('/history') ? 'text-primary' : 'text-text-sub hover:text-primary'}`}
               >
-                Riwayat Saya
+                Riwayat
               </Link>
             )}
           </div>
@@ -48,24 +48,18 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
              
              {user ? (
-               // TAMPILAN SUDAH LOGIN
-               <div className="flex items-center gap-4">
-                 <span className="text-sm text-text-sub hidden sm:block">
-                   Hi, <span className="font-bold text-primary">{user.username}</span>
-                 </span>
-                 <button 
-                    onClick={logout}
-                    className="text-sm font-medium text-red-500 hover:text-red-700 transition-colors"
-                 >
-                   Keluar
-                 </button>
+               // TAMPILAN SUDAH LOGIN (Menggunakan UserMenu)
+               <div className="flex items-center gap-3">
                  <Button 
                     variant="primary"
-                    className="px-4 py-2 text-sm"
+                    className="hidden sm:flex px-4 py-2 text-sm shadow-sm"
                     onClick={() => router.push('/pre-interview')}
                  >
                     + Sesi Baru
                  </Button>
+                 
+                 {/* Dropdown Menu Avatar */}
+                 <UserMenu user={user} />
                </div>
              ) : (
                // TAMPILAN BELUM LOGIN

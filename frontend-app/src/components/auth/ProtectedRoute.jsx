@@ -7,13 +7,20 @@ const ProtectedRoute = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
+    // Jika loading selesai dan tidak ada user
     if (!loading && !user) {
-      // Jika tidak loading dan user kosong, tendang ke login
-      router.push("/login");
+      // Redirect ke login dengan query parameter 'message'
+      // 'returnUrl' berguna agar setelah login bisa balik ke halaman yang dituju
+      router.push({
+        pathname: "/login",
+        query: { 
+            message: "Silakan login terlebih dahulu untuk mengakses halaman ini.",
+            returnUrl: router.asPath 
+        }
+      });
     }
   }, [user, loading, router]);
 
-  // Tampilkan loading saat mengecek sesi
   if (loading || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
@@ -22,7 +29,6 @@ const ProtectedRoute = ({ children }) => {
     );
   }
 
-  // Jika user ada, render halaman
   return children;
 };
 

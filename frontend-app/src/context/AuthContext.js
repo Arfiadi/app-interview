@@ -9,16 +9,18 @@ export function AuthProvider({ children }) {
   const router = useRouter();
 
   useEffect(() => {
-    // Cek localStorage saat load
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      try {
+          setUser(JSON.parse(storedUser));
+      } catch (e) {
+          localStorage.removeItem("user");
+      }
     }
     setLoading(false);
   }, []);
 
   const login = async (username, password) => {
-    // Panggil API Next.js (Proxy)
     const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -28,11 +30,12 @@ export function AuthProvider({ children }) {
     const data = await res.json();
     if (!res.ok) throw new Error(data.message);
     
-    // Simpan session sederhana
     const userData = { username, token: data.access_token };
     localStorage.setItem("user", JSON.stringify(userData));
     setUser(userData);
-    router.push("/");
+    
+    // HAPUS router.push("/") DARI SINI
+    // Biarkan komponen Login yang menentukan redirect (untuk mendukung returnUrl)
   };
 
   const logout = () => {

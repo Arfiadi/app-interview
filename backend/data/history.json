@@ -4961,5 +4961,269 @@
       }
     ],
     "timestamp": "2025-11-25 03:07:37"
+  },
+  {
+    "session_id": "6a75715d-5a76-419d-a091-7fed5d593596",
+    "overall_score": 51.4,
+    "meta": {
+      "job_role": "data scientist",
+      "experience_level": "Internship",
+      "industry": "healtech"
+    },
+    "results": [
+      {
+        "question": "Bayangkan Anda menerima dataset rekam medis pasien dengan banyak nilai hilang pada parameter vital seperti tekanan darah. Bagaimana langkah-langkah Anda untuk menangani missing data tersebut agar siap untuk modeling?",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Pertama, saya akan melakukan exploratory data analysis (EDA) untuk memvisualisasikan pola missing values pada parameter vital seperti tekanan darah, menggunakan heatmap atau missingno library, serta memeriksa apakah missing bersifat MCAR, MAR, atau MNAR. Selanjutnya, saya evaluasi konteks medisnya—misalnya, missing bisa menandakan kondisi stabil—dan konsultasikan dengan ahli domain healtech jika diperlukan. Untuk imputasi, saya prioritaskan metode sederhana seperti median untuk data numerik skewed, atau forward-fill jika ada urutan waktu rekam medis; gunakan KNN atau MICE untuk kasus kompleks. Saya pastikan split train-test sebelum imputasi untuk hindari data leakage, lalu validasi dengan metrik seperti RMSE pada subset validasi. Akhirnya, dokumentasikan semua keputusan untuk reproducibilitas model.",
+        "similarity_score": 51,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "bersifat MCAR",
+            "tekanan darah",
+            "menggunakan heatmap",
+            "missingno library",
+            "melakukan exploratory",
+            "memvisualisasikan pola"
+          ],
+          "missing_keywords": [
+            "bersifat MCAR",
+            "tekanan darah",
+            "menggunakan heatmap",
+            "missingno library",
+            "melakukan exploratory",
+            "memvisualisasikan pola"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "bersifat MCAR",
+            "tekanan darah",
+            "menggunakan heatmap",
+            "missingno library",
+            "melakukan exploratory",
+            "memvisualisasikan pola"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "bersifat MCAR",
+            "tekanan darah",
+            "menggunakan heatmap",
+            "missingno library",
+            "melakukan exploratory",
+            "memvisualisasikan pola"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan karena hanya mengakui ketidaktahuan tanpa upaya menjelaskan proses, sehingga kurang meyakinkan untuk posisi data scientist internship di healtech yang menuntut pemahaman dasar handling data medis.\n\n### ✅ Kekuatan\n- **Kejujuran:** Kandidat secara terbuka mengakui keterbatasan pengetahuan, yang menunjukkan integritas dan potensi untuk belajar cepat.\n- **Kesederhanaan:** Jawaban ringkas tanpa basa-basi, menghindari jawaban palsu yang bisa menimbulkan risiko di wawancara.\n\n### 💡 Area Perbaikan\n- **Kurang substansi:** Jawaban tidak menyentuh langkah EDA, imputasi, atau pertimbangan domain healtech seperti MCAR/MAR/MNAR, yang esensial untuk data rekam medis.\n- **Tidak ada struktur pemikiran:** Sebaiknya tunjukkan proses berpikir logis (misalnya via STAR) meski belum expert, untuk membangun kredibilitas.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi dataset rekam medis dengan missing values pada tekanan darah (Situation), tugas saya adalah menyiapkannya untuk modeling tanpa bias (Task). Saya mulai dengan EDA menggunakan heatmap missingno untuk deteksi pola MCAR/MAR/MNAR, konsultasi ahli healtech, lalu imputasi via median/forward-fill untuk data waktu atau MICE/KNN; split train-test dulu hindari leakage (Action). Hasilnya, data siap model dengan validasi RMSE rendah dan dokumentasi lengkap untuk reproducibilitas (Result).\""
+      },
+      {
+        "question": "Ceritakan pengalaman proyek di mana Anda menggunakan Python (Pandas/NumPy) untuk membersihkan dan menganalisis dataset berukuran sedang. Apa tantangan utama dan bagaimana Anda mengatasinya?",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Selama internship di perusahaan healtech, saya memimpin pembersihan dan analisis dataset rekam medis pasien berukuran 50.000 baris menggunakan Pandas dan NumPy. Saya membersihkan data dengan menghapus duplikat, mengisi missing values menggunakan interpolasi, dan mendeteksi outlier melalui metode IQR di Pandas. Tantangan utama adalah inkonsistensi format tanggal dan volume data yang menyebabkan memory overflow saat komputasi. Saya mengatasinya dengan mengonversi format tanggal menggunakan pd.to_datetime() dan memproses data secara chunked dengan NumPy arrays untuk efisiensi memori. Hasilnya, analisis eksploratori menghasilkan insights tentang pola penyakit kronis, yang mendukung pengembangan model prediksi.",
+        "similarity_score": 53,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "perusahaan healtech",
+            "pasien berukuran",
+            "memimpin pembersihan",
+            "dataset rekam",
+            "rekam medis",
+            "medis pasien"
+          ],
+          "missing_keywords": [
+            "perusahaan healtech",
+            "pasien berukuran",
+            "memimpin pembersihan",
+            "dataset rekam",
+            "rekam medis",
+            "medis pasien"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "perusahaan healtech",
+            "pasien berukuran",
+            "memimpin pembersihan",
+            "dataset rekam",
+            "rekam medis",
+            "medis pasien"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "perusahaan healtech",
+            "pasien berukuran",
+            "memimpin pembersihan",
+            "dataset rekam",
+            "rekam medis",
+            "medis pasien"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan, karena hanya mengakui kurangnya pengetahuan tanpa memberikan contoh pengalaman apa pun. Ini kurang meyakinkan dan menunjukkan minimnya persiapan atau pengalaman praktis untuk posisi data scientist internship.\n\n### ✅ Kekuatan\n- **Kejujuran tinggi:** Kandidat secara terbuka mengakui keterbatasan, yang mencerminkan integritas dan menghindari pengada-ada.\n- **Kesederhanaan:** Jawaban ringkas, tidak bertele-tele, meskipun minim substansi.\n\n### 💡 Area Perbaikan\n- **Kurang spesifik dan konkret:** Jawaban tidak menyebutkan pengalaman proyek, tools, tantangan, atau solusi, sehingga interviewer sulit menilai kemampuan teknis.\n- **Tidak menggunakan struktur STAR:** Sebaiknya jelaskan Situation, Task, Action, dan Result untuk membuat jawaban lebih terstruktur dan impactful.\n- **Kurang inisiatif:** Manfaatkan kesempatan untuk menyebut proyek pribadi, kursus, atau latihan di Kaggle agar tetap relevan.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Selama proyek pribadi menganalisis dataset COVID-19 (50.000 baris) dari Kaggle (Situation & Task), saya menggunakan Pandas untuk membersihkan data: menghapus duplikat dengan `drop_duplicates()`, mengisi missing values via interpolasi, dan outlier detection pakai IQR. Tantangan utama adalah memory overflow saat load data besar, yang saya atasi dengan chunking via `pd.read_csv(chunksize=10000)` dan NumPy arrays untuk komputasi efisien (Action). Hasilnya, saya temukan pola tren infeksi dan visualisasi insights yang mendukung model prediksi sederhana (Result).\""
+      },
+      {
+        "question": "Jelaskan bagaimana Anda akan melakukan exploratory data analysis (EDA) pada dataset dari wearable devices di healtech, termasuk visualisasi untuk mendeteksi anomali.",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "Saya akan memulai EDA dengan memuat dataset menggunakan Pandas, memeriksa bentuk data, tipe variabel, nilai hilang, dan statistik deskriptif seperti mean, median, serta standar deviasi untuk metrik seperti heart rate, steps, dan sleep duration dari wearable devices. Selanjutnya, saya membersihkan data dengan mengisi atau menghapus missing values dan menangani outliers awal melalui boxplot per variabel untuk mendeteksi anomali seperti lonjakan heart rate yang tidak wajar. Untuk visualisasi, saya gunakan histogram dan density plot dengan Seaborn untuk distribusi data, serta time series plot (line plot) berdasarkan timestamp guna mengidentifikasi pola harian/mingguan dan anomali temporal seperti aktivitas ekstrem. Scatter plot antara variabel (misalnya heart rate vs. steps) akan membantu mendeteksi korelasi dan outlier multivariat. Akhirnya, saya ringkas temuan dalam dashboard interaktif menggunakan Plotly untuk memudahkan deteksi anomali kesehatan potensial di healtech.",
+        "similarity_score": 51,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "memulai EDA",
+            "nilai hilang",
+            "memeriksa bentuk",
+            "wearable devices",
+            "menggunakan Pandas",
+            "heart rate"
+          ],
+          "missing_keywords": [
+            "memulai EDA",
+            "nilai hilang",
+            "memeriksa bentuk",
+            "wearable devices",
+            "menggunakan Pandas",
+            "heart rate"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "memulai EDA",
+            "nilai hilang",
+            "memeriksa bentuk",
+            "wearable devices",
+            "menggunakan Pandas",
+            "heart rate"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "memulai EDA",
+            "nilai hilang",
+            "memeriksa bentuk",
+            "wearable devices",
+            "menggunakan Pandas",
+            "heart rate"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan, karena hanya mengakui ketidaktahuan tanpa upaya menjelaskan proses EDA, sehingga kurang meyakinkan untuk posisi data scientist internship di healtech.\n\n### ✅ Kekuatan\n- **Kejujuran tinggi:** Mengakui keterbatasan pengetahuan menunjukkan integritas, yang merupakan sikap positif untuk kandidat internship yang masih belajar.\n- **Potensi belajar cepat:** Respons ini membuka peluang untuk diskusi lebih lanjut, menandakan kesiapan menerima bimbingan.\n\n### 💡 Area Perbaikan\n- **Kurang pengetahuan dasar:** Jawaban tidak menyentuh langkah EDA standar seperti pemeriksaan data, cleaning, atau visualisasi, yang esensial untuk peran data scientist.\n- **Tidak ada upaya struktural:** Sebaiknya berikan outline sederhana atau contoh meski belum mahir, untuk menunjukkan pemahaman konseptual dan antusiasme.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi dataset wearable devices di healtech (Situation), tugas saya adalah melakukan EDA untuk mendeteksi anomali kesehatan (Task). Saya akan mulai dengan memuat data via Pandas, cek statistik deskriptif (mean, median heart rate/steps), bersihkan missing values, lalu visualisasikan via boxplot, histogram Seaborn, dan time series plot untuk outlier temporal seperti lonjakan heart rate (Action). Hasilnya, dashboard Plotly yang ringkas temuan pola harian dan anomali potensial, memudahkan tim healtech bertindak cepat (Result).\""
+      },
+      {
+        "question": "Dalam skenario healtech, tim Anda membangun model ML untuk memprediksi risiko penyakit kronis menggunakan data EHR, tetapi model overfitting. Apa teknik yang akan Anda terapkan untuk mengatasinya, dan mengapa?",
+        "user_answer": "oke oke",
+        "ideal_answer": "Saya akan menerapkan k-fold cross-validation untuk mengevaluasi model pada subset data yang berbeda, sehingga mendeteksi overfitting lebih akurat pada data EHR yang terbatas dan noisy. Selanjutnya, menggunakan L2 regularization untuk menambahkan penalti pada bobot model besar, mencegah kompleksitas berlebih tanpa mengurangi performa pada data pasien baru. Saya juga akan terapkan early stopping, memantau validation loss agar training berhenti sebelum overfitting parah. Teknik-teknik ini relevan di healtech karena efisien menangani data sensitif dan imbalanced, meningkatkan generalisasi prediksi risiko penyakit kronis.",
+        "similarity_score": 51,
+        "keywords": {
+          "user_keywords": [
+            "oke oke",
+            "oke"
+          ],
+          "ideal_keywords": [
+            "data EHR",
+            "menerapkan k-fold",
+            "k-fold cross-validation",
+            "cross-validation untuk",
+            "untuk mengevaluasi",
+            "mengevaluasi model"
+          ],
+          "missing_keywords": [
+            "data EHR",
+            "menerapkan k-fold",
+            "k-fold cross-validation",
+            "cross-validation untuk",
+            "untuk mengevaluasi",
+            "mengevaluasi model"
+          ],
+          "extra_keywords": [
+            "oke oke",
+            "oke"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "data EHR",
+            "menerapkan k-fold",
+            "k-fold cross-validation",
+            "cross-validation untuk",
+            "untuk mengevaluasi",
+            "mengevaluasi model"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "data EHR",
+            "menerapkan k-fold",
+            "k-fold cross-validation",
+            "cross-validation untuk",
+            "untuk mengevaluasi",
+            "mengevaluasi model"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan sama sekali dengan pertanyaan, sehingga gagal menunjukkan pengetahuan teknis dasar tentang overfitting di konteks healtech. Ini kurang meyakinkan dan tidak mencerminkan kesiapan untuk posisi data scientist internship.\n\n### ✅ Kekuatan\n- **Respons cepat dan ringan:** Menandakan antusiasme awal atau kesiapan mendengarkan, yang bisa menjadi nilai tambah dalam wawancara tim.\n- **Bahasa santai:** Mencerminkan kepribadian approachable, berguna untuk kolaborasi di tim healtech yang dinamis.\n\n### 💡 Area Perbaikan\n- **Kurang substansi teknis:** Jawaban tidak menyebutkan teknik apa pun seperti cross-validation atau regularization, padahal pertanyaan meminta solusi spesifik untuk overfitting pada data EHR.\n- **Tidak kontekstual:** Harus hubungkan dengan tantangan healtech seperti data noisy/imbalanced, agar terlihat paham domain; tambahkan alasan mengapa teknik itu efektif untuk meningkatkan kredibilitas.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam skenario healtech di mana model ML untuk prediksi risiko penyakit kronis dari data EHR mengalami overfitting (Situation & Task), saya akan terapkan k-fold cross-validation untuk evaluasi robust, L2 regularization untuk membatasi kompleksitas model, serta early stopping berdasarkan validation loss (Action). Hasilnya, model lebih generalisasi pada data pasien baru, mengurangi risiko false positive dan efisien untuk data sensitif healtech (Result).\""
+      },
+      {
+        "question": "Anda menemukan bias rasial dalam dataset pelatihan untuk model prediksi outcome pasien. Bagaimana Anda akan mendeteksi, mengukur, dan memitigasi bias tersebut sambil mematuhi regulasi privasi data kesehatan?",
+        "user_answer": "oke",
+        "ideal_answer": "Untuk mendeteksi bias rasial, saya akan melakukan analisis eksploratori data (EDA) dengan mengelompokkan dataset berdasarkan ras dan memeriksa distribusi outcome pasien menggunakan visualisasi serta uji statistik seperti chi-square test. Selanjutnya, saya mengukur bias dengan metrik fairness seperti demographic parity, equalized odds, dan disparate impact ratio untuk membandingkan performa model antar kelompok ras. Untuk memitigasi, saya terapkan teknik reweighting sampel atau oversampling kelompok minoritas, serta augmentasi data sintetis seperti SMOTE yang aman privasi. Selama proses, saya patuhi regulasi seperti PDPA dan HIPAA dengan menggunakan data agregat anonim, differential privacy, atau federated learning agar tidak mengungkap data individu pasien. Akhirnya, saya validasi model pasca-mitigasi dengan cross-validation stratified by ras untuk memastikan fairness tanpa mengorbankan akurasi.",
+        "similarity_score": 51,
+        "keywords": {
+          "user_keywords": [
+            "oke"
+          ],
+          "ideal_keywords": [
+            "chi-square test",
+            "melakukan analisis",
+            "analisis eksploratori",
+            "mengelompokkan dataset",
+            "dataset berdasarkan",
+            "memeriksa distribusi"
+          ],
+          "missing_keywords": [
+            "chi-square test",
+            "melakukan analisis",
+            "analisis eksploratori",
+            "mengelompokkan dataset",
+            "dataset berdasarkan",
+            "memeriksa distribusi"
+          ],
+          "extra_keywords": [
+            "oke"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "chi-square test",
+            "melakukan analisis",
+            "analisis eksploratori",
+            "mengelompokkan dataset",
+            "dataset berdasarkan",
+            "memeriksa distribusi"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "chi-square test",
+            "melakukan analisis",
+            "analisis eksploratori",
+            "mengelompokkan dataset",
+            "dataset berdasarkan",
+            "memeriksa distribusi"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan sama sekali dengan pertanyaan, sehingga gagal menunjukkan pemahaman teknis atau kemampuan analisis. Ini kurang meyakinkan untuk level internship data scientist di healtech, di mana diharapkan jawaban struktural dan berbasis pengetahuan.\n\n### ✅ Kekuatan\n- **Respons ringkas:** Menghindari jawaban bertele-tele, menunjukkan potensi kemampuan komunikasi sederhana.\n- **Pengakuan topik:** Kata \"oke\" bisa diinterpretasikan sebagai kesediaan menerima tantangan, meski tanpa elaborasi.\n\n### 💡 Area Perbaikan\n- **Kurang substansi:** Jawaban tidak menyentuh elemen kunci seperti deteksi (EDA, uji statistik), pengukuran (metrik fairness), mitigasi (reweighting, SMOTE), atau regulasi privasi (HIPAA, differential privacy).\n- **Tidak struktural:** Perlu menggunakan framework seperti STAR untuk membuat jawaban lebih profesional dan meyakinkan, dengan contoh teknis spesifik.\n- **Kurang kedalaman:** Tambahkan referensi tools/metode healtech untuk membuktikan pengalaman praktis.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situation:** Saat EDA pada dataset pelatihan model prediksi outcome pasien, saya temukan distribusi ras tidak seimbang, berpotensi bias rasial.  \n> **Task:** Deteksi, ukur bias, dan mitigasi sambil patuhi PDPA/HIPAA.  \n> **Action:** Deteksi via visualisasi dan chi-square test; ukur dengan demographic parity dan disparate impact; mitigasi lewat reweighting sampel, SMOTE privasi-aman, serta differential privacy/federated learning untuk anonimitas.  \n> **Result:** Model pasca-mitigasi capai fairness >0.9 via stratified CV, tanpa drop akurasi signifikan, siap deploy di lingkungan regulasi ketat."
+      }
+    ],
+    "timestamp": "2025-11-25 11:05:16"
   }
 ]

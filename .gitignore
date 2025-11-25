@@ -91,3 +91,17 @@ Thumbs.db
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# Next.js / Node
+node_modules/
+.next/
+.DS_Store

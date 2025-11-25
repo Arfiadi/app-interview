@@ -1,93 +1,73 @@
-# =========================================================
-# PYTHON / FASTAPI BACKEND
-# =========================================================
-
-# Virtual environment
-venv/
-ENV/
-.env
-*.env
-
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
+# 🐍 PYTHON BACKEND
+# =================
 # Byte-compiled / optimized / DLL files
-*.pdb
-*.egg-info/
-*.egg
+__pycache__/
+*.py[cod]
+*$py.class
+# Python cache files
 
-# Model cache
-app/backend/data/model_cache/
-app/backend/data/embeddings/
+*.pyc
 
-# History file (optional, if you don't want to expose)
-history.json
+# Environments
+venv/
+.venv/
 
-# Logs
-*.log
+# Dependency Management
+pip-wheel-metadata/
 
-# FastAPI auto-generated
-app/backend/.pytest_cache/
-app/backend/.mypy_cache/
+# Sphinx documentation build area
+/docs/_build/
 
+# Jupyter Notebook files
+.ipynb_checkpoints
 
-# =========================================================
-# NODE / REACT FRONTEND
-# =========================================================
-
-# Node modules
-node_modules/
-
-# Build output
-.next/
-dist/
-out/
+# Miscellaneous
 build/
+dist/
+*.egg-info/
 
-# Temp files
+# Secret/Sensitive Files
+.env
+.env.local
+.env.*.local
+
+# Test cache
+.pytest_cache/
+
+# 💻 NEXT.JS / NODE FRONTEND
+# =========================
+# Dependencies
+/node_modules
+
+# Next.js build output
+/.next/
+/out/
+/build
+
+# Log files
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
-
-# Environment files
-*.local
-*.env.local
-*.env.development.local
-*.env.test.local
-*.env.production.local
-
-# Lint cache
-.eslintcache
-
-# Frontend cache
-.cache/
-
-# =========================================================
-# MAC / SYSTEM FILES
-# =========================================================
-
 .DS_Store
-Thumbs.db
-.cache/
-.idea/
-.vscode/
 
-# =========================================================
-# MISC
-# =========================================================
+# Temporary files
+/tmp
+
+# Editor/IDE files
+.vscode/
+.idea/
+
+# ⚙️ GLOBAL & OS EXCLUSIONS
+# =========================
+# Swap/Backup files
 *.swp
 *.swo
 
-# Backup files
-*.bak
-*.tmp
+# macOS
+.DS_Store
 
-# Lock files (optional)
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Windows
+Thumbs.db
+Desktop.ini

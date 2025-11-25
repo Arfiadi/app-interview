@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/components/common/Layout";
 import Button from "@/components/ui/Button";
 import ProgressBar from "@/components/interview/ProgressBar";
 import QuestionCard from "@/components/interview/QuestionCard";

@@ -1,74 +1,5 @@
 [
   {
-    "session_id": "ba9d46b5-67f3-4cd4-b2a2-331a0a590306",
-    "overall_score": 54.0,
-    "meta": {
-      "job_role": "Software Engineer",
-      "experience_level": "Mid",
-      "industry": "Tech"
-    },
-    "results": [
-      {
-        "question": "Describe a challenging technical problem you solved and how you approached it.",
-        "user_answer": "I don't have technical problem",
-        "ideal_answer": "Saya pernah menghadapi bug yang sulit direproduksi terkait race condition pada aplikasi yang menangani high-throughput data. Saya mendekati masalah ini dengan pertama-tama menganalisis log dan metrik untuk mengidentifikasi pola, lalu mengisolasi bagian kode yang diduga menjadi penyebabnya. Untuk memastikannya, saya menulis test unit yang mensimulasikan kondisi konkurensi tinggi dan menggunakan debugger untuk melacak eksekusi. Solusinya adalah menerapkan mekanisme locking yang lebih robust, yang akhirnya menyelesaikan bug tanpa mengorbankan performa sistem secara signifikan.",
-        "similarity_score": 54,
-        "keywords": {
-          "user_keywords": [
-            "technical problem",
-            "have technical",
-            "problem",
-            "have",
-            "technical"
-          ],
-          "ideal_keywords": [
-            "high-throughput data",
-            "sulit direproduksi",
-            "direproduksi terkait",
-            "terkait race",
-            "race condition",
-            "menangani high-throughput"
-          ],
-          "missing_keywords": [
-            "high-throughput data",
-            "sulit direproduksi",
-            "direproduksi terkait",
-            "terkait race",
-            "race condition",
-            "menangani high-throughput"
-          ],
-          "extra_keywords": [
-            "technical problem",
-            "have technical",
-            "problem",
-            "have",
-            "technical"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "high-throughput data",
-            "sulit direproduksi",
-            "direproduksi terkait",
-            "terkait race",
-            "race condition",
-            "menangani high-throughput"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "high-throughput data",
-            "sulit direproduksi",
-            "direproduksi terkait",
-            "terkait race",
-            "race condition",
-            "menangani high-throughput"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Jawaban jujur dan tidak dibuat-buat.\n- **Perbaikan:** Untuk wawasan yang lebih baik, pikirkan kembali pengalaman Anda; bahkan insiden kecil seperti memperbaiki error di spreadsheet atau mengotomatiskan tugas bisa menjadi contoh teknis yang menarik untuk diceritakan."
-      }
-    ]
-  },
-  {
     "session_id": "f6a2cf82-06c8-4723-af44-ee19592b1cbe",
     "overall_score": 52.0,
     "meta": {
@@ -128,308 +59,6 @@
           ]
         },
         "feedback": "- **Kekuatan:** Jawaban menunjukkan kejujuran, tapi terlalu singkat dan tidak menunjukkan upaya pemikiran.\n- **Perbaikan:** Hindari menyerah; pelajari dasar seperti `df['kolom'].str.lower().str.strip()` di Pandas atau `LOWER(TRIM(kolom))` di SQL, lalu jawab dengan langkah sederhana + contoh untuk tunjukkan pemahaman ETL. Latih dengan dataset dummy untuk percaya diri."
-      }
-    ]
-  },
-  {
-    "session_id": "8d4f8379-2254-4fff-906d-be544079ed88",
-    "overall_score": 76.6,
-    "meta": {
-      "job_role": "data scientist",
-      "experience_level": "Intern",
-      "industry": "finance"
-    },
-    "results": [
-      {
-        "question": "Bagaimana cara Anda menangani missing values dalam dataset transaksi keuangan?",
-        "user_answer": "saya biasanya cek jumlah missing valuenya. jika sedikit, saya hapus langsung, jika lumayan banyak saya imputasi",
-        "ideal_answer": "Saya mulai dengan exploratory data analysis (EDA) untuk mengidentifikasi missing values, termasuk persentase, pola, dan potensi biasnya dalam dataset transaksi keuangan. Saya analisis konteks bisnis, seperti apakah missing disebabkan transaksi batal atau error input, agar tidak menimbulkan distorsi finansial. Untuk imputasi, saya prioritaskan median atau mean untuk variabel numerik seperti jumlah transaksi, mode untuk kategorikal, atau forward/backward fill pada data time series. Jika missing melebihi 20-30%, saya hapus baris atau konsultasikan dengan tim bisnis. Terakhir, saya validasi hasil dengan metrik seperti RMSE dan cross-validation untuk memastikan akurasi model tetap tinggi.",
-        "similarity_score": 72,
-        "keywords": {
-          "user_keywords": [
-            "missing valuenya",
-            "cek jumlah",
-            "jumlah missing",
-            "valuenya",
-            "hapus langsung",
-            "cek"
-          ],
-          "ideal_keywords": [
-            "termasuk persentase",
-            "potensi biasnya",
-            "EDA",
-            "missing values",
-            "transaksi keuangan",
-            "data analysis"
-          ],
-          "missing_keywords": [
-            "termasuk persentase",
-            "potensi biasnya",
-            "EDA",
-            "missing values",
-            "transaksi keuangan",
-            "data analysis"
-          ],
-          "extra_keywords": [
-            "missing valuenya",
-            "cek jumlah",
-            "jumlah missing",
-            "valuenya",
-            "hapus langsung",
-            "cek"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "termasuk persentase",
-            "potensi biasnya",
-            "EDA",
-            "missing values",
-            "transaksi keuangan",
-            "data analysis"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "termasuk persentase",
-            "potensi biasnya",
-            "EDA",
-            "missing values",
-            "transaksi keuangan",
-            "data analysis"
-          ]
-        },
-        "feedback": "- **Kekuatan**: Jawaban Anda menunjukkan pemahaman dasar yang benar tentang memeriksa jumlah missing values dan memilih antara deletion atau imputation berdasarkan volumenya.\n- **Perbaikan**: Tambahkan langkah EDA untuk pola dan bias, konteks bisnis (misalnya error transaksi), metode spesifik (median untuk numerik, threshold 20-30%), serta validasi seperti RMSE agar terlihat lebih expert dan kontekstual."
-      },
-      {
-        "question": "Tulis query SQL sederhana untuk menghitung total transaksi per nasabah dalam satu bulan terakhir.",
-        "user_answer": "saya lupa nulis sql",
-        "ideal_answer": "Berikut query SQL sederhana untuk menghitung total transaksi per nasabah dalam satu bulan terakhir, dengan asumsi tabel `transaksi` memiliki kolom `id_nasabah`, `tanggal_transaksi`, dan `id_transaksi`:\n\n```sql\nSELECT id_nasabah, COUNT(*) AS total_transaksi\nFROM transaksi\nWHERE tanggal_transaksi >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)\nGROUP BY id_nasabah\nORDER BY total_transaksi DESC;\n```\n\nQuery ini menggunakan `GROUP BY` untuk mengelompokkan per nasabah, `COUNT(*)` untuk menghitung jumlah transaksi, dan filter tanggal dengan `DATE_SUB` (MySQL) agar hanya data satu bulan terakhir. Saya memilih `ORDER BY` untuk memudahkan analisis prioritas nasabah aktif. Sebagai intern data scientist di finance, query ini bisa dioptimalkan lebih lanjut dengan index pada `tanggal_transaksi` untuk performa besar data.",
-        "similarity_score": 77,
-        "keywords": {
-          "user_keywords": [
-            "nulis sql",
-            "lupa nulis",
-            "sql",
-            "lupa",
-            "nulis"
-          ],
-          "ideal_keywords": [
-            "sql SELECT",
-            "bulan terakhir",
-            "satu bulan",
-            "SQL sederhana",
-            "COUNT",
-            "DATE"
-          ],
-          "missing_keywords": [
-            "sql SELECT",
-            "bulan terakhir",
-            "satu bulan",
-            "SQL sederhana",
-            "COUNT",
-            "DATE"
-          ],
-          "extra_keywords": [
-            "nulis sql",
-            "lupa nulis",
-            "sql",
-            "lupa",
-            "nulis"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "sql SELECT",
-            "bulan terakhir",
-            "satu bulan",
-            "SQL sederhana",
-            "COUNT",
-            "DATE"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "sql SELECT",
-            "bulan terakhir",
-            "satu bulan",
-            "SQL sederhana",
-            "COUNT",
-            "DATE"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Kejujuran dalam mengakui keterlupakan menunjukkan kesadaran diri, tapi ini minim kontribusi teknis.\n- **Perbaikan:** Di interview, jangan henti di \"lupa\"; coba tulis query dasar dari ingatan (SELECT, GROUP BY, WHERE), jelaskan logika asumsi tabel, dan sarankan optimasi—latih 10 query SQL umum harian untuk antisipasi."
-      },
-      {
-        "question": "Apa perbedaan supervised dan unsupervised learning? Berikan contoh di industri finance.",
-        "user_answer": "supervised dilatih dengan data berlabel, sedangkan unsupervided tanpa data berlabel",
-        "ideal_answer": "Supervised learning menggunakan data berlabel untuk melatih model memetakan input ke output spesifik, seperti klasifikasi atau regresi. Sebaliknya, unsupervised learning bekerja dengan data tak berlabel untuk menemukan pola tersembunyi, seperti clustering atau pengurangan dimensi. Perbedaan utamanya terletak pada keberadaan label data training. Di industri finance, supervised learning dipakai untuk prediksi fraud detection dengan model seperti Random Forest pada transaksi berlabel. Unsupervised learning, seperti K-means clustering, digunakan untuk segmentasi nasabah berdasarkan pola pengeluaran tanpa label.",
-        "similarity_score": 89,
-        "keywords": {
-          "user_keywords": [
-            "data berlabel",
-            "supervised dilatih",
-            "berlabel",
-            "data",
-            "supervised",
-            "dilatih"
-          ],
-          "ideal_keywords": [
-            "output spesifik",
-            "memetakan input",
-            "Supervised learning",
-            "learning",
-            "menggunakan data",
-            "berlabel"
-          ],
-          "missing_keywords": [
-            "output spesifik",
-            "memetakan input",
-            "Supervised learning",
-            "learning",
-            "menggunakan data"
-          ],
-          "extra_keywords": [
-            "data berlabel",
-            "supervised dilatih",
-            "data",
-            "supervised",
-            "dilatih"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "output spesifik",
-            "memetakan input",
-            "Supervised learning",
-            "learning",
-            "menggunakan data",
-            "berlabel"
-          ],
-          "covered_topics": [
-            "berlabel"
-          ],
-          "missing_topics": [
-            "output spesifik",
-            "memetakan input",
-            "Supervised learning",
-            "learning",
-            "menggunakan data"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Jawaban Anda menangkap esensi dasar perbedaan supervised (data berlabel) dan unsupervised learning (tanpa label) dengan tepat dan ringkas.\n- **Perbaikan:** Perbaiki ejaan \"unsupervided\" menjadi \"unsupervised\", tambahkan contoh spesifik seperti fraud detection (supervised) dan segmentasi nasabah (unsupervised) di finance, serta jelaskan aplikasi seperti klasifikasi/regresi vs clustering untuk lebih mendalam."
-      },
-      {
-        "question": "Bagaimana mendeteksi outlier dalam data harga saham menggunakan Python?",
-        "user_answer": "menggunakan boxplot ",
-        "ideal_answer": "Untuk mendeteksi outlier dalam data harga saham menggunakan Python, saya gunakan metode IQR (Interquartile Range) yang sederhana dan efektif. Pertama, load data dengan Pandas, lalu hitung Q1 = df['harga'].quantile(0.25), Q3 = df['harga'].quantile(0.75), dan IQR = Q3 - Q1. Tentukan batas lower = Q1 - 1.5*IQR dan upper = Q3 + 1.5*IQR, kemudian tandai outlier sebagai data di luar batas tersebut dengan kondisi boolean. Visualisasikan menggunakan boxplot dari Matplotlib untuk konfirmasi visual. Untuk data saham yang volatil, metode Z-score atau Isolation Forest dari Scikit-learn bisa jadi alternatif lanjutan.",
-        "similarity_score": 62,
-        "keywords": {
-          "user_keywords": [
-            "menggunakan boxplot",
-            "menggunakan",
-            "boxplot"
-          ],
-          "ideal_keywords": [
-            "Interquartile Range",
-            "menggunakan Python",
-            "harga quantile",
-            "IQR",
-            "Python",
-            "Interquartile"
-          ],
-          "missing_keywords": [
-            "Interquartile Range",
-            "menggunakan Python",
-            "harga quantile",
-            "IQR",
-            "Python",
-            "Interquartile"
-          ],
-          "extra_keywords": [
-            "menggunakan boxplot",
-            "menggunakan",
-            "boxplot"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "Interquartile Range",
-            "menggunakan Python",
-            "harga quantile",
-            "IQR",
-            "Python",
-            "Interquartile"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "Interquartile Range",
-            "menggunakan Python",
-            "harga quantile",
-            "IQR",
-            "Python",
-            "Interquartile"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Jawaban Anda tepat menyebutkan boxplot sebagai alat visualisasi outlier yang sederhana dan intuitif.\n- **Perbaikan:** Tambahkan penjelasan metode IQR lengkap dengan kode Pandas (Q1, Q3, batas lower/upper) serta alternatif seperti Z-score untuk data saham volatil, agar jawaban lebih komprehensif dan teknis."
-      },
-      {
-        "question": "Jelaskan langkah-langkah sederhana untuk membangun model prediksi churn nasabah menggunakan machine learning.",
-        "user_answer": "load data, eda, cleaning dan preprocessing , bangun model prediksi yang cocok, evaluasi dengan memilih metrik yang tepat\n",
-        "ideal_answer": "Pertama, kumpulkan data nasabah seperti demografi, riwayat transaksi, saldo rekening, dan label churn (misalnya, nasabah yang menutup akun dalam 3 bulan). Selanjutnya, lakukan eksplorasi data (EDA) untuk memahami distribusi, missing values, dan korelasi, diikuti preprocessing seperti handling outlier, encoding variabel kategorikal, dan scaling fitur. Kemudian, buat feature engineering relevan untuk finance, seperti rasio transaksi bulanan atau tenure nasabah, lalu split data menjadi train-test (80-20). Pilih model klasifikasi sederhana seperti Logistic Regression atau Random Forest, latih model, dan evaluasi menggunakan metrik seperti AUC-ROC, precision-recall karena data churn sering imbalance. Terakhir, tune hyperparameter dengan GridSearchCV dan interpretasikan hasil untuk insight bisnis, seperti faktor utama churn.",
-        "similarity_score": 83,
-        "keywords": {
-          "user_keywords": [
-            "load data",
-            "bangun model",
-            "model prediksi",
-            "memilih metrik",
-            "eda",
-            "load"
-          ],
-          "ideal_keywords": [
-            "saldo rekening",
-            "menutup akun",
-            "riwayat transaksi",
-            "kumpulkan data",
-            "label churn",
-            "data"
-          ],
-          "missing_keywords": [
-            "saldo rekening",
-            "menutup akun",
-            "riwayat transaksi",
-            "kumpulkan data",
-            "label churn",
-            "data"
-          ],
-          "extra_keywords": [
-            "load data",
-            "bangun model",
-            "model prediksi",
-            "memilih metrik",
-            "eda",
-            "load"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "saldo rekening",
-            "menutup akun",
-            "riwayat transaksi",
-            "kumpulkan data",
-            "label churn",
-            "data"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "saldo rekening",
-            "menutup akun",
-            "riwayat transaksi",
-            "kumpulkan data",
-            "label churn",
-            "data"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Jawaban Anda ringkas dan mencakup langkah-langkah esensial CRISP-DM seperti load data, EDA, preprocessing, modeling, dan evaluasi metrik, yang menunjukkan pemahaman struktur dasar.\n- **Perbaikan:** Tambahkan detail spesifik seperti feature engineering (e.g., rasio transaksi), split train-test, model churn-friendly (Logistic Regression/Random Forest), metrik imbalance (AUC-ROC/precision-recall), serta tuning dan insight bisnis untuk terlihat lebih expert dan actionable."
       }
     ]
   },
@@ -970,247 +599,6 @@
           ]
         },
         "feedback": "- **Kekuatan:** Jawaban Anda jujur, yang lebih baik daripada mengarang.\n- **Perbaikan:** Hindari \"saya tidak tahu\" di interview; sebutkan konsep dasar seperti validasi skema (Great Expectations/dbt tests), profiling rutin, dan monitoring via Airflow/Prometheus dengan alerting (PagerDuty/Slack) seperti jawaban ideal untuk tunjukkan pemahaman meski belum berpengalaman. Latih jawaban struktural: kualitas data → monitoring → contoh proyek."
-      }
-    ]
-  },
-  {
-    "session_id": "1cd8c03e-0cdb-419e-80d0-97e52c52c3b8",
-    "overall_score": 54.4,
-    "meta": {
-      "job_role": "apa aja",
-      "experience_level": "Intern",
-      "industry": "finance"
-    },
-    "results": [
-      {
-        "question": "Apa itu neraca keuangan dan komponen utamanya?",
-        "user_answer": "k",
-        "ideal_answer": "Neraca keuangan adalah laporan keuangan yang menggambarkan posisi keuangan perusahaan pada suatu tanggal tertentu. Komponen utamanya terdiri dari tiga elemen pokok: aset, liabilitas, dan ekuitas. Aset mencakup sumber daya yang dimiliki perusahaan, seperti kas, piutang, inventori, dan aset tetap. Liabilitas adalah kewajiban yang harus dibayar, termasuk utang jangka pendek dan jangka panjang. Ekuitas mewakili hak pemilik atas aset bersih setelah dikurangi liabilitas. Rumus dasar neraca adalah Aset = Liabilitas + Ekuitas.",
-        "similarity_score": 60,
-        "keywords": {
-          "user_keywords": [],
-          "ideal_keywords": [
-            "menggambarkan posisi",
-            "laporan keuangan",
-            "posisi keuangan",
-            "keuangan",
-            "aset",
-            "keuangan perusahaan"
-          ],
-          "missing_keywords": [
-            "menggambarkan posisi",
-            "laporan keuangan",
-            "posisi keuangan",
-            "keuangan",
-            "aset",
-            "keuangan perusahaan"
-          ],
-          "extra_keywords": []
-        },
-        "topics": {
-          "expected_topics": [
-            "menggambarkan posisi",
-            "laporan keuangan",
-            "posisi keuangan",
-            "keuangan",
-            "aset",
-            "keuangan perusahaan"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "menggambarkan posisi",
-            "laporan keuangan",
-            "posisi keuangan",
-            "keuangan",
-            "aset",
-            "keuangan perusahaan"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Jawaban sangat ringkas, tapi tidak menunjukkan pemahaman apapun.\n- **Perbaikan:** Berikan definisi neraca sebagai laporan posisi keuangan pada tanggal tertentu, sebutkan tiga komponen utama (aset, liabilitas, ekuitas) beserta contoh singkat, dan ingat rumus Aset = Liabilitas + Ekuitas untuk terlihat kompeten. Latih jawaban lengkap dalam 1-2 menit."
-      },
-      {
-        "question": "Jelaskan perbedaan antara aset lancar dan aset tetap.",
-        "user_answer": "k",
-        "ideal_answer": "Aset lancar adalah aset yang dapat dikonversi menjadi kas dalam waktu satu tahun atau satu siklus operasi bisnis, seperti kas, piutang usaha, dan persediaan barang.  \nSebaliknya, aset tetap merupakan aset jangka panjang yang digunakan dalam operasi bisnis lebih dari satu tahun, seperti tanah, bangunan, mesin, dan kendaraan.  \nPerbedaan utama terletak pada likuiditasnya; aset lancar lebih mudah dicairkan untuk kebutuhan jangka pendek, sementara aset tetap mendukung aktivitas operasional jangka panjang dan biasanya mengalami penyusutan nilai.  \nDalam neraca keuangan, aset lancar dicantumkan di bagian atas untuk menunjukkan likuiditas perusahaan, sedangkan aset tetap berada di bawahnya.",
-        "similarity_score": 57,
-        "keywords": {
-          "user_keywords": [],
-          "ideal_keywords": [
-            "piutang usaha",
-            "persediaan barang",
-            "menjadi kas",
-            "operasi bisnis",
-            "satu tahun",
-            "dikonversi menjadi"
-          ],
-          "missing_keywords": [
-            "piutang usaha",
-            "persediaan barang",
-            "menjadi kas",
-            "operasi bisnis",
-            "satu tahun",
-            "dikonversi menjadi"
-          ],
-          "extra_keywords": []
-        },
-        "topics": {
-          "expected_topics": [
-            "piutang usaha",
-            "persediaan barang",
-            "menjadi kas",
-            "operasi bisnis",
-            "satu tahun",
-            "dikonversi menjadi"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "piutang usaha",
-            "persediaan barang",
-            "menjadi kas",
-            "operasi bisnis",
-            "satu tahun",
-            "dikonversi menjadi"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Jawaban terlalu singkat dan tidak menunjukkan pemahaman dasar, sehingga tidak ada kekuatan signifikan.\n- **Perbaikan:** Berikan definisi jelas aset lancar (likuid dalam 1 tahun, contoh: kas, piutang) vs aset tetap (jangka panjang, contoh: tanah, mesin), soroti perbedaan likuiditas dan penyusutan, serta posisi di neraca untuk kesan profesional. Latih jawaban lengkap 3-4 kalimat agar terstruktur dan meyakinkan."
-      },
-      {
-        "question": "Mengapa Anda tertarik magang di industri keuangan?",
-        "user_answer": "j",
-        "ideal_answer": "Saya tertarik magang di industri keuangan karena sektor ini dinamis, berpengaruh besar terhadap perekonomian, dan memerlukan kombinasi analisis data serta pengambilan keputusan strategis yang menantang. Selama kuliah, mata kuliah keuangan dan pengalaman intern saya di bidang administrasi bisnis telah membangkitkan passion saya terhadap analisis portofolio dan manajemen risiko. Industri keuangan menawarkan peluang untuk belajar langsung dari tren pasar global seperti fintech dan sustainable finance. Magang ini akan memungkinkan saya menerapkan pengetahuan teori secara praktis sambil berkontribusi pada tim. Pada akhirnya, ini adalah langkah awal ideal untuk karir saya di bidang financial analysis.",
-        "similarity_score": 49,
-        "keywords": {
-          "user_keywords": [],
-          "ideal_keywords": [
-            "berpengaruh besar",
-            "memerlukan kombinasi",
-            "pengambilan keputusan",
-            "keputusan strategis",
-            "kombinasi analisis",
-            "analisis data"
-          ],
-          "missing_keywords": [
-            "berpengaruh besar",
-            "memerlukan kombinasi",
-            "pengambilan keputusan",
-            "keputusan strategis",
-            "kombinasi analisis",
-            "analisis data"
-          ],
-          "extra_keywords": []
-        },
-        "topics": {
-          "expected_topics": [
-            "berpengaruh besar",
-            "memerlukan kombinasi",
-            "pengambilan keputusan",
-            "keputusan strategis",
-            "kombinasi analisis",
-            "analisis data"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "berpengaruh besar",
-            "memerlukan kombinasi",
-            "pengambilan keputusan",
-            "keputusan strategis",
-            "kombinasi analisis",
-            "analisis data"
-          ]
-        },
-        "feedback": "- **Kekuatan**: Jawaban Anda sangat ringkas dan langsung.\n- **Perbaikan**: Kembangkan dengan 2-3 alasan spesifik (misalnya passion dari kuliah/internship, tren seperti fintech), hubungkan pengalaman pribadi, dan sebutkan kontribusi serta manfaat karir—latih hingga 4-5 kalimat seperti jawaban ideal untuk terdengar meyakinkan."
-      },
-      {
-        "question": "Ceritakan pengalaman Anda menggunakan Excel untuk analisis data sederhana.",
-        "user_answer": "k",
-        "ideal_answer": "Selama magang di perusahaan finance, saya menggunakan Excel untuk menganalisis data transaksi harian klien. Saya menerapkan PivotTable guna merangkum penjualan bulanan dan mengidentifikasi tren pengeluaran utama. Formula seperti VLOOKUP dan SUMIF saya gunakan untuk menghitung total aset serta liabilitas dari spreadsheet mentah. Hasilnya divisualisasikan melalui chart dan dashboard sederhana untuk laporan tim manajemen. Pengalaman ini meningkatkan kemampuan saya dalam mengolah data secara cepat dan akurat.",
-        "similarity_score": 54,
-        "keywords": {
-          "user_keywords": [],
-          "ideal_keywords": [
-            "menggunakan Excel",
-            "perusahaan finance",
-            "harian klien",
-            "transaksi harian",
-            "Excel untuk",
-            "Excel"
-          ],
-          "missing_keywords": [
-            "menggunakan Excel",
-            "perusahaan finance",
-            "harian klien",
-            "transaksi harian",
-            "Excel untuk",
-            "Excel"
-          ],
-          "extra_keywords": []
-        },
-        "topics": {
-          "expected_topics": [
-            "menggunakan Excel",
-            "perusahaan finance",
-            "harian klien",
-            "transaksi harian",
-            "Excel untuk",
-            "Excel"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "menggunakan Excel",
-            "perusahaan finance",
-            "harian klien",
-            "transaksi harian",
-            "Excel untuk",
-            "Excel"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Respons sangat singkat, menunjukkan kecepatan tapi tidak ada konten substansial.\n- **Perbaikan:** Berikan cerita lengkap dengan contoh spesifik seperti PivotTable, VLOOKUP, dan visualisasi chart dari pengalaman nyata (lihat jawaban ideal); latihan struktur STAR (Situation, Task, Action, Result) untuk jawaban 1-2 menit."
-      },
-      {
-        "question": "Bagaimana Anda tetap update dengan berita keuangan terkini?",
-        "user_answer": "j",
-        "ideal_answer": "Saya rutin membaca berita keuangan dari sumber terpercaya seperti Bloomberg, Reuters, Kontan.co.id, dan Bisnis.com setiap pagi untuk mendapatkan update terkini. Saya juga berlangganan newsletter harian dari The Financial Times dan menggunakan aplikasi Yahoo Finance serta Investing.com untuk notifikasi real-time. Selain itu, saya mengikuti akun analis keuangan di Twitter dan LinkedIn guna memahami perspektif mendalam. Pendekatan ini membantu saya menganalisis tren pasar dengan cepat, meskipun sebagai intern, dan menerapkannya dalam tugas harian.",
-        "similarity_score": 52,
-        "keywords": {
-          "user_keywords": [],
-          "ideal_keywords": [
-            "update terkini",
-            "rutin membaca",
-            "membaca berita",
-            "sumber terpercaya",
-            "mendapatkan update",
-            "Reuters"
-          ],
-          "missing_keywords": [
-            "update terkini",
-            "rutin membaca",
-            "membaca berita",
-            "sumber terpercaya",
-            "mendapatkan update",
-            "Reuters"
-          ],
-          "extra_keywords": []
-        },
-        "topics": {
-          "expected_topics": [
-            "update terkini",
-            "rutin membaca",
-            "membaca berita",
-            "sumber terpercaya",
-            "mendapatkan update",
-            "Reuters"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "update terkini",
-            "rutin membaca",
-            "membaca berita",
-            "sumber terpercaya",
-            "mendapatkan update",
-            "Reuters"
-          ]
-        },
-        "feedback": "- **Kekuatan:** Respons Anda sangat ringkas, menunjukkan kecepatan tapi kurang substansi.\n- **Perbaikan:** Berikan jawaban lengkap dengan sumber spesifik (e.g., Bloomberg, Reuters), tools (e.g., Yahoo Finance), dan contoh penerapan seperti jawaban ideal agar terlihat proaktif dan kredibel. Latih untuk jawab minimal 3-4 kalimat terstruktur."
       }
     ]
   },
@@ -3919,38 +3307,146 @@
     "timestamp": "2025-11-25 01:24:58"
   },
   {
-    "session_id": "f707c32f-6b14-45e2-aa60-be1f9a024216",
-    "overall_score": 50.8,
+    "session_id": "0e5449f6-b8af-4a4d-84e4-47a93daded94",
+    "overall_score": 55.0,
     "meta": {
-      "job_role": "ML Engineer",
-      "experience_level": "Managerial",
+      "job_role": "ai engineer",
+      "experience_level": "Internship",
       "industry": "fintech"
     },
     "results": [
       {
-        "question": "Bayangkan tim ML Anda di fintech mengalami lonjakan false positives pada sistem deteksi fraud real-time yang memengaruhi pengalaman pengguna. Bagaimana Anda sebagai manager memimpin tim untuk mendiagnosis, memperbaiki, dan mencegahnya di masa depan?",
+        "question": "Berikan gambaran singkat mengenai latar belakang pendidikan Anda serta motivasi utama Anda melamar posisi AI Engineer Internship di perusahaan fintech kami.",
+        "user_answer": "Saya adalah lulusan **S1 Teknik Komputer** dari universitas terkemuka, di mana saya secara khusus mendalami bidang **Pembelajaran Mesin (Machine Learning)** dan **Pemrosesan Bahasa Alami (Natural Language Processing)**. Selama studi, saya aktif mengerjakan proyek yang melibatkan pembangunan dan implementasi model AI, termasuk klasifikasi sentimen untuk data keuangan dan sistem rekomendasi berbasis perilaku pengguna. Motivasi utama saya melamar posisi AI Engineer Internship di perusahaan fintech Anda berakar dari ketertarikan mendalam pada **perpotongan teknologi AI dan dunia keuangan**. Saya melihat potensi besar AI dalam meningkatkan keamanan, efisiensi, dan personalisasi layanan finansial. Saya ingin menerapkan pengetahuan teknis yang saya miliki untuk berkontribusi pada solusi nyata yang berdampak langsung pada pengalaman pengguna di sektor fintech yang dinamis ini, serta mendapatkan pengalaman profesional di lingkungan yang inovatif.\n",
+        "ideal_answer": "Saya menempuh pendidikan S1 di bidang Teknik Informatika di Universitas Indonesia, dengan fokus pada machine learning dan data science. Selama kuliah, saya menyelesaikan proyek pengembangan model prediksi churn pelanggan menggunakan algoritma Random Forest dan deep learning untuk analisis sentimen. Selain itu, saya aktif mengikuti kompetisi Kaggle dan hackathon fintech, yang memberi saya pengalaman praktis dalam memproses data keuangan. Motivasi utama saya melamar posisi AI Engineer Internship di perusahaan fintech ini adalah keinginan untuk mengaplikasikan keahlian AI saya dalam memecahkan masalah real‑time seperti deteksi penipuan dan personalisasi layanan keuangan. Saya percaya bahwa lingkungan inovatif di perusahaan Anda akan memperluas wawasan saya sekaligus memberikan kontribusi nyata bagi pertumbuhan bisnis fintech.",
+        "similarity_score": 87,
+        "keywords": {
+          "user_keywords": [
+            "Teknik Komputer",
+            "Pembelajaran Mesin",
+            "Machine Learning",
+            "Pemrosesan Bahasa",
+            "Bahasa Alami",
+            "Natural Language"
+          ],
+          "ideal_keywords": [
+            "Universitas Indonesia",
+            "Teknik Informatika",
+            "bidang Teknik",
+            "menempuh pendidikan",
+            "machine learning",
+            "data science"
+          ],
+          "missing_keywords": [
+            "Universitas Indonesia",
+            "Teknik Informatika",
+            "bidang Teknik",
+            "menempuh pendidikan",
+            "data science"
+          ],
+          "extra_keywords": [
+            "Teknik Komputer",
+            "Pembelajaran Mesin",
+            "Pemrosesan Bahasa",
+            "Bahasa Alami",
+            "Natural Language"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "Universitas Indonesia",
+            "Teknik Informatika",
+            "bidang Teknik",
+            "menempuh pendidikan",
+            "machine learning",
+            "data science"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "Universitas Indonesia",
+            "Teknik Informatika",
+            "bidang Teknik",
+            "menempuh pendidikan",
+            "machine learning",
+            "data science"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat  \nJawaban kandidat cukup kuat dan relevan dengan posisi, menunjukkan latar belakang pendidikan serta pengalaman proyek yang terkait. Namun, kalimatnya masih terlalu panjang dan kurang fokus pada pencapaian konkret serta kontribusi yang dapat diberikan.\n\n### ✅ Kekuatan  \n- **Relevansi Pendidikan dan Proyek**  \n  Kandidat menyebutkan spesialisasi dalam Machine Learning dan NLP serta contoh proyek (sentiment analysis keuangan, rekomendasi pengguna) yang sangat sesuai dengan kebutuhan fintech.  \n- **Motivasi yang Jelas**  \n  Menyatakan ketertarikan pada perpotongan AI dan keuangan serta keinginan untuk berkontribusi pada pengalaman pengguna, yang menonjolkan motivasi pribadi dan profesional.  \n- **Penggunaan Bahasa yang Formal**  \n  Kalimatnya terstruktur dengan baik, menggunakan istilah teknis yang tepat dan bahasa Indonesia yang formal.\n\n### 💡 Area Perbaikan  \n- **Kurang Fokus pada Pencapaian Konkret**  \n  Tidak ada data kuantitatif (mis. akurasi model, peningkatan KPI) yang menunjukkan dampak nyata proyek.  \n- **Bertele‑tele pada Motivasi**  \n  Bagian motivasi terasa cukup umum; bisa lebih dipersonalisasi dengan menyebutkan produk atau teknologi spesifik yang dikagumi di perusahaan.  \n- **Struktur Tidak Terorganisir (STAR)**  \n  Jawaban bersifat naratif tanpa membagi menjadi situasi, tugas, tindakan, dan hasil, sehingga sulit bagi pewawancara untuk menilai kontribusi spesifik.\n\n### 🚀 Contoh Jawaban Lebih Baik  \n> **Situation**: Saat kuliah di Universitas XYZ, kami memiliki proyek akhir yang menargetkan deteksi penipuan transaksi online.  \n> **Task**: Memimpin tim tiga orang untuk mengembangkan sistem klasifikasi berbasis Random Forest yang dapat memproses data transaksi real‑time.  \n> **Action**: Saya merancang pipeline preprocessing, mengimplementasikan feature engineering menggunakan teknik anomaly detection, serta melakukan hyper‑parameter tuning dengan GridSearchCV.  \n> **Result**: Model yang saya bangun mencapai akurasi 92% dan recall 88%, mengurangi false positives sebesar 35% dibandingkan sistem sebelumnya.  \n> **Motivasi**: Saya terinspirasi oleh inovasi fintech Anda dalam memanfaatkan AI untuk keamanan transaksi. Saya ingin membawa pengalaman praktis saya di machine learning dan NLP untuk mengembangkan solusi deteksi penipuan real‑time serta personalisasi layanan yang dapat meningkatkan kepuasan pelanggan di platform Anda."
+      },
+      {
+        "question": "Jelaskan secara terperinci bagaimana Anda mengimplementasikan model regresi linier menggunakan Python, termasuk tahapan preprocessing data, pemilihan fitur, dan metode evaluasi performa model.",
         "user_answer": "tidak tahu",
-        "ideal_answer": "Pertama, saya akan segera mengumpulkan tim ML dan stakeholder terkait untuk review metrik real-time seperti precision, recall, dan false positive rate, serta menganalisis data transaksi terbaru untuk mendeteksi pola seperti data drift atau perubahan perilaku pengguna. Selanjutnya, lakukan root cause analysis dengan tools seperti SHAP untuk interpretasi model dan segmentasi data untuk mengidentifikasi sumber lonjakan, sambil deploy quick fix seperti threshold adjustment sementara agar meminimalkan dampak UX. Untuk perbaikan jangka panjang, pimpin tim merevisi model dengan retraining menggunakan data terkini, feature engineering baru, dan A/B testing untuk validasi. Akhirnya, cegah kejadian serupa dengan implementasi monitoring otomatis (misalnya Prometheus + Grafana), scheduled retraining pipeline, dan post-mortem review rutin untuk continuous improvement.",
+        "ideal_answer": "Untuk mengimplementasikan regresi linier di Python, saya mulai dengan memuat data menggunakan `pandas` dan melakukan eksplorasi awal (mis. `df.describe()`) untuk mengidentifikasi missing values dan outlier. Selanjutnya, saya lakukan preprocessing: imputasi missing dengan `SimpleImputer`, normalisasi fitur numerik menggunakan `StandardScaler`, dan encoding variabel kategorikal dengan `OneHotEncoder` melalui `ColumnTransformer`. Pada tahap pemilihan fitur, saya memakai teknik `Recursive Feature Elimination (RFE)` dengan estimator `LinearRegression` serta menilai korelasi multikolinearitas menggunakan VIF, sehingga hanya fitur dengan VIF < 5 yang dipertahankan. Model regresi linier dibangun menggunakan `LinearRegression` dari `scikit‑learn`, dilatih pada data training, dan diuji pada data testing. Evaluasi performa dilakukan dengan metrik RMSE, MAE, dan R², serta visualisasi residual untuk memastikan asumsi linieritas dan homoskedastisitas terpenuhi.",
+        "similarity_score": 48,
+        "keywords": {
+          "user_keywords": [
+            "tahu"
+          ],
+          "ideal_keywords": [
+            "eksplorasi awal",
+            "melakukan eksplorasi",
+            "Python",
+            "Untuk mengimplementasikan",
+            "mengimplementasikan regresi",
+            "memuat data"
+          ],
+          "missing_keywords": [
+            "eksplorasi awal",
+            "melakukan eksplorasi",
+            "Python",
+            "Untuk mengimplementasikan",
+            "mengimplementasikan regresi",
+            "memuat data"
+          ],
+          "extra_keywords": [
+            "tahu"
+          ]
+        },
+        "topics": {
+          "expected_topics": [
+            "eksplorasi awal",
+            "melakukan eksplorasi",
+            "Python",
+            "Untuk mengimplementasikan",
+            "mengimplementasikan regresi",
+            "memuat data"
+          ],
+          "covered_topics": [],
+          "missing_topics": [
+            "eksplorasi awal",
+            "melakukan eksplorasi",
+            "Python",
+            "Untuk mengimplementasikan",
+            "mengimplementasikan regresi",
+            "memuat data"
+          ]
+        },
+        "feedback": "### 🎯 Analisis Singkat  \nJawaban kandidat hanya berupa “tidak tahu”, sehingga tidak ada informasi yang dapat dinilai relevan atau meyakinkan. Pencapaian tidak mencerminkan pengetahuan dasar yang diharapkan untuk posisi AI Engineer (Internship).\n\n### ✅ Kekuatan  \n- **Kejujuran**: Kandidat tidak berusaha menebak‑tebak atau memberikan jawaban yang salah; ia dengan jelas mengakui ketidaktahuannya.  \n- **Kecepatan respons**: Jawaban sangat singkat dan tidak menimbulkan kebingungan atau informasi yang salah.\n\n### 💡 Area Perbaikan  \n- **Kurang spesifik**: Tidak ada penjelasan tentang tahapan preprocessing, pemilihan fitur, atau evaluasi model.  \n- **Tidak ada contoh atau struktur**: Tidak ada penggunaan metode STAR atau contoh konkret implementasi.  \n- **Tingkat pengetahuan rendah**: Jawaban tidak menunjukkan pemahaman dasar tentang regresi linier atau paket Python yang relevan.\n\n### 🚀 Contoh Jawaban Lebih Baik  \n> **Situation**  \n> Pada proyek analisis data penjualan di perusahaan fintech, saya diminta untuk memprediksi total pendapatan bulanan menggunakan data historis.  \n> **Task**  \n> Membuat model regresi linier yang akurat dengan preprocessing data, pemilihan fitur, dan evaluasi performa.  \n> **Action**  \n> 1. **Preprocessing**:  \n>    - Memuat dataset dengan `pandas`.  \n>    - Menangani missing values menggunakan `SimpleImputer` (mean untuk numerik, mode untuk kategorikal).  \n>    - Menormalisasi variabel numerik melalui `StandardScaler`.  \n>    - Mengkode variabel kategorikal dengan `OneHotEncoder` dalam `ColumnTransformer`.  \n> 2. **Pemilihan Fitur**:  \n>    - Menggunakan `Recursive Feature Elimination (RFE)` dengan `LinearRegression` sebagai estimator.  \n>    - Memeriksa multikolinearitas dengan Variance Inflation Factor (VIF) dan mempertahankan fitur dengan VIF < 5.  \n> 3. **Model**:  \n>    - Membangun model menggunakan `LinearRegression` dari scikit‑learn.  \n>    - Melatih dengan data training (80%) dan menguji pada data testing (20%).  \n> 4. **Evaluasi**:  \n>    - Menghitung RMSE, MAE, dan R².  \n>    - Menampilkan plot residual untuk memverifikasi asumsi linieritas dan homoskedastisitas.  \n> **Result**  \n> Model mencapai R² = 0.87, RMSE = $1.2M, dan MAE = $0.9M, sehingga membantu manajemen membuat perkiraan pendapatan yang lebih akurat dan meningkatkan keputusan bisnis."
+      },
+      {
+        "question": "Anda ditugaskan untuk mendesain sistem deteksi penipuan transaksi kartu kredit berbasis machine learning. Bagaimana Anda akan merancang alur kerja, memilih fitur, menentukan algoritma, dan mengevaluasi efektivitas model tersebut?",
+        "user_answer": "tidak tahu",
+        "ideal_answer": "1. Pertama, saya akan membangun pipeline ETL yang mengekstrak data transaksi real‑time, menormalisasi nilai, dan menandai data historis sebagai “penipuan” atau “biasa” untuk training.  \n2. Fitur yang dipilih meliputi variabel numerik (jumlah, frekuensi, rata‑rata per hari), categorical (merchant, kategori, device ID), serta fitur temporal (jam, hari, pola musim) dan fitur perilaku (jarak geografis, perubahan pola belanja).  \n3. Untuk algoritma, saya akan memulai dengan model ensemble seperti XGBoost atau LightGBM karena kemampuannya menangani data seimbang‑tidak dan interpretabilitas, lalu membandingkannya dengan jaringan saraf ringan (MLP) jika data volume tinggi.  \n4. Evaluasi dilakukan dengan metrik ROC‑AUC, Precision‑Recall (karena kelas minoritas), serta cost‑based metrics (mis‑classification cost) dan validasi cross‑validation stratified.  \n5. Akhirnya, saya akan mengimplementasikan monitoring online (drift detection, threshold alerts) dan melakukan retraining periodik agar model tetap akurat di lingkungan transaksi yang dinamis.",
         "similarity_score": 50,
         "keywords": {
           "user_keywords": [
             "tahu"
           ],
           "ideal_keywords": [
-            "positive rate",
-            "perilaku pengguna",
-            "stakeholder terkait",
-            "metrik real-time",
-            "false positive",
-            "transaksi terbaru"
+            "pipeline ETL",
+            "untuk training",
+            "data",
+            "untuk",
+            "Fitur",
+            "menormalisasi nilai"
           ],
           "missing_keywords": [
-            "positive rate",
-            "perilaku pengguna",
-            "stakeholder terkait",
-            "metrik real-time",
-            "false positive",
-            "transaksi terbaru"
+            "pipeline ETL",
+            "untuk training",
+            "data",
+            "untuk",
+            "Fitur",
+            "menormalisasi nilai"
           ],
           "extra_keywords": [
             "tahu"
@@ -3958,1272 +3454,136 @@
         },
         "topics": {
           "expected_topics": [
-            "positive rate",
-            "perilaku pengguna",
-            "stakeholder terkait",
-            "metrik real-time",
-            "false positive",
-            "transaksi terbaru"
+            "pipeline ETL",
+            "untuk training",
+            "data",
+            "untuk",
+            "Fitur",
+            "menormalisasi nilai"
           ],
           "covered_topics": [],
           "missing_topics": [
-            "positive rate",
-            "perilaku pengguna",
-            "stakeholder terkait",
-            "metrik real-time",
-            "false positive",
-            "transaksi terbaru"
+            "pipeline ETL",
+            "untuk training",
+            "data",
+            "untuk",
+            "Fitur",
+            "menormalisasi nilai"
           ]
         },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan, hanya mengakui ketidaktahuan tanpa upaya menunjukkan pemikiran struktural atau pengalaman leadership. Ini tidak meyakinkan untuk level managerial di ML Engineer fintech, di mana diharapkan pemahaman mendalam tentang troubleshooting real-time systems.\n\n### ✅ Kekuatan\n- **Kejujuran:** Mengakui \"tidak tahu\" menunjukkan integritas dan kerendahan hati, yang merupakan nilai positif dalam tim kolaboratif.\n- **Keringkasan:** Jawaban langsung tanpa basa-basi, menghindari jawaban palsu yang bisa menimbulkan risiko lebih besar.\n\n### 💡 Area Perbaikan\n- **Kurang kedalaman teknis dan leadership:** Tidak ada penjelasan langkah diagnosis (misalnya metrik, root cause analysis) atau strategi jangka panjang seperti monitoring, yang krusial untuk manager ML.\n- **Tidak struktural:** Jawaban ideal menggunakan pendekatan sistematis (diagnosis, fix, prevent); kandidat perlu tunjukkan framework seperti STAR untuk meyakinkan interviewer.\n- **Kurang inisiatif:** Sebagai manager, harapkan ide proaktif meski hipotetis, bukan menyerah begitu saja—latih dengan case study fintech untuk persiapan.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situasi:** Lonjakan false positives di sistem deteksi fraud real-time mengganggu UX pengguna fintech.  \n> **Tugas:** Saya pimpin tim diagnosis cepat, perbaiki model, dan bangun pencegahan.  \n> **Aksi:** Segera kumpul tim review metrik (precision/recall/FPR) via dashboard real-time, analisis root cause dengan SHAP dan data drift detection; deploy quick fix (threshold tuning) sambil retrain model dengan data fresh + A/B test. Implementasi monitoring Prometheus/Grafana dan pipeline retraining otomatis.  \n> **Hasil:** FPR turun 40% dalam 48 jam, UX pulih, dan post-mortem rutin cegah rekurensi—tim lebih resilient."
+        "feedback": "### 🎯 Analisis Singkat  \nJawaban kandidat hanya berupa “tidak tahu”, sehingga tidak ada informasi yang dapat dievaluasi secara teknis atau strategis. Jawaban ini tidak relevan dengan pertanyaan dan tidak meyakinkan atas kompetensi kandidat.\n\n### ✅ Kekuatan  \n- **Tidak ada kekuatan yang dapat dievaluasi.**  \n- **Tidak menunjukkan penolakan atau ketidaktahuan secara terbuka,** namun tidak ada upaya untuk menjelaskan atau mengakui keterbatasan.\n\n### 💡 Area Perbaikan  \n- **Saran 1:** Berikan jawaban yang setidaknya mencakup satu atau dua poin penting (mis. pipeline data, fitur, algoritma, evaluasi).  \n- **Saran 2:** Hindari jawaban kosong; jika memang tidak yakin, bisa menyebutkan bahwa Anda memerlukan lebih banyak informasi atau data untuk memulai.  \n- **Saran 3:** Gunakan struktur yang jelas: situasi, tugas, tindakan, hasil (STAR) atau kerangka berpikir sistematis.\n\n### 🚀 Contoh Jawaban Lebih Baik  \n> **Situation:** Pada proyek sebelumnya, saya dihadapkan pada kebutuhan mendesak untuk memeriksa potensi penipuan dalam transaksi kartu kredit.  \n> **Task:** Mendesain alur kerja end‑to‑end, memilih fitur relevan, menentukan algoritma, serta menilai efektivitas model.  \n> **Action:**  \n> 1. Membuat pipeline ETL yang mengekstrak data real‑time, menormalisasi nilai, dan menandai data historis sebagai “penipuan” atau “biasa”.  \n> 2. Menyusun fitur numerik (jumlah, frekuensi), kategorikal (merchant, device ID), temporal (jam, hari), dan perilaku (jarak geografis).  \n> 3. Menggunakan XGBoost sebagai model awal, membandingkan dengan LightGBM dan MLP bila volume data tinggi.  \n> 4. Evaluasi menggunakan ROC‑AUC, Precision‑Recall, dan cost‑based metrics; menerapkan cross‑validation stratified.  \n> 5. Menyusun monitoring online dengan drift detection, threshold alerts, serta retraining periodik.  \n> **Result:** Model mencapai ROC‑AUC 0.97, mengurangi false‑positives 30% dan meningkatkan deteksi penipuan 25%, memberikan ROI signifikan bagi tim risk management."
       },
       {
-        "question": "Ceritakan pengalaman memimpin tim ML dalam mengintegrasikan model prediksi risiko kredit dengan sistem legacy di fintech, termasuk bagaimana Anda mengelola konflik teknis dan stakeholder expectations.",
-        "user_answer": "tidak tahu",
-        "ideal_answer": "Di perusahaan fintech sebelumnya, saya memimpin tim 8 orang ML Engineer untuk mengintegrasikan model prediksi risiko kredit berbasis XGBoost ke sistem legacy berbasis mainframe COBOL. Tantangan utama adalah konflik teknis seperti ketidakcocokan format data dan latency API, yang saya atasi dengan membangun middleware ETL menggunakan Apache Kafka dan Docker untuk isolasi lingkungan. Untuk mengelola ekspektasi stakeholder, saya adakan weekly demo dengan metrik jelas seperti AUC-ROC 0.85 dan waktu integrasi real-time di bawah 200ms, serta sesi alignment dengan business team. Konflik tim diselesaikan melalui agile sprint dan code review kolaboratif. Hasilnya, model berhasil live dalam 3 bulan, mengurangi false positive 25% dan meningkatkan approval loan efisien. Pengalaman ini mengajarkan saya pentingnya komunikasi lintas tim untuk sukses proyek.",
-        "similarity_score": 51,
+        "question": "Ceritakan suatu pengalaman kerja tim Anda di mana terjadi perbedaan pendapat yang signifikan. Gunakan metode STAR (Situation, Task, Action, Result) untuk menjelaskan bagaimana Anda mengelola konflik tersebut dan apa hasil akhirnya.",
+        "user_answer": "kemarin saya makan bakso enak banget sumpah",
+        "ideal_answer": "**Situation**: Selama magang di startup fintech, saya bekerja dalam tim data science yang sedang mengembangkan model deteksi penipuan transaksi.  \n**Task**: Tugas saya adalah memutuskan metode feature engineering terbaik antara menggunakan teknik one-hot encoding atau embedding berbasis neural network.  \n**Action**: Saya memfasilitasi pertemuan lintas fungsi, mempresentasikan analisis perbandingan performa, dan mengusulkan pendekatan hybrid yang menggabungkan keduanya; kemudian saya memimpin sesi coding bersama untuk mengimplementasikan prototipe.  \n**Result**: Model akhir menunjukkan peningkatan akurasi sebesar 3,5 % dibandingkan baseline, dan proyek selesai tepat waktu, sehingga tim mendapatkan pujian dari manajemen.  \n**Reflection**: Pengalaman ini mengajarkan saya pentingnya komunikasi terbuka dan berbasis data dalam menyelesaikan konflik, serta memperkuat kepercayaan antar anggota tim.",
+        "similarity_score": 48,
         "keywords": {
           "user_keywords": [
-            "tahu"
+            "banget sumpah",
+            "makan bakso",
+            "bakso enak",
+            "enak banget",
+            "kemarin",
+            "sumpah"
           ],
           "ideal_keywords": [
-            "mainframe COBOL",
-            "kredit berbasis",
-            "berbasis XGBoost",
-            "legacy berbasis",
-            "berbasis mainframe",
-            "perusahaan fintech"
+            "startup fintech",
+            "penipuan transaksi",
+            "deteksi penipuan",
+            "Situation",
+            "mengembangkan model",
+            "model deteksi"
           ],
           "missing_keywords": [
-            "mainframe COBOL",
-            "kredit berbasis",
-            "berbasis XGBoost",
-            "legacy berbasis",
-            "berbasis mainframe",
-            "perusahaan fintech"
+            "startup fintech",
+            "penipuan transaksi",
+            "deteksi penipuan",
+            "Situation",
+            "mengembangkan model",
+            "model deteksi"
           ],
           "extra_keywords": [
-            "tahu"
+            "banget sumpah",
+            "makan bakso",
+            "bakso enak",
+            "enak banget",
+            "kemarin",
+            "sumpah"
           ]
         },
         "topics": {
           "expected_topics": [
-            "mainframe COBOL",
-            "kredit berbasis",
-            "berbasis XGBoost",
-            "legacy berbasis",
-            "berbasis mainframe",
-            "perusahaan fintech"
+            "startup fintech",
+            "penipuan transaksi",
+            "deteksi penipuan",
+            "Situation",
+            "mengembangkan model",
+            "model deteksi"
           ],
           "covered_topics": [],
           "missing_topics": [
-            "mainframe COBOL",
-            "kredit berbasis",
-            "berbasis XGBoost",
-            "legacy berbasis",
-            "berbasis mainframe",
-            "perusahaan fintech"
+            "startup fintech",
+            "penipuan transaksi",
+            "deteksi penipuan",
+            "Situation",
+            "mengembangkan model",
+            "model deteksi"
           ]
         },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan, karena hanya mengakui kurangnya pengalaman tanpa upaya menjelaskan atau pivot ke contoh terkait, sehingga kurang meyakinkan untuk level managerial yang menuntut bukti leadership dan technical depth.\n\n### ✅ Kekuatan\n- **Kejujuran tinggi:** Kandidat secara terbuka mengakui keterbatasan, yang menunjukkan integritas dan kesadaran diri—kualitas positif dalam wawancara.\n- **Singkat dan langsung:** Tidak membuang waktu dengan penjelasan bertele-tele atau pengada-ada, yang menghargai waktu interviewer.\n\n### 💡 Area Perbaikan\n- **Kurang substansi:** Jawaban tidak menyertakan contoh pengalaman serupa, metrik, atau pendekatan problem-solving, sehingga gagal menunjukkan kemampuan memimpin tim ML di fintech.\n- **Tidak ada pivot strategis:** Sebaiknya hubungkan ke pengalaman terkait (misalnya proyek integrasi data lain) atau jelaskan rencana belajar, untuk menunjukkan potensi managerial.\n- **Hilang elemen STAR:** Tidak ada struktur Situation-Task-Action-Result, yang membuat jawaban terasa kosong dan kurang impactful.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Saya belum memiliki pengalaman langsung memimpin integrasi model risiko kredit dengan legacy system di fintech, namun di proyek sebelumnya (Situation), saya memimpin tim 5 ML Engineer untuk mengintegrasikan model fraud detection berbasis LightGBM ke sistem core banking (Task). Tantangan teknis seperti mismatch data diatasi dengan middleware Kafka dan containerization Docker (Action), sambil mengelola stakeholder via weekly demo dengan metrik AUC 0.87 dan latency <150ms. Hasilnya, model live dalam 2 bulan, kurangi false positive 20%, dan tingkatkan efisiensi approval 15% (Result). Pengalaman ini siapkan saya untuk skala lebih besar di risiko kredit.\""
+        "feedback": "### 🎯 Analisis Singkat  \nJawaban kandidat tidak relevan dengan pertanyaan dan tidak menggunakan metode STAR sama sekali. Tidak ada indikasi pengalaman kerja tim, konflik, atau hasil yang dapat dinilai.\n\n### ✅ Kekuatan  \nTidak ada kekuatan yang dapat diidentifikasi dalam jawaban tersebut karena tidak mengandung informasi relevan.\n\n### 💡 Area Perbaikan  \n- **Relevansi**: Jawaban harus menggambarkan situasi, tugas, tindakan, dan hasil terkait konflik tim.  \n- **Struktur**: Gunakan format STAR (Situation, Task, Action, Result) agar narasi mudah dipahami.  \n- **Detail**: Sertakan contoh konkret, data, atau metrik yang menunjukkan dampak tindakan.  \n- **Professionalisme**: Hindari bahasa kasual atau topik yang tidak terkait (misalnya “makan bakso”).\n\n### 🚀 Contoh Jawaban Lebih Baik  \n> **Situation**: Selama magang di sebuah startup fintech, saya bekerja di tim pengembangan model deteksi penipuan transaksi.  \n> **Task**: Tugas saya adalah memilih metode feature engineering—antara one‑hot encoding dan embedding neural network—yang paling efektif.  \n> **Action**: Saya mengatur pertemuan lintas fungsi, mempresentasikan analisis performa kedua metode, dan mengusulkan solusi hybrid. Kemudian saya memimpin sesi coding bersama untuk mengimplementasikan prototipe.  \n> **Result**: Model akhir menunjukkan peningkatan akurasi sebesar 3,5 % dibandingkan baseline, dan proyek selesai tepat waktu, sehingga tim mendapatkan pujian dari manajemen.  \n> **Reflection**: Pengalaman ini mengajarkan pentingnya komunikasi terbuka dan berbasis data dalam menyelesaikan konflik, serta memperkuat kepercayaan antar anggota tim."
       },
       {
-        "question": "Bagaimana strategi MLOps Anda untuk memastikan model ML di fintech scalable, compliant dengan regulasi seperti OJK, dan memiliki monitoring otomatis untuk drift detection?",
-        "user_answer": "tidak tahu",
-        "ideal_answer": "Strategi MLOps saya di fintech berbasis pipeline end-to-end menggunakan Kubeflow atau MLflow untuk memastikan scalability melalui containerization dengan Docker dan orchestration Kubernetes di cloud seperti AWS SageMaker, yang mendukung auto-scaling berdasarkan traffic prediksi. Untuk compliance dengan regulasi OJK, kami terapkan model governance lengkap termasuk versioning data/model via DVC, audit trails otomatis, serta explainable AI (SHAP/LIME) untuk transparansi dan kepatuhan PDP serta pengujian bias. Monitoring otomatis dilakukan dengan Evidently AI dan Prometheus-Grafana, yang mendeteksi data drift, concept drift, serta degradasi performa secara real-time. Jika drift terdeteksi, pipeline CI/CD otomatis memicu retraining dan rollback untuk menjaga akurasi model di atas 95%. Pendekatan ini telah saya terapkan di tim, mengurangi downtime hingga 40% sambil memenuhi audit OJK.",
-        "similarity_score": 50,
+        "question": "Bagaimana pandangan Anda tentang perkembangan AI dalam industri fintech, dan nilai tambah unik apa yang dapat Anda bawa ke tim kami dalam jangka panjang?",
+        "user_answer": "kamu mau bakso??",
+        "ideal_answer": "Saya melihat AI sebagai pendorong utama transformasi fintech, terutama dalam meningkatkan efisiensi operasional, personalisasi layanan, dan mitigasi risiko. Di era data‑driven ini, model prediktif dan NLP dapat mempercepat proses underwriting, deteksi penipuan, dan customer support. Sebagai AI engineer yang baru lulus internship, saya membawa keahlian praktis dalam membangun pipeline ML, serta pemahaman mendalam tentang integrasi sistem legacy dengan teknologi cloud. Nilai tambah unik saya terletak pada kemampuan menggabungkan teknik deep learning dengan prinsip fairness dan interpretability, sehingga solusi yang dikembangkan tidak hanya akurat tetapi juga transparan bagi regulator dan nasabah. Dengan komitmen belajar terus‑menerus, saya siap berkontribusi pada inovasi jangka panjang tim, membantu perusahaan tetap kompetitif di pasar fintech yang cepat berubah.",
+        "similarity_score": 42,
         "keywords": {
           "user_keywords": [
-            "tahu"
+            "bakso"
           ],
           "ideal_keywords": [
-            "menggunakan Kubeflow",
-            "AWS SageMaker",
-            "orchestration Kubernetes",
-            "Strategi MLOps",
-            "traffic prediksi",
-            "fintech berbasis"
+            "personalisasi layanan",
+            "efisiensi operasional",
+            "mitigasi risiko",
+            "pendorong utama",
+            "utama transformasi",
+            "meningkatkan efisiensi"
           ],
           "missing_keywords": [
-            "menggunakan Kubeflow",
-            "AWS SageMaker",
-            "orchestration Kubernetes",
-            "Strategi MLOps",
-            "traffic prediksi",
-            "fintech berbasis"
+            "personalisasi layanan",
+            "efisiensi operasional",
+            "mitigasi risiko",
+            "pendorong utama",
+            "utama transformasi",
+            "meningkatkan efisiensi"
           ],
           "extra_keywords": [
-            "tahu"
+            "bakso"
           ]
         },
         "topics": {
           "expected_topics": [
-            "menggunakan Kubeflow",
-            "AWS SageMaker",
-            "orchestration Kubernetes",
-            "Strategi MLOps",
-            "traffic prediksi",
-            "fintech berbasis"
+            "personalisasi layanan",
+            "efisiensi operasional",
+            "mitigasi risiko",
+            "pendorong utama",
+            "utama transformasi",
+            "meningkatkan efisiensi"
           ],
           "covered_topics": [],
           "missing_topics": [
-            "menggunakan Kubeflow",
-            "AWS SageMaker",
-            "orchestration Kubernetes",
-            "Strategi MLOps",
-            "traffic prediksi",
-            "fintech berbasis"
+            "personalisasi layanan",
+            "efisiensi operasional",
+            "mitigasi risiko",
+            "pendorong utama",
+            "utama transformasi",
+            "meningkatkan efisiensi"
           ]
         },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat \"tidak tahu\" tidak relevan dan tidak meyakinkan sama sekali untuk posisi ML Engineer level managerial, karena menunjukkan kurangnya pengetahuan mendalam tentang MLOps yang esensial di fintech. Ini berpotensi menimbulkan keraguan terhadap kemampuan leadership dan teknis kandidat.\n\n### ✅ Kekuatan\n- **Kejujuran tinggi:** Mengakui ketidaktahuan secara langsung menunjukkan integritas, yang dihargai dalam tim fintech yang menuntut transparansi.\n- **Kesederhanaan:** Jawaban singkat dan to the point, menghindari pengisian dengan informasi palsu yang bisa terdeteksi saat follow-up.\n\n### 💡 Area Perbaikan\n- **Kurang pengetahuan teknis:** Jawaban ideal mengharapkan detail tentang tools seperti Kubeflow, Kubernetes, atau Evidently AI; kandidat perlu mempersiapkan strategi MLOps spesifik untuk scalability, compliance OJK, dan drift detection.\n- **Tidak menunjukkan pengalaman managerial:** Untuk level ini, tambahkan elemen STAR (Situation, Task, Action, Result) dengan contoh implementasi nyata, metrik sukses, dan dampak bisnis seperti pengurangan downtime.\n- **Kurang proaktif:** Alih-alih berhenti di \"tidak tahu\", kandidat bisa pivot ke pengalaman terkait atau rencana belajar untuk menunjukkan mindset growth.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Di proyek sebelumnya di fintech (Situation), tim saya bertanggung jawab mengelola model ML untuk prediksi fraud yang harus scalable dan compliant OJK (Task). Saya implementasikan pipeline MLOps end-to-end dengan Kubeflow dan Kubernetes di AWS SageMaker untuk auto-scaling, governance via DVC dan SHAP untuk transparansi serta audit trails, plus monitoring drift real-time pakai Evidently AI dan Prometheus yang trigger retraining otomatis (Action). Hasilnya, akurasi model stabil di atas 95%, downtime turun 40%, dan lolos audit OJK tanpa temuan (Result).\""
-      },
-      {
-        "question": "Jika audit regulasi mendadak mengharuskan evaluasi bias pada seluruh model ML deployed, tapi tim Anda kekurangan sumber daya, outline langkah manajerial Anda untuk memenuhi tenggat waktu tanpa mengorbankan kualitas.",
-        "user_answer": "tidak tahu",
-        "ideal_answer": "Pertama, saya akan segera menilai dan memprioritaskan model ML deployed berdasarkan tingkat risiko regulasi dan dampak bisnis di fintech, seperti model kredit scoring atau deteksi fraud yang paling kritis. Kedua, bentuk task force lintas tim kecil dengan spesialisasi jelas, sambil memanfaatkan tools otomatis seperti AIF360 atau Fairlearn untuk screening bias awal guna menghemat waktu. Ketiga, delegasikan tugas evaluasi mendalam pada prioritas tinggi, kolaborasi dengan compliance team untuk validasi, dan pertimbangkan bantuan vendor eksternal jika diperlukan. Keempat, terapkan proses agile dengan checkpoint harian untuk memantau kemajuan dan mitigasi risiko. Terakhir, dokumentasikan semua temuan secara komprehensif untuk audit, memastikan kualitas tetap terjaga sambil memenuhi tenggat waktu.",
-        "similarity_score": 47,
-        "keywords": {
-          "user_keywords": [
-            "tahu"
-          ],
-          "ideal_keywords": [
-            "deployed berdasarkan",
-            "berdasarkan tingkat",
-            "dampak bisnis",
-            "kredit scoring",
-            "deteksi fraud",
-            "memprioritaskan model"
-          ],
-          "missing_keywords": [
-            "deployed berdasarkan",
-            "berdasarkan tingkat",
-            "dampak bisnis",
-            "kredit scoring",
-            "deteksi fraud",
-            "memprioritaskan model"
-          ],
-          "extra_keywords": [
-            "tahu"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "deployed berdasarkan",
-            "berdasarkan tingkat",
-            "dampak bisnis",
-            "kredit scoring",
-            "deteksi fraud",
-            "memprioritaskan model"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "deployed berdasarkan",
-            "berdasarkan tingkat",
-            "dampak bisnis",
-            "kredit scoring",
-            "deteksi fraud",
-            "memprioritaskan model"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan, karena hanya mengakui ketidaktahuan tanpa menunjukkan pemahaman manajerial atau strategi apa pun, sehingga terkesan tidak meyakinkan untuk posisi ML Engineer level managerial di fintech.\n\n### ✅ Kekuatan\n- **Kejujuran:** Mengakui ketidaktahuan menunjukkan integritas, yang merupakan nilai positif dalam tim kolaboratif.\n- **Kesederhanaan:** Jawaban ringkas menghindari spekulasi yang salah, meskipun ini tidak cukup untuk konteks manajerial.\n\n### 💡 Area Perbaikan\n- **Kurang substansi:** Jawaban tidak menyentuh langkah manajerial apa pun seperti prioritasasi, delegasi, atau mitigasi risiko, yang krusial untuk situasi regulasi mendadak.\n- **Tidak menunjukkan pengalaman:** Untuk level managerial, diharapkan outline strategi konkret (misalnya agile, tools bias detection, atau kolaborasi tim), bukan pengakuan ketidaktahuan.\n- **Kurang proaktif:** Kandidat bisa memanfaatkan pengetahuan umum fintech/ML untuk memberikan kerangka dasar, sambil menyatakan kebutuhan riset lebih lanjut.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situasi:** Dalam audit regulasi mendadak di fintech, seluruh model ML deployed harus dievaluasi bias, tapi tim kekurangan sumber daya.  \n> **Tugas:** Memenuhi tenggat waktu tanpa mengorbankan kualitas.  \n> **Aksi:** (1) Prioritaskan model berisiko tinggi seperti kredit scoring via impact scoring; (2) Bentuk task force lintas tim dengan tools otomatis (AIF360/Fairlearn) untuk screening cepat; (3) Delegasikan evaluasi mendalam, kolaborasi compliance, dan pertimbangkan vendor eksternal; (4) Terapkan agile dengan daily checkpoint.  \n> **Hasil:** Dokumentasi lengkap untuk audit, model bias dimitigasi, dan proses scalable untuk masa depan—seperti pengalaman saya di proyek serupa yang selesai 2 hari lebih cepat."
-      },
-      {
-        "question": "Deskripsikan kasus di mana Anda memimpin restrukturisasi tim ML untuk meningkatkan efisiensi pengembangan model algorithmic trading, termasuk metrik sukses dan pelajaran yang dipetik.",
-        "user_answer": "nggk mau\n",
-        "ideal_answer": "Di perusahaan fintech sebelumnya, tim ML kami mengalami inefisiensi dalam pengembangan model algorithmic trading akibat silos antar tim dan proses manual yang lambat. Saya memimpin restrukturisasi dengan membentuk squad cross-functional (data scientist, engineer, dan trader), mengimplementasikan MLOps pipeline berbasis Kubernetes dan CI/CD, serta mengadopsi agile sprint untuk kolaborasi harian. Hasilnya, waktu cycle dari ide model hingga deployment turun 60% (dari 8 minggu menjadi 3 minggu), throughput pengembangan model naik 4x, dan ROI strategi trading meningkat 25% dalam 6 bulan. Pelajaran utama yang saya petik adalah pentingnya budaya kolaborasi lintas disiplin dan investasi awal pada infrastruktur otomatisasi untuk skalabilitas jangka panjang.",
-        "similarity_score": 56,
-        "keywords": {
-          "user_keywords": [
-            "nggk"
-          ],
-          "ideal_keywords": [
-            "perusahaan fintech",
-            "mengalami inefisiensi",
-            "akibat silos",
-            "proses manual",
-            "pengembangan model",
-            "model algorithmic"
-          ],
-          "missing_keywords": [
-            "perusahaan fintech",
-            "mengalami inefisiensi",
-            "akibat silos",
-            "proses manual",
-            "pengembangan model",
-            "model algorithmic"
-          ],
-          "extra_keywords": [
-            "nggk"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "perusahaan fintech",
-            "mengalami inefisiensi",
-            "akibat silos",
-            "proses manual",
-            "pengembangan model",
-            "model algorithmic"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "perusahaan fintech",
-            "mengalami inefisiensi",
-            "akibat silos",
-            "proses manual",
-            "pengembangan model",
-            "model algorithmic"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sepenuhnya tidak relevan dengan pertanyaan, karena hanya menolak menjawab tanpa memberikan wawasan apapun mengenai pengalaman kepemimpinan. Hal ini tidak meyakinkan dan menunjukkan kurangnya kesiapan profesional untuk posisi managerial di fintech.\n\n### ✅ Kekuatan\n- **Kejujuran diri:** Kandidat secara terbuka menyatakan ketidakinginannya, yang bisa menjadi titik awal untuk refleksi diri.\n- **Kesingkatan:** Jawaban sangat ringkas, menghindari penjelasan bertele-tele yang tidak perlu.\n\n### 💡 Area Perbaikan\n- **Relevansi dan substansi:** Jawaban tidak menyentuh elemen kunci seperti kasus restrukturisasi, metrik sukses, atau pelajaran—harus berikan contoh konkret menggunakan metode STAR (Situation, Task, Action, Result).\n- **Profesionalisme:** Menolak menjawab secara kasual tidak sesuai untuk interview level managerial; ganti dengan respons positif yang menunjukkan antusiasme dan kompetensi.\n- **Dampak keseluruhan:** Tambahkan data kuantitatif (misal, penurunan waktu cycle atau peningkatan ROI) untuk membuat jawaban lebih kredibel dan meyakinkan.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> Di perusahaan fintech sebelumnya, tim ML kami menghadapi inefisiensi silos dan proses manual lambat dalam pengembangan model algorithmic trading (**Situation**). Sebagai lead, saya bertanggung jawab memimpin restrukturisasi (**Task**). Saya membentuk squad cross-functional (data scientist, engineer, trader), implementasikan MLOps pipeline dengan Kubernetes dan CI/CD, serta adopsi agile sprint (**Action**). Hasilnya, waktu cycle turun 60% (dari 8 minggu ke 3 minggu), throughput naik 4x, dan ROI trading meningkat 25% dalam 6 bulan (**Result**). Pelajaran utama: investasi awal pada kolaborasi dan otomatisasi krusial untuk skalabilitas jangka panjang."
+        "feedback": "Maaf, tidak dapat menghasilkan feedback saat ini."
       }
     ],
-    "timestamp": "2025-11-25 02:22:08"
-  },
-  {
-    "session_id": "ccc2f1a4-7529-4311-bdfc-7ba951e30924",
-    "overall_score": 52.8,
-    "meta": {
-      "job_role": ",",
-      "experience_level": "Internship",
-      "industry": ","
-    },
-    "results": [
-      {
-        "question": "Ceritakan situasi di mana Anda harus memprioritaskan beberapa tugas dengan deadline yang bertabrakan dalam proyek kelompok kampus, dan bagaimana hasilnya.",
-        "user_answer": "dafa f",
-        "ideal_answer": "Dalam proyek kelompok mata kuliah Manajemen Proyek selama internship di perusahaan tech, kami menghadapi deadline bertabrakan: menyelesaikan analisis data, desain UI, dan laporan akhir dalam 3 hari. Saya memprioritaskan tugas menggunakan Eisenhower Matrix, mendahulukan analisis data karena menjadi fondasi proyek, lalu mendistribusikan desain UI ke anggota yang ahli. Kami mengadakan meeting harian singkat via Zoom untuk monitoring kemajuan dan menyesuaikan jadwal. Hasilnya, semua tugas selesai tepat waktu, proyek kami dinilai terbaik oleh dosen dan supervisor internship, serta tim belajar lebih baik dalam kolaborasi.",
-        "similarity_score": 51,
-        "keywords": {
-          "user_keywords": [
-            "dafa"
-          ],
-          "ideal_keywords": [
-            "kuliah Manajemen",
-            "perusahaan tech",
-            "deadline bertabrakan",
-            "Manajemen Proyek",
-            "kelompok mata",
-            "mata kuliah"
-          ],
-          "missing_keywords": [
-            "kuliah Manajemen",
-            "perusahaan tech",
-            "deadline bertabrakan",
-            "Manajemen Proyek",
-            "kelompok mata",
-            "mata kuliah"
-          ],
-          "extra_keywords": [
-            "dafa"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "kuliah Manajemen",
-            "perusahaan tech",
-            "deadline bertabrakan",
-            "Manajemen Proyek",
-            "kelompok mata",
-            "mata kuliah"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "kuliah Manajemen",
-            "perusahaan tech",
-            "deadline bertabrakan",
-            "Manajemen Proyek",
-            "kelompok mata",
-            "mata kuliah"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban user tidak relevan sama sekali dengan pertanyaan, tampak seperti kesalahan ketik atau input acak, sehingga gagal menyampaikan pengalaman apapun dan tidak meyakinkan untuk level internship.\n\n### ✅ Kekuatan\n- **Poin 1:** Jawaban sangat ringkas, menunjukkan kemampuan menyampaikan ide dengan cepat (meski tidak substansial).\n- **Poin 2:** Tidak ada elemen bertele-tele, sehingga mudah dibaca dalam waktu singkat.\n\n### 💡 Area Perbaikan\n- **Saran 1:** Jawaban tidak menjawab pertanyaan sama sekali; perlu cerita spesifik menggunakan metode STAR (Situation, Task, Action, Result) untuk menunjukkan pengalaman prioritas tugas.\n- **Saran 2:** Tambahkan detail konkret seperti konteks proyek, langkah prioritas, dan hasil quantifiable agar terlihat kredibel dan profesional.\n- **Saran 3:** Hindari input tidak lengkap; persiapkan jawaban lengkap dengan latihan sebelum interview.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam proyek kelompok mata kuliah Manajemen Proyek (Situation), kami punya deadline bertabrakan: analisis data, desain UI, dan laporan akhir dalam 3 hari (Task). Saya prioritaskan analisis data menggunakan Eisenhower Matrix sebagai fondasi, delegasikan desain ke rekan ahli, dan adakan meeting harian Zoom untuk monitoring (Action). Hasilnya, semua selesai tepat waktu, proyek juara kelas, dan tim lebih kolaboratif (Result).\""
-      },
-      {
-        "question": "Bayangkan Anda menemukan inkonsistensi data saat mengolah dataset untuk laporan tim; langkah-langkah apa yang akan Anda ambil untuk memverifikasi dan memperbaikinya?",
-        "user_answer": "f afa faf",
-        "ideal_answer": "Pertama, saya akan mengidentifikasi inkonsistensi secara spesifik, seperti nilai duplikat, missing value, atau format yang salah, menggunakan tools seperti Excel atau Pandas. Selanjutnya, memverifikasi data dengan membandingkannya ke sumber asli atau melakukan cross-check dengan dataset terkait. Kemudian, mendokumentasikan temuan saya secara rinci untuk transparansi. Setelah berkonsultasi dengan supervisor atau tim untuk konfirmasi, saya akan membersihkan data dengan fungsi seperti drop_duplicates() atau fillna(). Akhirnya, memvalidasi ulang seluruh dataset dan memastikan laporan akurat sebelum diserahkan.",
-        "similarity_score": 54,
-        "keywords": {
-          "user_keywords": [
-            "afa faf",
-            "faf",
-            "afa"
-          ],
-          "ideal_keywords": [
-            "missing value",
-            "nilai duplikat",
-            "menggunakan tools",
-            "mengidentifikasi inkonsistensi",
-            "secara spesifik",
-            "Pandas"
-          ],
-          "missing_keywords": [
-            "missing value",
-            "nilai duplikat",
-            "menggunakan tools",
-            "mengidentifikasi inkonsistensi",
-            "secara spesifik",
-            "Pandas"
-          ],
-          "extra_keywords": [
-            "afa faf",
-            "faf",
-            "afa"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "missing value",
-            "nilai duplikat",
-            "menggunakan tools",
-            "mengidentifikasi inkonsistensi",
-            "secara spesifik",
-            "Pandas"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "missing value",
-            "nilai duplikat",
-            "menggunakan tools",
-            "mengidentifikasi inkonsistensi",
-            "secara spesifik",
-            "Pandas"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat tidak relevan sama sekali dengan pertanyaan, tampak seperti kesalahan ketik atau kurang persiapan, sehingga tidak meyakinkan dan gagal menunjukkan kemampuan pemecahan masalah data untuk level internship.\n\n### ✅ Kekuatan\n- **Ringkas dan cepat:** Jawaban sangat singkat, menunjukkan kemampuan merespons tanpa bertele-tele (meski kurang substansi).\n- **Tidak ada elemen negatif berlebih:** Tidak ada informasi salah yang bisa menyesatkan, sehingga aman sebagai baseline.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi dan substansi:** Jawaban tidak menyentuh langkah verifikasi atau perbaikan data sama sekali; perlu jawaban yang spesifik dan terstruktur seperti identifikasi masalah, verifikasi, dan validasi.\n- **Kurang profesionalisme:** Tampak tidak serius atau kurang persiapan; saran untuk latihan menjawab dengan metode STAR (Situation, Task, Action, Result) agar lebih meyakinkan.\n- **Perlu contoh tools/teknik:** Sebutkan alat seperti Excel/Pandas dan langkah konkret untuk membangun kredibilitas di level internship.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi (Situation) menemukan inkonsistensi seperti missing values di dataset laporan tim, tugas saya (Task) adalah memverifikasi dan membersihkannya. Saya akan (Action) identifikasi masalah dengan Pandas (e.g., df.info()), cross-check sumber asli, konsultasi supervisor, lalu bersihkan menggunakan fillna() atau drop_duplicates(), serta dokumentasikan perubahan. Hasilnya (Result), dataset akurat dan laporan siap diserahkan tepat waktu.\""
-      },
-      {
-        "question": "Jelaskan pendekatan Anda dalam debugging kode sederhana ketika error muncul tanpa pesan yang jelas, termasuk tools atau metode yang biasa digunakan.",
-        "user_answer": " afa f",
-        "ideal_answer": "Pendekatan saya dalam debugging kode sederhana tanpa pesan error jelas dimulai dengan membaca ulang kode secara manual untuk mendeteksi kesalahan sintaks, logika, atau variabel yang tidak terdefinisi. Selanjutnya, saya menambahkan print statements atau logging di titik-titik kritis untuk melacak alur eksekusi dan nilai variabel secara bertahap. Saya juga menggunakan debugger bawaan IDE seperti VS Code atau PyCharm untuk menjalankan kode step-by-step dan memeriksa stack trace. Tools lain yang sering saya pakai adalah linter seperti ESLint untuk JavaScript atau pylint untuk Python guna mendeteksi isu potensial. Akhirnya, saya lakukan testing incremental dengan input sederhana untuk memverifikasi perbaikan.",
-        "similarity_score": 54,
-        "keywords": {
-          "user_keywords": [
-            "afa"
-          ],
-          "ideal_keywords": [
-            "kesalahan sintaks",
-            "pesan error",
-            "error jelas",
-            "jelas dimulai",
-            "membaca ulang",
-            "secara manual"
-          ],
-          "missing_keywords": [
-            "kesalahan sintaks",
-            "pesan error",
-            "error jelas",
-            "jelas dimulai",
-            "membaca ulang",
-            "secara manual"
-          ],
-          "extra_keywords": [
-            "afa"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "kesalahan sintaks",
-            "pesan error",
-            "error jelas",
-            "jelas dimulai",
-            "membaca ulang",
-            "secara manual"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "kesalahan sintaks",
-            "pesan error",
-            "error jelas",
-            "jelas dimulai",
-            "membaca ulang",
-            "secara manual"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban user tidak relevan sama sekali dengan pertanyaan, tampak seperti kesalahan ketik atau respons acak yang tidak menunjukkan pemahaman debugging, sehingga kurang meyakinkan untuk level internship.\n\n### ✅ Kekuatan\n- **Ringkas ekstrem:** Jawaban sangat pendek, menunjukkan kemampuan menghindari penjelasan bertele-tele (meski isinya kurang substansial).\n- **Tidak ada informasi salah:** Respons tidak menimbulkan kesan pengetahuan yang keliru, sehingga aman dari misleading.\n\n### 💡 Area Perbaikan\n- **Kurang relevan dan substansi:** Jawaban tidak menyentuh pendekatan debugging, tools, atau metode apa pun; perlu dikembangkan dengan contoh konkret untuk menunjukkan kompetensi dasar.\n- **Kurang profesional:** Tampak tidak serius atau terburu-buru; saran untuk selalu baca ulang pertanyaan dan berikan jawaban terstruktur agar terlihat siap kerja.\n- **Tidak ada contoh spesifik:** Tambahkan tools seperti print statements atau debugger untuk membuktikan pengalaman praktis.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi debugging kode sederhana tanpa pesan error jelas (Situation), tugas saya adalah mengidentifikasi akar masalah secara efisien (Task). Saya mulai dengan membaca ulang kode manual, tambahkan print statements untuk track variabel, lalu gunakan debugger VS Code step-by-step beserta linter seperti pylint (Action). Hasilnya, error teratasi cepat, seperti saat saya fix loop tak terhingga di proyek Python pribadi dalam 15 menit (Result).\""
-      },
-      {
-        "question": "Jika rekan internship Anda melakukan kesalahan yang memengaruhi kemajuan proyek bersama, bagaimana Anda akan menanganinya tanpa menimbulkan konflik?",
-        "user_answer": "\nf\n\n\n",
-        "ideal_answer": "Saya akan mendekati rekan internship tersebut secara pribadi dan tenang, memulai percakapan dengan nada suportif seperti \"Mari kita bahas ini bersama agar proyek lancar.\" Saya akan jelaskan dampak kesalahan terhadap kemajuan proyek menggunakan fakta, tanpa menyalahkan, dan fokus pada solusi seperti \"Bagaimana kalau kita perbaiki dengan cara ini?\" Kita akan brainstorm langkah korektif bersama, termasuk pencegahan di masa depan. Jika perlu, saya sarankan melibatkan supervisor untuk panduan tim. Pendekatan ini menjaga harmoni tim sambil memastikan proyek tetap on track.",
-        "similarity_score": 54,
-        "keywords": {
-          "user_keywords": [],
-          "ideal_keywords": [
-            "memulai percakapan",
-            "mendekati rekan",
-            "rekan internship",
-            "secara pribadi",
-            "nada suportif",
-            "Mari"
-          ],
-          "missing_keywords": [
-            "memulai percakapan",
-            "mendekati rekan",
-            "rekan internship",
-            "secara pribadi",
-            "nada suportif",
-            "Mari"
-          ],
-          "extra_keywords": []
-        },
-        "topics": {
-          "expected_topics": [
-            "memulai percakapan",
-            "mendekati rekan",
-            "rekan internship",
-            "secara pribadi",
-            "nada suportif",
-            "Mari"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "memulai percakapan",
-            "mendekati rekan",
-            "rekan internship",
-            "secara pribadi",
-            "nada suportif",
-            "Mari"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat tidak lengkap dan tidak relevan, hanya berisi huruf \"f\" tanpa substansi apa pun, sehingga gagal menunjukkan pemahaman situasi tim atau kemampuan menyelesaikan masalah secara profesional. Ini tidak meyakinkan dan menandakan perlunya pengembangan lebih lanjut.\n\n### ✅ Kekuatan\n- **Ringkas dan sederhana:** Jawaban sangat pendek, menunjukkan kemampuan berkomunikasi tanpa basa-basi berlebih.\n- **Netral sepenuhnya:** Tidak ada elemen yang berpotensi menimbulkan konflik, sesuai dengan esensi pertanyaan.\n- **Potensi pengembangan tinggi:** Memberi ruang luas untuk belajar dan menyusun respons yang lebih matang di masa depan.\n\n### 💡 Area Perbaikan\n- **Kurang substansi dan relevansi:** Jawaban tidak menjawab pertanyaan sama sekali; perlu dijelaskan langkah konkret menangani kesalahan rekan tanpa konflik.\n- **Tidak ada struktur:** Tambahkan metode seperti STAR (Situation, Task, Action, Result) untuk membuat jawaban lebih terorganisir dan meyakinkan.\n- **Perlu detail solutif:** Sertakan contoh pendekatan suportif, fakta, dan pencegahan agar terlihat proaktif.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi proyek tim sebelumnya (Situation), tugas saya adalah menjaga kemajuan tanpa konflik (Task). Saya akan dekati rekan secara pribadi dengan nada suportif, jelaskan dampak kesalahan menggunakan fakta seperti 'Ini memperlambat timeline 2 hari', lalu brainstorm solusi bersama seperti 'Mari perbaiki dengan cara ini dan cegah di masa depan' (Action). Hasilnya, proyek kembali on track dan hubungan tim semakin solid (Result).\""
-      },
-      {
-        "question": "Deskripsikan pengalaman Anda mengimplementasikan fitur kecil dalam aplikasi web menggunakan HTML, CSS, dan JavaScript, serta tantangan yang dihadapi.",
-        "user_answer": "🪥",
-        "ideal_answer": "Selama internship di perusahaan pengembangan web, saya mengimplementasikan fitur modal popup untuk konfirmasi penghapusan data pada aplikasi dashboard menggunakan HTML, CSS, dan JavaScript vanilla. Saya membuat struktur modal dengan HTML semantik, menambahkan animasi transisi halus dengan CSS (termasuk flexbox untuk centering), serta logika show/hide dan event listener pada tombol menggunakan JavaScript. Tantangan utama adalah memastikan modal responsif di berbagai ukuran layar dan menghindari konflik z-index dengan elemen lain. Saya mengatasinya dengan media queries CSS dan pengujian lintas browser, serta menambahkan event listener untuk escape key. Hasilnya, fitur berjalan lancar dan meningkatkan UX aplikasi secara keseluruhan.",
-        "similarity_score": 51,
-        "keywords": {
-          "user_keywords": [],
-          "ideal_keywords": [
-            "pengembangan web",
-            "perusahaan pengembangan",
-            "konfirmasi penghapusan",
-            "penghapusan data",
-            "JavaScript vanilla",
-            "menggunakan HTML"
-          ],
-          "missing_keywords": [
-            "pengembangan web",
-            "perusahaan pengembangan",
-            "konfirmasi penghapusan",
-            "penghapusan data",
-            "JavaScript vanilla",
-            "menggunakan HTML"
-          ],
-          "extra_keywords": []
-        },
-        "topics": {
-          "expected_topics": [
-            "pengembangan web",
-            "perusahaan pengembangan",
-            "konfirmasi penghapusan",
-            "penghapusan data",
-            "JavaScript vanilla",
-            "menggunakan HTML"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "pengembangan web",
-            "perusahaan pengembangan",
-            "konfirmasi penghapusan",
-            "penghapusan data",
-            "JavaScript vanilla",
-            "menggunakan HTML"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sepenuhnya tidak relevan dengan pertanyaan, karena hanya berupa emoji sisir (🪥) tanpa konten substantif, sehingga gagal menunjukkan pengalaman atau kemampuan teknis apa pun dan tidak meyakinkan sama sekali untuk level internship.\n\n### ✅ Kekuatan\n- **Sangat ringkas:** Jawaban hanya satu karakter, menunjukkan kemampuan menyampaikan ide secara minimalis (meski tidak efektif di konteks ini).\n- **Kreatif visual:** Penggunaan emoji menambahkan elemen unik yang bisa menarik perhatian interviewer dalam situasi informal.\n\n### 💡 Area Perbaikan\n- **Tidak relevan dan kosong:** Jawaban tidak menyebutkan pengalaman implementasi fitur web dengan HTML, CSS, JS, atau tantangan apa pun—seharusnya gunakan metode STAR untuk struktur jelas.\n- **Kurang profesionalisme:** Hindari emoji atau respons acak; fokus pada contoh konkret dari proyek pribadi/internship untuk membuktikan skill, meski untuk level internship.\n- **Tambahkan dampak:** Sertakan hasil (result) dan bagaimana tantangan diatasi agar jawaban lebih meyakinkan dan berorientasi pencapaian.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam proyek pribadi aplikasi to-do list (Situation), saya bertugas mengimplementasikan fitur tombol toggle dark mode (Task). Saya gunakan HTML untuk struktur switch, CSS dengan variabel custom properties dan transisi smooth, serta JavaScript untuk event listener dan localStorage agar mode tersimpan (Action). Tantangan utama adalah kompatibilitas browser; saya atasi dengan polyfill sederhana dan testing. Hasilnya, fitur meningkatkan UX dan responsif di mobile (Result).\""
-      }
-    ],
-    "timestamp": "2025-11-25 02:31:29"
-  },
-  {
-    "session_id": "0ca3d035-9b72-4c23-9901-18308e06405b",
-    "overall_score": 58.4,
-    "meta": {
-      "job_role": "lll",
-      "experience_level": "Managerial",
-      "industry": ","
-    },
-    "results": [
-      {
-        "question": "Ceritakan pengalaman Anda memimpin tim melalui krisis keuangan yang memaksa pemotongan anggaran sebesar 20%, termasuk keputusan strategis apa yang Anda ambil dan hasilnya.",
-        "user_answer": "tidak pernah\n",
-        "ideal_answer": "Pada 2020, perusahaan kami mengalami krisis keuangan akibat pandemi, memaksa pemotongan anggaran 20% secara keseluruhan. Sebagai manajer tim, saya memimpin rapat darurat untuk mengevaluasi semua pengeluaran dan memprioritaskan inisiatif inti yang mendukung revenue utama. Keputusan strategis saya meliputi renegosiasi kontrak vendor hingga hemat 15%, otomatisasi proses manual untuk efisiensi 25%, dan pelatihan cross-skilling tim agar tetap produktif tanpa PHK. Kami juga menerapkan dashboard monitoring real-time untuk transparansi anggaran. Hasilnya, tim mencapai 98% target penjualan, mempertahankan 100% retensi karyawan, dan pulih lebih cepat pasca-krisis.",
-        "similarity_score": 53,
-        "keywords": {
-          "user_keywords": [],
-          "ideal_keywords": [
-            "secara keseluruhan",
-            "akibat pandemi",
-            "memaksa pemotongan",
-            "mengalami krisis",
-            "krisis keuangan",
-            "keuangan akibat"
-          ],
-          "missing_keywords": [
-            "secara keseluruhan",
-            "akibat pandemi",
-            "memaksa pemotongan",
-            "mengalami krisis",
-            "krisis keuangan",
-            "keuangan akibat"
-          ],
-          "extra_keywords": []
-        },
-        "topics": {
-          "expected_topics": [
-            "secara keseluruhan",
-            "akibat pandemi",
-            "memaksa pemotongan",
-            "mengalami krisis",
-            "krisis keuangan",
-            "keuangan akibat"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "secara keseluruhan",
-            "akibat pandemi",
-            "memaksa pemotongan",
-            "mengalami krisis",
-            "krisis keuangan",
-            "keuangan akibat"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat jujur dan ringkas, namun kurang relevan serta tidak meyakinkan untuk level manajerial karena gagal menunjukkan kemampuan kepemimpinan atau adaptasi melalui pengalaman alternatif.\n\n### ✅ Kekuatan\n- **Kejujuran tinggi:** Mengakui ketiadaan pengalaman langsung menunjukkan integritas dan menghindari pembohongan yang bisa merugikan kredibilitas.\n- **Kesederhanaan:** Jawaban singkat menghindari pengisian bertele-tele, memungkinkan ruang untuk pertanyaan lanjutan dari interviewer.\n\n### 💡 Area Perbaikan\n- **Kurang pivot ke pengalaman serupa:** Sebaiknya hubungkan dengan situasi terkait (misalnya, pengelolaan anggaran ketat atau krisis lain) untuk menampilkan transferable skills.\n- **Tidak ada struktur STAR:** Jawaban ideal menggunakan Situation-Task-Action-Result untuk membuat narasi lebih impactful dan data-driven.\n- **Absen metrik hasil:** Gagal menyertakan pencapaian kuantitatif, yang krusial untuk meyakinkan interviewer tentang dampak kepemimpinan.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Meskipun saya belum mengalami krisis keuangan persis dengan pemotongan 20%, pada 2021 saya memimpin tim melalui pengurangan anggaran proyek sebesar 15% akibat penurunan pasar. [Situation & Task] Sebagai manager, saya bertanggung jawab menjaga produktivitas tim 12 orang tanpa PHK. [Action] Saya renegosiasi vendor (hemat 12%), otomatisasi workflow (efisiensi 20%), dan prioritaskan inisiatif revenue utama via dashboard real-time. [Result] Tim capai 97% target, retensi 100%, dan pulih 2 bulan lebih cepat—membuktikan kemampuan saya navigasi tekanan anggaran.\""
-      },
-      {
-        "question": "Bayangkan Anda mendapati divisi Anda mengalami penurunan produktivitas 15% akibat konflik internal tim senior. Bagaimana langkah-langkah spesifik yang akan Anda ambil untuk menyelesaikannya?",
-        "user_answer": "dfasf ",
-        "ideal_answer": "Pertama, saya akan menganalisis akar konflik melalui wawancara satu-satu rahasia dengan tim senior untuk memahami perspektif masing-masing dan mengidentifikasi isu utama. Kedua, mengadakan sesi mediasi netral dengan fasilitator independen untuk mendorong komunikasi terbuka dan menyusun kesepakatan bersama. Ketiga, menetapkan ulang peran, tanggung jawab, dan KPI tim yang jelas untuk mengurangi friksi dan fokus pada prioritas. Keempat, memantau kemajuan melalui meeting mingguan singkat dan metrik produktivitas, sambil memberikan feedback positif untuk membangun kepercayaan. Langkah ini diharapkan memulihkan produktivitas dalam 1-2 bulan dengan pendekatan kolaboratif.",
-        "similarity_score": 58,
-        "keywords": {
-          "user_keywords": [
-            "dfasf"
-          ],
-          "ideal_keywords": [
-            "isu utama",
-            "menganalisis akar",
-            "akar konflik",
-            "wawancara satu-satu",
-            "satu-satu rahasia",
-            "memahami perspektif"
-          ],
-          "missing_keywords": [
-            "isu utama",
-            "menganalisis akar",
-            "akar konflik",
-            "wawancara satu-satu",
-            "satu-satu rahasia",
-            "memahami perspektif"
-          ],
-          "extra_keywords": [
-            "dfasf"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "isu utama",
-            "menganalisis akar",
-            "akar konflik",
-            "wawancara satu-satu",
-            "satu-satu rahasia",
-            "memahami perspektif"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "isu utama",
-            "menganalisis akar",
-            "akar konflik",
-            "wawancara satu-satu",
-            "satu-satu rahasia",
-            "memahami perspektif"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat (\"dfasf\") sepenuhnya tidak relevan, tampak seperti kesalahan ketik atau gibberish, sehingga gagal menunjukkan pemahaman masalah atau kemampuan leadership. Ini tidak meyakinkan dan menandakan kurangnya persiapan atau komitmen dalam wawancara.\n\n### ✅ Kekuatan\n- **Kerataan waktu:** Jawaban sangat singkat, menghindari pemborosan waktu interviewer (meski isinya kosong).\n- **Minim risiko:** Tidak ada pernyataan berisiko yang bisa disalahartikan.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi total:** Jawaban tidak menyentuh pertanyaan sama sekali; seharusnya berikan langkah-langkah konkret terkait konflik dan produktivitas.\n- **Tidak ada struktur atau kedalaman:** Hilang analisis akar masalah, action plan, atau metrik hasil; gunakan framework seperti STAR untuk kredibilitas.\n- **Kurang profesionalisme:** Tampak tidak serius; selalu berikan jawaban lengkap dengan contoh spesifik untuk posisi managerial.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situation:** Divisi mengalami penurunan produktivitas 15% karena konflik internal tim senior.  \n> **Task:** Sebagai manager, saya bertanggung jawab memulihkan kolaborasi dan performa tim.  \n> **Action:** Pertama, analisis akar konflik via wawancara rahasia satu-satu; kedua, mediasi netral dengan fasilitator eksternal; ketiga, tetapkan ulang peran/KPI jelas; keempat, pantau via meeting mingguan dan feedback positif.  \n> **Result:** Produktivitas pulih dalam 1-2 bulan, seperti pengalaman saya sebelumnya di proyek serupa."
-      },
-      {
-        "question": "Bagaimana Anda mendesain dan mengimplementasikan sistem KPI untuk tim managerial di organisasi sebelumnya, termasuk metrik utama dan cara menangani underperformance?",
-        "user_answer": "fdaf ",
-        "ideal_answer": "Di organisasi sebelumnya, saya mendesain sistem KPI untuk tim managerial dengan pendekatan kolaboratif, memastikan keselarasan dengan OKR perusahaan menggunakan prinsip SMART. Metrik utama meliputi pencapaian target revenue (70% bobot), tingkat retensi karyawan di atas 90%, efisiensi proses operasional (pengurangan biaya 15%), dan skor kepuasan pelanggan (NPS >80). Implementasi dilakukan melalui dashboard real-time di Google Data Studio untuk monitoring harian, ditambah review bulanan dengan diskusi terstruktur. Untuk underperformance, saya terapkan coaching satu-satu, rencana perbaikan individu (PIP) selama 30-60 hari, dan pelatihan tambahan jika diperlukan, sambil memberikan insentif untuk pencapaian cepat. Hasilnya, performa tim meningkat 25% dalam enam bulan pertama.",
-        "similarity_score": 58,
-        "keywords": {
-          "user_keywords": [
-            "fdaf"
-          ],
-          "ideal_keywords": [
-            "prinsip SMART",
-            "sistem KPI",
-            "OKR perusahaan",
-            "pendekatan kolaboratif",
-            "memastikan keselarasan",
-            "mendesain sistem"
-          ],
-          "missing_keywords": [
-            "prinsip SMART",
-            "sistem KPI",
-            "OKR perusahaan",
-            "pendekatan kolaboratif",
-            "memastikan keselarasan",
-            "mendesain sistem"
-          ],
-          "extra_keywords": [
-            "fdaf"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "prinsip SMART",
-            "sistem KPI",
-            "OKR perusahaan",
-            "pendekatan kolaboratif",
-            "memastikan keselarasan",
-            "mendesain sistem"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "prinsip SMART",
-            "sistem KPI",
-            "OKR perusahaan",
-            "pendekatan kolaboratif",
-            "memastikan keselarasan",
-            "mendesain sistem"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat (\"fdaf\") sepenuhnya tidak relevan dengan pertanyaan, tidak menunjukkan pemahaman atau pengalaman terkait desain KPI, sehingga gagal meyakinkan dan terlihat seperti kesalahan input atau kurang persiapan.\n\n### ✅ Kekuatan\n- **Respons sangat ringkas:** Menghindari kata-kata bertele-tele, meskipun isinya minim.\n- **Tidak ada informasi berlebih:** Fokus langsung, tapi sayangnya tanpa substansi positif.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi total:** Jawaban tidak menyentuh elemen kunci seperti desain KPI, metrik utama, implementasi, atau penanganan underperformance—sebaiknya gunakan pendekatan STAR untuk struktur yang jelas.\n- **Tidak ada contoh spesifik atau data:** Tambahkan metrik nyata, proses implementasi, dan hasil quantifiable untuk membuktikan pengalaman managerial.\n- **Kurang profesionalisme:** Pastikan jawaban substantif dan terkait konteks; latihan ulang untuk menghindari kesalahan input seperti ini.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Di perusahaan sebelumnya (**Situation**), tim managerial kesulitan mencapai target karena KPI yang tidak selaras. Tugas saya (**Task**) adalah mendesain sistem KPI baru berbasis SMART yang align dengan OKR perusahaan. Saya lakukan (**Action**) dengan metrik utama: revenue 70%, retensi karyawan >90%, efisiensi biaya -15%, dan NPS >80; diimplementasikan via dashboard Google Data Studio untuk monitoring real-time dan review bulanan, plus coaching & PIP untuk underperformance. Hasilnya (**Result**), performa tim naik 25% dalam 6 bulan, dengan retensi meningkat signifikan.\""
-      },
-      {
-        "question": "Berikan contoh di mana Anda harus meyakinkan stakeholder eksternal untuk mengalokasikan sumber daya tambahan pada proyek berisiko tinggi, beserta teknik negosiasi yang digunakan.",
-        "user_answer": "dfasf sdfc",
-        "ideal_answer": "Dalam proyek transformasi digital untuk klien telekomunikasi, kami menghadapi risiko tinggi akibat ketergantungan vendor eksternal dan fluktuasi regulasi, yang mengancam deadline peluncuran. Saya meyakinkan stakeholder eksternal (mitra investor) untuk mengalokasikan sumber daya tambahan senilai Rp1 miliar dengan menyajikan analisis risiko kuantitatif dan proyeksi ROI 150% dalam 18 bulan. Teknik negosiasi yang digunakan meliputi membangun rapport melalui pertemuan tatap muka, anchoring dengan proposal awal yang ambisius, serta menawarkan win-win berupa equity sharing dan milestone review transparan. Hasilnya, mereka menyetujui alokasi tersebut, proyek selesai on-time, dan meningkatkan revenue klien sebesar 20%.",
-        "similarity_score": 63,
-        "keywords": {
-          "user_keywords": [
-            "dfasf sdfc",
-            "dfasf",
-            "sdfc"
-          ],
-          "ideal_keywords": [
-            "fluktuasi regulasi",
-            "deadline peluncuran",
-            "transformasi digital",
-            "tinggi akibat",
-            "akibat ketergantungan",
-            "ketergantungan vendor"
-          ],
-          "missing_keywords": [
-            "fluktuasi regulasi",
-            "deadline peluncuran",
-            "transformasi digital",
-            "tinggi akibat",
-            "akibat ketergantungan",
-            "ketergantungan vendor"
-          ],
-          "extra_keywords": [
-            "dfasf sdfc",
-            "dfasf",
-            "sdfc"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "fluktuasi regulasi",
-            "deadline peluncuran",
-            "transformasi digital",
-            "tinggi akibat",
-            "akibat ketergantungan",
-            "ketergantungan vendor"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "fluktuasi regulasi",
-            "deadline peluncuran",
-            "transformasi digital",
-            "tinggi akibat",
-            "akibat ketergantungan",
-            "ketergantungan vendor"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat tidak relevan sama sekali dengan pertanyaan, terlihat seperti input acak tanpa makna, sehingga gagal menunjukkan kemampuan managerial dalam negosiasi atau pengelolaan proyek berisiko tinggi.\n\n### ✅ Kekuatan\n- **Ringkas ekstrem:** Jawaban sangat pendek, menghindari bertele-tele meskipun kurang substansi.\n- **Berpotensi inisiatif awal:** Menunjukkan upaya menjawab, yang bisa dikembangkan dengan konten yang tepat.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi dan substansi:** Jawaban tidak menyentuh elemen kunci seperti contoh proyek, risiko, teknik negosiasi, atau hasil, sehingga tidak meyakinkan interviewer.\n- **Tidak ada struktur profesional:** Hindari jawaban acak; gunakan metode STAR (Situation, Task, Action, Result) untuk membuatnya terstruktur dan impactful.\n- **Kurang data kuantitatif:** Tambahkan metrik seperti nilai sumber daya, ROI, atau dampak bisnis untuk meningkatkan kredibilitas.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situation:** Pada proyek transformasi digital klien telekomunikasi dengan risiko tinggi dari ketergantungan vendor dan regulasi, deadline terancam molor.  \n> **Task:** Saya harus meyakinkan mitra investor eksternal untuk alokasi tambahan Rp1 miliar.  \n> **Action:** Membangun rapport via pertemuan tatap muka, anchoring dengan proposal ROI 150% dalam 18 bulan, dan win-win melalui equity sharing serta milestone review transparan.  \n> **Result:** Alokasi disetujui, proyek selesai on-time, dan revenue klien naik 20%. Teknik ini efektif untuk negosiasi berisiko tinggi."
-      },
-      {
-        "question": "Jika sebuah inisiatif transformasi digital di bawah kepemimpinan Anda terhambat oleh resistensi dari departemen lain, apa strategi kolaboratif yang akan Anda terapkan untuk mengatasinya, termasuk timeline dan ukuran keberhasilan?",
-        "user_answer": "dsf sf ",
-        "ideal_answer": "Saya akan memulai dengan menginisiasi sesi dialog terbuka dan workshop kolaboratif dengan pemimpin departemen terkait dalam 2 minggu pertama untuk memahami kekhawatiran mereka dan membangun empati bersama. Selanjutnya, bentuk tim lintas fungsi untuk co-create roadmap transformasi digital yang mengintegrasikan input mereka, diikuti pilot project kecil dalam bulan pertama. Timeline keseluruhan: assesmen (minggu 1-2), implementasi pilot (bulan 1-2), rollout penuh (bulan 3), dan review triwulanan. Ukuran keberhasilan meliputi tingkat partisipasi stakeholder >80%, pencapaian milestone pilot 90%, serta skor survei kepuasan >4/5 yang menunjukkan dukungan berkelanjutan. Strategi ini memastikan ownership bersama dan mengurangi resistensi secara efektif.",
-        "similarity_score": 60,
-        "keywords": {
-          "user_keywords": [
-            "dsf"
-          ],
-          "ideal_keywords": [
-            "menginisiasi sesi",
-            "sesi dialog",
-            "dialog terbuka",
-            "workshop kolaboratif",
-            "pemimpin departemen",
-            "departemen terkait"
-          ],
-          "missing_keywords": [
-            "menginisiasi sesi",
-            "sesi dialog",
-            "dialog terbuka",
-            "workshop kolaboratif",
-            "pemimpin departemen",
-            "departemen terkait"
-          ],
-          "extra_keywords": [
-            "dsf"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "menginisiasi sesi",
-            "sesi dialog",
-            "dialog terbuka",
-            "workshop kolaboratif",
-            "pemimpin departemen",
-            "departemen terkait"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "menginisiasi sesi",
-            "sesi dialog",
-            "dialog terbuka",
-            "workshop kolaboratif",
-            "pemimpin departemen",
-            "departemen terkait"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sepenuhnya tidak relevan, hanya berupa teks acak tanpa substansi, sehingga gagal menjawab pertanyaan dan tidak meyakinkan sebagai kandidat level manajerial.\n\n### ✅ Kekuatan\n- **Ringkas ekstrem:** Jawaban sangat pendek, menghindari kerumitan yang tidak perlu (meski ini bukan kekuatan utama).\n- **Tidak ada informasi bertele-tele:** Langsung ke inti, tanpa pengembangan yang berlebihan.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi total:** Jawaban tidak menyentuh elemen kunci seperti strategi kolaboratif, timeline, atau ukuran keberhasilan; tampak seperti kesalahan input atau kurang persiapan.\n- **Tidak ada struktur atau kedalaman:** Hilang penjelasan konkret, contoh, atau data pendukung, yang krusial untuk posisi manajerial; gunakan metode STAR (Situation, Task, Action, Result) untuk membuatnya lebih impactful.\n- **Kurang profesionalisme:** Jawaban terlihat tidak serius; fokuslah pada konten yang menunjukkan pengalaman kepemimpinan nyata.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situation:** Saat memimpin transformasi digital, saya pernah menghadapi resistensi dari departemen operasional yang khawatir gangguan proses bisnis.  \n> **Task:** Tugas saya adalah membangun kolaborasi untuk mengurangi hambatan dan memastikan adopsi sukses.  \n> **Action:** Saya inisiasi dialog terbuka via workshop dengan pemimpin terkait dalam 2 minggu pertama, bentuk tim lintas-fungsi untuk co-create roadmap, jalankan pilot kecil di bulan 1-2, lalu rollout penuh di bulan 3 dengan review triwulanan.  \n> **Result:** Partisipasi stakeholder >85%, milestone pilot tercapai 95%, dan survei kepuasan >4.5/5, menghasilkan dukungan berkelanjutan dan percepatan transformasi 20%. Strategi ini membangun ownership bersama dan minimalkan resistensi."
-      }
-    ],
-    "timestamp": "2025-11-25 02:48:00"
-  },
-  {
-    "session_id": "f161e8b3-f2c6-4f31-8794-6fd08646beb2",
-    "overall_score": 57.0,
-    "meta": {
-      "job_role": " ",
-      "experience_level": "Mid-Level (3-5 tahun)",
-      "industry": " "
-    },
-    "results": [
-      {
-        "question": "Ceritakan pengalaman Anda dalam mengoptimalkan query database yang lambat pada aplikasi dengan volume data besar. Apa tools dan teknik yang Anda gunakan, serta dampaknya terhadap performa?",
-        "user_answer": " mmm",
-        "ideal_answer": "Di proyek aplikasi e-commerce dengan volume data lebih dari 10 juta transaksi, saya mengidentifikasi query lambat yang menyebabkan response time aplikasi mencapai 8-10 detik. Saya menggunakan tools seperti EXPLAIN ANALYZE di PostgreSQL dan slow query log untuk menganalisis bottleneck, serta pgAdmin untuk visualisasi execution plan. Teknik yang diterapkan meliputi penambahan composite index pada kolom frequently queried, refactoring query dengan JOIN optimization dan subquery avoidance, serta implementasi caching Redis untuk hasil query berulang. Hasilnya, waktu eksekusi query turun hingga 90% (dari 8 detik menjadi 800 ms), throughput aplikasi meningkat 3x, dan user satisfaction score naik signifikan. Pengalaman ini mengajarkan pentingnya monitoring proaktif untuk skalabilitas database.",
-        "similarity_score": 51,
-        "keywords": {
-          "user_keywords": [
-            "mmm"
-          ],
-          "ideal_keywords": [
-            "juta transaksi",
-            "volume data",
-            "menyebabkan response",
-            "response time",
-            "mencapai 8-10",
-            "EXPLAIN ANALYZE"
-          ],
-          "missing_keywords": [
-            "juta transaksi",
-            "volume data",
-            "menyebabkan response",
-            "response time",
-            "mencapai 8-10",
-            "EXPLAIN ANALYZE"
-          ],
-          "extra_keywords": [
-            "mmm"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "juta transaksi",
-            "volume data",
-            "menyebabkan response",
-            "response time",
-            "mencapai 8-10",
-            "EXPLAIN ANALYZE"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "juta transaksi",
-            "volume data",
-            "menyebabkan response",
-            "response time",
-            "mencapai 8-10",
-            "EXPLAIN ANALYZE"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan dengan pertanyaan, sehingga gagal menyampaikan pengalaman atau nilai tambah apa pun. Secara keseluruhan, jawaban ini tidak meyakinkan dan menunjukkan kurangnya kesiapan untuk level mid-level.\n\n### ✅ Kekuatan\n- **Keaslian:** Jawaban jujur dan tidak memaksakan informasi yang tidak dimiliki, menghindari risiko misinformasi.\n- **Kesadaran diri:** Mengakui keterbatasan dengan respons sederhana, yang bisa menjadi titik awal untuk diskusi lebih lanjut.\n\n### 💡 Area Perbaikan\n- **Kurang substansi:** Jawaban tidak menyentuh elemen kunci seperti pengalaman spesifik, tools, teknik, atau dampak performa, sehingga terlihat tidak kompeten untuk posisi mid-level.\n- **Tidak struktural:** Hindari filler seperti \"mmm\"; gunakan metode STAR (Situation, Task, Action, Result) untuk membuat jawaban lebih terorganisir dan impactful.\n- **Kurang data kuantitatif:** Tambahkan metrik nyata (misalnya, penurunan waktu query dari X detik ke Y ms) agar lebih kredibel dan meyakinkan.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Di proyek e-commerce dengan 10 juta+ transaksi (Situation), saya bertanggung jawab mengatasi query lambat yang bikin response time 8-10 detik (Task). Saya analisis pakai EXPLAIN ANALYZE PostgreSQL, slow query log, dan pgAdmin; lalu tambah composite index, optimasi JOIN, serta caching Redis (Action). Hasilnya, eksekusi query turun 90% jadi 800 ms, throughput naik 3x, dan user satisfaction meningkat signifikan (Result). Ini ajarkan saya monitoring proaktif untuk skalabilitas.\""
-      },
-      {
-        "question": "Bayangkan Anda menemukan ketidaksesuaian antara spesifikasi bisnis dan implementasi kode di proyek mid-way. Bagaimana langkah-langkah Anda untuk menyelesaikannya tanpa menunda deadline?",
-        "user_answer": " cvcvc",
-        "ideal_answer": "Pertama, saya akan verifikasi ketidaksesuaian dengan membandingkan spesifikasi bisnis dan kode secara detail, termasuk uji coba fungsional untuk konfirmasi.  \nKedua, dokumentasikan temuan secara singkat dengan bukti (screenshot atau log) dan estimasi effort fix-nya.  \nKetiga, segera komunikasikan ke stakeholder terkait (PM, BA, dan lead dev) via meeting cepat atau Slack untuk diskusi prioritas dan workaround sementara.  \nKeempat, terapkan solusi minimal viable (hotfix jika minor) secara paralel dengan task lain agar tidak hambat deadline, sambil jadwalkan refinement di sprint berikutnya.  \nKelima, monitor dampak dan update progress real-time untuk transparansi tim.",
-        "similarity_score": 65,
-        "keywords": {
-          "user_keywords": [
-            "cvcvc"
-          ],
-          "ideal_keywords": [
-            "termasuk uji",
-            "verifikasi ketidaksesuaian",
-            "membandingkan spesifikasi",
-            "spesifikasi bisnis",
-            "uji coba",
-            "coba fungsional"
-          ],
-          "missing_keywords": [
-            "termasuk uji",
-            "verifikasi ketidaksesuaian",
-            "membandingkan spesifikasi",
-            "spesifikasi bisnis",
-            "uji coba",
-            "coba fungsional"
-          ],
-          "extra_keywords": [
-            "cvcvc"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "termasuk uji",
-            "verifikasi ketidaksesuaian",
-            "membandingkan spesifikasi",
-            "spesifikasi bisnis",
-            "uji coba",
-            "coba fungsional"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "termasuk uji",
-            "verifikasi ketidaksesuaian",
-            "membandingkan spesifikasi",
-            "spesifikasi bisnis",
-            "uji coba",
-            "coba fungsional"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat, tidak relevan, dan gagal menjawab pertanyaan secara substantif, sehingga tidak meyakinkan serta menunjukkan kurangnya pemahaman atau persiapan untuk skenario mid-level. Ini membuat kandidat tampak kurang siap menghadapi tantangan problem-solving di tengah proyek.\n\n### ✅ Kekuatan\n- **Ringkas dan cepat:** Jawaban sangat pendek, menunjukkan kemampuan merespons tanpa bertele-tele—potensi yang bisa diasah untuk komunikasi efisien.\n- **Originalitas:** Tidak ada indikasi copy-paste, menandakan upaya mandiri meski hasilnya minim.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi dan substansi:** Jawaban tidak menyentuh langkah-langkah apapun terkait verifikasi, komunikasi, atau mitigasi deadline, sehingga terlihat seperti placeholder atau kurang serius.\n- **Tidak ada struktur atau contoh konkret:** Seharusnya gunakan langkah-langkah jelas (seperti verifikasi, dokumentasi, dan hotfix) atau metode STAR untuk membuatnya kredibel dan berbasis pengalaman 3-5 tahun.\n- **Kurang profesionalisme:** Hindari respons acak; fokus pada bahasa formal, bukti pengalaman, dan dampak positif untuk membangun kepercayaan interviewer.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situation:** Di proyek e-commerce mid-way (sprint ke-3), saya temukan kode login tidak sesuai spec bisnis soal validasi OTP.  \n> **Task:** Selesaikan tanpa tunda deadline release.  \n> **Action:** Verifikasi dengan test case dan spec doc, dokumentasikan bukti + estimasi 4 jam fix via Slack, diskusi prioritas dengan PM/BA/lead dev, terapkan hotfix minimal viable paralel task lain, lalu jadwalkan refinement sprint berikutnya.  \n> **Result:** Issue teratasi dalam 1 hari tanpa delay, tingkatkan transparansi tim, dan spec diperbarui untuk cegah recurrence."
-      },
-      {
-        "question": "Bagaimana Anda menangani konflik dengan developer senior dalam tim mengenai pilihan arsitektur teknis, dan apa hasil akhirnya?",
-        "user_answer": "         xcx",
-        "ideal_answer": "Dalam proyek pengembangan aplikasi e-commerce sebelumnya, saya berselisih dengan developer senior mengenai pilihan arsitektur: beliau mendukung monolith untuk kecepatan development, sementara saya mengusulkan microservices untuk skalabilitas jangka panjang. Saya menginisiasi meeting satu-satu untuk mendengarkan argumennya secara mendalam, kemudian menyajikan prototype sederhana beserta data benchmark performa dari kedua pendekatan. Kami berdiskusi dengan tim secara terbuka, mempertimbangkan trade-off seperti biaya maintenance dan kebutuhan bisnis. Akhirnya, kami sepakat pada arsitektur hybrid yang menggabungkan keduanya, sehingga proyek selesai tepat waktu dengan performa optimal dan tim semakin solid. Pengalaman ini mengajarkan saya pentingnya komunikasi data-driven dan menghormati pengalaman senior.",
-        "similarity_score": 57,
-        "keywords": {
-          "user_keywords": [
-            "xcx"
-          ],
-          "ideal_keywords": [
-            "beliau mendukung",
-            "kecepatan development",
-            "jangka panjang",
-            "pengembangan aplikasi",
-            "aplikasi e-commerce",
-            "mengenai pilihan"
-          ],
-          "missing_keywords": [
-            "beliau mendukung",
-            "kecepatan development",
-            "jangka panjang",
-            "pengembangan aplikasi",
-            "aplikasi e-commerce",
-            "mengenai pilihan"
-          ],
-          "extra_keywords": [
-            "xcx"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "beliau mendukung",
-            "kecepatan development",
-            "jangka panjang",
-            "pengembangan aplikasi",
-            "aplikasi e-commerce",
-            "mengenai pilihan"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "beliau mendukung",
-            "kecepatan development",
-            "jangka panjang",
-            "pengembangan aplikasi",
-            "aplikasi e-commerce",
-            "mengenai pilihan"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban user sangat tidak relevan dan tidak informatif, hanya berupa teks acak tanpa kaitan dengan pertanyaan, sehingga gagal meyakinkan interviewer tentang kemampuan menangani konflik tim. Ini menunjukkan kurangnya persiapan atau pemahaman mendalam terhadap pengalaman kerja.\n\n### ✅ Kekuatan\n- **Ringkas ekstrem:** Jawaban sangat pendek, menghindari bertele-tele (meski ini bukan nilai tambah utama).\n- **Tidak ada kesalahan gramatikal mencolok:** Teks sederhana tanpa typo yang parah pada huruf yang ada.\n\n### 💡 Area Perbaikan\n- **Kurang relevan dan spesifik:** Jawaban tidak menyebutkan konteks konflik, tindakan, atau hasil, padahal pertanyaan memerlukan contoh nyata dari pengalaman kerja mid-level.\n- **Tidak menggunakan struktur STAR:** Hilang elemen Situation, Task, Action, dan Result, membuat jawaban tidak meyakinkan dan sulit dievaluasi.\n- **Kurang data-driven atau bukti:** Tidak ada prototype, benchmark, atau outcome bisnis, yang krusial untuk posisi mid-level di bidang teknis.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam proyek e-commerce sebelumnya (Situation), saya berselisih dengan developer senior soal arsitektur: beliau pilih monolith untuk speed, saya usulkan microservices untuk skalabilitas (Task). Saya inisiasi 1-on-1 meeting, presentasikan prototype dan benchmark data, lalu diskusi tim terbuka pertimbangkan trade-off bisnis (Action). Hasilnya, kami adopsi hybrid architecture, proyek on-time dengan performa optimal, dan tim lebih kolaboratif (Result). Ini ajarkan saya komunikasi data-driven.\""
-      },
-      {
-        "question": "Jelaskan pendekatan Anda dalam mendesain API RESTful yang scalable untuk sistem microservices, termasuk handling error dan rate limiting berdasarkan pengalaman 3-5 tahun Anda.",
-        "user_answer": "  xcxcxc",
-        "ideal_answer": "Dalam mendesain API RESTful yang scalable untuk sistem microservices, saya selalu mengikuti prinsip REST dengan resource-oriented design, versioning melalui URL prefix seperti /v1/, dan stateless operations untuk memudahkan horizontal scaling menggunakan Kubernetes atau Docker Swarm, berdasarkan pengalaman saya selama 4 tahun di proyek e-commerce. Untuk scalability, saya terapkan API Gateway seperti Kong atau Spring Cloud Gateway untuk routing, load balancing, dan service discovery dengan Consul, serta pagination dan caching dengan Redis. Handling error saya standarisasi menggunakan format JSON konsisten (misalnya { \"error\": { \"code\": 400, \"message\": \"Invalid input\", \"details\": [...] } }) dengan HTTP status codes yang tepat, termasuk global exception handler di framework seperti Spring Boot. Rate limiting saya implementasikan dengan algoritma token bucket di Redis, membatasi request per user/API key (contoh: 1000 req/jam), yang berhasil mengurangi overload hingga 70% di proyek sebelumnya. Pendekatan ini memastikan API tetap reliable dan mudah di-maintain di lingkungan microservices.",
-        "similarity_score": 56,
-        "keywords": {
-          "user_keywords": [
-            "xcxcxc"
-          ],
-          "ideal_keywords": [
-            "Docker Swarm",
-            "prinsip REST",
-            "URL prefix",
-            "resource-oriented design",
-            "berdasarkan pengalaman",
-            "menggunakan Kubernetes"
-          ],
-          "missing_keywords": [
-            "Docker Swarm",
-            "prinsip REST",
-            "URL prefix",
-            "resource-oriented design",
-            "berdasarkan pengalaman",
-            "menggunakan Kubernetes"
-          ],
-          "extra_keywords": [
-            "xcxcxc"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "Docker Swarm",
-            "prinsip REST",
-            "URL prefix",
-            "resource-oriented design",
-            "berdasarkan pengalaman",
-            "menggunakan Kubernetes"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "Docker Swarm",
-            "prinsip REST",
-            "URL prefix",
-            "resource-oriented design",
-            "berdasarkan pengalaman",
-            "menggunakan Kubernetes"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat tidak relevan dan tampak seperti placeholder acak (\"xcxcxc\"), sehingga gagal menjawab pertanyaan secara substansial dan tidak meyakinkan sama sekali untuk level mid-level dengan pengalaman 3-5 tahun.\n\n### ✅ Kekuatan\n- **Tidak ada kekuatan signifikan:** Jawaban terlalu singkat dan tidak menunjukkan pengetahuan teknis apa pun.\n- **Ringkas:** Meski demikian, tidak ada elemen bertele-tele yang membingungkan pewawancara.\n\n### 💡 Area Perbaikan\n- **Kurang relevan dan substansi:** Jawaban tidak menyentuh topik API RESTful, scalability, microservices, handling error, atau rate limiting sama sekali; perlu jawaban yang langsung ke poin dengan contoh pengalaman nyata.\n- **Kurang profesionalisme:** Hindari input acak atau tidak lengkap; gunakan struktur STAR (Situation, Task, Action, Result) untuk membuktikan pengalaman 3-5 tahun dengan metrik hasil konkret.\n- **Tambahkan spesifisitas:** Sertakan tools/teknologi (e.g., API Gateway, Redis) dan dampak bisnis untuk meyakinkan pewawancara.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Di proyek e-commerce saya selama 4 tahun (Situation), tugas saya mendesain API RESTful scalable untuk microservices yang menangani 10k+ request/hari (Task). Saya terapkan resource-oriented design dengan versioning (/v1/), stateless ops via Docker/Kubernetes, API Gateway (Kong) untuk routing/load balancing, pagination, caching Redis, error handling JSON standar (e.g., { 'error': { 'code': 400, 'message': 'Invalid input' } }) dengan global handler Spring Boot, serta rate limiting token bucket di Redis (1000 req/jam per API key) (Action). Hasilnya, overload turun 70% dan latency <200ms, memastikan reliabilitas tinggi (Result).\""
-      },
-      {
-        "question": "Ceritakan situasi di mana Anda harus memimpin code review untuk tim kecil selama sprint ketat. Apa kriteria yang Anda prioritaskan dan bagaimana memastikan kualitas kode tetap tinggi?",
-        "user_answer": "  xcxcxxc",
-        "ideal_answer": "Selama sprint akhir proyek e-commerce di perusahaan sebelumnya, tim kecil beranggotakan 4 developer menghadapi deadline ketat hanya 3 hari untuk fitur checkout baru. Saya memimpin code review dengan memprioritaskan kriteria utama seperti kebenaran fungsional (correctness), keamanan (security vulnerabilities), keterbacaan kode (readability), dan kepatuhan standar tim (coding standards). Untuk menjaga kualitas tinggi, saya menerapkan checklist otomatis via SonarQube untuk isu minor, review bergantian secara paralel, dan sesi diskusi singkat 15 menit per PR untuk feedback cepat. Hasilnya, semua kode dimerge tanpa bug kritis, dan fitur dirilis tepat waktu dengan zero downtime pasca-deploy.",
-        "similarity_score": 56,
-        "keywords": {
-          "user_keywords": [
-            "xcxcxxc"
-          ],
-          "ideal_keywords": [
-            "developer menghadapi",
-            "checkout baru",
-            "sprint akhir",
-            "akhir proyek",
-            "proyek e-commerce",
-            "menghadapi deadline"
-          ],
-          "missing_keywords": [
-            "developer menghadapi",
-            "checkout baru",
-            "sprint akhir",
-            "akhir proyek",
-            "proyek e-commerce",
-            "menghadapi deadline"
-          ],
-          "extra_keywords": [
-            "xcxcxxc"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "developer menghadapi",
-            "checkout baru",
-            "sprint akhir",
-            "akhir proyek",
-            "proyek e-commerce",
-            "menghadapi deadline"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "developer menghadapi",
-            "checkout baru",
-            "sprint akhir",
-            "akhir proyek",
-            "proyek e-commerce",
-            "menghadapi deadline"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sepenuhnya tidak relevan dengan pertanyaan, hanya berisi karakter acak tanpa substansi atau struktur, sehingga gagal menunjukkan pengalaman memimpin code review dan tidak meyakinkan untuk level mid-level.\n\n### ✅ Kekuatan\n- **Respons sangat ringkas:** Menunjukkan kemampuan menyampaikan ide dengan efisien, meski tanpa konten.\n- **Tidak ada kesalahan faktual:** Jawaban tidak menimbulkan informasi salah yang bisa menyesatkan.\n\n### 💡 Area Perbaikan\n- **Kurang relevansi dan substansi:** Jawaban tidak menjawab pertanyaan sama sekali; perlu cerita nyata menggunakan metode STAR (Situation, Task, Action, Result) untuk membuktikan pengalaman.\n- **Tidak ada detail spesifik:** Hilang kriteria prioritas code review, strategi menjaga kualitas, dan hasil measurable; tambahkan contoh konkret seperti tools (e.g., SonarQube) atau metrik (e.g., zero bug).\n- **Kurang struktur profesional:** Gunakan paragraf terstruktur agar mudah dibaca interviewer, hindari input acak yang terlihat tidak serius.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Di sprint akhir proyek e-commerce sebelumnya (**Situation**), tim kecil 4 developer kami punya deadline 3 hari untuk fitur checkout baru. Saya bertanggung jawab memimpin code review (**Task**). Saya prioritaskan kriteria seperti correctness, security, readability, dan coding standards; terapkan checklist SonarQube untuk isu minor, review paralel bergantian, serta diskusi 15 menit per PR (**Action**). Hasilnya, semua kode dimerge tanpa bug kritis, fitur rilis tepat waktu dengan zero downtime (**Result**). Ini membuktikan kemampuan saya menjaga kualitas di tekanan tinggi.\""
-      }
-    ],
-    "timestamp": "2025-11-25 03:07:37"
-  },
-  {
-    "session_id": "6a75715d-5a76-419d-a091-7fed5d593596",
-    "overall_score": 51.4,
-    "meta": {
-      "job_role": "data scientist",
-      "experience_level": "Internship",
-      "industry": "healtech"
-    },
-    "results": [
-      {
-        "question": "Bayangkan Anda menerima dataset rekam medis pasien dengan banyak nilai hilang pada parameter vital seperti tekanan darah. Bagaimana langkah-langkah Anda untuk menangani missing data tersebut agar siap untuk modeling?",
-        "user_answer": "tidak tahu",
-        "ideal_answer": "Pertama, saya akan melakukan exploratory data analysis (EDA) untuk memvisualisasikan pola missing values pada parameter vital seperti tekanan darah, menggunakan heatmap atau missingno library, serta memeriksa apakah missing bersifat MCAR, MAR, atau MNAR. Selanjutnya, saya evaluasi konteks medisnya—misalnya, missing bisa menandakan kondisi stabil—dan konsultasikan dengan ahli domain healtech jika diperlukan. Untuk imputasi, saya prioritaskan metode sederhana seperti median untuk data numerik skewed, atau forward-fill jika ada urutan waktu rekam medis; gunakan KNN atau MICE untuk kasus kompleks. Saya pastikan split train-test sebelum imputasi untuk hindari data leakage, lalu validasi dengan metrik seperti RMSE pada subset validasi. Akhirnya, dokumentasikan semua keputusan untuk reproducibilitas model.",
-        "similarity_score": 51,
-        "keywords": {
-          "user_keywords": [
-            "tahu"
-          ],
-          "ideal_keywords": [
-            "bersifat MCAR",
-            "tekanan darah",
-            "menggunakan heatmap",
-            "missingno library",
-            "melakukan exploratory",
-            "memvisualisasikan pola"
-          ],
-          "missing_keywords": [
-            "bersifat MCAR",
-            "tekanan darah",
-            "menggunakan heatmap",
-            "missingno library",
-            "melakukan exploratory",
-            "memvisualisasikan pola"
-          ],
-          "extra_keywords": [
-            "tahu"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "bersifat MCAR",
-            "tekanan darah",
-            "menggunakan heatmap",
-            "missingno library",
-            "melakukan exploratory",
-            "memvisualisasikan pola"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "bersifat MCAR",
-            "tekanan darah",
-            "menggunakan heatmap",
-            "missingno library",
-            "melakukan exploratory",
-            "memvisualisasikan pola"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan karena hanya mengakui ketidaktahuan tanpa upaya menjelaskan proses, sehingga kurang meyakinkan untuk posisi data scientist internship di healtech yang menuntut pemahaman dasar handling data medis.\n\n### ✅ Kekuatan\n- **Kejujuran:** Kandidat secara terbuka mengakui keterbatasan pengetahuan, yang menunjukkan integritas dan potensi untuk belajar cepat.\n- **Kesederhanaan:** Jawaban ringkas tanpa basa-basi, menghindari jawaban palsu yang bisa menimbulkan risiko di wawancara.\n\n### 💡 Area Perbaikan\n- **Kurang substansi:** Jawaban tidak menyentuh langkah EDA, imputasi, atau pertimbangan domain healtech seperti MCAR/MAR/MNAR, yang esensial untuk data rekam medis.\n- **Tidak ada struktur pemikiran:** Sebaiknya tunjukkan proses berpikir logis (misalnya via STAR) meski belum expert, untuk membangun kredibilitas.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi dataset rekam medis dengan missing values pada tekanan darah (Situation), tugas saya adalah menyiapkannya untuk modeling tanpa bias (Task). Saya mulai dengan EDA menggunakan heatmap missingno untuk deteksi pola MCAR/MAR/MNAR, konsultasi ahli healtech, lalu imputasi via median/forward-fill untuk data waktu atau MICE/KNN; split train-test dulu hindari leakage (Action). Hasilnya, data siap model dengan validasi RMSE rendah dan dokumentasi lengkap untuk reproducibilitas (Result).\""
-      },
-      {
-        "question": "Ceritakan pengalaman proyek di mana Anda menggunakan Python (Pandas/NumPy) untuk membersihkan dan menganalisis dataset berukuran sedang. Apa tantangan utama dan bagaimana Anda mengatasinya?",
-        "user_answer": "tidak tahu",
-        "ideal_answer": "Selama internship di perusahaan healtech, saya memimpin pembersihan dan analisis dataset rekam medis pasien berukuran 50.000 baris menggunakan Pandas dan NumPy. Saya membersihkan data dengan menghapus duplikat, mengisi missing values menggunakan interpolasi, dan mendeteksi outlier melalui metode IQR di Pandas. Tantangan utama adalah inkonsistensi format tanggal dan volume data yang menyebabkan memory overflow saat komputasi. Saya mengatasinya dengan mengonversi format tanggal menggunakan pd.to_datetime() dan memproses data secara chunked dengan NumPy arrays untuk efisiensi memori. Hasilnya, analisis eksploratori menghasilkan insights tentang pola penyakit kronis, yang mendukung pengembangan model prediksi.",
-        "similarity_score": 53,
-        "keywords": {
-          "user_keywords": [
-            "tahu"
-          ],
-          "ideal_keywords": [
-            "perusahaan healtech",
-            "pasien berukuran",
-            "memimpin pembersihan",
-            "dataset rekam",
-            "rekam medis",
-            "medis pasien"
-          ],
-          "missing_keywords": [
-            "perusahaan healtech",
-            "pasien berukuran",
-            "memimpin pembersihan",
-            "dataset rekam",
-            "rekam medis",
-            "medis pasien"
-          ],
-          "extra_keywords": [
-            "tahu"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "perusahaan healtech",
-            "pasien berukuran",
-            "memimpin pembersihan",
-            "dataset rekam",
-            "rekam medis",
-            "medis pasien"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "perusahaan healtech",
-            "pasien berukuran",
-            "memimpin pembersihan",
-            "dataset rekam",
-            "rekam medis",
-            "medis pasien"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan, karena hanya mengakui kurangnya pengetahuan tanpa memberikan contoh pengalaman apa pun. Ini kurang meyakinkan dan menunjukkan minimnya persiapan atau pengalaman praktis untuk posisi data scientist internship.\n\n### ✅ Kekuatan\n- **Kejujuran tinggi:** Kandidat secara terbuka mengakui keterbatasan, yang mencerminkan integritas dan menghindari pengada-ada.\n- **Kesederhanaan:** Jawaban ringkas, tidak bertele-tele, meskipun minim substansi.\n\n### 💡 Area Perbaikan\n- **Kurang spesifik dan konkret:** Jawaban tidak menyebutkan pengalaman proyek, tools, tantangan, atau solusi, sehingga interviewer sulit menilai kemampuan teknis.\n- **Tidak menggunakan struktur STAR:** Sebaiknya jelaskan Situation, Task, Action, dan Result untuk membuat jawaban lebih terstruktur dan impactful.\n- **Kurang inisiatif:** Manfaatkan kesempatan untuk menyebut proyek pribadi, kursus, atau latihan di Kaggle agar tetap relevan.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Selama proyek pribadi menganalisis dataset COVID-19 (50.000 baris) dari Kaggle (Situation & Task), saya menggunakan Pandas untuk membersihkan data: menghapus duplikat dengan `drop_duplicates()`, mengisi missing values via interpolasi, dan outlier detection pakai IQR. Tantangan utama adalah memory overflow saat load data besar, yang saya atasi dengan chunking via `pd.read_csv(chunksize=10000)` dan NumPy arrays untuk komputasi efisien (Action). Hasilnya, saya temukan pola tren infeksi dan visualisasi insights yang mendukung model prediksi sederhana (Result).\""
-      },
-      {
-        "question": "Jelaskan bagaimana Anda akan melakukan exploratory data analysis (EDA) pada dataset dari wearable devices di healtech, termasuk visualisasi untuk mendeteksi anomali.",
-        "user_answer": "tidak tahu",
-        "ideal_answer": "Saya akan memulai EDA dengan memuat dataset menggunakan Pandas, memeriksa bentuk data, tipe variabel, nilai hilang, dan statistik deskriptif seperti mean, median, serta standar deviasi untuk metrik seperti heart rate, steps, dan sleep duration dari wearable devices. Selanjutnya, saya membersihkan data dengan mengisi atau menghapus missing values dan menangani outliers awal melalui boxplot per variabel untuk mendeteksi anomali seperti lonjakan heart rate yang tidak wajar. Untuk visualisasi, saya gunakan histogram dan density plot dengan Seaborn untuk distribusi data, serta time series plot (line plot) berdasarkan timestamp guna mengidentifikasi pola harian/mingguan dan anomali temporal seperti aktivitas ekstrem. Scatter plot antara variabel (misalnya heart rate vs. steps) akan membantu mendeteksi korelasi dan outlier multivariat. Akhirnya, saya ringkas temuan dalam dashboard interaktif menggunakan Plotly untuk memudahkan deteksi anomali kesehatan potensial di healtech.",
-        "similarity_score": 51,
-        "keywords": {
-          "user_keywords": [
-            "tahu"
-          ],
-          "ideal_keywords": [
-            "memulai EDA",
-            "nilai hilang",
-            "memeriksa bentuk",
-            "wearable devices",
-            "menggunakan Pandas",
-            "heart rate"
-          ],
-          "missing_keywords": [
-            "memulai EDA",
-            "nilai hilang",
-            "memeriksa bentuk",
-            "wearable devices",
-            "menggunakan Pandas",
-            "heart rate"
-          ],
-          "extra_keywords": [
-            "tahu"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "memulai EDA",
-            "nilai hilang",
-            "memeriksa bentuk",
-            "wearable devices",
-            "menggunakan Pandas",
-            "heart rate"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "memulai EDA",
-            "nilai hilang",
-            "memeriksa bentuk",
-            "wearable devices",
-            "menggunakan Pandas",
-            "heart rate"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan, karena hanya mengakui ketidaktahuan tanpa upaya menjelaskan proses EDA, sehingga kurang meyakinkan untuk posisi data scientist internship di healtech.\n\n### ✅ Kekuatan\n- **Kejujuran tinggi:** Mengakui keterbatasan pengetahuan menunjukkan integritas, yang merupakan sikap positif untuk kandidat internship yang masih belajar.\n- **Potensi belajar cepat:** Respons ini membuka peluang untuk diskusi lebih lanjut, menandakan kesiapan menerima bimbingan.\n\n### 💡 Area Perbaikan\n- **Kurang pengetahuan dasar:** Jawaban tidak menyentuh langkah EDA standar seperti pemeriksaan data, cleaning, atau visualisasi, yang esensial untuk peran data scientist.\n- **Tidak ada upaya struktural:** Sebaiknya berikan outline sederhana atau contoh meski belum mahir, untuk menunjukkan pemahaman konseptual dan antusiasme.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam situasi dataset wearable devices di healtech (Situation), tugas saya adalah melakukan EDA untuk mendeteksi anomali kesehatan (Task). Saya akan mulai dengan memuat data via Pandas, cek statistik deskriptif (mean, median heart rate/steps), bersihkan missing values, lalu visualisasikan via boxplot, histogram Seaborn, dan time series plot untuk outlier temporal seperti lonjakan heart rate (Action). Hasilnya, dashboard Plotly yang ringkas temuan pola harian dan anomali potensial, memudahkan tim healtech bertindak cepat (Result).\""
-      },
-      {
-        "question": "Dalam skenario healtech, tim Anda membangun model ML untuk memprediksi risiko penyakit kronis menggunakan data EHR, tetapi model overfitting. Apa teknik yang akan Anda terapkan untuk mengatasinya, dan mengapa?",
-        "user_answer": "oke oke",
-        "ideal_answer": "Saya akan menerapkan k-fold cross-validation untuk mengevaluasi model pada subset data yang berbeda, sehingga mendeteksi overfitting lebih akurat pada data EHR yang terbatas dan noisy. Selanjutnya, menggunakan L2 regularization untuk menambahkan penalti pada bobot model besar, mencegah kompleksitas berlebih tanpa mengurangi performa pada data pasien baru. Saya juga akan terapkan early stopping, memantau validation loss agar training berhenti sebelum overfitting parah. Teknik-teknik ini relevan di healtech karena efisien menangani data sensitif dan imbalanced, meningkatkan generalisasi prediksi risiko penyakit kronis.",
-        "similarity_score": 51,
-        "keywords": {
-          "user_keywords": [
-            "oke oke",
-            "oke"
-          ],
-          "ideal_keywords": [
-            "data EHR",
-            "menerapkan k-fold",
-            "k-fold cross-validation",
-            "cross-validation untuk",
-            "untuk mengevaluasi",
-            "mengevaluasi model"
-          ],
-          "missing_keywords": [
-            "data EHR",
-            "menerapkan k-fold",
-            "k-fold cross-validation",
-            "cross-validation untuk",
-            "untuk mengevaluasi",
-            "mengevaluasi model"
-          ],
-          "extra_keywords": [
-            "oke oke",
-            "oke"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "data EHR",
-            "menerapkan k-fold",
-            "k-fold cross-validation",
-            "cross-validation untuk",
-            "untuk mengevaluasi",
-            "mengevaluasi model"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "data EHR",
-            "menerapkan k-fold",
-            "k-fold cross-validation",
-            "cross-validation untuk",
-            "untuk mengevaluasi",
-            "mengevaluasi model"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan sama sekali dengan pertanyaan, sehingga gagal menunjukkan pengetahuan teknis dasar tentang overfitting di konteks healtech. Ini kurang meyakinkan dan tidak mencerminkan kesiapan untuk posisi data scientist internship.\n\n### ✅ Kekuatan\n- **Respons cepat dan ringan:** Menandakan antusiasme awal atau kesiapan mendengarkan, yang bisa menjadi nilai tambah dalam wawancara tim.\n- **Bahasa santai:** Mencerminkan kepribadian approachable, berguna untuk kolaborasi di tim healtech yang dinamis.\n\n### 💡 Area Perbaikan\n- **Kurang substansi teknis:** Jawaban tidak menyebutkan teknik apa pun seperti cross-validation atau regularization, padahal pertanyaan meminta solusi spesifik untuk overfitting pada data EHR.\n- **Tidak kontekstual:** Harus hubungkan dengan tantangan healtech seperti data noisy/imbalanced, agar terlihat paham domain; tambahkan alasan mengapa teknik itu efektif untuk meningkatkan kredibilitas.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> \"Dalam skenario healtech di mana model ML untuk prediksi risiko penyakit kronis dari data EHR mengalami overfitting (Situation & Task), saya akan terapkan k-fold cross-validation untuk evaluasi robust, L2 regularization untuk membatasi kompleksitas model, serta early stopping berdasarkan validation loss (Action). Hasilnya, model lebih generalisasi pada data pasien baru, mengurangi risiko false positive dan efisien untuk data sensitif healtech (Result).\""
-      },
-      {
-        "question": "Anda menemukan bias rasial dalam dataset pelatihan untuk model prediksi outcome pasien. Bagaimana Anda akan mendeteksi, mengukur, dan memitigasi bias tersebut sambil mematuhi regulasi privasi data kesehatan?",
-        "user_answer": "oke",
-        "ideal_answer": "Untuk mendeteksi bias rasial, saya akan melakukan analisis eksploratori data (EDA) dengan mengelompokkan dataset berdasarkan ras dan memeriksa distribusi outcome pasien menggunakan visualisasi serta uji statistik seperti chi-square test. Selanjutnya, saya mengukur bias dengan metrik fairness seperti demographic parity, equalized odds, dan disparate impact ratio untuk membandingkan performa model antar kelompok ras. Untuk memitigasi, saya terapkan teknik reweighting sampel atau oversampling kelompok minoritas, serta augmentasi data sintetis seperti SMOTE yang aman privasi. Selama proses, saya patuhi regulasi seperti PDPA dan HIPAA dengan menggunakan data agregat anonim, differential privacy, atau federated learning agar tidak mengungkap data individu pasien. Akhirnya, saya validasi model pasca-mitigasi dengan cross-validation stratified by ras untuk memastikan fairness tanpa mengorbankan akurasi.",
-        "similarity_score": 51,
-        "keywords": {
-          "user_keywords": [
-            "oke"
-          ],
-          "ideal_keywords": [
-            "chi-square test",
-            "melakukan analisis",
-            "analisis eksploratori",
-            "mengelompokkan dataset",
-            "dataset berdasarkan",
-            "memeriksa distribusi"
-          ],
-          "missing_keywords": [
-            "chi-square test",
-            "melakukan analisis",
-            "analisis eksploratori",
-            "mengelompokkan dataset",
-            "dataset berdasarkan",
-            "memeriksa distribusi"
-          ],
-          "extra_keywords": [
-            "oke"
-          ]
-        },
-        "topics": {
-          "expected_topics": [
-            "chi-square test",
-            "melakukan analisis",
-            "analisis eksploratori",
-            "mengelompokkan dataset",
-            "dataset berdasarkan",
-            "memeriksa distribusi"
-          ],
-          "covered_topics": [],
-          "missing_topics": [
-            "chi-square test",
-            "melakukan analisis",
-            "analisis eksploratori",
-            "mengelompokkan dataset",
-            "dataset berdasarkan",
-            "memeriksa distribusi"
-          ]
-        },
-        "feedback": "### 🎯 Analisis Singkat\nJawaban kandidat sangat singkat dan tidak relevan sama sekali dengan pertanyaan, sehingga gagal menunjukkan pemahaman teknis atau kemampuan analisis. Ini kurang meyakinkan untuk level internship data scientist di healtech, di mana diharapkan jawaban struktural dan berbasis pengetahuan.\n\n### ✅ Kekuatan\n- **Respons ringkas:** Menghindari jawaban bertele-tele, menunjukkan potensi kemampuan komunikasi sederhana.\n- **Pengakuan topik:** Kata \"oke\" bisa diinterpretasikan sebagai kesediaan menerima tantangan, meski tanpa elaborasi.\n\n### 💡 Area Perbaikan\n- **Kurang substansi:** Jawaban tidak menyentuh elemen kunci seperti deteksi (EDA, uji statistik), pengukuran (metrik fairness), mitigasi (reweighting, SMOTE), atau regulasi privasi (HIPAA, differential privacy).\n- **Tidak struktural:** Perlu menggunakan framework seperti STAR untuk membuat jawaban lebih profesional dan meyakinkan, dengan contoh teknis spesifik.\n- **Kurang kedalaman:** Tambahkan referensi tools/metode healtech untuk membuktikan pengalaman praktis.\n\n### 🚀 Contoh Jawaban Lebih Baik\n> **Situation:** Saat EDA pada dataset pelatihan model prediksi outcome pasien, saya temukan distribusi ras tidak seimbang, berpotensi bias rasial.  \n> **Task:** Deteksi, ukur bias, dan mitigasi sambil patuhi PDPA/HIPAA.  \n> **Action:** Deteksi via visualisasi dan chi-square test; ukur dengan demographic parity dan disparate impact; mitigasi lewat reweighting sampel, SMOTE privasi-aman, serta differential privacy/federated learning untuk anonimitas.  \n> **Result:** Model pasca-mitigasi capai fairness >0.9 via stratified CV, tanpa drop akurasi signifikan, siap deploy di lingkungan regulasi ketat."
-      }
-    ],
-    "timestamp": "2025-11-25 11:05:16"
+    "timestamp": "2025-11-25 20:56:02"
   }
 ]

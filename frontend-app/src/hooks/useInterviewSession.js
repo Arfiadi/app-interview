@@ -1,21 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
-// Hook ini mengelola seluruh logika sesi wawancara
 export function useInterviewSession() {
   const router = useRouter();
   
   // Ambil params dari URL
-  // 'n' adalah parameter untuk jumlah pertanyaan (num_questions)
   const { job, job_role, level, experience_level, industry, n } = router.query;
   
-  // Normalisasi parameter agar konsisten
   const jobQuery = job || job_role || "";
   const levelQuery = level || experience_level || "";
   const industryQuery = industry || "";
 
-  // --- Core State (Status Sesi) ---
-  const [status, setStatus] = useState("idle"); // idle, loading, ready, error
+  // State
+  const [status, setStatus] = useState("idle");
   const [questions, setQuestions] = useState([]);
   const [sessionId, setSessionId] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,43 +20,44 @@ export function useInterviewSession() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   
-  // --- Feature State: Timer & Voice ---
-  const [timer, setTimer] = useState(0); // Timer dalam detik
+  // Features
+  const [timer, setTimer] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
   const recognitionRef = useRef(null);
 
-  // 1. INITIALIZE SESSION (Saat halaman dimuat)
+  // 1. INITIALIZE SESSION
   useEffect(() => {
-    // Tunggu sampai router siap membaca URL query
     if (!router.isReady) return;
     
-    // Validasi parameter wajib
     if (!jobQuery || !levelQuery) {
         setStatus("error");
-        setErrorMsg("Parameter sesi tidak lengkap (Role/Level hilang).");
+        setErrorMsg("Parameter sesi tidak lengkap.");
         return;
     }
 
     async function initSession() {
       setStatus("loading");
       try {
-        // Parse jumlah pertanyaan dari URL (default: 5)
+        // --- FIX JUMLAH PERTANYAAN ---
+        // Membersihkan input "5 (Default)" menjadi angka 5
         let numQ = 5;
         if (n) {
-           // Kadang formatnya "5 (Default)", jadi kita ambil angka depannya saja
-           const parsed = parseInt(n);
-           if (!isNaN(parsed)) numQ = parsed;
+           // Ambil hanya angka dari string (misal "5 (Default)" -> "5")
+           const cleanN = n.toString().replace(/\D/g, ''); 
+           const parsed = parseInt(cleanN);
+           // Validasi batas (3-10)
+           if (!isNaN(parsed) && parsed >= 1 && parsed <= 15) {
+               numQ = parsed;
+           }
         }
 
-        // Payload untuk dikirim ke Backend via Next.js API Route
         const payload = { 
             job_role: jobQuery, 
             experience_level: levelQuery, 
             industry: industryQuery, 
-            num_questions: numQ // <-- Menggunakan jumlah pertanyaan dinamis
+            num_questions: numQ // Mengirim integer bersih
         };
         
-        // Panggil API Route Next.js (bukan Python langsung)
         const res = await fetch("/api/interview/generate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -69,7 +67,6 @@ export function useInterviewSession() {
         if (!res.ok) throw new Error("Gagal menghubungi AI Coach.");
         const data = await res.json();
         
-        // Simpan data sesi ke state
         setQuestions(data.questions);
         setSessionId(data.session_id);
         setStatus("ready");
@@ -79,12 +76,11 @@ export function useInterviewSession() {
       }
     }
 
-    // Hindari pemanggilan ganda (double-fetch) di React Strict Mode
     if (status === 'idle') initSession();
     
-  }, [router.isReady, jobQuery, levelQuery, industryQuery, n]); // Dependency array
+  }, [router.isReady, jobQuery, levelQuery, industryQuery, n]);
 
-  // 2. TIMER LOGIC
+  // 2. TIMER
   useEffect(() => {
     let interval;
     if (status === "ready") {
@@ -93,7 +89,7 @@ export function useInterviewSession() {
     return () => clearInterval(interval);
   }, [status]);
 
-  // 3. VOICE RECOGNITION LOGIC (Web Speech API)
+  // 3. VOICE
   useEffect(() => {
     if (typeof window !== "undefined") {
         const Speech = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -101,10 +97,9 @@ export function useInterviewSession() {
             const recognition = new Speech();
             recognition.continuous = true;
             recognition.interimResults = true;
-            recognition.lang = "id-ID"; // Set bahasa ke Indonesia
+            recognition.lang = "id-ID";
             
             recognition.onresult = (e) => {
-                // Hanya ambil hasil final untuk menghindari duplikasi teks
                 if (e.results[0].isFinal) {
                     setAnswer(prev => (prev ? prev + " " : "") + e.results[0][0].transcript);
                 }
@@ -115,8 +110,7 @@ export function useInterviewSession() {
   }, []);
 
   const toggleVoice = () => {
-      if (!recognitionRef.current) return alert("Browser ini tidak mendukung fitur Voice-to-Text.");
-      
+      if (!recognitionRef.current) return alert("Browser tidak support voice.");
       if (isRecording) {
           recognitionRef.current.stop();
           setIsRecording(false);
@@ -126,16 +120,13 @@ export function useInterviewSession() {
       }
   };
 
-  // 4. SUBMIT ANSWER LOGIC
+  // 4. SUBMIT
   const submitAnswer = async () => {
       if (!sessionId) return;
       setIsSubmitting(true);
-      
-      // Matikan rekaman suara otomatis jika masih aktif
       if (isRecording) toggleVoice();
 
       try {
-          // Kirim jawaban ke API
           await fetch("/api/scoring/submit", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -146,16 +137,14 @@ export function useInterviewSession() {
               })
           });
 
-          // Reset input dan pindah ke pertanyaan berikutnya
           setAnswer("");
           if (currentIndex + 1 < questions.length) {
               setCurrentIndex(p => p + 1);
           } else {
-              // Jika pertanyaan sudah habis, selesaikan sesi
               await finishSession();
           }
       } catch (e) {
-          alert("Gagal mengirim jawaban. Coba lagi.");
+          alert("Gagal kirim jawaban");
       } finally {
           setIsSubmitting(false);
       }
@@ -163,7 +152,6 @@ export function useInterviewSession() {
 
   const finishSession = async () => {
       try {
-        // Trigger evaluasi akhir di backend
         const res = await fetch("/api/scoring/evaluate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -171,18 +159,15 @@ export function useInterviewSession() {
         });
         const result = await res.json();
         
-        // Redirect ke halaman Results dengan membawa data hasil
         router.push({
             pathname: "/results",
             query: { session_id: sessionId, result: JSON.stringify(result) }
         }, "/results");
       } catch(e) {
-          // Fallback: tetap pindah halaman jika evaluasi gagal (agar user tidak stuck)
           router.push(`/results?session_id=${sessionId}`);
       }
   };
 
-  // Expose data dan fungsi agar bisa dipakai di UI Component
   return {
       status, errorMsg,
       questions, currentQuestion: questions[currentIndex], currentIndex,

@@ -1,32 +1,37 @@
 import { useEffect, useState } from "react";
-// Gunakan path import alias @ (berkat jsconfig.json)
 import { useApi } from "@/hooks/useApi"; 
 import Layout from "@/components/Layout";
 import Button from "@/components/ui/Button";
+import HistoryItem from "@/components/history/HistoryItem"; // Import komponen baru
 
 export default function HistoryPage() {
-  const { getHistory, loading, error } = useApi();
+  const { getHistory, deleteHistory, loading, error } = useApi();
   const [historyList, setHistoryList] = useState([]);
 
-  useEffect(() => {
-    async function load() {
+  // Load Data
+  const refreshHistory = async () => {
       try {
-        // Panggil fungsi getHistory tanpa ID untuk mengambil semua data
-        // Ini akan menembak ke /api/history/all
         const data = await getHistory(); 
         const sorted = Array.isArray(data) ? data.reverse() : [];
         setHistoryList(sorted);
-      } catch (err) {
-        // Error handled by hook
-      }
-    }
-    load();
+      } catch (err) { }
+  };
+
+  useEffect(() => {
+    refreshHistory();
   }, []);
 
-  const getScoreBadgeColor = (score) => {
-    if (score >= 80) return "bg-green-100 text-green-700 border-green-200";
-    if (score >= 60) return "bg-blue-100 text-blue-700 border-blue-200";
-    return "bg-yellow-100 text-yellow-700 border-yellow-200";
+  // Handle Delete
+  const handleDelete = async (sessionId) => {
+      if(!confirm("Apakah Anda yakin ingin menghapus riwayat ini?")) return;
+      
+      try {
+          await deleteHistory(sessionId);
+          // Refresh list setelah hapus
+          await refreshHistory();
+      } catch(e) {
+          alert("Gagal menghapus data.");
+      }
   };
 
   return (
@@ -43,13 +48,13 @@ export default function HistoryPage() {
           </Button>
         </div>
 
-        {loading ? (
+        {loading && historyList.length === 0 ? (
            <div className="flex justify-center py-20">
              <div className="w-8 h-8 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
            </div>
         ) : error ? (
            <div className="bg-red-50 text-red-600 p-4 rounded-lg text-center border border-red-100">
-             Gagal memuat riwayat. Pastikan backend Python berjalan.
+             Gagal memuat riwayat. Pastikan backend berjalan.
            </div>
         ) : historyList.length === 0 ? (
            <div className="text-center py-20 bg-surface rounded-2xl border border-dashed border-gray-300">
@@ -58,33 +63,12 @@ export default function HistoryPage() {
            </div>
         ) : (
           <div className="grid gap-4 animate-fade-in">
-            {historyList.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-surface p-6 rounded-xl shadow-soft border border-gray-100 hover:shadow-card hover:border-secondary/30 transition-all duration-200 group"
-              >
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-bold text-lg text-primary">
-                        {item.meta?.job_role || item.job_role || "Unknown Role"}
-                      </h3>
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-text-sub border border-gray-200 uppercase tracking-wide">
-                        {item.meta?.experience_level || item.experience_level || "General"}
-                      </span>
-                    </div>
-                    <p className="text-sm text-text-sub">
-                      {item.meta?.industry || item.industry || "-"} • {item.timestamp || "Baru saja"}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
-                    <div className={`px-4 py-1.5 rounded-lg border font-bold text-sm ${getScoreBadgeColor(item.overall_score)}`}>
-                      Skor: {item.overall_score}
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {historyList.map((item) => (
+              <HistoryItem 
+                key={item.session_id} 
+                item={item} 
+                onDelete={handleDelete} 
+              />
             ))}
           </div>
         )}

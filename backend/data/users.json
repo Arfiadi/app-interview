@@ -1,0 +1,16 @@
+[
+  {
+    "id": "aa47029b-e366-4fea-86a4-584b0d178b00",
+    "username": "Arfi Adi ",
+    "email": "arfiadi13@gmail.com",
+    "hashed_password": "167735f0653f272696b441cb5f0dcf8a776b4d77d1a08a2efb42ac5bcbd0cd6f",
+    "disabled": false
+  },
+  {
+    "id": "884d496b-d89c-4ca7-9e53-089050f55dc3",
+    "username": "arfiadi",
+    "email": "arfinugroho13@gmail.com",
+    "hashed_password": "a25add8efff35120ee4e5a771293d2d3b7a2a528683229ec2ba478bb31b95e29",
+    "disabled": false
+  }
+]

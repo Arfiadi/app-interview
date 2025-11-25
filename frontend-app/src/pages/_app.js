@@ -1,6 +1,10 @@
-// Gunakan alias @ untuk mengarah ke src/styles/globals.css
 import "@/styles/globals.css";
+import { AuthProvider } from "@/context/AuthContext";
 
 export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <AuthProvider>
+      <Component {...pageProps} />
+    </AuthProvider>
+  );
 }

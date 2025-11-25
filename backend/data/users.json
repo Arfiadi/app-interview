@@ -12,5 +12,12 @@
     "email": "arfinugroho13@gmail.com",
     "hashed_password": "a25add8efff35120ee4e5a771293d2d3b7a2a528683229ec2ba478bb31b95e29",
     "disabled": false
+  },
+  {
+    "id": "2efc3f0e-03f1-4b30-9109-46b865d9f6c8",
+    "username": "Arfi",
+    "email": "arfiardin13@gmail.com",
+    "hashed_password": "167735f0653f272696b441cb5f0dcf8a776b4d77d1a08a2efb42ac5bcbd0cd6f",
+    "disabled": false
   }
 ]

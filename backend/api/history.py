@@ -19,6 +19,14 @@ def get_history(session_id: str):
     return item
 
 
+# Endpoint Baru: Delete
+@router.delete("/delete/{session_id}")
+def delete_history(session_id: str):
+    success = delete_history_item(session_id)
+    if not success:
+        raise HTTPException(status_code=404, detail="Session not found or delete failed")
+    return {"status": "ok", "message": "History deleted"}
+
 @router.post("/save")
 def save_history(payload: dict):
     session_id = payload.get("session_id")

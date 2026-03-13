@@ -102,7 +102,7 @@ Contributing
 - Fork the repo, create a branch, open a PR. Keep dependency and model upgrades in separate PRs.
 
 License
-- No LICENSE file found in the repository. If you want a license added (MIT/Apache-2.0/etc.), add a LICENSE file and I can update the README to reference it.
+- No LICENSE 
 
 Contact
 - Repo owner: Arfiadi

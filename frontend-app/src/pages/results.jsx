@@ -9,7 +9,7 @@ import ResultQuestionCard from "@/components/results/ResultQuestionCard";
 
 export default function ResultsPage() {
   const router = useRouter();
-  const { saveHistory } = useApi();
+  const { saveHistory, getHistory } = useApi();
   const { session_id, result } = router.query;
   const [data, setData] = useState(null);
   const [saved, setSaved] = useState(false);
@@ -21,16 +21,28 @@ export default function ResultsPage() {
       } catch (err) {
         console.error("Gagal parse hasil:", err);
       }
+    } else if (session_id) {
+      getHistory(session_id)
+        .then((historyItem) => {
+          if (historyItem && !historyItem.error) {
+            setData(historyItem);
+            setSaved(true);
+          }
+        })
+        .catch((err) => {
+          console.error("Gagal fetch history detail:", err);
+        });
     }
-  }, [result]);
+  }, [result, session_id]);
 
   useEffect(() => {
-    if (session_id && !saved) {
+    // Hanya panggil saveHistory jika kita mendapat data lewat query 'result'
+    if (result && session_id && !saved) {
       saveHistory(session_id)
         .then(() => setSaved(true))
         .catch(() => console.warn("Gagal auto-save"));
     }
-  }, [session_id, saved]);
+  }, [result, session_id, saved]);
 
   if (!data) {
     return (

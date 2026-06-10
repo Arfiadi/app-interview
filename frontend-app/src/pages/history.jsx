@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import ProtectedRoute from "@/components/auth/ProtectedRoute"; // Import Satpam
 import { useApi } from "@/hooks/useApi"; 
 import Layout from "@/components/common/Layout";
@@ -6,6 +7,7 @@ import Button from "@/components/ui/Button";
 import HistoryItem from "@/components/history/HistoryItem";
 
 export default function HistoryPage() {
+  const router = useRouter();
   const { getHistory, deleteHistory, loading, error } = useApi();
   const [historyList, setHistoryList] = useState([]);
 
@@ -44,7 +46,7 @@ export default function HistoryPage() {
               <h1 className="text-3xl font-bold text-primary">Riwayat Sesi</h1>
               <p className="text-text-sub mt-1">Arsip perjalanan latihan wawancara Anda.</p>
             </div>
-            <Button variant="outline" onClick={() => window.location.href = '/pre-interview'} className="hidden sm:flex">
+            <Button variant="outline" onClick={() => router.push('/pre-interview')} className="hidden sm:flex">
               + Sesi Baru
             </Button>
           </div>
@@ -60,7 +62,7 @@ export default function HistoryPage() {
           ) : historyList.length === 0 ? (
              <div className="text-center py-20 bg-surface rounded-2xl border border-dashed border-gray-300">
                <p className="text-text-muted mb-4">Belum ada riwayat wawancara.</p>
-               <Button onClick={() => window.location.href = '/pre-interview'}>Mulai Sekarang</Button>
+               <Button onClick={() => router.push('/pre-interview')}>Mulai Sekarang</Button>
              </div>
           ) : (
             <div className="grid gap-4 animate-fade-in">

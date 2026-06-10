@@ -157,12 +157,9 @@ export function useInterviewSession() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ session_id: sessionId })
         });
-        const result = await res.json();
+        await res.json();
         
-        router.push({
-            pathname: "/results",
-            query: { session_id: sessionId, result: JSON.stringify(result) }
-        }, "/results");
+        router.push(`/results?session_id=${sessionId}`);
       } catch(e) {
           router.push(`/results?session_id=${sessionId}`);
       }

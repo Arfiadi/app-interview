@@ -1,5 +1,5 @@
 import os
-from backend.services.openrouter_client import ask_openrouter
+from backend.services.openrouter_client import ask_openrouter, ask_openrouter_async
 
 # Load Model dari Env
 MODEL = os.getenv("LLM_MODEL", "deepseek/deepseek-chat")
@@ -24,7 +24,7 @@ def load_template():
         ### Perbaikan
         """
 
-def get_feedback(question, user_answer, ideal_answer, role="General", exp="Mid", industry="General"):
+async def get_feedback(question, user_answer, ideal_answer, role="General", exp="Mid", industry="General"):
     """
     Menghasilkan feedback menggunakan LLM.
     Sekarang mendukung konteks Role, Exp, dan Industry untuk hasil lebih tajam.
@@ -46,5 +46,5 @@ def get_feedback(question, user_answer, ideal_answer, role="General", exp="Mid",
         # Fallback jika template memiliki placeholder yang tidak sesuai
         prompt = f"Berikan feedback interview untuk posisi {role}.\nPertanyaan: {question}\nJawaban: {user_answer}"
 
-    resp = ask_openrouter(MODEL, [{"role": "user", "content": prompt}], temperature=0.7)
+    resp = await ask_openrouter_async(MODEL, [{"role": "user", "content": prompt}], temperature=0.7)
     return resp or "Maaf, tidak dapat menghasilkan feedback saat ini."

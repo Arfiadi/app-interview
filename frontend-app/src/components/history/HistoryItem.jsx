@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Button from "../ui/Button";
 
 /**
@@ -5,6 +6,7 @@ import Button from "../ui/Button";
  * Menampilkan detail sesi dan tombol hapus.
  */
 export default function HistoryItem({ item, onDelete }) {
+  const router = useRouter();
   
   const getScoreBadgeColor = (score) => {
     if (score >= 80) return "bg-green-100 text-green-700 border-green-200";
@@ -41,7 +43,7 @@ export default function HistoryItem({ item, onDelete }) {
           <div className="flex gap-2">
              <button 
                 className="text-sm font-medium text-secondary hover:text-primary transition-colors underline decoration-transparent hover:decoration-current"
-                onClick={() => alert("Fitur lihat detail akan segera hadir!")}
+                onClick={() => router.push(`/results?session_id=${item.session_id}`)}
               >
                 Detail
               </button>

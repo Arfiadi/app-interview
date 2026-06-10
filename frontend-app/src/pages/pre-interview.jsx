@@ -63,7 +63,7 @@ export default function PreInterview() {
       n: numQuestions
     }).toString();
 
-    window.location.href = `/interview?${query}`;
+    router.push(`/interview?${query}`);
   };
 
   return (

@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
 import uuid
+import asyncio
 
 # Import dari struktur baru yang lebih bersih
 from backend.models.interview import InterviewStartRequest
@@ -10,21 +11,22 @@ from backend.utils.model_loader import cache_session_store
 router = APIRouter()
 
 @router.post("/generate")
-def generate_interview(req: InterviewStartRequest):
+async def generate_interview(req: InterviewStartRequest):
     try:
         # 1. Generate Pertanyaan via Service
-        questions = generate_questions(
+        questions = await generate_questions(
             req.job_role,
             req.experience_level,
             req.industry,
             req.num_questions
         )
         
-        # 2. Generate Jawaban Ideal (Background Process idealnya, tapi sync untuk MVP)
-        ideal_answers = [
+        # 2. Generate Jawaban Ideal secara paralel
+        tasks = [
             generate_ideal_answer(q, req.job_role, req.experience_level, req.industry)
             for q in questions
         ]
+        ideal_answers = await asyncio.gather(*tasks)
         
         # 3. Simpan Session di Cache
         session_id = str(uuid.uuid4())

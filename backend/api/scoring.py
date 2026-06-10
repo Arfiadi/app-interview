@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
+import asyncio
 from backend.services.similarity_service import compute_similarity_score
 from backend.services.nlp_insights import extract_keywords_and_missing, topic_coverage_simple
 from backend.services.llm_feedback import get_feedback
@@ -36,7 +37,7 @@ def submit_answer(req: AnswerSubmitRequest):
     return {"status": "ok"}
 
 @router.post("/evaluate")
-def evaluate_session(req: EvaluateRequest):
+async def evaluate_session(req: EvaluateRequest):
     """
     Mengevaluasi seluruh sesi wawancara setelah user selesai menjawab semua pertanyaan.
     Menghitung skor similarity, keyword matching, dan meminta feedback kualitatif dari LLM.
@@ -55,10 +56,28 @@ def evaluate_session(req: EvaluateRequest):
     ideal_answers = session["ideal_answers"]
     user_answers = session["answers"]
     
+    # A. Buat tasks untuk feedback LLM secara paralel (I/O Bound)
+    feedback_tasks = []
+    for idx, q in enumerate(questions):
+        user_ans = user_answers[idx] or ""
+        ideal_ans = ideal_answers[idx] or ""
+        feedback_tasks.append(
+            get_feedback(
+                question=q, 
+                user_answer=user_ans, 
+                ideal_answer=ideal_ans,
+                role=job_role,
+                exp=experience_level,
+                industry=industry
+            )
+        )
+    
+    feedbacks = await asyncio.gather(*feedback_tasks)
+    
     results = []
     similarity_scores = []
     
-    # 2. ITERASI SETIAP PERTANYAAN
+    # B. Hitung kesamaan & analisis NLP lokal
     for idx, q in enumerate(questions):
         user_ans = user_answers[idx] or ""
         ideal_ans = ideal_answers[idx] or ""
@@ -73,16 +92,8 @@ def evaluate_session(req: EvaluateRequest):
         # C. Analisis Topik (NLP Simple)
         topics = topic_coverage_simple(ideal_ans, user_ans)
         
-        # D. Feedback Kualitatif dari LLM (AI Coach)
-        # Kita kirimkan konteks lengkap agar AI bertindak sebagai spesialis
-        feedback = get_feedback(
-            question=q, 
-            user_answer=user_ans, 
-            ideal_answer=ideal_ans,
-            role=job_role,
-            exp=experience_level,
-            industry=industry
-        )
+        # D. Ambil feedback hasil LLM
+        feedback = feedbacks[idx]
         
         # Kumpulkan hasil per pertanyaan
         results.append({

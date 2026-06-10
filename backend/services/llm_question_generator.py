@@ -1,4 +1,4 @@
-from backend.services.openrouter_client import ask_openrouter
+from backend.services.openrouter_client import ask_openrouter, ask_openrouter_async
 import json
 import os
 import re
@@ -52,7 +52,7 @@ def clean_json_string(s: str) -> str:
     # Fallback: hapus backticks saja
     return s.replace("```", "").strip()
 
-def generate_questions(role, exp, industry, n=5):
+async def generate_questions(role, exp, industry, n=5):
     """
     Fungsi utama untuk menghasilkan pertanyaan wawancara.
     Mencoba menggunakan LLM, jika gagal beralih ke Mock Mode.
@@ -65,7 +65,7 @@ def generate_questions(role, exp, industry, n=5):
         prompt = template.format(n=n, role=role, exp=exp, industry=industry)
         
         # Panggil AI
-        resp = ask_openrouter(MODEL, [{"role": "user", "content": prompt}], temperature=0.7)
+        resp = await ask_openrouter_async(MODEL, [{"role": "user", "content": prompt}], temperature=0.7)
         
         if resp:
             clean_resp = clean_json_string(resp)

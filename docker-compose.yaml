@@ -25,12 +25,12 @@ services:
       dockerfile: Dockerfile
     container_name: interview_frontend
     ports:
-      - "3000:3000"
+      - "3005:3001"
     environment:
       # URL Backend untuk server-side fetching (antar container)
       - PYTHON_API_URL=http://backend:8000
       # URL Publik untuk client-side fetching (jika ada)
-      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+      - NEXT_PUBLIC_APP_URL=http://localhost:3005
     depends_on:
       - backend
     restart: unless-stopped

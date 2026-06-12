@@ -1,5 +1,5 @@
 # Gunakan base image Python yang ringan
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Set working directory di dalam container
 WORKDIR /app
@@ -14,17 +14,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Salin requirements.txt terlebih dahulu (untuk caching layer Docker yang efisien)
-COPY requirements.txt .
+COPY requirements.txt ./backend/requirements.txt
 
 # Install dependencies Python
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r ./backend/requirements.txt
+
 
 # Salin seluruh kode backend ke dalam container
-COPY . .
+COPY . ./backend
 
 # Expose port yang digunakan FastAPI
 EXPOSE 8000
 
 # Perintah untuk menjalankan aplikasi saat container start
 # Menggunakan host 0.0.0.0 agar bisa diakses dari luar container
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]

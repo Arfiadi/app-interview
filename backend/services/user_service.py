@@ -1,58 +1,40 @@
-import json
-import os
-import uuid
 from typing import Optional
-from backend.models.user import UserInDB, UserCreate
+from sqlmodel import select
+from sqlalchemy.ext.asyncio import AsyncSession
+from backend.models.db_models import UserDB
+from backend.models.user import UserCreate
 from backend.core.security import get_password_hash
 
-# Setup Path
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, "data")
-USERS_FILE = os.path.join(DATA_DIR, "users.json")
+async def get_user_by_username(db: AsyncSession, username: str) -> Optional[UserDB]:
+    """Get a user by username or email from the database."""
+    statement = select(UserDB).where((UserDB.username == username) | (UserDB.email == username))
+    result = await db.execute(statement)
+    return result.scalars().first()
 
-def _ensure_users_file():
-    if not os.path.exists(DATA_DIR):
-        os.makedirs(DATA_DIR, exist_ok=True)
-    if not os.path.exists(USERS_FILE):
-        with open(USERS_FILE, "w") as f:
-            json.dump([], f)
-
-def get_user_by_username(username: str) -> Optional[UserInDB]:
-    _ensure_users_file()
-    try:
-        with open(USERS_FILE, "r") as f:
-            users = json.load(f)
-            for u in users:
-                if u["username"] == username or u["email"] == username:
-                    return UserInDB(**u)
-    except json.JSONDecodeError:
+async def create_user(db: AsyncSession, user: UserCreate) -> Optional[UserDB]:
+    """Create a new user in the database."""
+    # Check if username or email already exists
+    existing_user = await get_user_by_username(db, user.username)
+    if existing_user:
         return None
-    return None
+    existing_email = await get_user_by_username(db, user.email)
+    if existing_email:
+        return None
+        
+    db_user = UserDB(
+        username=user.username,
+        email=user.email,
+        hashed_password=get_password_hash(user.password)
+    )
+    db.add(db_user)
+    await db.commit()
+    await db.refresh(db_user)
+    return db_user
 
-def create_user(user: UserCreate):
-    _ensure_users_file()
-    
-    if get_user_by_username(user.username) or get_user_by_username(user.email):
-        return None 
-        
-    new_user = {
-        "id": str(uuid.uuid4()),
-        "username": user.username,
-        "email": user.email,
-        "hashed_password": get_password_hash(user.password),
-        "disabled": False
-    }
-    
-    # Read-Append-Write
-    try:
-        with open(USERS_FILE, "r") as f:
-            data = json.load(f)
-    except:
-        data = []
-        
-    data.append(new_user)
-    
-    with open(USERS_FILE, "w") as f:
-        json.dump(data, f, indent=2)
-        
-    return new_user
+async def update_user_password(db: AsyncSession, user: UserDB, plain_password: str) -> UserDB:
+    """Update a user's password to bcrypt (used for password migration)."""
+    user.hashed_password = get_password_hash(plain_password)
+    db.add(user)
+    await db.commit()
+    await db.refresh(user)
+    return user

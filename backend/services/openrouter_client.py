@@ -18,7 +18,7 @@ HEADERS = {
     "Authorization": f"Bearer {OPENROUTER_API_KEY}",
     "Content-Type": "application/json",
     # Header tambahan yang disarankan OpenRouter
-    "HTTP-Referer": "http://localhost:3000", 
+    "HTTP-Referer": "http://localhost:3005", 
     "X-Title": "InterviewCoach Local"
 }
 
@@ -73,3 +73,12 @@ def ask_openrouter(model: str, messages: list, temperature: float = 0.7):
         return None
     finally:
         session.close()
+
+import asyncio
+
+async def ask_openrouter_async(model: str, messages: list, temperature: float = 0.7):
+    """
+    Asynchronous wrapper for ask_openrouter running in a separate thread.
+    """
+    return await asyncio.to_thread(ask_openrouter, model, messages, temperature)
+

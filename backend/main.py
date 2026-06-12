@@ -4,16 +4,26 @@ import os
 # Menambahkan root directory ke sys.path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+from backend.core.database import init_db
 
 load_dotenv()
 
-# 1. IMPORT ROUTER AUTH DI SINI
-from backend.api import interview, scoring, history, auth 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Initialize database and run migrations
+    await init_db()
+    
+    
+    yield
 
-app = FastAPI(title="AI Interview Backend", version="1.0")
+# 1. IMPORT ROUTER AUTH DI SINI
+from backend.api import interview, scoring, history, auth, analytics 
+
+app = FastAPI(title="AI Interview Backend", version="1.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -30,6 +40,7 @@ app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(interview.router, prefix="/interview", tags=["interview"])
 app.include_router(scoring.router, prefix="/scoring", tags=["scoring"])
 app.include_router(history.router, prefix="/history", tags=["history"])
+app.include_router(analytics.router, prefix="/analytics", tags=["analytics"])
 
 @app.get("/")
 def root():

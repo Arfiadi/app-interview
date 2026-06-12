@@ -21,3 +21,54 @@
   }
 }
 
+/* Print Stylesheet for PDF Export */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Hide navigation, buttons, and decorative elements */
+  nav, 
+  footer, 
+  button, 
+  .no-print,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Expand content to full width */
+  .print\:full-width,
+  .print-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    position: static !important;
+  }
+
+  /* Prevent page breaks inside cards */
+  .print-avoid-break,
+  .card,
+  [class*="shadow-card"] {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Reset spacing and margins for print */
+  .max-w-7xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure text colors are readable on paper */
+  p, h1, h2, h3, h4, span, li, blockquote {
+    color: #111827 !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+}
+

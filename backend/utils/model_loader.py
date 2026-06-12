@@ -6,8 +6,6 @@ import time
 import tempfile
 from typing import List, Dict, Optional, Any
 
-_model = None
-_model_lock = threading.Lock()
 
 # In-memory simple session store (MVP)
 cache_session_store: Dict[str, Any] = {}
@@ -22,21 +20,6 @@ HISTORY_LOCK = threading.Lock()  # protect read/write to history file
 def _ensure_data_dir():
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR, exist_ok=True)
-
-
-def get_embedding_model():
-    """
-    Lazy-load the sentence-transformers model (thread-safe).
-    """
-    global _model
-    with _model_lock:
-        if _model is None:
-            # recommended model for multilingual similarity
-            from sentence_transformers import SentenceTransformer  # local import
-            _model = SentenceTransformer(
-                "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-            )
-        return _model
 
 
 def _atomic_write_json(path: str, data):
@@ -222,35 +205,4 @@ def delete_history_item(session_id: str) -> bool:
             return True
     except Exception as e:
         print(f"Failed to delete history: {e}")
-        return False
-
-# Tambahkan fungsi ini di file model_loader.py
-def delete_history_item(session_id: str) -> bool:
-    """
-    Menghapus item history berdasarkan session_id.
-    Returns True jika berhasil dihapus, False jika tidak ditemukan.
-    """
-    try:
-        _ensure_data_dir()
-        with HISTORY_LOCK:
-            history = []
-            if os.path.exists(HISTORY_FILE):
-                with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-                    try:
-                        history = json.load(f)
-                        if not isinstance(history, list): history = []
-                    except:
-                        history = []
-            
-            # Cari dan hapus
-            initial_len = len(history)
-            new_history = [h for h in history if h.get("session_id") != session_id]
-            
-            if len(new_history) == initial_len:
-                return False # Tidak ada yang dihapus (ID tidak ketemu)
-            
-            _atomic_write_json(HISTORY_FILE, new_history)
-            return True
-    except Exception as e:
-        print(f"Failed to delete history: {e}")
-        return False
+        return False

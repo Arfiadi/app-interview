@@ -5,6 +5,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { username, password } = req.body;
 
+  if (!process.env.PYTHON_API_URL) {
+    return res.status(500).json({ message: "Konfigurasi Server Error: PYTHON_API_URL belum dikonfigurasi di dashboard Vercel." });
+  }
+
   try {
     const formData = new URLSearchParams();
     formData.append("username", username);

@@ -3,6 +3,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).json({ message: "Method not allowed" });
 
+  if (!process.env.PYTHON_API_URL) {
+    return res.status(500).json({ detail: "Konfigurasi Server Error: PYTHON_API_URL belum dikonfigurasi di dashboard Vercel." });
+  }
+
   try {
     const pythonRes = await fetch(`${process.env.PYTHON_API_URL}/auth/register`, {
       method: "POST",

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export function useApi() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   async function request(url: string, method: string = "GET", body: any = null) {
     setLoading(true);
@@ -28,6 +30,15 @@ export function useApi() {
         headers,
         body: body ? JSON.stringify(body) : null,
       });
+
+      // Auto-logout on 401: token expired or invalid
+      if (response.status === 401) {
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("user");
+        }
+        router.replace("/login");
+        throw new Error("Sesi Anda telah berakhir. Silakan login kembali.");
+      }
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Request failed");

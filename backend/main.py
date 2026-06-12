@@ -17,15 +17,7 @@ async def lifespan(app: FastAPI):
     # Initialize database and run migrations
     await init_db()
     
-    # Pre-load sentence-transformer embedding model to eliminate cold-start latency
-    try:
-        from backend.utils.model_loader import get_embedding_model
-        import asyncio
-        await asyncio.to_thread(get_embedding_model)
-        print("Embedding model loaded successfully.")
-    except Exception as e:
-        print(f"Failed to pre-load embedding model: {e}")
-        
+    
     yield
 
 # 1. IMPORT ROUTER AUTH DI SINI

@@ -1,243 +1,149 @@
-# AI Interview Coach 🎤
+<div align="center">
+  <h1>🎙️ AI Interview Coach</h1>
+  <p><em>An intelligent, AI-powered interview practice platform. Generate role-specific questions, submit answers, and receive instant semantic scoring and qualitative STAR-method feedback.</em></p>
 
-An AI-powered interview practice platform. Generate role-specific interview questions, submit answers, and receive instant scoring and qualitative feedback — all powered by OpenRouter LLMs.
-
----
-
-## Features
-
-- **Generate Questions** — Role-, industry-, and experience-level-specific questions via LLM
-- **Submit & Score Answers** — Semantic similarity scoring using OpenRouter API (no local ML model needed)
-- **LLM Feedback** — Per-question qualitative feedback and keyword/topic insights
-- **Session History** — Persisted to PostgreSQL; view past sessions and track progress
-- **Analytics Dashboard** — Score trends, best/average scores, top roles & industries
-- **Authentication** — JWT-based login & registration
+  [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+  [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+  [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql)](https://www.postgresql.org/)
+  [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://www.docker.com/)
+  [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel)](https://vercel.com/)
+</div>
 
 ---
 
-## Tech Stack
+## 🚀 Live Deployment
 
-| Layer | Technology |
-|---|---|
-| Backend | Python 3.11, FastAPI, SQLModel, asyncpg |
-| Database | PostgreSQL 16 |
-| Cache | Redis 7 |
-| LLM | OpenRouter API (configurable model) |
-| Frontend | Next.js 16 (TypeScript), Tailwind CSS |
-| Orchestration | Docker Compose |
+The application is fully deployed and accessible online:
+
+- **Frontend (Web App):** [https://app-interview-xi.vercel.app/](https://app-interview-xi.vercel.app/)
+- **Backend API:** [https://interview-backend-737275753890.asia-southeast1.run.app](https://interview-backend-737275753890.asia-southeast1.run.app)
+- **API Documentation (Swagger):** [Backend Docs](https://interview-backend-737275753890.asia-southeast1.run.app/docs)
 
 ---
 
-## Prerequisites
+## ✨ Key Features
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (recommended)
+- 🎯 **Dynamic Question Generation** — Tailored interview questions based on Job Role, Industry, and Experience Level, powered by advanced LLMs (OpenRouter).
+- 🧠 **Semantic Scoring & Insights** — Answers are evaluated semantically against an AI-generated ideal answer, scoring from 0 to 100 based on conceptual accuracy, not just keyword matching.
+- 💡 **Constructive Feedback (STAR Method)** — Get qualitative feedback on your answers with a re-written, professional example using the STAR (Situation, Task, Action, Result) framework.
+- 📊 **Analytics Dashboard** — Track your progress over time with interactive charts showing your average score, top roles, and recent session trends.
+- 🖨️ **PDF Report Export** — Print or save your interview evaluation reports cleanly with an optimized print layout.
+- 🔐 **Secure Authentication** — JWT-based registration and login system to protect your personal interview history.
+
+---
+
+## 🏗️ Tech Stack & Architecture
+
+This project is built using a modern, scalable, and fully asynchronous architecture:
+
+### Frontend
+- **Framework:** Next.js (Pages Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel Serverless Functions
+
+### Backend
+- **Framework:** FastAPI (Python 3.11+)
+- **ORM & Database:** SQLModel, PostgreSQL (Neon DB via `asyncpg`)
+- **Caching & State:** Redis (Upstash)
+- **AI Integration:** OpenRouter API (supports GPT-4, DeepSeek, Claude, etc.)
+- **Deployment:** Google Cloud Run
+
+---
+
+## 💻 Local Development Setup
+
+You can run the application locally using Docker (Recommended) or manually.
+
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (for Docker setup)
+- Node.js & Python 3.11+ (for Manual setup)
 - An [OpenRouter API key](https://openrouter.ai/)
 
----
+### 1. Environment Configuration
 
-## Quickstart (Docker Compose)
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Arfiadi/app-interview.git
-cd app-interview
-```
-
-### 2. Create `.env` file
-
-Create a `.env` file in the **repository root**:
+Create a `.env` file in the root of the project:
 
 ```env
 OPENROUTER_API_KEY=your_openrouter_api_key_here
-LLM_MODEL=openai/gpt-4o-mini        # or any OpenRouter model
+LLM_MODEL=openai/gpt-4o-mini        # Or your preferred OpenRouter model
 SECRET_KEY=change_this_to_a_strong_secret_key
 ```
 
-### 3. Run the application
+### 2. Run with Docker Compose (Recommended)
 
 **Windows:**
 ```batch
 run_app.bat
 ```
 
-**Linux/macOS:**
+**Linux / macOS:**
 ```bash
 docker-compose up --build -d
 ```
 
-### 4. Access the app
+Access the local services:
+- **Frontend:** `http://localhost:3005`
+- **Backend API:** `http://localhost:8000`
 
-| Service | URL |
-|---|---|
-| Frontend | http://localhost:3005 |
-| Backend API | http://localhost:8000 |
-| API Docs (Swagger) | http://localhost:8000/docs |
+### 3. Run Manually (Without Docker)
 
----
-
-## Environment Variables
-
-| Variable | Description | Required |
-|---|---|---|
-| `OPENROUTER_API_KEY` | Your OpenRouter API key | ✅ |
-| `LLM_MODEL` | OpenRouter model ID (e.g. `openai/gpt-4o-mini`) | ✅ |
-| `SECRET_KEY` | JWT signing secret | ✅ |
-| `DATABASE_URL` | PostgreSQL connection string (auto-set in Docker) | Auto |
-| `REDIS_URL` | Redis connection string (auto-set in Docker) | Auto |
-
----
-
-## Local Development (without Docker)
-
-### Backend
+<details>
+<summary><strong>Backend Setup</strong></summary>
 
 ```bash
 cd backend
 python -m venv .venv
-# Windows:
+
+# Activate Virtual Env (Windows)
 .venv\Scripts\activate
-# Linux/macOS:
+# Activate Virtual Env (Mac/Linux)
 source .venv/bin/activate
 
 pip install -r requirements.txt
-
-# Run migrations & server
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
+*(Ensure PostgreSQL and Redis are running locally and add `DATABASE_URL` / `REDIS_URL` to `.env`)*
+</details>
 
-> Make sure PostgreSQL and Redis are running locally, and set `DATABASE_URL` / `REDIS_URL` in `.env`.
-
-### Frontend
+<details>
+<summary><strong>Frontend Setup</strong></summary>
 
 ```bash
 cd frontend-app
-npm ci
-npm run dev      # http://localhost:3000
+npm install
+npm run dev
 ```
+</details>
 
 ---
 
-## API Reference
+## 🧪 Testing
 
-### Authentication
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/auth/register` | Register new user |
-| `POST` | `/auth/token` | Login (returns JWT) |
-
-### Interview
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/interview/generate` | Generate questions for a session |
-
-**Request body:**
-```json
-{
-  "job_role": "Software Engineer",
-  "experience_level": "Mid",
-  "industry": "FinTech",
-  "num_questions": 5
-}
-```
-
-### Scoring
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/scoring/submit` | Submit a single answer |
-| `POST` | `/scoring/evaluate` | Evaluate full session (returns scores & feedback) |
-
-### History
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/history/all` | Get all past sessions |
-| `GET` | `/history/{session_id}` | Get single session detail |
-| `DELETE` | `/history/delete` | Delete a session |
-
-### Analytics
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/analytics/summary` | Overall stats (total sessions, avg/best score, top role) |
-| `GET` | `/analytics/trend?limit=10` | Score trend over last N sessions |
-
----
-
-## Running Tests
+The backend includes a comprehensive, asynchronous Pytest test suite with an in-memory SQLite database.
 
 ```bash
-pytest -c backend/pytest.ini
-```
-
-All 7 tests should pass:
-
-```
-7 passed in ~10s
+cd backend
+pytest -c pytest.ini
 ```
 
 ---
 
-## Project Structure
+## 🤝 Contributing
 
-```
-app-interview/
-├── backend/
-│   ├── api/              # FastAPI routers (auth, interview, scoring, history, analytics)
-│   ├── core/             # Config, database, security, deps
-│   ├── models/           # SQLModel DB models & Pydantic schemas
-│   ├── services/         # LLM feedback, OpenRouter client, similarity service
-│   ├── tests/            # Pytest test suite
-│   ├── Dockerfile
-│   └── requirements.txt
-├── frontend-app/
-│   ├── src/
-│   │   ├── pages/        # Next.js pages & API routes
-│   │   ├── components/   # UI components
-│   │   ├── context/      # AuthContext
-│   │   ├── hooks/        # useApi, useInterviewSession
-│   │   └── styles/
-│   ├── Dockerfile
-│   └── package.json
-├── docker-compose.yaml
-├── .env                  # (not committed — create manually)
-└── run_app.bat           # Windows one-click launcher
-```
+Contributions, issues, and feature requests are welcome!
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## Changelog
+## 📜 License
 
-### v0.2.0
-- ♻️ Refactored scoring to use OpenRouter API (removed PyTorch / sentence-transformers — saves ~1.5 GB)
-- 🗄️ Migrated session storage from JSON file to PostgreSQL
-- 📊 Added analytics dashboard (score trends, KPI cards)
-- 🔐 Added JWT authentication (register / login)
-- 🧪 Added full pytest test suite (7 tests)
-- 🐳 Updated Docker Compose with PostgreSQL & Redis services
-- 🔄 Frontend migrated from JavaScript to TypeScript
+Distributed under the MIT License.
 
-### v0.1.0
-- Initial release: FastAPI backend + Next.js frontend
-- Local sentence-transformers model for similarity scoring
-
----
-
-## Contributing
-
-Fork the repo, create a feature branch, and open a Pull Request. Keep dependency upgrades in separate PRs.
-
----
-
-## License
-
-MIT
-
----
-
-## Contact
-
-Repo owner: **Arfiadi** — [GitHub](https://github.com/Arfiadi)
+<div align="center">
+  <p>Built with ❤️ by <a href="https://github.com/Arfiadi">Arfiadi</a></p>
+</div>

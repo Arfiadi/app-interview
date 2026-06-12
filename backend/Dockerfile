@@ -23,9 +23,8 @@ RUN pip install --no-cache-dir -r ./backend/requirements.txt
 # Salin seluruh kode backend ke dalam container
 COPY . ./backend
 
-# Expose port yang digunakan FastAPI
-EXPOSE 8000
+# Cloud Run injects PORT env var (default 8080)
+EXPOSE 8080
 
-# Perintah untuk menjalankan aplikasi saat container start
-# Menggunakan host 0.0.0.0 agar bisa diakses dari luar container
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Use shell form so $PORT is expanded at runtime (Cloud Run requirement)
+CMD uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8080}

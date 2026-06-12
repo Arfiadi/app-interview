@@ -27,7 +27,13 @@ app = FastAPI(title="AI Interview Backend", version="1.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:3005",
+        "https://*.vercel.app",
+        "https://app-interview.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -45,3 +51,8 @@ app.include_router(analytics.router, prefix="/analytics", tags=["analytics"])
 @app.get("/")
 def root():
     return {"message": "AI Interview Backend is running 🚀"}
+
+@app.get("/health")
+def health_check():
+    """Health check endpoint for Cloud Run."""
+    return {"status": "healthy", "version": "0.2.0"}

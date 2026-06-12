@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://via.placeholder.com/1000x120/0f172a/38bdf8?text=AI+Interview+Coach" alt="AI Interview Coach Banner" width="100%">
+<img src="https://placehold.co/1000x120/0f172a/38bdf8?text=AI+Interview+Coach" alt="AI Interview Coach Banner" width="100%">
 
 <br/>
 

@@ -21,8 +21,12 @@ Berikan evaluasi dalam format MARKDOWN yang rapi. Jangan gunakan JSON. Gunakan s
 - **Saran 1:** ...
 - **Saran 2:** ...
 
-### 🚀 Contoh Jawaban Lebih Baik
-(Tuliskan ulang jawaban user agar lebih profesional, menggunakan metode STAR - Situation, Task, Action, Result jika memungkinkan. Buat ini singkat namun berdampak.)
+### 🚀 Contoh Jawaban Lebih Baik (STAR Method)
+(Tuliskan ulang jawaban user agar lebih profesional dan terstruktur menggunakan metode STAR:
+- **Situation & Task**: Latar belakang masalah dan tantangan yang dihadapi.
+- **Action**: Tindakan taktis konkret yang diambil untuk menyelesaikannya.
+- **Result**: Dampak nyata, terukur, atau hasil positif dari tindakan tersebut.
+Kemas dalam 1-2 paragraf pendek yang persuasif dan berdampak tinggi.)
 > "..."
 
-Gunakan bahasa Indonesia yang profesional, memotivasi, namun objektif.
+Gunakan bahasa Indonesia yang profesional, memotivasi, namun objektif. Sekali lagi, hasil evaluasi WAJIB berformat Markdown murni agar rapi.

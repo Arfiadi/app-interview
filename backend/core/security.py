@@ -1,47 +1,55 @@
 import os
-import hashlib
-import hmac
-import uuid
-import base64
 from datetime import datetime, timedelta
-
-# Minimal security helpers for password hashing and token creation.
-# IMPORTANT: keep this module lightweight and avoid importing any application
-# modules (e.g., routers) here to prevent circular imports.
-
-# Use an application secret (can be set via env var); fallback to a dev value.
-SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret")
-
+from typing import Any, Union
+from jose import jwt, JWTError
+import bcrypt
+from backend.core.config import settings
 
 def get_password_hash(password: str) -> str:
-    """Return a deterministic SHA256-based hash for the given password.
-
-    This implementation is intentionally simple to avoid extra dependencies
-    (no passlib/bcrypt). For production use, replace with a proper password
-    hashing algorithm (bcrypt/argon2).
-    """
+    """Hash the password using bcrypt."""
     if password is None:
         return ""
-    salted = (password + SECRET_KEY).encode("utf-8")
-    return hashlib.sha256(salted).hexdigest()
-
+    salt = bcrypt.gensalt()
+    return bcrypt.hashpw(password.encode('utf-8'), salt).decode('utf-8')
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    """Verify a plain password against the stored hash."""
-    return get_password_hash(plain_password) == (hashed_password or "")
+    """Verify a plain password against the bcrypt hash."""
+    if not hashed_password:
+        return False
+    # Fallback to SHA256 verification for users created before migration
+    # Note: If the password hash does not look like bcrypt, or pwd_context fails,
+    # we could implement a migration strategy, but for simplicity, we verify using bcrypt.
+    # To support backward compatibility with older SHA256 hashes if they exist,
+    # we can check if hash starts with bcrypt prefix (e.g. '$2b$'). If not, we check SHA256.
+    if not hashed_password.startswith("$2"):
+        import hashlib
+        salted = (plain_password + settings.SECRET_KEY).encode("utf-8")
+        sha256_hash = hashlib.sha256(salted).hexdigest()
+        if sha256_hash == hashed_password:
+            # Upgrade the hash on verify (we will save the upgraded hash when user logs in)
+            return True
+        return False
+    try:
+        return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password.encode('utf-8'))
+    except Exception:
+        return False
 
+def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None) -> str:
+    """Create a signed JWT access token."""
+    to_encode = data.copy()
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+    
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
+    return encoded_jwt
 
-def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
-    """Create a simple opaque access token string.
-
-    This function returns a random token (UUID-based, urlsafe). It does not
-    encode the payload. For a real JWT implementation, swap this out with
-    a proper JWT library (e.g. python-jose) and sign tokens with
-    `SECRET_KEY`.
-    """
-    # We include a timestamp to help debugging/rotation if needed.
-    token_uuid = uuid.uuid4()
-    ts = int(datetime.utcnow().timestamp())
-    raw = f"{token_uuid.hex}.{ts}".encode("utf-8")
-    token = base64.urlsafe_b64encode(hmac.new(SECRET_KEY.encode(), raw, hashlib.sha256).digest()).decode().rstrip("=\n")
-    return token
+def decode_access_token(token: str) -> Union[dict, None]:
+    """Decode and verify a JWT access token."""
+    try:
+        payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+        return payload
+    except JWTError:
+        return None

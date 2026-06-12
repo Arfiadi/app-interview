@@ -6,8 +6,6 @@ import time
 import tempfile
 from typing import List, Dict, Optional, Any
 
-_model = None
-_model_lock = threading.Lock()
 
 # In-memory simple session store (MVP)
 cache_session_store: Dict[str, Any] = {}
@@ -22,21 +20,6 @@ HISTORY_LOCK = threading.Lock()  # protect read/write to history file
 def _ensure_data_dir():
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR, exist_ok=True)
-
-
-def get_embedding_model():
-    """
-    Lazy-load the sentence-transformers model (thread-safe).
-    """
-    global _model
-    with _model_lock:
-        if _model is None:
-            # recommended model for multilingual similarity
-            from sentence_transformers import SentenceTransformer  # local import
-            _model = SentenceTransformer(
-                "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-            )
-        return _model
 
 
 def _atomic_write_json(path: str, data):

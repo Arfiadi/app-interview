@@ -85,7 +85,10 @@ export function useInterviewSession() {
         if (!res.ok) throw new Error("Gagal menghubungi AI Coach.");
         const data = await res.json();
         
-        setQuestions(data.questions);
+        const formattedQuestions = data.questions.map((q: any) => {
+            return typeof q === "string" ? { text: q } : q;
+        });
+        setQuestions(formattedQuestions);
         setSessionId(data.session_id);
         setStatus("ready");
       } catch (err: any) {

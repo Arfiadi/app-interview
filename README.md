@@ -63,24 +63,25 @@ Experience the application in production:
 
 ---
 
+## ⚙️ Environment Variables
+
+Before running the application, create a `.env` file in the repository root:
+
+| Variable | Description | Required |
+|---|---|:---:|
+| `OPENROUTER_API_KEY` | Your OpenRouter API key | ✅ |
+| `LLM_MODEL` | OpenRouter model ID (e.g. `openai/gpt-4o-mini`) | ✅ |
+| `SECRET_KEY` | JWT signing secret | ✅ |
+| `DATABASE_URL` | PostgreSQL connection string (auto-set in Docker) | Auto |
+| `REDIS_URL` | Redis connection string (auto-set in Docker) | Auto |
+
+---
+
 ## 💻 Developer Setup
 
 Get the environment up and running on your local machine in under 2 minutes.
 
-### 1. Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-- An [OpenRouter API key](https://openrouter.ai/)
-
-### 2. Environment Variables
-Create a `.env` file in the project root to securely inject your configurations:
-
-```env
-OPENROUTER_API_KEY=your_openrouter_api_key_here
-LLM_MODEL=openai/gpt-4o-mini        # AI Model of your choice
-SECRET_KEY=change_this_to_a_strong_secret_key
-```
-
-### 3. Ignition (Via Docker)
+### 1. Ignition (Via Docker) - Recommended
 
 Boot up the entire stack—Frontend, Backend, Database, and Cache—with a single command:
 
@@ -98,16 +99,127 @@ docker-compose up --build -d
 > - Frontend: `http://localhost:3005`
 > - Backend Swagger UI: `http://localhost:8000/docs`
 
+### 2. Run Manually (Without Docker)
+
+<details>
+<summary><strong>Backend Setup</strong></summary>
+
+```bash
+cd backend
+python -m venv .venv
+
+# Activate Virtual Env (Windows)
+.venv\Scripts\activate
+# Activate Virtual Env (Mac/Linux)
+source .venv/bin/activate
+
+pip install -r requirements.txt
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+*(Ensure PostgreSQL and Redis are running locally and add `DATABASE_URL` / `REDIS_URL` to `.env`)*
+</details>
+
+<details>
+<summary><strong>Frontend Setup</strong></summary>
+
+```bash
+cd frontend-app
+npm install
+npm run dev
+```
+</details>
+
 ---
 
-## 🧪 Quality Assurance
+## 📡 API Reference
 
-We maintain strict reliability standards through comprehensive automated testing. The backend is validated using an in-memory asynchronous SQLite database.
+### Authentication
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/auth/register` | Register new user |
+| `POST` | `/auth/token` | Login (returns JWT) |
+
+### Interview & Scoring
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/interview/generate` | Generate questions for a session |
+| `POST` | `/scoring/submit` | Submit a single answer |
+| `POST` | `/scoring/evaluate` | Evaluate full session (returns scores & feedback) |
+
+### History & Analytics
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/history/all` | Get all past sessions |
+| `GET` | `/history/{session_id}` | Get single session detail |
+| `DELETE` | `/history/delete` | Delete a session |
+| `GET` | `/analytics/summary` | Overall stats (total sessions, avg/best score, top role) |
+| `GET` | `/analytics/trend?limit=10` | Score trend over last N sessions |
+
+---
+
+## 📁 Project Structure
+
+```text
+app-interview/
+├── backend/
+│   ├── api/              # FastAPI routers (auth, interview, scoring, history, analytics)
+│   ├── core/             # Config, database, security, deps
+│   ├── models/           # SQLModel DB models & Pydantic schemas
+│   ├── services/         # LLM feedback, OpenRouter client, similarity service
+│   ├── tests/            # Pytest test suite
+│   ├── Dockerfile
+│   └── requirements.txt
+├── frontend-app/
+│   ├── src/
+│   │   ├── pages/        # Next.js pages & API routes
+│   │   ├── components/   # UI components
+│   │   ├── context/      # AuthContext
+│   │   ├── hooks/        # useApi, useInterviewSession
+│   │   └── styles/
+│   ├── Dockerfile
+│   └── package.json
+├── docker-compose.yaml
+└── run_app.bat           # Windows one-click launcher
+```
+
+---
+
+## 🧪 Testing
+
+The backend includes a comprehensive, asynchronous Pytest test suite with an in-memory SQLite database.
 
 ```bash
 cd backend
 pytest -c pytest.ini
 ```
+
+---
+
+## 📝 Changelog
+
+### v0.2.0
+- ♻️ Refactored scoring to use OpenRouter API (removed PyTorch / sentence-transformers — saves ~1.5 GB)
+- 🗄️ Migrated session storage from JSON file to PostgreSQL
+- 📊 Added analytics dashboard (score trends, KPI cards)
+- 🔐 Added JWT authentication (register / login)
+- 🧪 Added full pytest test suite (7 tests)
+- 🐳 Updated Docker Compose with PostgreSQL & Redis services
+- 🔄 Frontend migrated from JavaScript to TypeScript
+
+### v0.1.0
+- Initial release: FastAPI backend + Next.js frontend
+- Local sentence-transformers model for similarity scoring
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 

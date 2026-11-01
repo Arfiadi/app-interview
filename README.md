@@ -21,7 +21,7 @@
 
 ## 🌟 Executive Summary
 
-**AI Interview Coach** is a state-of-the-art practice platform designed to simulate high-stakes professional interviews. By leveraging advanced Large Language Models (LLMs) via OpenRouter, it provides dynamic, role-specific questions and instantaneous, human-like qualitative feedback—empowering candidates to land their dream jobs.
+**AI Interview Coach** is a interview practice platform designed to simulate high-stakes professional interviews. By leveraging advanced Large Language Models (LLMs) via OpenRouter, it provides dynamic, role-specific questions and instantaneous, human-like qualitative feedback—empowering candidates to land their dream jobs.
 
 ---
 
